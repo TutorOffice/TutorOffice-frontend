@@ -1,16 +1,21 @@
 import Layout from '../../components/layout/Layout';
 import s from './MainPage.module.css';
 import mainImage from '../../assets/images/main-image.png';
-import {btnClass, Button} from "../../shared";
+import { btnClass, Button } from '../../shared';
+import Input from '../../shared/ui/input/input';
+import { btnType } from '../../shared/ui/button/button';
 
 const MainPage = () => {
   return (
     <Layout>
       <section className={s.main}>
         <div className={s.main__buttons}>
-          <Button variant={btnClass.ghost}>Вход</Button>
-          <Button variant={btnClass.primary}>Регистрация</Button>
-
+          <Button type={btnType.button} variant={btnClass.ghost}>
+            Вход
+          </Button>
+          <Button type={btnType.button} variant={btnClass.primary}>
+            Регистрация
+          </Button>
         </div>
         <div className={s.main__content}>
           <h1 className={s.main__title}>Добро пожаловать в Личный кабинет «Репетитор»!</h1>
@@ -19,11 +24,14 @@ const MainPage = () => {
             информацию и многое другое.
           </p>
 
-          <Button variant={btnClass.primary}>Попробовать <br/>(без регистрации)</Button>
-
+          <Button type={btnType.button} variant={btnClass.primary}>
+            Попробовать <br />
+            (без регистрации)
+          </Button>
         </div>
         <img className={s.main__image} src={mainImage} alt='Репетитор и ученик' />
       </section>
+      <Input placeholder='+7 921 123 45 67' />
     </Layout>
   );
 };

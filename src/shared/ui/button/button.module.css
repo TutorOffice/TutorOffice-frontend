@@ -10,7 +10,11 @@
 }
 .button:disabled {
     background-color: var(--inactive);
+    color: var(--grey);
+    border: 1px solid var(--grey);
+    pointer-events: none;
 }
+
 
 .buttonPrimary {
     background-color: var(--orange);

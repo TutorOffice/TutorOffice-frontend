@@ -2,18 +2,23 @@ import Layout from '../../components/layout/Layout';
 import s from './MainPage.module.css';
 import mainImage from '../../assets/images/main-image.png';
 import { btnClass, btnType, Button } from '../../shared/ui';
+import { Link } from 'react-router-dom';
 
 const MainPage = () => {
   return (
     <Layout>
       <section className={s.main}>
         <div className={s.main__buttons}>
-          <Button type={btnType.button} variant={btnClass.ghost}>
-            Вход
-          </Button>
-          <Button type={btnType.button} variant={btnClass.primary}>
-            Регистрация
-          </Button>
+          <Link to='login'>
+            <Button type={btnType.button} variant={btnClass.ghost}>
+              Вход
+            </Button>
+          </Link>
+          <Link to='/register'>
+            <Button type={btnType.button} variant={btnClass.primary}>
+              Регистрация
+            </Button>
+          </Link>
         </div>
         <div className={s.main__content}>
           <h1 className={s.main__title}>Добро пожаловать в Личный кабинет «Репетитор»!</h1>

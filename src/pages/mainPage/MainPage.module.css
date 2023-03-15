@@ -10,6 +10,7 @@
   align-self: flex-end;
   margin-bottom: 150px;
   display: flex;
+  gap: 20px;
 }
 
 .main__button {

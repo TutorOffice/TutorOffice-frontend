@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import s from './input.module.css';
+import s from './Input.module.css';
 
 interface InputProps {
   onChange?: () => void;

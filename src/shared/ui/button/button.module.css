@@ -18,10 +18,10 @@
 
 .buttonPrimary {
   background-color: var(--orange);
+  transition: background-color 0.3s ease-in-out;
 }
 
 .buttonPrimary:hover {
-  transition: all 0.3s ease-in-out;
   background-color: var(--orange-hover);
 }
 
@@ -30,8 +30,9 @@
   border: 1px solid var(--blue);
   border-radius: 20px;
   color: var(--blue);
+  transition: outline 0.3s ease-in-out;
 }
 
 .buttonGhost:hover {
-  border: 2px solid var(--blue);
+  outline: 2px solid var(--blue);
 }

@@ -1,5 +1,7 @@
+import MainPage from '../../pages/mainPage/MainPage';
+
 const App = () => {
-  return <div>Hello</div>;
+  return <MainPage />;
 };
 
 export default App;

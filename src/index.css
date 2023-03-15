@@ -7,6 +7,16 @@
   box-sizing: border-box;
 }
 
+:root {
+  --black: #071d48;
+  --orange: #ffbd59;
+  --orange-hover: #ffab2b;
+  --orange-pressed: #ff9a00;
+  --red: #ec0f0f;
+  --blue: #2459bf;
+}
+
 body {
   font-family: 'Inter', Arial, sans-serif;
+  color: var(--black);
 }

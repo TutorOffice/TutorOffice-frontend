@@ -21,3 +21,28 @@
   src: url(./fonts/Inter-Bold.woff2) format('woff2'), url(./fonts/Inter-Bold.woff) format('woff'),
     url(./fonts/Inter-Bold.ttf) format('ttf');
 }
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url(./fonts/roboto-v30-cyrillic-regular.woff2) format('woff2'),
+    url(./fonts/roboto-v30-cyrillic-regular.woff) format('woff'),
+    url(./fonts/roboto-v30-cyrillic-regular.ttf) format('ttf');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url(./fonts/roboto-v30-cyrillic-700.woff2) format('woff2'),
+    url(./fonts/roboto-v30-cyrillic-700.woff) format('woff'), url(./fonts/roboto-v30-cyrillic-700.ttf) format('ttf');
+}
+
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 600;
+  src: url(./fonts/raleway-v28-cyrillic-600.woff2) format('woff2'),
+    url(./fonts/raleway-v28-cyrillic-600.woff) format('woff'), url(./fonts/raleway-v28-cyrillic-600.ttf) format('ttf');
+}

@@ -7,7 +7,7 @@ import CheckMailPass from '../../pages/passwords/checkMailPass/CheckMailPass';
 import SuccessPass from '../../pages/passwords/successPass/SuccessPass';
 import CheckMailRegister from '../../pages/register/checkMailRegister/CheckMailRegister';
 import Register from '../../pages/register/Register';
-import TutorOffice from '../../pages/tutorOffice/tutorOffice';
+import TutorOffice from '../../pages/tutorOffice/TutorOffice';
 
 const App = () => {
   return (

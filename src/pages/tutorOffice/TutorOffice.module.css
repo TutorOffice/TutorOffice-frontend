@@ -1,5 +1,5 @@
 .office {
-  max-width: 1024px;
+  max-width: 992px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -14,4 +14,37 @@
 }
 
 .office__content {
+  width: 100%;
+}
+
+.office__title {
+  margin-bottom: 50px;
+  text-align: center;
+  font-family: 'Raleway';
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.students__list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: 30px;
+}
+
+.list__title {
+  max-width: 100%;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Raleway';
+  font-size: 20px;
+}
+
+.firstSpan {
+  width: 65px;
+}
+
+.secondSpan {
+  width: 195px;
 }

@@ -3,6 +3,15 @@ import Layout from '../../components/layout/Layout';
 import { btnClass, btnType, Button } from '../../shared/ui';
 import userPhoto from '../../assets/images/user-photo.jpg';
 import UserInfo from '../../components/userInfo/UserInfo';
+import testPhoto from '../../assets/images/test-student.jpg';
+import OfficeItem from '../../components/officeItem/OfficeItem';
+
+const testStudents = [
+  { id: 1, photo: testPhoto, time: '10:30', name: 'Алексей Ф.', theme: 'Pres.Perf', homeWork: true },
+  { id: 2, photo: testPhoto, time: '10:30', name: 'Алексей Ф.', theme: 'Pres.Perf', homeWork: false },
+  { id: 3, photo: testPhoto, time: '10:30', name: 'Алексей Ф.', theme: 'Pres.Perf', homeWork: true },
+  { id: 4, photo: testPhoto, time: '10:30', name: 'Алексей Ф.', theme: 'Pres.Perf', homeWork: true },
+];
 
 const TutorOffice = () => {
   return (
@@ -21,6 +30,26 @@ const TutorOffice = () => {
         </header>
         <div className={s.office__content}>
           <h2 className={s.office__title}>Расписание на сегодня</h2>
+          <div className={s.list__title}>
+            <span className={s.firstSpan}></span>
+            <p>Время</p>
+            <p>Ученик</p>
+            <p>Тема</p>
+            <p>Д/з</p>
+            <span className={s.secondSpan}></span>
+          </div>
+          <ul className={s.students__list}>
+            {testStudents.map((stud) => (
+              <OfficeItem
+                key={stud.id}
+                photo={stud.photo}
+                time={stud.time}
+                name={stud.name}
+                theme={stud.theme}
+                homeWork={stud.homeWork}
+              />
+            ))}
+          </ul>
         </div>
       </section>
     </Layout>

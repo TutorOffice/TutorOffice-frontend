@@ -1,5 +1,2 @@
-import Button, {btnClass} from "./ui/button/button";
-export {
-    Button,
-    btnClass,
-}
+import Button, { btnClass } from './ui/button/Button';
+export { Button, btnClass };

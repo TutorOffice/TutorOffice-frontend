@@ -2,8 +2,8 @@ import Layout from '../../components/layout/Layout';
 import s from './MainPage.module.css';
 import mainImage from '../../assets/images/main-image.png';
 import { btnClass, Button } from '../../shared';
-import Input from '../../shared/ui/input/input';
-import { btnType } from '../../shared/ui/button/button';
+import Input from '../../shared/ui/input/Input';
+import { btnType } from '../../shared/ui/button/Button';
 
 const MainPage = () => {
   return (
@@ -31,7 +31,7 @@ const MainPage = () => {
         </div>
         <img className={s.main__image} src={mainImage} alt='Репетитор и ученик' />
       </section>
-      <Input placeholder='+7 921 123 45 67' />
+      <Input labelText='Номер телефона' placeholder='+7 921 123 45 67' />
     </Layout>
   );
 };

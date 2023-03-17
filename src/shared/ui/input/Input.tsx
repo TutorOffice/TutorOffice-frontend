@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import s from './input.module.css';
+import s from './Input.module.css';
 import close from '../../../assets/icons/pass-close.svg';
 import open from '../../../assets/icons/pass-open.svg';
 import { usePassword } from './usePassword';

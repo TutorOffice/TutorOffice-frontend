@@ -7,6 +7,7 @@ import CheckMailPass from '../../pages/passwords/checkMailPass/CheckMailPass';
 import SuccessPass from '../../pages/passwords/successPass/SuccessPass';
 import CheckMailRegister from '../../pages/register/checkMailRegister/CheckMailRegister';
 import Register from '../../pages/register/Register';
+import TutorOffice from '../../pages/tutorOffice/tutorOffice';
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
       <Route path='/success-pass' element={<SuccessPass />} />
       <Route path='/check-mail-register' element={<CheckMailRegister />} />
       <Route path='/check-mail-pass' element={<CheckMailPass />} />
+      <Route path='/tutor-office' element={<TutorOffice />} />
     </Routes>
   );
 };

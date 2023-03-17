@@ -1,5 +1,7 @@
 # Фронтенд проекта Личный кабинет репетитора
 
+## [Ссылка на прототип](https://tutoroffice.github.io/TutorOffice-frontend/)
+
 ## Команда разработчиков:
 
 - Максим https://github.com/Maksimarus

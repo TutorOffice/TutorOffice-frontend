@@ -9,9 +9,20 @@ interface modalProps {
   title?: string;
   btnText: string;
   width: string;
+  isErrorUpload?: boolean;
+  isErrorUploadText?: string;
 }
 
-const Modal: React.FC<modalProps> = ({ children, isOpen, onClose, title = '', btnText, width }) => {
+const Modal: React.FC<modalProps> = ({
+  children,
+  isOpen,
+  onClose,
+  title = '',
+  btnText,
+  width,
+  isErrorUpload = false,
+  isErrorUploadText = '',
+}) => {
   useEffect(() => {
     document.addEventListener('keydown', keyboardHandler);
     if (isOpen) document.body.style.overflowY = 'hidden';
@@ -45,6 +56,11 @@ const Modal: React.FC<modalProps> = ({ children, isOpen, onClose, title = '', bt
                 <span>{btnText}</span>
               </Button>
             </div>
+            {isErrorUpload && (
+              <div className={s.errorText}>
+                <p>{isErrorUploadText}</p>
+              </div>
+            )}
           </div>
         </div>
       </div>

@@ -7,6 +7,7 @@ import React, { useState } from 'react';
 import Modal from '../../components/modal/Modal';
 
 const MainPage = () => {
+  const [isModal, setIsModal] = useState(false);
   return (
     <Layout>
       <section className={s.main}>
@@ -35,6 +36,21 @@ const MainPage = () => {
         </div>
         <img className={s.main__image} src={mainImage} alt='Репетитор и ученик' />
       </section>
+      <button onClick={() => setIsModal(true)}>open modal</button>
+      <Modal
+        isErrorUpload={true}
+        isErrorUploadText='Если у вас возникают проблемы с загрузкой, попробуйте выбрать фотографию меньшего размера.'
+        width='570px'
+        title='Загрузка новой фотографии'
+        btnText='Выбрать файл'
+        isOpen={isModal}
+        onClose={() => setIsModal(false)}
+      >
+        <p>
+          Преподавателям будет проще узнать вас, если вы загрузите свою настоящую фотографию. Вы можете загрузить
+          изображение в формате JPG, GIF или PNG.
+        </p>
+      </Modal>
     </Layout>
   );
 };

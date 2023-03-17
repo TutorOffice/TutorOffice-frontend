@@ -1,7 +1,8 @@
 import Layout from '../../components/layout/Layout';
 import s from './MainPage.module.css';
 import mainImage from '../../assets/images/main-image.png';
-import { btnClass, btnType, Button } from '../../shared/ui';
+import { btnClass, Button } from '../../shared';
+import { btnType } from '../../shared/ui/button/Button';
 import { Link } from 'react-router-dom';
 
 const MainPage = () => {

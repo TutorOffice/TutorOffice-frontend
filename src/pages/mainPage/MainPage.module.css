@@ -23,7 +23,7 @@
 
 .main__title {
   margin: 0 0 20px;
-  font-family: 'Raleway';
+  font-family: 'Raleway', sans-serif;
   text-align: center;
   font-size: 30px;
   font-weight: 600;
@@ -31,7 +31,7 @@
 
 .main__desc {
   margin-bottom: 50px;
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: calc(21 / 18);

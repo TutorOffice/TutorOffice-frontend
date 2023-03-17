@@ -13,18 +13,6 @@
   gap: 20px;
 }
 
-.main__button {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 18px 60px;
-  border-radius: 20px;
-  background-color: var(--orange);
-}
-.main__button:not(:last-child) {
-  margin-right: 20px;
-}
-
 .main__content {
   max-width: 748px;
   margin-bottom: 70px;

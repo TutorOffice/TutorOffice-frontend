@@ -1,0 +1,38 @@
+.button {
+  padding: 18px 60px;
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 21px;
+  color: var(--black);
+  border-radius: 20px;
+}
+
+.button:disabled {
+  background-color: var(--inactive);
+  color: var(--grey);
+  border: 1px solid var(--grey);
+  pointer-events: none;
+}
+
+.buttonPrimary {
+  background-color: var(--orange);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.buttonPrimary:hover {
+  background-color: var(--orange-hover);
+}
+
+.buttonGhost {
+  background: var(--white);
+  border: 1px solid var(--blue);
+  border-radius: 20px;
+  color: var(--blue);
+  transition: outline 0.3s ease-in-out;
+}
+
+.buttonGhost:hover {
+  outline: 2px solid var(--blue);
+}

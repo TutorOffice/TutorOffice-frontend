@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import s from './button.module.css';
+import s from './Button.module.css';
 
 export enum btnClass {
   primary = 'primary',
@@ -27,6 +27,7 @@ const Button: React.FC<ButtonProps> = ({ onClick, children, variant, isDisabled 
     [s.buttonPrimary]: variant === btnClass.primary && !isDisabled,
     [s.buttonGhost]: variant === btnClass.ghost && !isDisabled,
   });
+
   return (
     <button type={type} onClick={onClick} disabled={isDisabled} className={className}>
       {children}

@@ -2,20 +2,24 @@ import Layout from '../../components/layout/Layout';
 import s from './MainPage.module.css';
 import mainImage from '../../assets/images/main-image.png';
 import { btnClass, Button } from '../../shared';
-import Input from '../../shared/ui/input/Input';
 import { btnType } from '../../shared/ui/button/Button';
+import { Link } from 'react-router-dom';
 
 const MainPage = () => {
   return (
     <Layout>
       <section className={s.main}>
         <div className={s.main__buttons}>
-          <Button type={btnType.button} variant={btnClass.ghost}>
-            Вход
-          </Button>
-          <Button type={btnType.button} variant={btnClass.primary}>
-            Регистрация
-          </Button>
+          <Link to='login'>
+            <Button type={btnType.button} variant={btnClass.ghost}>
+              Вход
+            </Button>
+          </Link>
+          <Link to='/register'>
+            <Button type={btnType.button} variant={btnClass.primary}>
+              Регистрация
+            </Button>
+          </Link>
         </div>
         <div className={s.main__content}>
           <h1 className={s.main__title}>Добро пожаловать в Личный кабинет «Репетитор»!</h1>
@@ -23,7 +27,6 @@ const MainPage = () => {
             Как репетитор или ученик ты можешь составлять здесь расписание, отправлять домашние работы или хранить
             информацию и многое другое.
           </p>
-
           <Button type={btnType.button} variant={btnClass.primary}>
             Попробовать <br />
             (без регистрации)

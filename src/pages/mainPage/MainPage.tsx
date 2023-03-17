@@ -31,7 +31,6 @@ const MainPage = () => {
         </div>
         <img className={s.main__image} src={mainImage} alt='Репетитор и ученик' />
       </section>
-      <Input labelText='Номер телефона' placeholder='+7 921 123 45 67' />
     </Layout>
   );
 };

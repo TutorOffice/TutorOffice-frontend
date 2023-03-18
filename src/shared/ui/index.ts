@@ -1,4 +1,6 @@
-import Button, { btnClass, btnType } from './button/Button';
-import Input from './input/Input';
+import { btnClass, btnType } from './button/Button';
 
-export { Button, btnClass, btnType, Input };
+export { default as Button } from './button/Button';
+export { default as Input } from './input/Input';
+
+export { btnClass, btnType };

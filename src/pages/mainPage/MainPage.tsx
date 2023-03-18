@@ -1,9 +1,7 @@
 import Layout from '../../components/layout/Layout';
 import s from './MainPage.module.css';
 import mainImage from '../../assets/images/main-image.png';
-import { btnClass, Button } from '../../shared';
-import Input from '../../shared/ui/input/Input';
-import { btnType } from '../../shared/ui/button/Button';
+import { btnClass, btnType, Button } from '../../shared/ui';
 
 const MainPage = () => {
   return (

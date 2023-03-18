@@ -1,0 +1,47 @@
+.office {
+  max-width: 992px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.office__header {
+  width: 100%;
+  margin-bottom: 150px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.office__content {
+  width: 100%;
+  display: grid;
+}
+
+.office__title {
+  margin-bottom: 50px;
+  text-align: center;
+  font-family: 'Raleway';
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.students__list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: 30px;
+}
+
+.list__title {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  max-width: 100%;
+  margin-bottom: 30px;
+  font-family: 'Raleway';
+  font-size: 20px;
+}
+
+.grid__item {
+  width: 195px;
+}

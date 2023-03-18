@@ -1,0 +1,9 @@
+.officeItem {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(6, 1fr);
+  padding-bottom: 30px;
+  border-bottom: 1px solid #b8bbbf;
+  font-family: 'Roboto';
+  font-size: 18px;
+}

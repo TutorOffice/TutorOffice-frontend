@@ -15,6 +15,7 @@
 
 .office__content {
   width: 100%;
+  display: grid;
 }
 
 .office__title {
@@ -33,18 +34,14 @@
 }
 
 .list__title {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
   max-width: 100%;
   margin-bottom: 30px;
-  display: flex;
-  justify-content: space-between;
   font-family: 'Raleway';
   font-size: 20px;
 }
 
-.firstSpan {
-  width: 65px;
-}
-
-.secondSpan {
+.grid__item {
   width: 195px;
 }

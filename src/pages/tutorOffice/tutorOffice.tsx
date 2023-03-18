@@ -31,12 +31,12 @@ const TutorOffice = () => {
         <div className={s.office__content}>
           <h2 className={s.office__title}>Расписание на сегодня</h2>
           <div className={s.list__title}>
-            <span className={s.firstSpan}></span>
+            <p></p>
             <p>Время</p>
             <p>Ученик</p>
             <p>Тема</p>
             <p>Д/з</p>
-            <span className={s.secondSpan}></span>
+            <p className={s.grid__item}></p>
           </div>
           <ul className={s.students__list}>
             {testStudents.map((stud) => (

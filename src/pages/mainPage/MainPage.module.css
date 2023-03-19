@@ -6,13 +6,6 @@
   align-items: center;
 }
 
-.main__buttons {
-  align-self: flex-end;
-  margin-bottom: 150px;
-  display: flex;
-  gap: 20px;
-}
-
 .main__content {
   max-width: 748px;
   margin-bottom: 70px;

@@ -9,6 +9,7 @@ import Profile from '../../pages/profile/Profile';
 import CheckMailRegister from '../../pages/register/checkMailRegister/CheckMailRegister';
 import Register from '../../pages/register/Register';
 import TutorOffice from '../../pages/tutorOffice/TutorOffice';
+import NoLesson from '../../pages/noLesson/NoLesson';
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
       <Route path='/check-mail-pass' element={<CheckMailPass />} />
       <Route path='/tutor-office' element={<TutorOffice />} />
       <Route path='/profile' element={<Profile />} />
+      <Route path='/no-lesson' element={<NoLesson />} />
     </Routes>
   );
 };

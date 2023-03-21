@@ -3,6 +3,7 @@ import s from './Information.module.css';
 import Layout from '../layout/Layout';
 import { Button, btnClass, btnType } from '../../shared/ui';
 import { useNavigate } from 'react-router-dom';
+import InformationContent from './informationContent/InformationContent';
 
 interface InformationProps {
   title: string;
@@ -24,16 +25,9 @@ const Information: React.FC<InformationProps> = ({ children, title, btnText, ima
         <button className={s.information__backBtn} onClick={goBack}>
           Назад
         </button>
-        <div className={s.information__content}>
-          <div className={s.information__text}>
-            <h2 className={s.information__title}>{title}</h2>
-            <p className={s.information__desc}>{children}</p>
-            <Button onClick={onClick} variant={btnClass.primary} type={btnType.button}>
-              {btnText}
-            </Button>
-          </div>
-          <img src={image} alt='Конверт' />
-        </div>
+        <InformationContent title={title} btnText={btnText} image={image}>
+          {children}
+        </InformationContent>
       </section>
     </Layout>
   );

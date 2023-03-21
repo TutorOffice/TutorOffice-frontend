@@ -5,6 +5,7 @@ import userPhoto from '../../assets/images/user-photo.jpg';
 import UserInfo from '../../components/userInfo/UserInfo';
 import testPhoto from '../../assets/images/test-student.jpg';
 import OfficeItem from '../../components/officeItem/OfficeItem';
+import HeaderMain from '../../components/headerMain/HeaderMain';
 
 const testStudents = [
   { id: 1, photo: testPhoto, time: '10:30', name: 'Алексей Ф.', theme: 'Pres.Perf', homeWork: true },
@@ -17,7 +18,7 @@ const TutorOffice = () => {
   return (
     <Layout>
       <section className={s.office}>
-        <header className={s.office__header}>
+        <HeaderMain>
           <UserInfo
             photo={userPhoto}
             fullName='Гурин Александр Максимович'
@@ -27,7 +28,7 @@ const TutorOffice = () => {
           <Button type={btnType.button} variant={btnClass.primary}>
             Редактировать профиль
           </Button>
-        </header>
+        </HeaderMain>
         <div className={s.office__content}>
           <h2 className={s.office__title}>Расписание на сегодня</h2>
           <div className={s.list__title}>

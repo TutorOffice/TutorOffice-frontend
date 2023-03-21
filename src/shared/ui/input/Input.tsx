@@ -47,7 +47,7 @@ const Input: React.FC<InputProps> = ({
       </label>
       <div className={s.inputBlock}>
         <input
-          type={!isOpen ? 'password' : 'text'}
+          type={!isOpen && isPassword ? 'password' : 'text'}
           placeholder={placeholder}
           onChange={onChange}
           disabled={isDisabled}

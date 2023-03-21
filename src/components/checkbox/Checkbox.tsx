@@ -1,9 +1,5 @@
 import React, { useState } from 'react';
 import s from './Checkbox.module.css';
-import icon from '../../assets/icons/chbox.svg';
-import iconSelected from '../../assets/icons/chbox-selected.svg';
-import check from '../../assets/icons/check.svg';
-import { Link } from 'react-router-dom';
 
 interface CheckboxProps {
     children?: React.ReactNode;

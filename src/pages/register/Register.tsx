@@ -15,7 +15,8 @@ const Register = () => {
       <AuthForm title={'Регистрация'}>
         <Input labelText='Фамилия'
           commentTip='' isPassword={false}
-          isDisabled={false}/>
+          isDisabled={false} 
+          />
         <Input labelText='Имя'
           commentTip='' />
         <Input labelText='Отчество'

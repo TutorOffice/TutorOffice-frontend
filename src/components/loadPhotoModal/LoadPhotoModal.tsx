@@ -1,6 +1,5 @@
 import React from 'react';
-import { btnClass, btnType, Button } from '../../shared/ui';
-import Modal from '../modal/Modal';
+import { btnClass, btnType, Button, Modal } from '../../shared/ui';
 import s from './LoadPhotoModal.module.css';
 
 interface LoadPhotoModalProps {

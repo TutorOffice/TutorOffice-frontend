@@ -1,0 +1,26 @@
+.cookie {
+  position: fixed;
+  bottom: 20px;
+  width: 100%;
+  max-width: 1000px;
+  padding: 35px 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--blue);
+  border-radius: 210px;
+}
+
+.cookie__text {
+  max-width: 400px;
+  text-align: center;
+  color: var(--white);
+  font-family: 'Roboto';
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.cookie__buttons {
+  display: flex;
+  gap: 20px;
+}

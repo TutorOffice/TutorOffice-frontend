@@ -5,12 +5,17 @@ import { btnClass, btnType, Button, Input } from '../../shared/ui/index'
 // import HeaderMain from '../../components/headerMain/HeaderMain';
 import AuthForm from '../../components/auth-form/AuthForm';
 import Checkbox from '../../components/checkbox/Checkbox';
+import Policy from '../../components/policy/Policy';
+import registerImage from '../../assets/images/register-image.png'
+
+import { Link } from 'react-router-dom';
 
 const Register = () => {
   return (
       <AuthForm title={'Регистрация'}>
         <Input labelText='Фамилия'
-          commentTip='' />
+          commentTip='' isPassword={false}
+          isDisabled={false}/>
         <Input labelText='Имя'
           commentTip='' />
         <Input labelText='Отчество'
@@ -30,8 +35,10 @@ const Register = () => {
           commentTip='' />
 
         <Checkbox />
+        <Policy />
         <Button type={btnType.submit} variant={btnClass.primary} > Зарегистрироваться</Button>
-        <p>Уже есть аккаунт? <a href="#" className={s.backLink}>Войти</a></p>
+        <p>Уже есть аккаунт? <Link to='/login' className={s.backLink}>Войти</Link></p>
+        <img className={s.registerImg} src={registerImage} alt="Регистрация" />
       </AuthForm>
   )
 };

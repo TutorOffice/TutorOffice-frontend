@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     row-gap: 10px;
-    margin-bottom: 40px;
 }
 
 .checkbox__wrapper {
@@ -11,20 +10,59 @@
     column-gap: 15px;
     justify-content: flex-start;
 }
-.checkbox__wrapper:last-child {
- margin-top: 40px;
-}
 
-.policy__link {
-    color: var(--orange);
-    text-decoration: none;
-    transition: color 0.3s ease-in-out;
-}
 
-.policy__link:hover {
-    color: var(--orange-hover);
-}
 
-.policy__link:active {
-    color: var(--orange-pressed);
-}
+.customRadio {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+  /* для элемента label связанного с .customRadio */
+  .customRadio+label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+  }
+  /* создание в label псевдоэлемента  before со следующими стилями */
+  .customRadio+label::before {
+    content: '';
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid #adb5bd;
+    border-radius: 50%;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    /* background-size: 50% 50%; */
+  }
+  /* стили при наведении курсора на радио */
+  /* .customRadio:not(:disabled):not(:checked)+label:hover::before {
+    border-color: #b3d7ff;
+  } */
+  /* стили для активной радиокнопки (при нажатии на неё) */
+  /* .customRadio:not(:disabled):active+label::before {
+    background-color: #b3d7ff;
+    border-color: #b3d7ff;
+  } */
+  /* стили для радиокнопки, находящейся в фокусе */
+  /* .customRadio:focus+label::before {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  } */
+  /* стили для радиокнопки, находящейся в фокусе и не находящейся в состоянии checked */
+  /* .customRadio:focus:not(:checked)+label::before {
+    border-color: #80bdff;
+  } */
+  /* стили для радиокнопки, находящейся в состоянии checked */
+  .customRadio:checked+label::before {
+    border-color: #000;
+    background-color: #000;
+    background-image: url("../../assets/icons/chbox-selected.svg");
+  }
+  /* стили для радиокнопки, находящейся в состоянии disabled */
+  .customRadio:disabled+label::before {
+    background-color: #e9ecef;
+  }

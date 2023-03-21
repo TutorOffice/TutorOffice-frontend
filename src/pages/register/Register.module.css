@@ -1,3 +1,6 @@
+.register{
+  position: relative;
+}
 .backLink {
     color: var(--orange);
     text-decoration: none;
@@ -10,4 +13,13 @@
   
   .backLink:active {
     color: var(--orange-pressed);
+  }
+
+  .registerImg {
+    width: 425px;
+    height: 308px;
+    position: absolute;
+    bottom: 61px;
+    left: 110%;
+
   }

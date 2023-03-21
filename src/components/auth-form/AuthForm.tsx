@@ -3,7 +3,6 @@ import s from './AuthForm.module.css';
 import Layout from '../layout/Layout';
 //import { Button, btnClass, btnType } from '../../shared/ui';
 import { useNavigate } from 'react-router-dom';
-
 interface AuthFormProps {
     title: string;
     children: React.ReactNode;
@@ -19,11 +18,14 @@ const AuthForm: React.FC<AuthFormProps> = ({ children, title }) => {
         <Layout>
             <section className={s.authForm}>
                 <button className={s.authForm__backBtn} onClick={goBack}>
-                    Назад
+                    Назад 
                 </button>
                 <h2 className={s.authForm__title}>{ title }</h2>
+                
                 {children}
+                
             </section>
+           
         </Layout>
     );
 };

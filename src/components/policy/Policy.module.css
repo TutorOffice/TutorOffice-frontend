@@ -1,0 +1,79 @@
+.policy {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+
+}
+
+.policy__wrapper {
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+    justify-content: flex-start;
+}
+
+.policy__link {
+    color: var(--orange);
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.policy__link:hover {
+    color: var(--orange-hover);
+}
+
+.policy__link:active {
+    color: var(--orange-pressed);
+}
+
+.customCheckbox {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+  .customCheckbox+label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+  }
+  .customCheckbox+label::before {
+    content: '';
+    display: inline-block;
+    width: 39px;
+    height: 39px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid #000;
+    border-radius: 5px;
+    margin-right: 20px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+  }
+  .customCheckbox:checked+label::before {
+    background-image: url("../../assets/icons/arrow.svg");
+  }
+  .customCheckbox:not(:disabled):not(:checked)+label:hover::before {
+    border-color: #000;
+  }
+  /* стили для активного состояния чекбокса (при нажатии на него) */
+  .customCheckbox:not(:disabled):active+label::before {
+    background-color: #fff;
+  }
+  /* стили для чекбокса, находящегося в фокусе */
+  /* .customCheckbox:focus+label::before {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  } */
+  /* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
+  /* .customCheckbox:focus:not(:checked)+label::before {
+    border-color: #80bdff;
+  } */
+  /* стили для чекбокса, находящегося в состоянии disabled */
+  .customCheckbox:disabled+label::before {
+    background-color: #e9ecef;
+  }

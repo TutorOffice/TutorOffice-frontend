@@ -31,7 +31,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy": "gh-pages -d build",
-    "predeploy": "npm run build"
+    "predeploy": "npm run build",
+    "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write"
   },
   "eslintConfig": {
     "extends": [
@@ -52,7 +53,7 @@
     ]
   },
   "devDependencies": {
-    "prettier": "^2.8.4",
+    "prettier": "^2.8.6",
     "react-hook-form": "^7.43.5"
   }
 }

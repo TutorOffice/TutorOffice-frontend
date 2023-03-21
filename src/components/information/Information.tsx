@@ -1,8 +1,7 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import s from './Information.module.css';
 import Layout from '../layout/Layout';
-import { Button, btnClass, btnType } from '../../shared/ui';
-import { useNavigate } from 'react-router-dom';
 import InformationContent from './informationContent/InformationContent';
 
 interface InformationProps {

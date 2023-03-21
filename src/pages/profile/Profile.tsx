@@ -2,9 +2,8 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import s from './Profile.module.css';
 import Layout from '../../components/layout/Layout';
-import { btnClass, btnType, Button, Input } from '../../shared/ui';
+import { btnClass, btnType, Button, Input, LoadImage } from '../../shared/ui';
 import userPhoto from '../../assets/images/profile-photo.jpg';
-import LoadImage from '../../shared/ui/loadImage/LoadImage';
 import LoadPhotoModal from '../../components/loadPhotoModal/LoadPhotoModal';
 
 const Profile = () => {
@@ -36,7 +35,7 @@ const Profile = () => {
               <Input labelText='Телефон' />
             </fieldset>
             <fieldset className={s.profile__pass}>
-              <Input labelText='Пароль' isPassword={true} />
+              <Input labelText='Пароль' />
               <Link to='/change-pass'>
                 <Button type={btnType.button} variant={btnClass.ghost}>
                   Сменить пароль

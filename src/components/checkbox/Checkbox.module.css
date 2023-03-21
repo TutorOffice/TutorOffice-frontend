@@ -1,0 +1,30 @@
+.checkbox {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    margin-bottom: 40px;
+}
+
+.checkbox__wrapper {
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+    justify-content: flex-start;
+}
+.checkbox__wrapper:last-child {
+ margin-top: 40px;
+}
+
+.policy__link {
+    color: var(--orange);
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.policy__link:hover {
+    color: var(--orange-hover);
+}
+
+.policy__link:active {
+    color: var(--orange-pressed);
+}

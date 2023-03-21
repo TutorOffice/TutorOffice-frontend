@@ -1,13 +1,11 @@
 import React, { useEffect } from 'react';
 import s from './modal.module.css';
-import { btnClass, btnType, Button } from '../../shared/ui';
 
 interface modalProps {
   children: React.ReactNode;
   isOpen: boolean;
   onClose: () => void;
   title?: string;
-  btnText: string;
   width: string;
   isErrorUpload?: boolean;
   isErrorUploadText?: string;
@@ -18,7 +16,6 @@ const Modal: React.FC<modalProps> = ({
   isOpen,
   onClose,
   title = '',
-  btnText,
   width,
   isErrorUpload = false,
   isErrorUploadText = '',
@@ -51,11 +48,6 @@ const Modal: React.FC<modalProps> = ({
           <div className={s.modalContent}>
             {title && <h1 className={s.title}>{title}</h1>}
             {children}
-            <div className={s.modalButton}>
-              <Button variant={btnClass.primary} type={btnType.button}>
-                <span>{btnText}</span>
-              </Button>
-            </div>
             {isErrorUpload && (
               <div className={s.errorText}>
                 <p>{isErrorUploadText}</p>

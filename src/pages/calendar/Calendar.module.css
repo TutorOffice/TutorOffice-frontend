@@ -1,0 +1,17 @@
+.calendar {
+}
+
+.calendar__backBtn {
+  margin-bottom: 70px;
+  align-self: flex-start;
+  color: var(--orange);
+  transition: color 0.3s ease-in-out;
+}
+
+.calendar__backBtn:hover {
+  color: var(--orange-hover);
+}
+
+.calendar__backBtn:active {
+  color: var(--orange-pressed);
+}

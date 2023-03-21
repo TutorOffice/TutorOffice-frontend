@@ -1,0 +1,81 @@
+.profile {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile__header {
+  width: 100%;
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile__title {
+  font-family: 'Raleway';
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.profile__button {
+  text-decoration: none;
+  color: var(--orange);
+  font-family: 'Raleway';
+  font-size: 18px;
+  font-weight: 600;
+  transition: color 0.3s ease-in-out;
+}
+
+.profile__button:hover {
+  color: var(--orange-hover);
+}
+
+.profile__button:active {
+  color: var(--orange-pressed);
+}
+
+.profile__form {
+  width: 100%;
+  align-self: flex-start;
+}
+
+.profile__loadPhoto {
+  margin-bottom: 25px;
+}
+
+.profile__fieldset {
+  padding: 0;
+  border: none;
+  max-width: 490px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.profile__pass {
+  padding: 0;
+  border: none;
+  margin-bottom: 45px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.profile__pass div {
+  width: 100%;
+  max-width: 490px;
+}
+
+.profile__pass button:nth-child(1) {
+  transform: translateY(10px);
+}
+
+.profile__controls {
+  max-width: max-content;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}

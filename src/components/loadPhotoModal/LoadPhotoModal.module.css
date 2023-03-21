@@ -1,0 +1,17 @@
+.modalText {
+  font-size: 18px;
+}
+
+.input__wrapper {
+  position: relative;
+}
+
+.loadFileInput {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 25%;
+  right: 25%;
+  bottom: 0;
+  opacity: 0;
+}

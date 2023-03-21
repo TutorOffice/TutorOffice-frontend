@@ -21,7 +21,7 @@ const Input: React.FC<InputProps> = ({
   isDisabled = false,
   placeholder = '',
   labelText = '',
-  commentTip = 'Комментарий подсказка',
+  commentTip = '',
   isRequired = false,
   isError = false,
   isPassword = false,
@@ -54,7 +54,7 @@ const Input: React.FC<InputProps> = ({
           className={classNameInput}
         />
         {isPassword && (
-          <button onClick={setIsOpen} className={s.passHide}>
+          <button type='button' onClick={setIsOpen} className={s.passHide}>
             <img src={isOpen ? open : close} alt='' />
           </button>
         )}

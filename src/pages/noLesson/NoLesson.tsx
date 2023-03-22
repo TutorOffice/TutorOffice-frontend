@@ -1,4 +1,3 @@
-import s from './NoLesson.module.css';
 import Layout from '../../components/layout/Layout';
 import UserInfo from '../../components/userInfo/UserInfo';
 import userPhoto from '../../assets/images/user-photo.jpg';
@@ -6,12 +5,13 @@ import HeaderMain from '../../components/headerMain/HeaderMain';
 import { btnClass, btnType, Button } from '../../shared/ui';
 import noLesson from '../../assets/images/no-lesson.png';
 import InformationContent from '../../components/information/informationContent/InformationContent';
+import Wrapper from '../../components/wrapper/Wrapper';
 
 const NoLesson = () => {
   return (
     <Layout>
-      <section className={s.noLesson}>
-        <HeaderMain>
+      <Wrapper>
+        <HeaderMain bottom={200}>
           <UserInfo
             photo={userPhoto}
             fullName='Гурин Александр Максимович'
@@ -28,7 +28,7 @@ const NoLesson = () => {
             календаре.
           </span>
         </InformationContent>
-      </section>
+      </Wrapper>
     </Layout>
   );
 };

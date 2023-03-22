@@ -1,17 +1,49 @@
-.calendar {
+.calendarPage {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.calendar__backBtn {
+.calendarPage__backBtn {
   margin-bottom: 70px;
   align-self: flex-start;
   color: var(--orange);
   transition: color 0.3s ease-in-out;
 }
 
-.calendar__backBtn:hover {
+.calendarPage__backBtn:hover {
   color: var(--orange-hover);
 }
 
-.calendar__backBtn:active {
+.calendarPage__backBtn:active {
   color: var(--orange-pressed);
+}
+
+.calendarWrapper {
+  width: 100%;
+  max-width: 790px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calendarPage__title {
+  margin-bottom: 50px;
+  font-family: 'Raleway';
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 70px);
+  grid-template-rows: repeat(6, 70px);
+  row-gap: 30px;
+  column-gap: 50px;
+}
+
+.calendar__weekday {
+  grid-row: 7;
 }

@@ -1,0 +1,20 @@
+.calendarItem {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--blue);
+  border-radius: 10px;
+  font-family: 'Robot';
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.weekends {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.currentDay {
+  background-color: var(--red);
+}

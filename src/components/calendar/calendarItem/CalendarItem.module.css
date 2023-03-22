@@ -9,6 +9,12 @@
   font-family: 'Robot';
   font-size: 18px;
   font-weight: 400;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.calendarItem:hover {
+  opacity: 0.6;
 }
 
 .weekends {
@@ -18,4 +24,9 @@
 .currentDay {
   color: var(--white);
   background-color: var(--blue);
+}
+
+.active {
+  background-color: var(--green);
+  color: var(--white);
 }

@@ -14,9 +14,10 @@
   --orange-pressed: #ff9a00;
   --red: #ec0f0f;
   --blue: #2459bf;
-  --inactive:#efeeee;
+  --inactive: #efeeee;
   --white: #ffffff;
   --grey: #b8bbbf;
+  --green: #27bf24;
 }
 
 body {

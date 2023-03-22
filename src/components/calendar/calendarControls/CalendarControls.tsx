@@ -24,7 +24,7 @@ const CalendarControls: React.FC<CalendarControlsProps> = ({
 
   return (
     <div className={s.calendar__controls}>
-      <div className={s.arrow__left} onClick={prevHandler}></div>
+      <button className={s.arrow__left} onClick={prevHandler}></button>
       <div className={s.calendar__month} onClick={prevHandler}>
         {prevMonth}
       </div>
@@ -32,7 +32,7 @@ const CalendarControls: React.FC<CalendarControlsProps> = ({
       <div className={s.calendar__month} onClick={nextHandler}>
         {nextMonth}
       </div>
-      <div className={s.arrow__right} onClick={nextHandler}></div>
+      <button className={s.arrow__right} onClick={nextHandler}></button>
     </div>
   );
 };

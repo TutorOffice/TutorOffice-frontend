@@ -6,9 +6,17 @@ interface CalendarControlsProps {
   currentMonth: string;
   prevMonth: string;
   nextMonth: string;
+  prevHandler: () => void;
+  nextHandler: () => void;
 }
 
-const CalendarControls: React.FC<CalendarControlsProps> = ({ currentMonth, prevMonth, nextMonth }) => {
+const CalendarControls: React.FC<CalendarControlsProps> = ({
+  currentMonth,
+  prevMonth,
+  nextMonth,
+  prevHandler,
+  nextHandler,
+}) => {
   const currentMonthClassName = clsx({
     [s.calendar__month]: true,
     [s.currentMonth]: currentMonth,
@@ -16,11 +24,15 @@ const CalendarControls: React.FC<CalendarControlsProps> = ({ currentMonth, prevM
 
   return (
     <div className={s.calendar__controls}>
-      <div className={s.arrow__left}></div>
-      <div className={s.calendar__month}>{prevMonth}</div>
+      <div className={s.arrow__left} onClick={prevHandler}></div>
+      <div className={s.calendar__month} onClick={prevHandler}>
+        {prevMonth}
+      </div>
       <div className={currentMonthClassName}>{currentMonth}</div>
-      <div className={s.calendar__month}>{nextMonth}</div>
-      <div className={s.arrow__right}></div>
+      <div className={s.calendar__month} onClick={nextHandler}>
+        {nextMonth}
+      </div>
+      <div className={s.arrow__right} onClick={nextHandler}></div>
     </div>
   );
 };

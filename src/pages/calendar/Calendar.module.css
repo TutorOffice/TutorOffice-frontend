@@ -46,4 +46,5 @@
 
 .calendar__weekday {
   grid-row: 7;
+  margin-bottom: 20px;
 }

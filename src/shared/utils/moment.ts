@@ -1,5 +1,5 @@
 import moment from 'moment';
-type momentType = ReturnType<typeof moment>;
+export type momentType = ReturnType<typeof moment>;
 
 const TOTAL_DAYS = 42;
 const SATURDAY_INDEX = 6;

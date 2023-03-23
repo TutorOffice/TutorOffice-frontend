@@ -42,7 +42,7 @@ const Calendar = () => {
         {daysArray.map((day) => (
           <CalendarItem
             key={day.unix()}
-            day={day.format('D')}
+            day={day}
             isWeekend={getIsWeekend(day.day())}
             isCurrentDay={moment().isSame(day, 'day')}
           />

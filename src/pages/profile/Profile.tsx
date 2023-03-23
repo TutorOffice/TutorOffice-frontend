@@ -4,7 +4,7 @@ import s from './Profile.module.css';
 import Layout from '../../components/layout/Layout';
 import { btnClass, btnType, Button, Input, LoadImage } from '../../shared/ui';
 import userPhoto from '../../assets/images/profile-photo.jpg';
-import LoadPhotoModal from '../../components/loadPhotoModal/LoadPhotoModal';
+import LoadPhotoModal from '../../components/modals/loadPhotoModal/LoadPhotoModal';
 
 const Profile = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);

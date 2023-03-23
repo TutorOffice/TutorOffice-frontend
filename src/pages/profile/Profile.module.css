@@ -64,10 +64,3 @@
 .profile__pass button:nth-child(1) {
   transform: translateY(10px);
 }
-
-.profile__controls {
-  max-width: max-content;
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-}

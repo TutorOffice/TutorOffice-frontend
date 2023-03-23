@@ -1,5 +1,5 @@
 import React from 'react';
-import { btnClass, btnType, Button } from '../../shared/ui';
+import { btnClass, btnType, Button, ButtonGroup } from '../../shared/ui';
 import s from './CookieWindow.module.css';
 
 interface CookieWindowProps {
@@ -13,14 +13,14 @@ const CookieWindow: React.FC<CookieWindowProps> = ({ onClose }) => {
         При использовании данного сайта, вы подтверждаете свое согласие на использование файлов cookie и других похожих
         технологий в соответствии с настоящим уведомлением.
       </p>
-      <div className={s.cookie__buttons}>
+      <ButtonGroup>
         <Button onClick={onClose} type={btnType.button} variant={btnClass.primary}>
           Ок
         </Button>
         <Button type={btnType.button} variant={btnClass.primary}>
           Не ок
         </Button>
-      </div>
+      </ButtonGroup>
     </div>
   );
 };

@@ -38,7 +38,6 @@
 }
 .buttonBack {
   padding: 0;
-  margin-bottom: 200px;
   align-self: flex-start;
   color: var(--orange);
   transition: color 0.3s ease-in-out;

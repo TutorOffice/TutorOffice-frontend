@@ -10,7 +10,7 @@ interface CalendarModalProps {
 const CalendarModal: React.FC<CalendarModalProps> = ({ isOpen, onClose, title }) => {
   return (
     <Modal title={title} isOpen={isOpen} onClose={onClose} width='714px'>
-      <ButtonGroup>
+      <ButtonGroup bottom={0}>
         <Button type={btnType.button} variant={btnClass.primary}>
           Посмотреть расписание
         </Button>

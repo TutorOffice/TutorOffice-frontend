@@ -5,6 +5,7 @@ import mainImage from '../../assets/images/main-image.png';
 import { btnClass, btnType, Button, ButtonGroup } from '../../shared/ui';
 import CookieWindow from '../../components/cookieWindow/CookieWindow';
 import Wrapper from '../../components/wrapper/Wrapper';
+import { Link } from 'react-router-dom';
 
 const MainPage = () => {
   const [showCookieWindow, setShowCookieWindow] = useState(true);
@@ -16,12 +17,16 @@ const MainPage = () => {
     <Layout>
       <Wrapper>
         <ButtonGroup bottom={150}>
-          <Button type={btnType.button} variant={btnClass.ghost}>
-            Вход
-          </Button>
-          <Button type={btnType.button} variant={btnClass.primary}>
-            Регистрация
-          </Button>
+          <Link to='/login'>
+            <Button type={btnType.button} variant={btnClass.ghost}>
+              Вход
+            </Button>
+          </Link>
+          <Link to='/register'>
+            <Button type={btnType.button} variant={btnClass.primary}>
+              Регистрация
+            </Button>
+          </Link>
         </ButtonGroup>
         <div className={s.main__content}>
           <h1 className={s.main__title}>Добро пожаловать в Личный кабинет «Репетитор»!</h1>

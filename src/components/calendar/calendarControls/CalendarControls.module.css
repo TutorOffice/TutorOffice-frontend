@@ -1,0 +1,56 @@
+.calendar__controls {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.arrow__left {
+  width: 21px;
+  height: 21px;
+  border-top: 5px solid var(--blue);
+  border-left: 5px solid var(--blue);
+  transform: rotate(-45deg);
+}
+
+.arrow__left:hover {
+  opacity: 0.6;
+}
+
+.arrow__right {
+  width: 21px;
+  height: 21px;
+  border-top: 5px solid var(--blue);
+  border-right: 5px solid var(--blue);
+  transform: rotate(45deg);
+}
+
+.arrow__right:hover {
+  opacity: 0.6;
+}
+
+.calendar__month {
+  padding: 15px 30px;
+  border: 3px solid var(--blue);
+  border-radius: 30px;
+  font-family: 'Raleway';
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.calendar__month:hover {
+  opacity: 0.6;
+}
+
+.currentMonth {
+  background-color: var(--blue);
+  color: var(--white);
+  cursor: auto;
+}
+
+.currentMonth:hover {
+  opacity: 1;
+}

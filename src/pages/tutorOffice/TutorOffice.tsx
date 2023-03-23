@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import s from './TutorOffice.module.css';
 import Layout from '../../components/layout/Layout';
 import { btnClass, btnType, Button } from '../../shared/ui';
@@ -26,9 +27,11 @@ const TutorOffice = () => {
             phone='+7 936 619-98-06'
             mail='gurinalex065@yandex.ru'
           />
-          <Button type={btnType.button} variant={btnClass.primary}>
-            Редактировать профиль
-          </Button>
+          <Link to='/profile'>
+            <Button type={btnType.button} variant={btnClass.primary}>
+              Редактировать профиль
+            </Button>
+          </Link>
         </HeaderMain>
         <div className={s.office__content}>
           <h2 className={s.office__title}>Расписание на сегодня</h2>

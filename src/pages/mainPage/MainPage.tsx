@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import s from './MainPage.module.css';
 import Layout from '../../components/layout/Layout';
 import mainImage from '../../assets/images/main-image.png';
@@ -16,12 +17,16 @@ const MainPage = () => {
     <Layout>
       <Wrapper>
         <ButtonGroup bottom={150}>
-          <Button type={btnType.button} variant={btnClass.ghost}>
-            Вход
-          </Button>
-          <Button type={btnType.button} variant={btnClass.primary}>
-            Регистрация
-          </Button>
+          <Link to='/login'>
+            <Button type={btnType.button} variant={btnClass.ghost}>
+              Вход
+            </Button>
+          </Link>
+          <Link to='/register'>
+            <Button type={btnType.button} variant={btnClass.primary}>
+              Регистрация
+            </Button>
+          </Link>
         </ButtonGroup>
         <div className={s.main__content}>
           <h1 className={s.main__title}>Добро пожаловать в Личный кабинет «Репетитор»!</h1>

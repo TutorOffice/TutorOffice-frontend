@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import s from './Profile.module.css';
 import Layout from '../../components/layout/Layout';
-import { btnClass, btnType, Button, Input, LoadImage } from '../../shared/ui';
+import { btnClass, btnType, Button, ButtonGroup, Input, LoadImage } from '../../shared/ui';
 import userPhoto from '../../assets/images/profile-photo.jpg';
-import LoadPhotoModal from '../../components/loadPhotoModal/LoadPhotoModal';
+import LoadPhotoModal from '../../components/modals/loadPhotoModal/LoadPhotoModal';
 import Wrapper from '../../components/wrapper/Wrapper';
 
 const Profile = () => {
@@ -43,14 +43,14 @@ const Profile = () => {
                 </Button>
               </Link>
             </fieldset>
-            <div className={s.profile__controls}>
+            <ButtonGroup>
               <Button type={btnType.submit} variant={btnClass.primary}>
                 Сохранить изменения
               </Button>
               <Button type={btnType.reset} variant={btnClass.ghost}>
                 Отменить
               </Button>
-            </div>
+            </ButtonGroup>
           </form>
         </Wrapper>
       </Layout>

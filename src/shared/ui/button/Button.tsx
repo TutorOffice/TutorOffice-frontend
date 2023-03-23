@@ -21,9 +21,10 @@ interface ButtonProps {
   variant: btnClass;
   isDisabled?: boolean;
   type: btnType;
+  bottom?: number;
 }
 
-const Button: React.FC<ButtonProps> = ({ onClick, children, variant, isDisabled = false, type }) => {
+const Button: React.FC<ButtonProps> = ({ onClick, children, variant, isDisabled = false, type, bottom = 0 }) => {
   const className = clsx({
     [s.button]: true,
     [s.buttonPrimary]: variant === btnClass.primary && !isDisabled,
@@ -38,6 +39,7 @@ const Button: React.FC<ButtonProps> = ({ onClick, children, variant, isDisabled 
       onClick={variant === btnClass.back ? goBack : onClick}
       disabled={isDisabled}
       className={className}
+      style={{ marginBottom: bottom }}
     >
       {children}
     </button>

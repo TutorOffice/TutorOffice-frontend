@@ -2,10 +2,15 @@ import React from 'react';
 import s from './HeaderMain.module.css';
 interface HeaderMainProps {
   children: React.ReactNode;
+  bottom: number;
 }
 
-const HeaderMain: React.FC<HeaderMainProps> = ({ children }) => {
-  return <header className={s.header}>{children}</header>;
+const HeaderMain: React.FC<HeaderMainProps> = ({ children, bottom }) => {
+  return (
+    <header style={{ marginBottom: bottom }} className={s.header}>
+      {children}
+    </header>
+  );
 };
 
 export default HeaderMain;

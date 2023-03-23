@@ -1,11 +1,3 @@
-.main {
-  max-width: 1024px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .main__content {
   max-width: 748px;
   margin-bottom: 70px;

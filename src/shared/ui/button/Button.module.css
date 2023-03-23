@@ -36,3 +36,18 @@
 .buttonGhost:hover {
   outline: 2px solid var(--blue);
 }
+.buttonBack {
+  padding: 0;
+  margin-bottom: 200px;
+  align-self: flex-start;
+  color: var(--orange);
+  transition: color 0.3s ease-in-out;
+}
+
+.buttonBack:hover {
+  color: var(--orange-hover);
+}
+
+.buttonBack:active {
+  color: var(--orange-pressed);
+}

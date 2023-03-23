@@ -6,6 +6,7 @@ import UserInfo from '../../components/userInfo/UserInfo';
 import testPhoto from '../../assets/images/test-student.jpg';
 import OfficeItem from '../../components/officeItem/OfficeItem';
 import HeaderMain from '../../components/headerMain/HeaderMain';
+import Wrapper from '../../components/wrapper/Wrapper';
 
 const testStudents = [
   { id: 1, photo: testPhoto, time: '10:30', name: 'Алексей Ф.', theme: 'Pres.Perf', homeWork: true },
@@ -17,8 +18,8 @@ const testStudents = [
 const TutorOffice = () => {
   return (
     <Layout>
-      <section className={s.office}>
-        <HeaderMain>
+      <Wrapper>
+        <HeaderMain bottom={200}>
           <UserInfo
             photo={userPhoto}
             fullName='Гурин Александр Максимович'
@@ -52,7 +53,7 @@ const TutorOffice = () => {
             ))}
           </ul>
         </div>
-      </section>
+      </Wrapper>
     </Layout>
   );
 };

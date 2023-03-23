@@ -4,6 +4,7 @@ import Layout from '../../components/layout/Layout';
 import mainImage from '../../assets/images/main-image.png';
 import { btnClass, btnType, Button, ButtonGroup } from '../../shared/ui';
 import CookieWindow from '../../components/cookieWindow/CookieWindow';
+import Wrapper from '../../components/wrapper/Wrapper';
 
 const MainPage = () => {
   const [showCookieWindow, setShowCookieWindow] = useState(true);
@@ -13,8 +14,8 @@ const MainPage = () => {
 
   return (
     <Layout>
-      <section className={s.main}>
-        <ButtonGroup>
+      <Wrapper>
+        <ButtonGroup bottom={150}>
           <Button type={btnType.button} variant={btnClass.ghost}>
             Вход
           </Button>
@@ -35,7 +36,7 @@ const MainPage = () => {
         </div>
         <img className={s.main__image} src={mainImage} alt='Репетитор и ученик' />
         {showCookieWindow && <CookieWindow onClose={closeCookieWindow} />}
-      </section>
+      </Wrapper>
     </Layout>
   );
 };

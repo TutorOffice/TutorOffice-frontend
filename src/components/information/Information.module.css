@@ -1,12 +1,3 @@
-.information {
-  max-width: 1024px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-}
-
 .information__backBtn {
   margin-bottom: 200px;
   align-self: flex-start;

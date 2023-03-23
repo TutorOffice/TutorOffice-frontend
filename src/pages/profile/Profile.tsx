@@ -5,6 +5,7 @@ import Layout from '../../components/layout/Layout';
 import { btnClass, btnType, Button, Input, LoadImage } from '../../shared/ui';
 import userPhoto from '../../assets/images/profile-photo.jpg';
 import LoadPhotoModal from '../../components/loadPhotoModal/LoadPhotoModal';
+import Wrapper from '../../components/wrapper/Wrapper';
 
 const Profile = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -18,7 +19,7 @@ const Profile = () => {
   return (
     <>
       <Layout>
-        <section className={s.profile}>
+        <Wrapper>
           <header className={s.profile__header}>
             <h2 className={s.profile__title}>Редактирование профиля</h2>
             <Link to='/' className={s.profile__button}>
@@ -51,7 +52,7 @@ const Profile = () => {
               </Button>
             </div>
           </form>
-        </section>
+        </Wrapper>
       </Layout>
       <LoadPhotoModal isOpen={isOpenModal} onClose={closeModal} />
     </>

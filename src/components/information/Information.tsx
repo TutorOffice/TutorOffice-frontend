@@ -1,8 +1,8 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import s from './Information.module.css';
 import Layout from '../layout/Layout';
 import InformationContent from './informationContent/InformationContent';
+import { btnClass, btnType, Button } from '../../shared/ui';
+import Wrapper from '../wrapper/Wrapper';
 
 interface InformationProps {
   title: string;
@@ -13,21 +13,16 @@ interface InformationProps {
 }
 
 const Information: React.FC<InformationProps> = ({ children, title, btnText, image, onClick }) => {
-  const navigate = useNavigate();
-  const goBack = () => {
-    navigate(-1);
-  };
-
   return (
     <Layout>
-      <section className={s.information}>
-        <button className={s.information__backBtn} onClick={goBack}>
+      <Wrapper>
+        <Button variant={btnClass.back} type={btnType.submit}>
           Назад
-        </button>
+        </Button>
         <InformationContent title={title} btnText={btnText} image={image}>
           {children}
         </InformationContent>
-      </section>
+      </Wrapper>
     </Layout>
   );
 };

@@ -1,25 +1,28 @@
-.register{
+.register {
   position: relative;
 }
+
+.register__title {
+  margin-top: 100px;
+}
 .backLink {
-    color: var(--orange);
-    text-decoration: none;
-    transition: color 0.3s ease-in-out;
-  }
-  
-  .backLink:hover {
-    color: var(--orange-hover);
-  }
-  
-  .backLink:active {
-    color: var(--orange-pressed);
-  }
+  color: var(--orange);
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
 
-  .registerImg {
-    width: 425px;
-    height: 308px;
-    position: absolute;
-    bottom: 61px;
-    left: 110%;
+.backLink:hover {
+  color: var(--orange-hover);
+}
 
-  }
+.backLink:active {
+  color: var(--orange-pressed);
+}
+
+.registerImg {
+  width: 425px;
+  height: 308px;
+  position: absolute;
+  bottom: 61px;
+  left: 110%;
+}

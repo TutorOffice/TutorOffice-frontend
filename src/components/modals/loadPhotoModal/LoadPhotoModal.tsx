@@ -18,8 +18,8 @@ const LoadPhotoModal: React.FC<LoadPhotoModalProps> = ({ isOpen, onClose }) => {
       isErrorUploadText='Если у вас возникают проблемы с загрузкой, попробуйте выбрать фотографию меньшего размера.'
     >
       <span className={s.modalText}>
-        Ученикам будет проще узнать вас, если вы загрузите свою настоящую фотографию. Вы можете загрузить изображение в
-        формате JPG, GIF или PNG.
+        Ученикам будет проще узнать вас, если вы загрузите свою настоящую фотографию. Вы можете загрузить изображение
+        размером не больше 3Мб, в формате JPG, GIF или PNG.
       </span>
       <div className={s.input__wrapper}>
         <Button variant={btnClass.primary} type={btnType.button}>

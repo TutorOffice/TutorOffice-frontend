@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import s from './Profile.module.css';
 import Layout from '../../components/layout/Layout';
-import { btnClass, btnType, Button, ButtonGroup, Input, LoadImage } from '../../shared/ui';
+import { btnClass, btnType, Button, ButtonGroup, Input, inputTypes, LoadImage } from '../../shared/ui';
 import userPhoto from '../../assets/images/profile-photo.jpg';
 import LoadPhotoModal from '../../components/modals/loadPhotoModal/LoadPhotoModal';
 import Wrapper from '../../components/wrapper/Wrapper';
@@ -29,14 +29,14 @@ const Profile = () => {
           <form className={s.profile__form}>
             <LoadImage image={userPhoto} onClick={openModal} />
             <fieldset className={s.profile__fieldset}>
-              <Input labelText='Фамилия' />
-              <Input labelText='Имя' />
-              <Input labelText='Отчество' />
-              <Input labelText='E-mail' />
-              <Input labelText='Телефон' />
+              <Input type={inputTypes.text} labelText='Фамилия' />
+              <Input type={inputTypes.text} labelText='Имя' />
+              <Input type={inputTypes.text} labelText='Отчество' />
+              <Input type={inputTypes.email} labelText='E-mail' />
+              <Input type={inputTypes.phone} labelText='Телефон' />
             </fieldset>
             <fieldset className={s.profile__pass}>
-              <Input labelText='Пароль' />
+              <Input type={inputTypes.password} iconVisibility={false} isPassword={true} labelText='Пароль' />
               <Link to='/change-pass'>
                 <Button type={btnType.button} variant={btnClass.ghost}>
                   Сменить пароль

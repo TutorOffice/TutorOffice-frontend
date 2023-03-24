@@ -5,8 +5,12 @@ interface submitFormProps {
   onSubmit?: () => void;
 }
 
-const submitForm: React.FC<submitFormProps> = ({ children }) => {
-  return <form className={s.submitForm}>{children}</form>;
+const submitForm: React.FC<submitFormProps> = ({ children, onSubmit }) => {
+  return (
+    <form onSubmit={onSubmit} className={s.submitForm}>
+      {children}
+    </form>
+  );
 };
 
 export default submitForm;

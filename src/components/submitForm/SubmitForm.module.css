@@ -1,11 +1,9 @@
 .submitForm {
-    max-width: 490px;
-    margin-top: 35px;
-    margin-bottom: 30px;
-    display: flex;
-    flex-direction: column;
-    row-gap: 15px;
-    position: relative;
-
-  }
-  
+  max-width: 490px;
+  margin-top: 35px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  position: relative;
+}

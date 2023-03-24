@@ -2,6 +2,13 @@
   position: relative;
 }
 
+.register__title {
+  margin-bottom: 35px;
+  font-family: 'Raleway';
+  font-size: 24px;
+  font-weight: 600;
+}
+
 .backLink {
   margin-left: 5px;
   color: var(--orange);
@@ -15,4 +22,12 @@
 
 .backLink:active {
   color: var(--orange-pressed);
+}
+
+.registerImg {
+  width: 425px;
+  height: 308px;
+  position: absolute;
+  bottom: 61px;
+  left: 110%;
 }

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import s from './TutorOffice.module.css';
 import Layout from '../../components/layout/Layout';
 import { btnClass, btnType, Button } from '../../shared/ui';
@@ -6,6 +7,7 @@ import UserInfo from '../../components/userInfo/UserInfo';
 import testPhoto from '../../assets/images/test-student.jpg';
 import OfficeItem from '../../components/officeItem/OfficeItem';
 import HeaderMain from '../../components/headerMain/HeaderMain';
+import Wrapper from '../../components/wrapper/Wrapper';
 
 const testStudents = [
   { id: 1, photo: testPhoto, time: '10:30', name: 'Алексей Ф.', theme: 'Pres.Perf', homeWork: true },
@@ -17,17 +19,19 @@ const testStudents = [
 const TutorOffice = () => {
   return (
     <Layout>
-      <section className={s.office}>
-        <HeaderMain>
+      <Wrapper>
+        <HeaderMain bottom={200}>
           <UserInfo
             photo={userPhoto}
             fullName='Гурин Александр Максимович'
             phone='+7 936 619-98-06'
             mail='gurinalex065@yandex.ru'
           />
-          <Button type={btnType.button} variant={btnClass.primary}>
-            Редактировать профиль
-          </Button>
+          <Link to='/profile'>
+            <Button type={btnType.button} variant={btnClass.primary}>
+              Редактировать профиль
+            </Button>
+          </Link>
         </HeaderMain>
         <div className={s.office__content}>
           <h2 className={s.office__title}>Расписание на сегодня</h2>
@@ -52,7 +56,7 @@ const TutorOffice = () => {
             ))}
           </ul>
         </div>
-      </section>
+      </Wrapper>
     </Layout>
   );
 };

@@ -1,9 +1,11 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import s from './MainPage.module.css';
 import Layout from '../../components/layout/Layout';
 import mainImage from '../../assets/images/main-image.png';
 import { btnClass, btnType, Button, ButtonGroup } from '../../shared/ui';
 import CookieWindow from '../../components/cookieWindow/CookieWindow';
+import Wrapper from '../../components/wrapper/Wrapper';
 
 const MainPage = () => {
   const [showCookieWindow, setShowCookieWindow] = useState(true);
@@ -13,14 +15,18 @@ const MainPage = () => {
 
   return (
     <Layout>
-      <section className={s.main}>
-        <ButtonGroup>
-          <Button type={btnType.button} variant={btnClass.ghost}>
-            Вход
-          </Button>
-          <Button type={btnType.button} variant={btnClass.primary}>
-            Регистрация
-          </Button>
+      <Wrapper>
+        <ButtonGroup bottom={150}>
+          <Link to='/login'>
+            <Button type={btnType.button} variant={btnClass.ghost}>
+              Вход
+            </Button>
+          </Link>
+          <Link to='/register'>
+            <Button type={btnType.button} variant={btnClass.primary}>
+              Регистрация
+            </Button>
+          </Link>
         </ButtonGroup>
         <div className={s.main__content}>
           <h1 className={s.main__title}>Добро пожаловать в Личный кабинет «Репетитор»!</h1>
@@ -35,7 +41,7 @@ const MainPage = () => {
         </div>
         <img className={s.main__image} src={mainImage} alt='Репетитор и ученик' />
         {showCookieWindow && <CookieWindow onClose={closeCookieWindow} />}
-      </section>
+      </Wrapper>
     </Layout>
   );
 };

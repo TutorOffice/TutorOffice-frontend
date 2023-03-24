@@ -10,6 +10,7 @@ import CheckMailRegister from '../../pages/register/checkMailRegister/CheckMailR
 import Register from '../../pages/register/Register';
 import TutorOffice from '../../pages/tutorOffice/TutorOffice';
 import NoLesson from '../../pages/noLesson/NoLesson';
+import CalendarPage from '../../pages/calendarPage/CalendarPage';
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
       <Route path='/tutor-office' element={<TutorOffice />} />
       <Route path='/profile' element={<Profile />} />
       <Route path='/no-lesson' element={<NoLesson />} />
+      <Route path='/calendar' element={<CalendarPage />} />
     </Routes>
   );
 };

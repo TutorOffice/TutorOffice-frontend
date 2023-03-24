@@ -1,11 +1,3 @@
-.office {
-  max-width: 992px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .office__header {
   width: 100%;
   margin-bottom: 150px;

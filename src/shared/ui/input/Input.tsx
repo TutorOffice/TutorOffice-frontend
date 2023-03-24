@@ -5,7 +5,14 @@ import close from '../../../assets/icons/pass-close.svg';
 import open from '../../../assets/icons/pass-open.svg';
 import { usePassword } from './usePassword';
 
+export enum inputTypes {
+  text = 'text',
+  password = 'password',
+  phone = 'phone',
+  email = 'email',
+}
 interface InputProps {
+  type: inputTypes;
   onChange?: () => void;
   isDisabled?: boolean;
   placeholder?: string;
@@ -14,10 +21,12 @@ interface InputProps {
   isRequired?: boolean;
   isError?: boolean;
   isPassword?: boolean;
+  iconVisibility?: boolean;
 }
 
 const Input: React.FC<InputProps> = ({
   onChange,
+  type,
   isDisabled = false,
   placeholder = '',
   labelText = '',
@@ -25,6 +34,7 @@ const Input: React.FC<InputProps> = ({
   isRequired = false,
   isError = false,
   isPassword = false,
+  iconVisibility = true,
 }) => {
   const classNameInput = clsx({
     [s.input]: true,
@@ -53,9 +63,9 @@ const Input: React.FC<InputProps> = ({
           disabled={isDisabled}
           className={classNameInput}
         />
-        {isPassword && (
+        {isPassword && iconVisibility && (
           <button type='button' onClick={setIsOpen} className={s.passHide}>
-            <img src={isOpen ? open : close} alt='' />
+            <img src={isOpen ? open : close} alt='Иконка скрытия/отображения пароля' />
           </button>
         )}
       </div>

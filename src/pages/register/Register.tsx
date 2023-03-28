@@ -15,11 +15,11 @@ const Register = () => {
       </Button>
       <h2 className={s.register__title}>Регистрация</h2>
       <SubmitForm>
-        <Input type={inputTypes.text} labelText='Фамилия' />
-        <Input type={inputTypes.text} labelText='Имя' />
-        <Input type={inputTypes.text} labelText='Отчество' />
-        <Input type={inputTypes.email} labelText='E-mail' />
-        <Input type={inputTypes.phone} labelText='Телефон' />
+        <Input type={inputTypes.text} labelText='Фамилия' isRequired={true} />
+        <Input type={inputTypes.text} labelText='Имя' isRequired={true}/>
+        <Input type={inputTypes.text} labelText='Отчество' isRequired={true}/>
+        <Input type={inputTypes.email} labelText='E-mail' isRequired={true} placeholder={'example@domaim.ru'}/>
+        <Input type={inputTypes.phone} labelText='Телефон' placeholder={'+7 999 999 99 99'}/>
         <Input
           type={inputTypes.password}
           labelText='Пароль'
@@ -31,7 +31,7 @@ const Register = () => {
         <Input type={inputTypes.password} labelText='Повторите пароль' isPassword={true} isRequired={true} />
         <Checkbox />
         <Policy />
-        <Button type={btnType.submit} variant={btnClass.primary}>
+        <Button type={btnType.submit} variant={btnClass.primary} isDisabled={true}>
           Зарегистрироваться
         </Button>
         <img className={s.registerImg} src={registerImage} alt='Регистрация' />

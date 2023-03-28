@@ -1,0 +1,16 @@
+.login__title {
+    margin-bottom: 35px;
+    font-family: 'Raleway';
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  .login__links{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+  .login__links_row{
+    display: flex;
+    column-gap: 10px;
+  }

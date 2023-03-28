@@ -21,7 +21,7 @@ const ChangePassFromMail = () => {
         />
         <Input type={inputTypes.password} labelText='Повторите новый пароль' isRequired={true}  isPassword={true}/>
         <ButtonGroup>
-          <Button type={btnType.submit} variant={btnClass.ghost} isDisabled={true}>
+          <Button type={btnType.submit} variant={btnClass.primary} isDisabled={true}>
            Сохранить
           </Button>
           <Button type={btnType.button} variant={btnClass.ghost}>

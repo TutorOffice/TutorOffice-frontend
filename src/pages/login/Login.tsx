@@ -1,10 +1,18 @@
+import { Link } from 'react-router-dom';
 import s from './Login.module.css';
 import Layout from '../../components/layout/Layout';
 import SubmitForm from '../../components/submitForm/SubmitForm';
 import { btnClass, btnType, Button, Input, inputTypes } from '../../shared/ui';
-import { Link } from 'react-router-dom';
+import { useValid } from './useValid';
+
+type FormValues = {
+	email: string;
+	password: string;
+  };
 
 const Login = () => {
+  const { formState } = useValid();
+
   return (
     <Layout>
       <Button type={btnType.button} variant={btnClass.back} bottom={200}>
@@ -14,7 +22,7 @@ const Login = () => {
       <SubmitForm>
         <Input type={inputTypes.email} labelText='Введите e-mail' isRequired={true} />
         <Input type={inputTypes.password} labelText='Введите пароль' isRequired={true} isPassword={true} />
-        <Button type={btnType.submit} variant={btnClass.primary}>
+        <Button type={btnType.submit} variant={btnClass.primary} isDisabled={!formState.isValid}>
           Войти
         </Button>
       </SubmitForm>

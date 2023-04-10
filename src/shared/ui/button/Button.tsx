@@ -16,7 +16,7 @@ export enum btnType {
 }
 
 interface ButtonProps {
-  onClick?: () => void;
+  onClick?: (data: any) => void;
   children: React.ReactNode;
   variant: btnClass;
   isDisabled?: boolean;

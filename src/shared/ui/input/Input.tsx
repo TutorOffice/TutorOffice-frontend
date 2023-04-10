@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 import clsx from 'clsx';
 import s from './Input.module.css';
 import close from '../../../assets/icons/pass-close.svg';
 import open from '../../../assets/icons/pass-open.svg';
 import { usePassword } from './usePassword';
+import { UseFormRegister } from 'react-hook-form';
+import { FormValues } from '../../../pages/register/Register';
+import { validateType } from '../index';
 
 export enum inputTypes {
   text = 'text',
@@ -11,9 +14,10 @@ export enum inputTypes {
   phone = 'phone',
   email = 'email',
 }
+
 interface InputProps {
   type: inputTypes;
-  onChange?: () => void;
+  onChange?: (e: ChangeEvent) => void;
   isDisabled?: boolean;
   placeholder?: string;
   labelText?: string;
@@ -22,6 +26,8 @@ interface InputProps {
   isError?: boolean;
   isPassword?: boolean;
   iconVisibility?: boolean;
+  name?: validateType;
+  register?: UseFormRegister<FormValues>;
 }
 
 const Input: React.FC<InputProps> = ({
@@ -35,6 +41,8 @@ const Input: React.FC<InputProps> = ({
   isError = false,
   isPassword = false,
   iconVisibility = true,
+  name,
+  register,
 }) => {
   const classNameInput = clsx({
     [s.input]: true,
@@ -46,7 +54,6 @@ const Input: React.FC<InputProps> = ({
   });
 
   const [isOpen, setIsOpen] = usePassword();
-
   return (
     <div className={s.inputs}>
       <label>
@@ -57,6 +64,7 @@ const Input: React.FC<InputProps> = ({
       </label>
       <div className={s.inputBlock}>
         <input
+          {...(register && name ? { ...register(name, { required: isRequired, maxLength: 10 }) } : null)}
           type={isOpen ? 'text' : type}
           placeholder={placeholder}
           onChange={onChange}

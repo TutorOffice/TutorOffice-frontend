@@ -6,6 +6,8 @@ export enum validateType {
   firstName = 'firstName',
   lastName = 'lastName',
   patronymic = 'patronymic',
+  phone = 'phone',
+  password = 'password',
 }
 
 export { default as Button } from './button/Button';

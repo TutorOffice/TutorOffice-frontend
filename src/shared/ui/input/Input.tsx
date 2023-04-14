@@ -28,6 +28,7 @@ interface InputProps {
   iconVisibility?: boolean;
   name?: validateType;
   register?: UseFormRegister<FormValues>;
+  errors?: string;
 }
 
 const Input: React.FC<InputProps> = ({
@@ -43,6 +44,7 @@ const Input: React.FC<InputProps> = ({
   iconVisibility = true,
   name,
   register,
+  errors = '',
 }) => {
   const classNameInput = clsx({
     [s.input]: true,
@@ -64,13 +66,14 @@ const Input: React.FC<InputProps> = ({
       </label>
       <div className={s.inputBlock}>
         <input
-          {...(register && name ? { ...register(name, { required: isRequired, maxLength: 10 }) } : null)}
+          {...(register && name ? { ...register(name) } : null)}
           type={isOpen ? 'text' : type}
           placeholder={placeholder}
           onChange={onChange}
           disabled={isDisabled}
           className={classNameInput}
         />
+        {errors && <p>{errors}</p>}
         {isPassword && iconVisibility && (
           <button type='button' onClick={setIsOpen} className={s.passHide}>
             <img src={isOpen ? open : close} alt='Иконка скрытия/отображения пароля' />

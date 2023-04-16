@@ -4,8 +4,6 @@ import s from './Input.module.css';
 import close from '../../../assets/icons/pass-close.svg';
 import open from '../../../assets/icons/pass-open.svg';
 import { usePassword } from './usePassword';
-import { UseFormRegister } from 'react-hook-form';
-import { FormValues } from '../../../pages/register/Register';
 import { validateType } from '../index';
 
 export enum inputTypes {
@@ -27,8 +25,8 @@ interface InputProps {
   isPassword?: boolean;
   iconVisibility?: boolean;
   name?: validateType;
-  register?: UseFormRegister<FormValues>;
-  errors?: string;
+  register?: any;
+  errors?: any;
 }
 
 const Input: React.FC<InputProps> = ({
@@ -38,13 +36,13 @@ const Input: React.FC<InputProps> = ({
   placeholder = '',
   labelText = '',
   commentTip = '',
+  errors,
   isRequired = false,
-  isError = false,
+  isError = Boolean(errors),
   isPassword = false,
   iconVisibility = true,
   name,
   register,
-  errors = '',
 }) => {
   const classNameInput = clsx({
     [s.input]: true,
@@ -54,7 +52,6 @@ const Input: React.FC<InputProps> = ({
     [s.commentTip]: true,
     [s.errorTip]: isError,
   });
-
   const [isOpen, setIsOpen] = usePassword();
   return (
     <div className={s.inputs}>
@@ -66,14 +63,13 @@ const Input: React.FC<InputProps> = ({
       </label>
       <div className={s.inputBlock}>
         <input
-          {...(register && name ? { ...register(name) } : null)}
+          {...register(name)}
           type={isOpen ? 'text' : type}
           placeholder={placeholder}
-          onChange={onChange}
           disabled={isDisabled}
           className={classNameInput}
         />
-        {errors && <p>{errors}</p>}
+        {errors && <p className={s.required}>{errors.message}</p>}
         {isPassword && iconVisibility && (
           <button type='button' onClick={setIsOpen} className={s.passHide}>
             <img src={isOpen ? open : close} alt='Иконка скрытия/отображения пароля' />

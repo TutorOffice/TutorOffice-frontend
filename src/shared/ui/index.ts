@@ -8,6 +8,7 @@ export enum validateType {
   patronymic = 'patronymic',
   phone = 'phone',
   password = 'password',
+  confirmPassword = 'confirmPassword',
 }
 
 export { default as Button } from './button/Button';

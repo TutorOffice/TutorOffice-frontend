@@ -65,6 +65,8 @@ const Input: React.FC<InputProps> = ({
         <input
           {...register(name)}
           type={isOpen ? 'text' : type}
+          maxLength={type === 'phone' ? 18 : null}
+          data-tel-input={type === 'phone' ? 'data-tel-input' : null}
           placeholder={placeholder}
           disabled={isDisabled}
           className={classNameInput}

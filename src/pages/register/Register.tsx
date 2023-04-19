@@ -8,6 +8,7 @@ import registerImage from '../../assets/images/register-image.png';
 import Layout from '../../components/layout/Layout';
 import { SubmitHandler } from 'react-hook-form';
 import React from 'react';
+import usePhoneMask from '../../shared/utils/usePhoneMask';
 
 export interface FormValues {
   firstName: string;
@@ -22,6 +23,8 @@ const Register = () => {
   const onSubmit: SubmitHandler<FormValues> = (data) => {
     console.log(data);
   };
+  usePhoneMask();
+
   return (
     <Layout>
       <Button type={btnType.button} variant={btnClass.back} bottom={100}>
@@ -53,7 +56,7 @@ const Register = () => {
           и нижнем регистре и цифры'
         />
         <Input
-          name={validateType.password}
+          name={validateType.confirmPassword}
           type={inputTypes.password}
           labelText='Повторите пароль'
           isPassword={true}

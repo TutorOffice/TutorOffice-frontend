@@ -10,19 +10,24 @@ interface submitFormProps {
   onSubmit?: any;
 }
 
+const cyrillicPattern = /^[\u0400-\u04FF]+$/;
 const schema = yup
   .object({
-    firstName: yup.string().required('Имя указано некорректно'),
-    lastName: yup.string().required('Фамилия указана некорректно'),
-    patronymic: yup.string().required('Отчество указано некорректно'),
-    email: yup.string().email().required('E-mail введен некорректно. Пример: example@domain.ru'),
-    phone: yup.string().required('Телефон введен некорректно. Пример: +7 999 999 99 99'),
+    lastName: yup.string().matches(cyrillicPattern, 'Фамилия указана некорректно').required('Введите фамилию'),
+    firstName: yup.string().matches(cyrillicPattern, 'Имя указано некорректно').required('Введите имя'),
+    patronymic: yup.string().matches(cyrillicPattern, 'Отчество указано некорректно').required('Введите отчество'),
+    email: yup.string().email(' E-mail введен некорректно. Пример: example@domain.ru').required('Введите E-mail'),
+    phone: yup.string().max(18).matches(/\d+/, ' ').required('Введите телефон'),
     password: yup
       .string()
       .min(8, '')
-      .matches(/[a-z]+/, '')
-      .matches(/[A-Z]+/, '')
-      .matches(/\d+/, ''),
+      .matches(/[a-z]+/, ' ')
+      .matches(/[A-Z]+/, ' ')
+      .matches(/\d+/, ' '),
+    confirmPassword: yup
+      .string()
+      .oneOf([yup.ref('password')], 'Пароли не совпадают')
+      .required(''),
   })
   .required('');
 const SubmitForm: React.FC<submitFormProps> = ({ children, onSubmit }) => {
@@ -43,6 +48,7 @@ const SubmitForm: React.FC<submitFormProps> = ({ children, onSubmit }) => {
                   ...{
                     ...child.props,
                     register,
+                    // @ts-ignore
                     errors: errors[child.props.name],
                     key: child.props.name,
                   },

@@ -43,7 +43,7 @@ const loginSchema = yup
   })
   .required('');
 
-// вписать тип формы register or login
+// вписать тип формы registerSchema or loginSchema
 const SubmitForm: React.FC<submitFormProps> = ({ children, onSubmit }) => {
   const {
     register,

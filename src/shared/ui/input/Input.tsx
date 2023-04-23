@@ -11,6 +11,7 @@ export enum inputTypes {
   password = 'password',
   phone = 'phone',
   email = 'email',
+  checkbox = 'checkbox',
 }
 
 interface InputProps {
@@ -25,8 +26,8 @@ interface InputProps {
   isPassword?: boolean;
   iconVisibility?: boolean;
   name?: validateType;
-  register?: any;
-  errors?: any;
+  register?: any; // fix
+  errors?: any; // fix
 }
 
 const Input: React.FC<InputProps> = ({

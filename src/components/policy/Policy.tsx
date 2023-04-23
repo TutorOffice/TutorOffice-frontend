@@ -1,9 +1,14 @@
-import { useState } from 'react';
+import { FC, useState } from 'react';
 import { Link } from 'react-router-dom';
 import s from './Policy.module.css';
 
-const Policy = () => {
-  const [isChecked, setIsChecked] = useState(false);
+interface policyProps {
+  name: string;
+  register?: any; // fix
+}
+
+const Policy: FC<policyProps> = ({ name, register }) => {
+  const [isChecked, setIsChecked] = useState<boolean>(false);
   const onChange = () => {
     setIsChecked(!isChecked);
   };
@@ -12,10 +17,11 @@ const Policy = () => {
     <div className={s.policy}>
       <div className={s.checkbox__wrapper}>
         <input
+          {...register(name)}
           type='checkbox'
           id='policy'
           name='policy'
-          value='yes'
+          value={isChecked}
           className={s.customCheckbox}
           checked={isChecked}
           onChange={onChange}

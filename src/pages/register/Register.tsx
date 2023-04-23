@@ -2,13 +2,14 @@ import { Link } from 'react-router-dom';
 import s from './Register.module.css';
 import { btnClass, btnType, Button, Input, inputTypes, validateType } from '../../shared/ui/index';
 import SubmitForm from '../../components/submitForm/SubmitForm';
-import Checkbox from '../../components/checkbox/Checkbox';
 import Policy from '../../components/policy/Policy';
 import registerImage from '../../assets/images/register-image.png';
 import Layout from '../../components/layout/Layout';
 import { SubmitHandler } from 'react-hook-form';
 import React from 'react';
 import usePhoneMask from '../../shared/utils/usePhoneMask';
+import CheckboxForm from '../../components/checkbox/Checkbox';
+import Checkbox from '../../shared/ui/checkbox/Checkbox';
 
 export interface FormValues {
   firstName: string;
@@ -62,8 +63,17 @@ const Register = () => {
           isPassword={true}
           isRequired={true}
         />
-        <Checkbox />
-        <Policy />
+        <CheckboxForm name={validateType.userType}>
+          <Checkbox name='student' RegisterName={validateType.userType} TextValue='Ученик' type='radio' id='student' />
+          <Checkbox
+            name='tutor'
+            RegisterName={validateType.userType}
+            TextValue='Преподаватель'
+            type='radio'
+            id='tutor'
+          />
+        </CheckboxForm>
+        <Policy name={validateType.policy} />
         <Button type={btnType.submit} variant={btnClass.primary} isDisabled={false}>
           Зарегистрироваться
         </Button>

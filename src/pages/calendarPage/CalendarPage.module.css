@@ -1,13 +1,5 @@
-.calendarPage {
-  max-width: 1000px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.calendarPage__title {
-  margin-bottom: 50px;
+.calendar__title {
+  margin-bottom: 30px;
   font-family: 'Raleway';
   font-size: 30px;
   font-weight: 600;

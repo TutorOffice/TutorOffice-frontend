@@ -3,14 +3,7 @@ import moment from 'moment';
 import s from './Calendar.module.css';
 import CalendarItem from './calendarItem/CalendarItem';
 import CalendarControls from './calendarControls/CalendarControls';
-import {
-  getCurrentMonth,
-  getNextMonth,
-  getPrevMonth,
-  momentConfig,
-  getDaysArray,
-  getIsWeekend,
-} from '../../shared/utils';
+import { getCurrentMonth, momentConfig, getDaysArray, getIsWeekend, getCurrentYear } from '../../shared/utils';
 
 const Calendar = () => {
   moment.updateLocale('ru', momentConfig);
@@ -18,8 +11,7 @@ const Calendar = () => {
 
   const daysArray = getDaysArray(today);
   const currentMonth = getCurrentMonth(today);
-  const prevMonth = getPrevMonth(today);
-  const nextMonth = getNextMonth(today);
+  const currentYear = getCurrentYear(today);
 
   const prevHandler = () => {
     setToday((prev) => prev.clone().subtract(1, 'month'));
@@ -32,8 +24,7 @@ const Calendar = () => {
     <div className={s.calendarWrapper}>
       <CalendarControls
         currentMonth={currentMonth}
-        prevMonth={prevMonth}
-        nextMonth={nextMonth}
+        currentYear={currentYear}
         prevHandler={prevHandler}
         nextHandler={nextHandler}
       />

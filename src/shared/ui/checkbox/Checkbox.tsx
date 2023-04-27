@@ -1,9 +1,10 @@
 import React, { FC } from 'react';
 import s from './checkbox.module.css';
+import { FieldValues, UseFormRegister } from 'react-hook-form';
 
-interface checkboxProps {
+interface CheckboxProps {
   RegisterName: string;
-  register?: any; // fix
+  register?: UseFormRegister<FieldValues>;
   name: string;
   type: string;
   id: string;
@@ -12,7 +13,7 @@ interface checkboxProps {
   setIsTutor?: (isTutor: boolean) => void;
 }
 
-const Checkbox: FC<checkboxProps> = ({
+const Checkbox: FC<CheckboxProps> = ({
   isTutor = false,
   setIsTutor,
   TextValue,
@@ -23,12 +24,14 @@ const Checkbox: FC<checkboxProps> = ({
   id,
 }) => {
   const onChange = () => {
-    setIsTutor(!isTutor);
+    if (setIsTutor) {
+      setIsTutor(!isTutor);
+    }
   };
   return (
     <div className={s.checkbox__wrapper}>
       <input
-        {...register(RegisterName)}
+        {...(register && { ...register(name) })}
         className={s.customRadio}
         name={!isTutor ? 'tutor' : 'student'}
         type={type}

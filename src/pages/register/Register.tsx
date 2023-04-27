@@ -32,7 +32,7 @@ const Register = () => {
         Назад
       </Button>
       <h2 className={s.register__title}>Регистрация</h2>
-      <SubmitForm onSubmit={onSubmit}>
+      <SubmitForm isRegister={true} onSubmit={onSubmit}>
         <Input name={validateType.lastName} type={inputTypes.text} labelText='Фамилия' isRequired={true} />
 
         <Input name={validateType.firstName} type={inputTypes.text} labelText='Имя' isRequired={true} />

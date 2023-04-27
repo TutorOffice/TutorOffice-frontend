@@ -1,14 +1,15 @@
 import React, { createElement, FC, useState } from 'react';
 import s from './Checkbox.module.css';
+import { FieldValues, UseFormRegister } from 'react-hook-form';
 
 interface checkboxProps {
-  register?: any; // fix
+  register?: UseFormRegister<FieldValues>;
   children: React.ReactNode;
   name: string;
 }
 
 const CheckboxForm: FC<checkboxProps> = ({ name, register, children }) => {
-  const [isTutor, setIsTutor] = useState<boolean>(false);
+  const [isTutor, setIsTutor] = useState(false);
 
   return (
     <div className={s.checkbox}>

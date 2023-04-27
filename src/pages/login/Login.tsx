@@ -16,7 +16,7 @@ const Login = () => {
         Назад
       </Button>
       <h2 className={s.login__title}>Вход в личный кабинет</h2>
-      <SubmitForm onSubmit={onSubmit}>
+      <SubmitForm isRegister={false} onSubmit={onSubmit}>
         <Input name={validateType.email} type={inputTypes.email} labelText='Введите e-mail' isRequired={true} />
         <Input
           name={validateType.password}

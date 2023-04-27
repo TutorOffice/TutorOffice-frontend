@@ -7,6 +7,7 @@ export enum btnClass {
   primary = 'primary',
   ghost = 'ghost',
   back = 'back',
+  support = 'support',
 }
 
 export enum btnType {

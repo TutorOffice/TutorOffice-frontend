@@ -5,6 +5,7 @@ import close from '../../../assets/icons/pass-close.svg';
 import open from '../../../assets/icons/pass-open.svg';
 import { usePassword } from './usePassword';
 import { validateType } from '../index';
+import { FieldError, FieldValues, UseFormRegister } from 'react-hook-form';
 
 export enum inputTypes {
   text = 'text',
@@ -26,11 +27,13 @@ interface InputProps {
   isPassword?: boolean;
   iconVisibility?: boolean;
   name?: validateType;
-  register?: any; // fix
-  errors?: any; // fix
+  register?: UseFormRegister<FieldValues>;
+  errors?: FieldError | undefined;
+  ref?: React.RefObject<HTMLInputElement>;
 }
 
 const Input: React.FC<InputProps> = ({
+  ref,
   onChange,
   type,
   isDisabled = false,
@@ -53,6 +56,7 @@ const Input: React.FC<InputProps> = ({
     [s.commentTip]: true,
     [s.errorTip]: isError,
   });
+  console.log(errors);
   const [isOpen, setIsOpen] = usePassword();
   return (
     <div className={s.inputs}>
@@ -64,9 +68,10 @@ const Input: React.FC<InputProps> = ({
       </label>
       <div className={s.inputBlock}>
         <input
-          {...register(name)}
+          {...(ref ? ref : undefined)}
+          {...(register && name && { ...register(name) })}
           type={isOpen ? 'text' : type}
-          maxLength={type === 'phone' ? 18 : null}
+          maxLength={type === 'phone' ? 18 : undefined}
           data-tel-input={type === 'phone' ? 'data-tel-input' : null}
           placeholder={placeholder}
           disabled={isDisabled}

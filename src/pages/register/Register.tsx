@@ -21,11 +21,11 @@ export interface FormValues {
 }
 
 const Register = () => {
+  const phoneRef = React.useRef(null);
   const onSubmit: SubmitHandler<FormValues> = (data) => {
     console.log(data);
   };
   usePhoneMask();
-
   return (
     <Layout>
       <Button type={btnType.button} variant={btnClass.back} bottom={100}>
@@ -46,7 +46,13 @@ const Register = () => {
           isRequired={true}
           placeholder={'example@domaim.ru'}
         />
-        <Input name={validateType.phone} type={inputTypes.phone} labelText='Телефон' placeholder={'+7 999 999 99 99'} />
+        <Input
+          ref={phoneRef}
+          name={validateType.phone}
+          type={inputTypes.phone}
+          labelText='Телефон'
+          placeholder={'+7 999 999 99 99'}
+        />
         <Input
           name={validateType.password}
           type={inputTypes.password}

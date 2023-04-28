@@ -4,6 +4,7 @@ import s from './Calendar.module.css';
 import CalendarItem from './calendarItem/CalendarItem';
 import CalendarControls from './calendarControls/CalendarControls';
 import { getCurrentMonth, momentConfig, getDaysArray, getIsWeekend, getCurrentYear } from '../../shared/utils';
+import CalendarWeekDays from './calendarWeekDays/CalendarWeekDays';
 
 const Calendar = () => {
   moment.updateLocale('ru', momentConfig);
@@ -28,14 +29,14 @@ const Calendar = () => {
         prevHandler={prevHandler}
         nextHandler={nextHandler}
       />
+      <CalendarWeekDays />
       <div className={s.calendar}>
-        <div className={s.calendar__weekdays}></div>
         {daysArray.map((day) => (
           <CalendarItem
             key={day.unix()}
             day={day}
-            isWeekend={getIsWeekend(day.day())}
             isCurrentDay={moment().isSame(day, 'day')}
+            isCurrentMonth={moment().isSame(day, 'month')}
           />
         ))}
       </div>

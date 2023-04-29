@@ -1,6 +1,7 @@
 .content {
     padding: 90px;
     text-align: center;
+    margin: 0 auto;
 }
 
 .image {
@@ -8,5 +9,9 @@
 }
 
 .title {
+    margin-bottom: 20px;
+}
+
+.description {
     margin-bottom: 50px;
 }

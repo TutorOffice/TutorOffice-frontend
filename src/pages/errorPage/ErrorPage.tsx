@@ -1,27 +1,19 @@
-import s from './ErrorPage.module.css';
 import Layout from '../../components/layout/Layout';
 import Wrapper from '../../components/wrapper/Wrapper';
-import errorImg404 from '../../assets/images/404.png';
-import { btnClass, btnType, Button, ButtonGroup } from '../../shared/ui';
+import ErrorInfo from './errorInfo/ErrorInfo';
+import { errorTypes } from './errorTypes';
 
 const ErrorPage = () => {
   return (
     <Layout>
       <Wrapper>
-        <Wrapper>
-          <div className={s.content}>
-            <img src={errorImg404} alt='404' className={s.image} />
-            <h2 className={s.title}>Запрашиваемая страница не найдена!</h2>
-            <ButtonGroup>
-              <Button type={btnType.submit} variant={btnClass.primary}>
-                На Главную
-              </Button>
-              <Button type={btnType.reset} variant={btnClass.ghost}>
-                Написать в поддержку
-              </Button>
-            </ButtonGroup>
+        {errorTypes.map((obj) => (
+          <div key={obj.id}>
+            {obj.code === '400' ? (
+              <ErrorInfo imageUrl={obj.imageUrl!} title={obj.title} description={obj.description} code={obj.code} />
+            ) : null}
           </div>
-        </Wrapper>
+        ))}
       </Wrapper>
     </Layout>
   );

@@ -28,7 +28,7 @@ const App = () => {
       <Route path='/profile' element={<Profile />} />
       <Route path='/no-lesson' element={<NoLesson />} />
       <Route path='/calendar' element={<CalendarPage />} />
-      <Route path='/404' element={<ErrorPage />} />
+      <Route path='/not-found' element={<ErrorPage />} />
     </Routes>
   );
 };

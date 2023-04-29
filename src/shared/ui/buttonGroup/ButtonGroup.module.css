@@ -1,5 +1,7 @@
 .group__buttons {
     align-self: flex-end;
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
 }

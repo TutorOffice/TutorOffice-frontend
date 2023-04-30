@@ -54,6 +54,7 @@ const Modal: React.FC<modalProps> = ({
               </div>
             )}
           </div>
+          <button className={s.closeButton} onClick={onClose} />
         </div>
       </div>
     );

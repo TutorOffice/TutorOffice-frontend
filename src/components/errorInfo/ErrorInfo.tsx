@@ -1,5 +1,5 @@
 import s from './ErrorInfo.module.css';
-import { btnClass, btnType, Button, ButtonGroup } from '../../../shared/ui';
+import { btnClass, btnType, Button, ButtonGroup } from '../../shared/ui';
 import { Link } from 'react-router-dom';
 
 interface ErrorInfoProps {

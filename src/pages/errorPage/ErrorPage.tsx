@@ -1,7 +1,7 @@
 import Layout from '../../components/layout/Layout';
 import Wrapper from '../../components/wrapper/Wrapper';
-import ErrorInfo from './errorInfo/ErrorInfo';
-import { errorTypes } from './errorTypes';
+import ErrorInfo from '../../components/errorInfo/ErrorInfo';
+import { errorTypes } from '../../shared/utils/errorTypes';
 
 const ErrorPage = () => {
   return (

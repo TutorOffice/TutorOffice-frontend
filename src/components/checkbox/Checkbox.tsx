@@ -1,41 +1,35 @@
-import { useState } from 'react';
+import React, { createElement, FC, useState } from 'react';
 import s from './Checkbox.module.css';
+import { FieldValues, UseFormRegister } from 'react-hook-form';
 
-const Checkbox = () => {
-  const [isTutor, setIsTutor] = useState(true);
+interface checkboxProps {
+  register?: UseFormRegister<FieldValues>;
+  children: React.ReactNode;
+  name: string;
+}
 
-  const onChange = () => {
-    setIsTutor(!isTutor);
-  };
+const CheckboxForm: FC<checkboxProps> = ({ name, register, children }) => {
+  const [isTutor, setIsTutor] = useState(false);
 
   return (
     <div className={s.checkbox}>
-      <div className={s.checkbox__wrapper}>
-        <input
-          className={s.customRadio}
-          name='tutor'
-          type='radio'
-          id='tutor'
-          value='tutor'
-          checked={isTutor}
-          onChange={onChange}
-        />
-        <label htmlFor='tutor'>Преподаватель</label>
-      </div>
-      <div className={s.checkbox__wrapper}>
-        <input
-          className={s.customRadio}
-          name='student'
-          type='radio'
-          id='student'
-          value='student'
-          checked={!isTutor}
-          onChange={onChange}
-        />
-        <label htmlFor='student'>Ученик</label>
-      </div>
+      {Array.isArray(children)
+        ? children.map((child) => {
+            return child.props.name
+              ? createElement(child.type, {
+                  ...{
+                    ...child.props,
+                    register,
+                    isTutor: isTutor,
+                    setIsTutor: setIsTutor,
+                    key: child.props.name,
+                  },
+                })
+              : child;
+          })
+        : children}
     </div>
   );
 };
 
-export default Checkbox;
+export default CheckboxForm;

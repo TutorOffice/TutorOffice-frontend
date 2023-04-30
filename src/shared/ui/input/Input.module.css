@@ -5,13 +5,16 @@
   border-radius: 12px;
   padding: 12px 0 12px 12px;
 }
+
 .input::placeholder {
   color: var(--gray);
 }
+
 .input:disabled {
   color: var(--inactive);
   border: 1px solid var(--inactive);
 }
+
 .input:disabled[aria-placeholder] {
   color: var(--inactive);
 }
@@ -57,10 +60,12 @@
 .error::placeholder {
   color: var(--red);
 }
+
 .error:focus {
   color: var(--red);
   border: 1px solid var(--red);
 }
+
 .errorTip {
   color: var(--red);
 }

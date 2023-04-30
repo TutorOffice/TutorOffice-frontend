@@ -1,20 +1,18 @@
 .calendarWrapper {
   width: 100%;
-  max-width: 790px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .calendar {
+  overflow: hidden;
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(7, 70px);
-  grid-template-rows: repeat(6, 70px);
-  row-gap: 30px;
-  column-gap: 50px;
-}
-
-.calendar__weekdays {
-  grid-row: 7;
-  margin-bottom: 20px;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(6, minmax(auto, 120px));
+  gap: 1px;
+  background-color: var(--blue);
+  border: 1px solid var(--blue);
+  border-radius: 20px;
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import s from './HeaderMain.module.css';
+
 interface HeaderMainProps {
   children: React.ReactNode;
   bottom: number;

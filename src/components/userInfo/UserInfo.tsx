@@ -4,8 +4,8 @@ import s from './UserInfo.module.css';
 interface UserInfoProps {
   photo: string;
   fullName: string;
-  phone: string;
-  mail: string;
+  phone?: string;
+  mail?: string;
 }
 
 const UserInfo: React.FC<UserInfoProps> = ({ photo, fullName, phone, mail }) => {

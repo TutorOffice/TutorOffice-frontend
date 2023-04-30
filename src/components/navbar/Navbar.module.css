@@ -1,4 +1,5 @@
 .navbar {
+  overflow: hidden;
   font-family: 'Roboto';
   width: 270px;
   height: 100%;

@@ -1,5 +1,4 @@
 import React from 'react';
-import s from './CalendarModal.module.css';
 import { btnClass, btnType, Button, ButtonGroup, Modal } from '../../../shared/ui';
 
 interface CalendarModalProps {

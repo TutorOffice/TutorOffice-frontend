@@ -11,6 +11,7 @@ import Register from '../../pages/register/Register';
 import TutorOffice from '../../pages/tutorOffice/TutorOffice';
 import NoLesson from '../../pages/noLesson/NoLesson';
 import CalendarPage from '../../pages/calendarPage/CalendarPage';
+import ErrorPage from '../../pages/errorPage/ErrorPage';
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
       <Route path='/profile' element={<Profile />} />
       <Route path='/no-lesson' element={<NoLesson />} />
       <Route path='/calendar' element={<CalendarPage />} />
+      <Route path='/not-found' element={<ErrorPage />} />
     </Routes>
   );
 };

@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-import s from './TutorOffice.module.css';
+import { Link, useParams } from 'react-router-dom';
+import s from './CalendarDay.module.css';
 import Layout from '../../components/layout/Layout';
 import { btnClass, btnType, Button } from '../../shared/ui';
 import userPhoto from '../../assets/images/user-photo.jpg';
@@ -10,13 +10,15 @@ import HeaderMain from '../../components/headerMain/HeaderMain';
 import Wrapper from '../../components/wrapper/Wrapper';
 
 const testStudents = [
-  { id: 1, photo: testPhoto, time: '10:30', name: 'Алексей Ф.', theme: 'Pres.Perf', homeWork: true },
-  { id: 2, photo: testPhoto, time: '10:30', name: 'Алексей Ф.', theme: 'Pres.Perf', homeWork: false },
-  { id: 3, photo: testPhoto, time: '10:30', name: 'Алексей Ф.', theme: 'Pres.Perf', homeWork: true },
-  { id: 4, photo: testPhoto, time: '10:30', name: 'Алексей Ф.', theme: 'Pres.Perf', homeWork: true },
+  { id: 1, photo: testPhoto, time: '10:30', name: 'Алексей Феофанов', lessonStatus: true },
+  { id: 2, photo: testPhoto, time: '10:30', name: 'Алексей Феофанов', lessonStatus: false },
+  { id: 3, photo: testPhoto, time: '10:30', name: 'Алексей Феофанов ', lessonStatus: true },
+  { id: 4, photo: testPhoto, time: '10:30', name: 'Алексей Феофанов', lessonStatus: true },
 ];
 
-const TutorOffice = () => {
+const CalendarDay = () => {
+  const { date } = useParams();
+
   return (
     <Layout>
       <Wrapper>
@@ -34,24 +36,22 @@ const TutorOffice = () => {
           </Link>
         </HeaderMain>
         <div className={s.office__content}>
-          <h2 className={s.office__title}>Расписание на сегодня</h2>
-          <div className={s.list__title}>
-            <p></p>
-            <p>Время</p>
-            <p>Ученик</p>
-            <p>Тема</p>
-            <p>Д/з</p>
-            <p className={s.grid__item}></p>
-          </div>
+          <h2 className={s.office__title}>Расписание на {date}</h2>
           <ul className={s.students__list}>
+            <div className={s.list__title}>
+              <span>Ученик</span>
+              <span>Время</span>
+              <span>Д/з</span>
+              <span>Статус</span>
+              <span></span>
+            </div>
             {testStudents.map((stud) => (
               <OfficeItem
                 key={stud.id}
                 photo={stud.photo}
                 time={stud.time}
                 name={stud.name}
-                theme={stud.theme}
-                homeWork={stud.homeWork}
+                lessonStatus={stud.lessonStatus}
               />
             ))}
           </ul>
@@ -61,4 +61,4 @@ const TutorOffice = () => {
   );
 };
 
-export default TutorOffice;
+export default CalendarDay;

@@ -3,7 +3,7 @@ import moment from 'moment';
 import s from './Calendar.module.css';
 import CalendarItem from './calendarItem/CalendarItem';
 import CalendarControls from './calendarControls/CalendarControls';
-import { getCurrentMonth, momentConfig, getDaysArray, getIsWeekend, getCurrentYear } from '../../shared/utils';
+import { getCurrentMonth, momentConfig, getDaysArray, getCurrentYear } from '../../shared/utils';
 import CalendarWeekDays from './calendarWeekDays/CalendarWeekDays';
 
 const Calendar = () => {

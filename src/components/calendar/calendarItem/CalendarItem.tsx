@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import clsx from 'clsx';
 import s from './CalendarItem.module.css';
 import CalendarModal from '../../modals/calendarModal/CalendarModal';
-import { momentType } from '../../../shared/utils';
+import { formatDate, momentType } from '../../../shared/utils';
 
 interface CalendarItemProps {
   day: momentType;
@@ -22,7 +22,7 @@ const CalendarItem: React.FC<CalendarItemProps> = ({ day, isCurrentDay, isCurren
   };
 
   const monthDay = day.format('DD.MM');
-  const date = day.format('DD MMMM YYYY');
+  const date = formatDate(day.format('DD MMMM YYYY'));
 
   const className = clsx({
     [s.calendarItem]: true,

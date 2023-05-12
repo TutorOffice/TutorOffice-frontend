@@ -8,3 +8,4 @@ export {
   getCurrentYear,
 } from './moment';
 export type { momentType } from './moment';
+export { formatDate } from './formatDate';

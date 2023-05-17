@@ -1,29 +1,16 @@
 import s from './Navbar.module.css';
 import logo from '../../assets/images/logo.png';
-import { Link } from 'react-router-dom';
+import NavbarAuth from './NavbarAuth';
+import NavbarDefault from './NavbarDefault';
+
+const isAuth = true;
 
 const Navbar = () => {
   return (
     <header className={s.navbar}>
       <img src={logo} alt='Логотип' className={s.navbar__logo} />
       <nav className={s.navbar__menu}>
-        <ul className={s.navbar__list}>
-          <li className={s.navbar__item}>
-            <Link className={s.navbar__link} to='/'>
-              О проекте
-            </Link>
-          </li>
-          <li className={s.navbar__item}>
-            <Link className={s.navbar__link} to='/'>
-              Пробная версия <span>(без регистрации)</span>
-            </Link>
-          </li>
-          <li className={s.navbar__item}>
-            <Link className={s.navbar__link} to='/'>
-              Контакты
-            </Link>
-          </li>
-        </ul>
+        <ul className={s.navbar__list}>{isAuth ? <NavbarAuth /> : <NavbarDefault />}</ul>
       </nav>
       <ul className={s.contacts}>
         <li className={s.contacts__item}>

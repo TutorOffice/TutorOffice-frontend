@@ -1,4 +1,5 @@
 .button {
+  width: inherit;
   padding: 18px 60px;
   font-family: 'Raleway', sans-serif;
   font-style: normal;
@@ -12,7 +13,6 @@
 .button:disabled {
   background-color: var(--inactive);
   color: var(--grey);
-  border: 1px solid var(--grey);
   pointer-events: none;
 }
 
@@ -36,6 +36,7 @@
 .buttonGhost:hover {
   outline: 2px solid var(--blue);
 }
+
 .buttonBack {
   padding: 0;
   align-self: flex-start;

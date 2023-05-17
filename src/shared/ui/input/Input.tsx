@@ -56,7 +56,6 @@ const Input: React.FC<InputProps> = ({
     [s.commentTip]: true,
     [s.errorTip]: isError,
   });
-  console.log(errors);
   const [isOpen, setIsOpen] = usePassword();
   return (
     <div className={s.inputs}>

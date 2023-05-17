@@ -19,10 +19,10 @@ const ChangePassFromMail = () => {
           commentTip='Пароль должен содержать не менее 7 символов, буквы в верхнем
                       и нижнем регистре и цифры'
         />
-        <Input type={inputTypes.password} labelText='Повторите новый пароль' isRequired={true}  isPassword={true}/>
-        <ButtonGroup>
+        <Input type={inputTypes.password} labelText='Повторите новый пароль' isRequired={true} isPassword={true} />
+        <ButtonGroup width='100%'>
           <Button type={btnType.submit} variant={btnClass.primary} isDisabled={true}>
-           Сохранить
+            Сохранить
           </Button>
           <Button type={btnType.button} variant={btnClass.ghost}>
             Отменить

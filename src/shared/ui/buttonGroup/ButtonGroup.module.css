@@ -1,5 +1,5 @@
 .group__buttons {
-    align-self: flex-end;
-    display: flex;
-    gap: 20px;
+  align-self: flex-end;
+  display: flex;
+  gap: 20px;
 }

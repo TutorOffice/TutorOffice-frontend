@@ -1,0 +1,21 @@
+.weekdays {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px 0;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+}
+
+.weekday {
+  font-family: 'Raleway';
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.weekend {
+  font-family: 'Raleway';
+  font-weight: 600;
+  font-size: 20px;
+  color: red;
+}

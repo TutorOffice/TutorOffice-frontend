@@ -12,7 +12,8 @@
 
 .button:disabled {
   background-color: var(--inactive);
-  color: var(--grey);
+  color: var(--gray);
+  border: 1px solid var(--gray);
   pointer-events: none;
 }
 

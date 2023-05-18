@@ -1,32 +1,59 @@
 .calendarItem {
+  padding: 10px 20px 0 0;
   width: 100%;
   height: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid var(--blue);
-  border-radius: 10px;
-  font-family: 'Robot';
-  font-size: 18px;
-  font-weight: 400;
+  justify-content: flex-end;
+  background-color: var(--white);
+  font-family: 'Raleway';
+  font-size: 30px;
+  font-weight: 600;
   cursor: pointer;
-  transition: opacity 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .calendarItem:hover {
-  opacity: 0.6;
+  padding: 8px 18px 0 0;
+  border: 2px solid var(--blue);
 }
-
-.weekends {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-.currentDay {
-  color: var(--white);
+.calendarItem:active {
   background-color: var(--blue);
 }
 
-.active {
-  background-color: var(--green);
-  color: var(--white);
+.currentDay {
+  padding: 3px 13px 0 0;
+  border: 7px solid var(--blue);
+}
+.currentDay:hover {
+  padding: 3px 13px 0 0;
+  border: 7px solid var(--blue);
+}
+.currentDay:active {
+  background-color: var(--blue);
+  border-color: rgba(7, 29, 72, 0.6);
+}
+
+.currentDay.isLessons:hover {
+  border: 7px solid var(--green);
+}
+.currentDay.isLessons:active {
+  border: 7px solid rgba(7, 29, 72, 0.6);
+  background-color: #27bf24;
+}
+
+.isLessons {
+  border-color: var(--green);
+  background-color: var(--light-green);
+}
+.isLessons:hover {
+  border: none;
+  background-color: #83db81;
+}
+.isLessons:active {
+  border: none;
+  background-color: #27bf24;
+}
+
+.notCurrentMonth {
+  color: var(--gray);
 }

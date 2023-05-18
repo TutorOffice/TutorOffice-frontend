@@ -2,16 +2,16 @@ import React, { useState } from 'react';
 import clsx from 'clsx';
 import s from './CalendarItem.module.css';
 import CalendarModal from '../../modals/calendarModal/CalendarModal';
-import { momentType } from '../../../shared/utils';
+import { formatDate, momentType } from '../../../shared/utils';
 
 interface CalendarItemProps {
   day: momentType;
-  isWeekend: boolean;
   isCurrentDay: boolean;
+  isCurrentMonth: boolean;
   isLessons?: boolean;
 }
 
-const CalendarItem: React.FC<CalendarItemProps> = ({ day, isWeekend = false, isCurrentDay = false, isLessons }) => {
+const CalendarItem: React.FC<CalendarItemProps> = ({ day, isCurrentDay, isCurrentMonth, isLessons }) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
 
   const openModal = () => {
@@ -21,14 +21,14 @@ const CalendarItem: React.FC<CalendarItemProps> = ({ day, isWeekend = false, isC
     setIsOpenModal(false);
   };
 
-  const monthDay = day.format('D');
-  const date = day.format('DD MMMM YYYY');
+  const monthDay = day.format('DD.MM');
+  const date = formatDate(day.format('DD MMMM YYYY'));
 
   const className = clsx({
     [s.calendarItem]: true,
-    [s.weekends]: isWeekend,
+    [s.notCurrentMonth]: !isCurrentMonth,
     [s.currentDay]: isCurrentDay,
-    [s.active]: isLessons,
+    [s.isLessons]: isLessons,
   });
 
   return (

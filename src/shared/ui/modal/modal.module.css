@@ -41,3 +41,36 @@
   border-top: 1px solid #000000;
   font-size: 18px;
 }
+
+.closeButton {
+  position: absolute;
+  top: 26px;
+  right: 26px;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.closeButton:before,
+.closeButton:after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 26px;
+  height: 2px;
+  background-color: var(--black);
+}
+
+.closeButton:before {
+  transform: rotate(45deg);
+}
+
+.closeButton:after {
+  transform: rotate(-45deg);
+}
+
+.closeButton:hover {
+  opacity: 0.6;
+}

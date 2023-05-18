@@ -35,6 +35,9 @@ export const getDaysArray: (today: momentType) => Array<momentType> = (today) =>
 export const getCurrentMonth: (today: momentType) => string = (today) => {
   return today.clone().format('MMMM');
 };
+export const getCurrentYear: (today: momentType) => string = (today) => {
+  return today.clone().format('YYYY');
+};
 export const getPrevMonth: (today: momentType) => string = (today) => {
   return today.clone().subtract(1, 'month').format('MMMM');
 };

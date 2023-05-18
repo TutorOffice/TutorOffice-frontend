@@ -3,19 +3,21 @@
   bottom: 20px;
   width: 100%;
   max-width: 1000px;
-  padding: 35px 90px;
+  padding: 34px 45px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: var(--blue);
-  border-radius: 210px;
+  border-radius: 20px;
+}
+
+.cookie__body {
 }
 
 .cookie__text {
-  max-width: 400px;
-  text-align: center;
+  text-align: left;
   color: var(--white);
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-size: 14px;
   font-weight: 400;
 }
@@ -23,4 +25,13 @@
 .cookie__buttons {
   display: flex;
   gap: 20px;
+  font-weight: 600;
+}
+
+.close__cookie {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  padding: 10px;
 }

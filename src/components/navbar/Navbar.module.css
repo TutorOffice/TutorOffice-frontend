@@ -1,6 +1,6 @@
 .navbar {
+  font-family: 'Roboto', sans-serif;
   overflow: hidden;
-  font-family: 'Roboto';
   width: 270px;
   height: 100%;
   min-height: 1024px;
@@ -14,6 +14,8 @@
 
 .navbar__logo {
   margin-bottom: 70px;
+  object-fit: cover;
+  width: 250px;
 }
 
 .navbar__menu {
@@ -30,10 +32,6 @@
   transition: opacity 0.3s ease-in-out;
 }
 
-.navbar__item:hover {
-  opacity: 0.5;
-}
-
 .navbar__link {
   display: flex;
   flex-direction: column;
@@ -41,6 +39,20 @@
   color: var(--white);
   font-size: 18px;
   font-weight: 700;
+}
+
+.navbar__link_active {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--orange);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.navbar__link:hover {
+  color: var(--orange-hover);
+  transition: color 0.3s ease-in-out;
 }
 
 .navbar__link > span {

@@ -18,7 +18,7 @@ export const navLinksAuth: ILinkItem[] = [
   },
   {
     text: 'Расписание',
-    link: '/schedule',
+    link: '/calendar',
   },
   {
     text: 'Ученики',

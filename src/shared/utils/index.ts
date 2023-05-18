@@ -9,3 +9,4 @@ export {
 } from './moment';
 export type { momentType } from './moment';
 export { formatDate } from './formatDate';
+export { navLinksAuth, navLinks } from './NavLinks';

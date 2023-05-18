@@ -2,16 +2,17 @@ import s from './Navbar.module.css';
 import logo from '../../assets/images/logo.png';
 import NavbarAuth from './NavbarAuth';
 import NavbarDefault from './NavbarDefault';
+import { Link } from 'react-router-dom';
 
 const isAuth = true;
 
 const Navbar = () => {
   return (
     <header className={s.navbar}>
-      <img src={logo} alt='Логотип' className={s.navbar__logo} />
-      <nav className={s.navbar__menu}>
-        <ul className={s.navbar__list}>{isAuth ? <NavbarAuth /> : <NavbarDefault />}</ul>
-      </nav>
+      <Link to='/'>
+        <img src={logo} alt='Логотип' className={s.navbar__logo} />
+      </Link>
+      <nav className={s.navbar__menu}>{isAuth ? <NavbarAuth /> : <NavbarDefault />}</nav>
       <ul className={s.contacts}>
         <li className={s.contacts__item}>
           <a className={s.link} href='tel:+79211234567'>

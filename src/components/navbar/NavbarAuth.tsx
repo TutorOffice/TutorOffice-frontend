@@ -1,7 +1,6 @@
-import React from 'react';
 import s from './Navbar.module.css';
 import { NavLink } from 'react-router-dom';
-import { navLinksAuth } from '../../shared/utils/NavLinks';
+import { navLinksAuth } from '../../shared/utils';
 
 const NavbarAuth = () => {
   return (

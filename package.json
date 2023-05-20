@@ -23,6 +23,9 @@
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.9.0",
+    "storybook-addon-react-router-v6": "^1.0.0",
+    "storybook-css-modules": "^1.0.8",
+    "storybook-css-modules-preset": "^1.1.1",
     "typescript-plugin-css-modules": "^4.2.3",
     "vite": "^4.2.1",
     "vite-plugin-svgr": "^2.4.0",
@@ -32,12 +35,15 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "plugin:storybook/recommended"
     ]
   },
   "browserslist": {
@@ -53,10 +59,20 @@
     ]
   },
   "devDependencies": {
+    "@storybook/addon-essentials": "^7.0.12",
+    "@storybook/addon-interactions": "^7.0.12",
+    "@storybook/addon-links": "^7.0.12",
+    "@storybook/blocks": "^7.0.12",
+    "@storybook/react": "^7.0.12",
+    "@storybook/react-vite": "^7.0.12",
+    "@storybook/testing-library": "^0.0.14-next.2",
     "@typescript-eslint/eslint-plugin": "^5.56.0",
     "@typescript-eslint/parser": "^5.56.0",
+    "eslint-plugin-storybook": "^0.6.12",
     "prettier": "^2.8.6",
+    "prop-types": "^15.8.1",
     "react-hook-form": "^7.43.5",
+    "storybook": "^7.0.12",
     "typescript": "^5.0.3"
   }
 }

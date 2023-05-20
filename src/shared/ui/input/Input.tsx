@@ -12,7 +12,6 @@ export enum inputTypes {
   password = 'password',
   phone = 'phone',
   email = 'email',
-  checkbox = 'checkbox',
 }
 
 interface InputProps {

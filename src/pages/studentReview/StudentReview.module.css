@@ -1,0 +1,25 @@
+.studentReview__title {
+  margin-bottom: 35px;
+  font-family: 'Raleway';
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.studentReview__title_row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.studentReview__cards_container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  column-gap: 20px;
+  row-gap: 18px;
+}

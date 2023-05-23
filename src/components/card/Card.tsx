@@ -10,11 +10,7 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({ photo, name, subject, subjectLevel }) => {
-  return (
-    <div className={s.card}>
-      
-    </div>
-  );
-}
+  return <div className={s.card}></div>;
+};
 
 export default Card;

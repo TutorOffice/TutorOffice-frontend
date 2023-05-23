@@ -20,6 +20,5 @@
   flex-wrap: wrap;
   align-items: center;
   width: 100%;
-  column-gap: 20px;
-  row-gap: 18px;
+  gap: 20px 18px;
 }

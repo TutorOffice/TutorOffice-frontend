@@ -5,6 +5,7 @@ import { btnClass, btnType, Button, Input, inputTypes, validateType } from '../.
 import { Link } from 'react-router-dom';
 import { SubmitHandler } from 'react-hook-form';
 import { FormValues } from '../register/Register';
+import { TValidationSubmitFormResolver } from '../../shared/types/validation';
 
 const Login = () => {
   const onSubmit: SubmitHandler<FormValues> = (data) => {
@@ -16,7 +17,7 @@ const Login = () => {
         Назад
       </Button>
       <h2 className={s.login__title}>Вход в личный кабинет</h2>
-      <SubmitForm isRegister={false} onSubmit={onSubmit}>
+      <SubmitForm resolverType={TValidationSubmitFormResolver.LOGIN} onSubmit={onSubmit}>
         <Input name={validateType.email} type={inputTypes.email} labelText='Введите e-mail' isRequired={true} />
         <Input
           name={validateType.password}

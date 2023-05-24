@@ -23,12 +23,22 @@ export const registerSchema = yup
 
 export const loginSchema = yup
   .object({
-    email: yup.string().required('Введите E-mail').email(' E-mail введен некорректно. Пример: example@domain.ru'),
+    email: yup.string().required('Введите E-mail').email('E-mail введен некорректно. Пример: example@domain.ru'),
     password: yup
       .string()
       .min(8, '')
       .matches(/[a-z]+/, ' ')
       .matches(/[A-Z]+/, ' ')
       .matches(/\d+/, ' '),
+  })
+  .required('');
+
+export const changePassSchema = yup
+  .object({
+    email: yup
+      .string()
+      .min(7, '')
+      .required('Введите E-mail')
+      .email('E-mail введен некорректно. Пример: example@domain.ru'),
   })
   .required('');

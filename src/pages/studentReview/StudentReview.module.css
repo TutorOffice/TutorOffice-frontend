@@ -1,12 +1,31 @@
+.studentReview {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .studentReview__title {
-  margin-bottom: 35px;
   font-family: 'Raleway';
   font-size: 24px;
   font-weight: 600;
-  margin: 0;
 }
 
-.studentReview__title_row {
+.studentReview__blank {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding: 81px 50px 0 0;
+}
+
+.studentReview__content {
+  font-family: 'Roboto';
+  font-size: 18px;
+  line-height: 21px;
+  padding: 20px 0 30px 0;
+}
+
+.studentReview__withCards {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -15,10 +34,14 @@
 }
 
 .studentReview__cards_container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  align-items: center;
   width: 100%;
-  gap: 20px 18px;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 32%);
+  gap: 18px 20px;
+  justify-content: center;
+}
+
+.studentReview__image {
+  margin: 80px 85px 0 20px;
 }

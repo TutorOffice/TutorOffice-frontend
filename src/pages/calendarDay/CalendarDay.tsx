@@ -10,14 +10,17 @@ import HeaderMain from '../../components/headerMain/HeaderMain';
 import Wrapper from '../../components/wrapper/Wrapper';
 
 const testStudents = [
-  { id: 1, photo: testPhoto, time: '10:30', name: 'Алексей Феофанов', lessonStatus: true },
-  { id: 2, photo: testPhoto, time: '10:30', name: 'Алексей Феофанов', lessonStatus: false },
-  { id: 3, photo: testPhoto, time: '10:30', name: 'Алексей Феофанов ', lessonStatus: true },
-  { id: 4, photo: testPhoto, time: '10:30', name: 'Алексей Феофанов', lessonStatus: true },
+  { id: 1, photo: testPhoto, time: '10:30 - 11:30', name: 'Алексей Феофанов', lessonStatus: true },
+  { id: 2, photo: testPhoto, time: '10:30 - 11:30', name: 'Алексей Феофанов', lessonStatus: false },
+  { id: 3, photo: testPhoto, time: '10:30 - 11:30', name: 'Алексей Феофанов ', lessonStatus: true },
+  { id: 4, photo: testPhoto, time: '10:30 - 11:30', name: 'Алексей Феофанов', lessonStatus: true },
 ];
 
 const CalendarDay = () => {
-  const { date } = useParams();
+  type Params = {
+    date: string;
+  };
+  const { date } = useParams<Params>() as Params;
 
   return (
     <Layout>
@@ -48,6 +51,8 @@ const CalendarDay = () => {
             {testStudents.map((stud) => (
               <OfficeItem
                 key={stud.id}
+                date={date}
+                lessonId={stud.id}
                 photo={stud.photo}
                 time={stud.time}
                 name={stud.name}

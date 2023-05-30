@@ -12,6 +12,7 @@ import CalendarDay from '../../pages/calendarDay/CalendarDay';
 import NoLesson from '../../pages/noLesson/NoLesson';
 import CalendarPage from '../../pages/calendarPage/CalendarPage';
 import ErrorPage from '../../pages/errorPage/ErrorPage';
+import Lesson from '../../pages/lesson/Lesson';
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
       <Route path='/no-lesson' element={<NoLesson />} />
       <Route path='/calendar' element={<CalendarPage />} />
       <Route path='/calendar/:date' element={<CalendarDay />} />
+      <Route path='/calendar/:date/:lessonId' element={<Lesson />} />
       <Route path='/not-found' element={<ErrorPage />} />
     </Routes>
   );

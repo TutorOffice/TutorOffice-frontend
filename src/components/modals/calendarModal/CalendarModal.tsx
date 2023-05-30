@@ -1,6 +1,6 @@
 import React from 'react';
-import { btnClass, btnType, Button, ButtonGroup, Modal } from '../../../shared/ui';
 import { Link } from 'react-router-dom';
+import { btnClass, btnType, Button, ButtonGroup, Modal } from '../../../shared/ui';
 
 interface CalendarModalProps {
   isOpen: boolean;

@@ -1,5 +1,5 @@
 .button {
-  width: inherit;
+  width: fit-content;
   padding: 18px 60px;
   font-family: 'Raleway', sans-serif;
   font-style: normal;

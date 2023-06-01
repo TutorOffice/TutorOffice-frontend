@@ -1,15 +1,15 @@
 import { Link } from 'react-router-dom';
-import s from './Card.module.css';
+import s from './StudentCard.module.css';
 import { btnClass, btnType, Button } from '../../shared/ui';
 
-interface CardProps {
+interface StudentCardProps {
   photo: string;
   name: string;
   subject: string;
   subjectLevel: string;
 }
 
-const Card: React.FC<CardProps> = ({ photo, name, subject, subjectLevel }) => {
+const StudentCard: React.FC<StudentCardProps> = ({ photo, name, subject, subjectLevel }) => {
   return (
     <div className={s.card}>
       <div className={s.card__wrapper}>
@@ -21,7 +21,7 @@ const Card: React.FC<CardProps> = ({ photo, name, subject, subjectLevel }) => {
             {name.split(' ')[1]}
           </p>
           <p className={s.card__subject}>{subject}</p>
-          <p>{subjectLevel}</p>
+          <p>Уровень - {subjectLevel}</p>
         </div>
       </div>
       <Link to='#'>
@@ -33,4 +33,4 @@ const Card: React.FC<CardProps> = ({ photo, name, subject, subjectLevel }) => {
   );
 };
 
-export default Card;
+export default StudentCard;

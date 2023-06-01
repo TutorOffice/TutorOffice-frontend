@@ -1,8 +1,12 @@
+import s from './CalendarItem.module.css';
+
+import { formatDate, momentType } from '@/shared/utils';
+
+import CalendarModal from '@/components/modals/calendarModal/CalendarModal';
+
 import React, { useState } from 'react';
 import clsx from 'clsx';
-import s from './CalendarItem.module.css';
-import CalendarModal from '../../modals/calendarModal/CalendarModal';
-import { formatDate, momentType } from '../../../shared/utils';
+
 
 interface CalendarItemProps {
   day: momentType;

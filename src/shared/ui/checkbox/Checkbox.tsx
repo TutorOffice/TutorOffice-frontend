@@ -1,5 +1,6 @@
-import React, { FC } from 'react';
 import s from './checkbox.module.css';
+
+import React, { FC } from 'react';
 import { FieldValues, UseFormRegister } from 'react-hook-form';
 
 interface CheckboxProps {

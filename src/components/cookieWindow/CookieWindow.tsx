@@ -1,7 +1,11 @@
-import React from 'react';
-import { btnClass, btnType, Button, ButtonGroup } from '../../shared/ui';
 import s from './CookieWindow.module.css';
-import { ReactComponent as CloseCookie } from './../../assets/icons/close-cookie.svg';
+
+import { btnClass, btnType, Button, ButtonGroup } from '../../shared/ui';
+
+import { ReactComponent as CloseCookie } from '@/assets/icons/close-cookie.svg';
+
+import React from 'react';
+
 
 interface CookieWindowProps {
   onClose: () => void;

@@ -1,12 +1,17 @@
 import s from './CalendarPage.module.css';
-import Layout from '../../components/layout/Layout';
-import Calendar from '../../components/calendar/Calendar';
-import Wrapper from '../../components/wrapper/Wrapper';
+
 import { btnClass, btnType, Button } from '../../shared/ui';
-import UserInfo from '../../components/userInfo/UserInfo';
-import userPhoto from '../../assets/images/user-photo.jpg';
-import HeaderMain from '../../components/headerMain/HeaderMain';
+
+
+import userPhoto from '@/assets/images/user-photo.jpg';
+import Calendar from '@/components/calendar/Calendar';
+import HeaderMain from '@/components/headerMain/HeaderMain';
+import Layout from '@/components/layout/Layout';
+import UserInfo from '@/components/userInfo/UserInfo';
+import Wrapper from '@/components/wrapper/Wrapper';
+
 import { Link } from 'react-router-dom';
+
 
 const CalendarPage = () => {
   return (

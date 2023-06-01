@@ -1,14 +1,17 @@
-import { Link } from 'react-router-dom';
 import s from './Lesson.module.css';
-import HeaderMain from '../../components/headerMain/HeaderMain';
-import Layout from '../../components/layout/Layout';
-import UserInfo from '../../components/userInfo/UserInfo';
-import Wrapper from '../../components/wrapper/Wrapper';
-import { Button, btnClass, btnType } from '../../shared/ui';
-import userPhoto from '../../assets/images/user-photo.jpg';
-import testPhoto from '../../assets/images/test-student.jpg';
-import statusTrue from '../../assets/icons/status-true.svg';
-import statusFalse from '../../assets/icons/status-false.svg';
+
+
+import HeaderMain from '@/components/headerMain/HeaderMain';
+import Layout from '@/components/layout/Layout';
+import UserInfo from '@/components/userInfo/UserInfo';
+import Wrapper from '@/components/wrapper/Wrapper';
+import { btnClass, btnType, Button } from '@/shared/ui';
+import userPhoto from '@/assets/images/user-photo.jpg';
+import testPhoto from '@/assets/images/test-student.jpg';
+import statusTrue from '@/assets/icons/status-true.svg';
+import statusFalse from '@/assets/icons/status-false.svg';
+
+import { Link } from 'react-router-dom';
 
 const testData = { id: 1, photo: testPhoto, time: '10:30 - 11:30', name: 'Алексей Феофанов', lessonStatus: true };
 

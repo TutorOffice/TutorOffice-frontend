@@ -1,8 +1,14 @@
-import React from 'react';
-import Layout from '../layout/Layout';
 import InformationContent from './informationContent/InformationContent';
-import { btnClass, btnType, Button } from '../../shared/ui';
+
+import Layout from '../layout/Layout';
+
 import Wrapper from '../wrapper/Wrapper';
+
+import { btnClass, btnType, Button } from '@/shared/ui';
+
+import React from 'react';
+
+
 
 interface InformationProps {
   title: string;

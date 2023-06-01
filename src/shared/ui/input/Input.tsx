@@ -1,10 +1,13 @@
-import React, { ChangeEvent } from 'react';
-import clsx from 'clsx';
 import s from './Input.module.css';
+
+import { usePassword } from './usePassword';
+
 import close from '../../../assets/icons/pass-close.svg';
 import open from '../../../assets/icons/pass-open.svg';
-import { usePassword } from './usePassword';
 import { validateType } from '../index';
+
+import clsx from 'clsx';
+import React, { ChangeEvent } from 'react';
 import { FieldError, FieldValues, UseFormRegister } from 'react-hook-form';
 
 export enum inputTypes {

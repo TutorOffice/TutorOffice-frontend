@@ -1,10 +1,15 @@
+import s from './SubmitForm.module.css';
+
+import { FormValues } from '@/pages/register/Register';
+
+import { changePassSchema, loginSchema, registerSchema } from '@/shared/utils/validationSchemas';
+
+import { TValidationSubmitFormResolver } from '@/shared/types/validation';
+
 import React, { createElement } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { FormValues } from '../../pages/register/Register';
+
 import { yupResolver } from '@hookform/resolvers/yup';
-import s from './SubmitForm.module.css';
-import { loginSchema, registerSchema, changePassSchema } from '../../shared/utils/validationSchemas';
-import { TValidationSubmitFormResolver } from '../../shared/types/validation';
 
 interface SubmitFormProps {
   children: React.ReactNode;
@@ -13,14 +18,14 @@ interface SubmitFormProps {
 }
 
 const getResolver = (type: string) => {
-  if(type === TValidationSubmitFormResolver.REGISTER){
-    return yupResolver(registerSchema)
-  } else if(type === TValidationSubmitFormResolver.LOGIN){
-    return yupResolver(loginSchema)
+  if (type === TValidationSubmitFormResolver.REGISTER) {
+    return yupResolver(registerSchema);
+  } else if (type === TValidationSubmitFormResolver.LOGIN) {
+    return yupResolver(loginSchema);
   } else {
-    return yupResolver(changePassSchema)
+    return yupResolver(changePassSchema);
   }
-}
+};
 
 const SubmitForm: React.FC<SubmitFormProps> = ({ children, onSubmit, resolverType }) => {
   const {
@@ -40,7 +45,8 @@ const SubmitForm: React.FC<SubmitFormProps> = ({ children, onSubmit, resolverTyp
                   ...{
                     ...child.props,
                     register,
-                    // @ts-ignore
+                    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                    // @ts-expect-error
                     errors: errors[child.props.name],
                     key: child.props.name,
                   },

@@ -1,7 +1,7 @@
-import Layout from '../../components/layout/Layout';
-import Wrapper from '../../components/wrapper/Wrapper';
-import ErrorInfo from '../../components/errorInfo/ErrorInfo';
-import { errorTypes } from '../../shared/utils/errorTypes';
+import ErrorInfo from '@/components/errorInfo/ErrorInfo';
+import Layout from '@/components/layout/Layout';
+import Wrapper from '@/components/wrapper/Wrapper';
+import { errorTypes } from '@/shared/utils/errorTypes';
 
 const ErrorPage = () => {
   return (
@@ -10,7 +10,7 @@ const ErrorPage = () => {
         {errorTypes.map((obj) => (
           <div key={obj.id}>
             {obj.code === '400' ? (
-              <ErrorInfo imageUrl={obj.imageUrl!} title={obj.title} description={obj.description} code={obj.code} />
+              <ErrorInfo imageUrl={obj.imageUrl} title={obj.title} description={obj.description} code={obj.code} />
             ) : null}
           </div>
         ))}

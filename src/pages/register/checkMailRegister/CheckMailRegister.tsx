@@ -1,6 +1,8 @@
+
+import Information from '@/components/information/Information';
+import mailImage from '@/assets/images/mail.png';
+
 import { useNavigate } from 'react-router-dom';
-import Information from '../../../components/information/Information';
-import mailImage from '../../../assets/images/mail.png';
 
 const CheckMailRegister = () => {
   const navigate = useNavigate();

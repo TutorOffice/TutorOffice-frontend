@@ -1,7 +1,10 @@
+import '../../../index.css';
+
+import LoadImage from './LoadImage';
+
+import userPhoto from '../../../assets/images/profile-photo.jpg';
+
 import type { Meta, StoryObj } from '@storybook/react';
-import '../index.css';
-import LoadImage from '../shared/ui/loadImage/LoadImage';
-import userPhoto from '../assets/images/profile-photo.jpg';
 
 const meta = {
   title: 'LoadImage',

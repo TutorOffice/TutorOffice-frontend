@@ -1,6 +1,9 @@
 import s from './Navbar.module.css';
+
+import { navLinksAuth } from '@/shared/utils';
+
 import { NavLink } from 'react-router-dom';
-import { navLinksAuth } from '../../shared/utils';
+
 
 const NavbarAuth = () => {
   return (

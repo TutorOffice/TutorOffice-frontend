@@ -5,6 +5,24 @@
   width: 100%;
 }
 
+.studentReviewWithCard__description {
+  width: 66%;
+  font-family: 'Roboto';
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  margin-bottom: 16px;
+}
+
+.student_activ {
+  font-weight: 600;
+}
+
+.student_virtual {
+  font-weight: 600;
+  color: var(--dark-gray);
+}
+
 .studentReviewBlank {
   display: flex;
   justify-content: space-between;
@@ -35,7 +53,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .studentReview__cards_container {
@@ -45,6 +63,7 @@
   grid-template-columns: repeat(auto-fit, minmax(32%, 1fr));
   gap: 18px 20px;
   justify-content: center;
+  margin-top: 24px;
 }
 
 .studentReview__image {

@@ -1,5 +1,6 @@
 import s from './Lesson.module.css';
 
+
 import HeaderMain from '@/components/headerMain/HeaderMain';
 import Layout from '@/components/layout/Layout';
 import UserInfo from '@/components/userInfo/UserInfo';
@@ -12,9 +13,19 @@ import statusFalse from '@/assets/icons/status-false.svg';
 
 import { Link } from 'react-router-dom';
 
+
 const testData = { id: 1, photo: testPhoto, time: '10:30 - 11:30', name: 'Алексей Феофанов', lessonStatus: true };
 
 const Lesson = () => {
+  const [isOpenModal, setIsOpenModal] = useState(false);
+
+  const openModal = () => {
+    setIsOpenModal(true);
+  };
+  const closeModal = () => {
+    setIsOpenModal(false);
+  };
+
   return (
     <Layout>
       <Wrapper>
@@ -56,11 +67,12 @@ const Lesson = () => {
             <p className={s.note__title}>Заметки к уроку</p>
             <textarea className={s.note__textarea} placeholder='Здесь можно оставить заметку, чтобы ничего не забыть' />
           </div>
-          <Button type={btnType.button} variant={btnClass.primary}>
+          <Button type={btnType.button} variant={btnClass.primary} onClick={openModal}>
             Отменить урок
           </Button>
         </div>
       </Wrapper>
+      <CancelLessonModal isOpen={isOpenModal} onClose={closeModal} />
     </Layout>
   );
 };

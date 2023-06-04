@@ -9,6 +9,7 @@ interface modalProps {
   width: string;
   isErrorUpload?: boolean;
   isErrorUploadText?: string;
+  smallFont?: boolean;
 }
 
 const Modal: React.FC<modalProps> = ({
@@ -16,6 +17,7 @@ const Modal: React.FC<modalProps> = ({
   isOpen,
   onClose,
   title = '',
+  smallFont = false,
   width,
   isErrorUpload = false,
   isErrorUploadText = '',
@@ -46,7 +48,7 @@ const Modal: React.FC<modalProps> = ({
       <div onClick={handleOverlay} className={s.overlay}>
         <div style={{ maxWidth: `${width}` }} className={s.modal}>
           <div className={s.modalContent}>
-            {title && <h1 className={s.title}>{title}</h1>}
+            {title && <h2 className={smallFont ? s.smallTitle : s.title}>{title}</h2>}
             {children}
             {isErrorUpload && (
               <div className={s.errorText}>

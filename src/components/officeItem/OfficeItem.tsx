@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import s from './OfficeItem.module.css';
-import { btnClass, btnType, Button } from '../../shared/ui';
-import statusTrue from '../../assets/icons/status-true.svg';
-import statusFalse from '../../assets/icons/status-false.svg';
+
+import { btnClass, btnType, Button } from '@/shared/ui';
+import statusTrue from '@/assets/icons/status-true.svg';
+import statusFalse from '@/assets/icons/status-false.svg';
+
+import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 
 interface OfficeItemProps {
   photo: string;

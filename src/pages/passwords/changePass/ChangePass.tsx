@@ -1,16 +1,18 @@
-import { SubmitHandler } from 'react-hook-form';
-import Layout from '../../../components/layout/Layout';
-import { btnClass, btnType, Button, Input, inputTypes, validateType } from '../../../shared/ui';
 import s from './ChangePass.module.css';
-import { FormValues } from '../../register/Register';
-import { TValidationSubmitFormResolver } from '../../../shared/types/validation';
-import SubmitForm from '../../../components/submitForm/SubmitForm';
+
+import Layout from '@/components/layout/Layout';
+import { btnClass, btnType, Button, Input, inputTypes, validateType } from '@/shared/ui';
+import { TValidationSubmitFormResolver } from '@/shared/types/validation';
+import SubmitForm from '@/components/submitForm/SubmitForm';
+import { FormValues } from '@/pages/register/Register';
+
+import { SubmitHandler } from 'react-hook-form';
 
 const ChangePass = () => {
   const onSubmit: SubmitHandler<FormValues> = (data) => {
-    console.log(data);
+    return data;
   };
-  
+
   return (
     <Layout>
       <Button type={btnType.button} variant={btnClass.back} bottom={200}>

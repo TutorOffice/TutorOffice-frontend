@@ -1,9 +1,9 @@
-import React, { FC } from 'react';
 import s from './checkbox.module.css';
+
+import React, { FC } from 'react';
 import { FieldValues, UseFormRegister } from 'react-hook-form';
 
 interface CheckboxProps {
-  RegisterName: string;
   register?: UseFormRegister<FieldValues>;
   name: string;
   type: string;
@@ -13,16 +13,7 @@ interface CheckboxProps {
   setIsTutor?: (isTutor: boolean) => void;
 }
 
-const Checkbox: FC<CheckboxProps> = ({
-  isTutor = false,
-  setIsTutor,
-  TextValue,
-  name,
-  RegisterName,
-  register,
-  type,
-  id,
-}) => {
+const Checkbox: FC<CheckboxProps> = ({ isTutor = false, setIsTutor, TextValue, name, register, type, id }) => {
   const onChange = () => {
     if (setIsTutor) {
       setIsTutor(!isTutor);

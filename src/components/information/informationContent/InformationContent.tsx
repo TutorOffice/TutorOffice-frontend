@@ -1,6 +1,9 @@
-import React from 'react';
 import s from '../Information.module.css';
-import { btnClass, btnType, Button } from '../../../shared/ui';
+
+import { btnClass, btnType, Button } from '@/shared/ui';
+
+import React from 'react';
+
 
 interface InformationContentProps {
   children: React.ReactNode;

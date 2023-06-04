@@ -1,5 +1,5 @@
 export enum TValidationSubmitFormResolver {
-    REGISTER = 'register',
-    LOGIN = 'login',
-    CHANGE_PASS = 'change-pass',
+  REGISTER = 'register',
+  LOGIN = 'login',
+  CHANGE_PASS = 'change-pass',
 }

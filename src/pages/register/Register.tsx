@@ -1,15 +1,20 @@
-import { Link } from 'react-router-dom';
 import s from './Register.module.css';
+
 import { btnClass, btnType, Button, Input, inputTypes, validateType } from '../../shared/ui/index';
-import SubmitForm from '../../components/submitForm/SubmitForm';
-import Policy from '../../components/policy/Policy';
-import registerImage from '../../assets/images/register-image.png';
-import Layout from '../../components/layout/Layout';
-import { SubmitHandler } from 'react-hook-form';
+
+import SubmitForm from '@/components/submitForm/SubmitForm';
+import Policy from '@/components/policy/Policy';
+import registerImage from '@/assets/images/register-image.png';
+import Layout from '@/components/layout/Layout';
+
+import usePhoneMask from '@/shared/utils/usePhoneMask';
+import CheckboxForm from '@/components/checkbox/Checkbox';
+import Checkbox from '@/shared/ui/checkbox/Checkbox';
+import { TValidationSubmitFormResolver } from '@/shared/types/validation';
+
 import React from 'react';
-import usePhoneMask from '../../shared/utils/usePhoneMask';
-import CheckboxForm from '../../components/checkbox/Checkbox';
-import Checkbox from '../../shared/ui/checkbox/Checkbox';
+import { SubmitHandler } from 'react-hook-form';
+import { Link } from 'react-router-dom';
 
 export interface FormValues {
   firstName: string;
@@ -22,9 +27,11 @@ export interface FormValues {
 
 const Register = () => {
   const phoneRef = React.useRef(null);
+
   const onSubmit: SubmitHandler<FormValues> = (data) => {
-    console.log(data);
+    return data;
   };
+
   usePhoneMask();
   return (
     <Layout>
@@ -32,7 +39,7 @@ const Register = () => {
         Назад
       </Button>
       <h2 className={s.register__title}>Регистрация</h2>
-      <SubmitForm isRegister={true} onSubmit={onSubmit}>
+      <SubmitForm resolverType={TValidationSubmitFormResolver.REGISTER} onSubmit={onSubmit}>
         <Input name={validateType.lastName} type={inputTypes.text} labelText='Фамилия' isRequired={true} />
 
         <Input name={validateType.firstName} type={inputTypes.text} labelText='Имя' isRequired={true} />
@@ -69,15 +76,9 @@ const Register = () => {
           isPassword={true}
           isRequired={true}
         />
-        <CheckboxForm name={validateType.userType}>
-          <Checkbox name='student' RegisterName={validateType.userType} TextValue='Ученик' type='radio' id='student' />
-          <Checkbox
-            name='tutor'
-            RegisterName={validateType.userType}
-            TextValue='Преподаватель'
-            type='radio'
-            id='tutor'
-          />
+        <CheckboxForm>
+          <Checkbox name='student' TextValue='Ученик' type='radio' id='student' />
+          <Checkbox name='tutor' TextValue='Преподаватель' type='radio' id='tutor' />
         </CheckboxForm>
         <Policy name={validateType.policy} />
         <Button type={btnType.submit} variant={btnClass.primary} isDisabled={false}>

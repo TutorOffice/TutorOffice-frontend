@@ -3,3 +3,9 @@
   display: flex;
   gap: 20px;
 }
+
+.group__buttons_row {
+  align-self: flex-end;
+  display: flex;
+  gap: 20px;
+}

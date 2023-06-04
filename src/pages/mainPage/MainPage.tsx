@@ -1,11 +1,15 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import s from './MainPage.module.css';
-import Layout from '../../components/layout/Layout';
-import mainImage from '../../assets/images/main-image.png';
+
 import { btnClass, btnType, Button, ButtonGroup } from '../../shared/ui';
-import CookieWindow from '../../components/cookieWindow/CookieWindow';
-import Wrapper from '../../components/wrapper/Wrapper';
+
+import Layout from '@/components/layout/Layout';
+import mainImage from '@/assets/images/main-image.png';
+
+import CookieWindow from '@/components/cookieWindow/CookieWindow';
+import Wrapper from '@/components/wrapper/Wrapper';
+
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 const MainPage = () => {
   const [showCookieWindow, setShowCookieWindow] = useState(true);

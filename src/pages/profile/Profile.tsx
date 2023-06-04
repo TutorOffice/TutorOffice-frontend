@@ -1,11 +1,13 @@
+import s from './Profile.module.css';
+
+import Layout from '@/components/layout/Layout';
+import { btnClass, btnType, Button, ButtonGroup, Input, inputTypes, LoadImage } from '@/shared/ui';
+import userPhoto from '@/assets/images/profile-photo.jpg';
+import LoadPhotoModal from '@/components/modals/loadPhotoModal/LoadPhotoModal';
+import Wrapper from '@/components/wrapper/Wrapper';
+
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import s from './Profile.module.css';
-import Layout from '../../components/layout/Layout';
-import { btnClass, btnType, Button, ButtonGroup, Input, inputTypes, LoadImage } from '../../shared/ui';
-import userPhoto from '../../assets/images/profile-photo.jpg';
-import LoadPhotoModal from '../../components/modals/loadPhotoModal/LoadPhotoModal';
-import Wrapper from '../../components/wrapper/Wrapper';
 
 const Profile = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);

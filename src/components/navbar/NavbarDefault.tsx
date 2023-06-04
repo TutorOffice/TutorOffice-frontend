@@ -1,6 +1,9 @@
 import s from './Navbar.module.css';
+
+import { navLinks } from '@/shared/utils';
+
 import { NavLink } from 'react-router-dom';
-import { navLinks } from '../../shared/utils';
+
 
 const NavbarDefault = () => {
   return (

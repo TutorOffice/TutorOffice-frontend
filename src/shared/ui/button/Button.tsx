@@ -1,7 +1,9 @@
+import s from './Button.module.css';
+
+import { useBack } from './useBack';
+
 import React from 'react';
 import clsx from 'clsx';
-import s from './Button.module.css';
-import { useBack } from './useBack';
 
 export enum btnClass {
   primary = 'primary',

@@ -1,4 +1,3 @@
-
 import Information from '@/components/information/Information';
 import successImage from '@/assets/images/successPass.png';
 

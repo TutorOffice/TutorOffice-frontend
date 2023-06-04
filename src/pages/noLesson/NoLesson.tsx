@@ -1,4 +1,3 @@
-
 import Layout from '@/components/layout/Layout';
 import UserInfo from '@/components/userInfo/UserInfo';
 import userPhoto from '@/assets/images/user-photo.jpg';

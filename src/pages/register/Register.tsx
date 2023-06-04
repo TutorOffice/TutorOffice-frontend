@@ -2,9 +2,6 @@ import s from './Register.module.css';
 
 import { btnClass, btnType, Button, Input, inputTypes, validateType } from '../../shared/ui/index';
 
-
-
-
 import SubmitForm from '@/components/submitForm/SubmitForm';
 import Policy from '@/components/policy/Policy';
 import registerImage from '@/assets/images/register-image.png';
@@ -30,9 +27,11 @@ export interface FormValues {
 
 const Register = () => {
   const phoneRef = React.useRef(null);
+
   const onSubmit: SubmitHandler<FormValues> = (data) => {
-    console.log(data);
+    return data;
   };
+
   usePhoneMask();
   return (
     <Layout>
@@ -77,15 +76,9 @@ const Register = () => {
           isPassword={true}
           isRequired={true}
         />
-        <CheckboxForm name={validateType.userType}>
-          <Checkbox name='student' RegisterName={validateType.userType} TextValue='Ученик' type='radio' id='student' />
-          <Checkbox
-            name='tutor'
-            RegisterName={validateType.userType}
-            TextValue='Преподаватель'
-            type='radio'
-            id='tutor'
-          />
+        <CheckboxForm>
+          <Checkbox name='student' TextValue='Ученик' type='radio' id='student' />
+          <Checkbox name='tutor' TextValue='Преподаватель' type='radio' id='tutor' />
         </CheckboxForm>
         <Policy name={validateType.policy} />
         <Button type={btnType.submit} variant={btnClass.primary} isDisabled={false}>

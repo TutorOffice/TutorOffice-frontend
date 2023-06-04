@@ -1,6 +1,5 @@
 import s from './ChangePass.module.css';
 
-
 import Layout from '@/components/layout/Layout';
 import { btnClass, btnType, Button, Input, inputTypes, validateType } from '@/shared/ui';
 import { TValidationSubmitFormResolver } from '@/shared/types/validation';
@@ -11,7 +10,7 @@ import { SubmitHandler } from 'react-hook-form';
 
 const ChangePass = () => {
   const onSubmit: SubmitHandler<FormValues> = (data) => {
-    return;
+    return data;
   };
 
   return (

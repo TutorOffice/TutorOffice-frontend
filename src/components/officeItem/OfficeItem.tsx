@@ -1,6 +1,5 @@
 import s from './OfficeItem.module.css';
 
-
 import { btnClass, btnType, Button } from '@/shared/ui';
 import statusTrue from '@/assets/icons/status-true.svg';
 import statusFalse from '@/assets/icons/status-false.svg';

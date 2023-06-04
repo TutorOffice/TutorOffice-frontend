@@ -8,8 +8,6 @@ import { btnClass, btnType, Button } from '@/shared/ui';
 
 import React from 'react';
 
-
-
 interface InformationProps {
   title: string;
   children: React.ReactNode;

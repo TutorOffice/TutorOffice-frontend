@@ -2,12 +2,9 @@ import s from './Login.module.css';
 
 import { FormValues } from '../register/Register';
 
-
-
 import Layout from '@/components/layout/Layout';
 import SubmitForm from '@/components/submitForm/SubmitForm';
 import { btnClass, btnType, Button, Input, inputTypes, validateType } from '@/shared/ui';
-
 
 import { TValidationSubmitFormResolver } from '@/shared/types/validation';
 
@@ -16,7 +13,7 @@ import { Link } from 'react-router-dom';
 
 const Login = () => {
   const onSubmit: SubmitHandler<FormValues> = (data) => {
-    return;
+    return data;
   };
   return (
     <Layout>

@@ -1,6 +1,5 @@
 import s from './Lesson.module.css';
 
-
 import HeaderMain from '@/components/headerMain/HeaderMain';
 import Layout from '@/components/layout/Layout';
 import UserInfo from '@/components/userInfo/UserInfo';

@@ -2,7 +2,6 @@ import s from './ChangePassFromMail.module.css';
 
 import { btnClass, btnType, Button, ButtonGroup, Input, inputTypes } from '../../../shared/ui';
 
-
 import Layout from '@/components/layout/Layout';
 import SubmitForm from '@/components/submitForm/SubmitForm';
 import { FormValues } from '@/pages/register/Register';
@@ -12,7 +11,7 @@ import { SubmitHandler } from 'react-hook-form';
 
 const ChangePassFromMail = () => {
   const onSubmit: SubmitHandler<FormValues> = (data) => {
-    return;
+    return data;
   };
 
   return (

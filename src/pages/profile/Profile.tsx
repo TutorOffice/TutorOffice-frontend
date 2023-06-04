@@ -1,6 +1,5 @@
 import s from './Profile.module.css';
 
-
 import Layout from '@/components/layout/Layout';
 import { btnClass, btnType, Button, ButtonGroup, Input, inputTypes, LoadImage } from '@/shared/ui';
 import userPhoto from '@/assets/images/profile-photo.jpg';

@@ -1,6 +1,5 @@
 import s from './CalendarDay.module.css';
 
-
 import testPhoto from '@/assets/images/test-student.jpg';
 import userPhoto from '@/assets/images/user-photo.jpg';
 import HeaderMain from '@/components/headerMain/HeaderMain';
@@ -11,7 +10,6 @@ import Wrapper from '@/components/wrapper/Wrapper';
 import { btnClass, btnType, Button } from '@/shared/ui';
 
 import { Link, useParams } from 'react-router-dom';
-
 
 const testStudents = [
   { id: 1, photo: testPhoto, time: '10:30 - 11:30', name: 'Алексей Феофанов', lessonStatus: true },

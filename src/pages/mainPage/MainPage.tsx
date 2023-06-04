@@ -2,10 +2,8 @@ import s from './MainPage.module.css';
 
 import { btnClass, btnType, Button, ButtonGroup } from '../../shared/ui';
 
-
 import Layout from '@/components/layout/Layout';
 import mainImage from '@/assets/images/main-image.png';
-
 
 import CookieWindow from '@/components/cookieWindow/CookieWindow';
 import Wrapper from '@/components/wrapper/Wrapper';

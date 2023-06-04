@@ -1,4 +1,3 @@
-
 import mailImage from '@/assets/images/mail.png';
 import Information from '@/components/information/Information';
 

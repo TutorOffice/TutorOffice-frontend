@@ -12,6 +12,9 @@
     "plugin:import/warnings"
   ],
   "settings": {
+    "react": {
+      "version": "detect"
+    },
     "import/resolver": {
       "typescript": {}
     }
@@ -28,24 +31,21 @@
   "plugins": [
     "@typescript-eslint",
     "react",
-    "import"
+    "import",
+    "prettier"
   ],
   "ignorePatterns": [
     "**/*.stories.*",
     "vite.config.ts"
   ],
   "rules": {
+    "import/first": "error",
     "prefer-const": "error",
+    "import/newline-after-import": ["error", { "count": 2 }],
     "react/react-in-jsx-scope": "off",
     "no-console": "warn",
     "no-debugger": "warn",
     "no-alert": "warn",
-    "max-len": [
-      "warn",
-      {
-        "code": 120
-      }
-    ],
     "import/order": [
       "error",
       {
@@ -60,6 +60,13 @@
           "type"
         ],
         "newlines-between": "always-and-inside-groups"
+      }
+    ],
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
       }
     ]
   }

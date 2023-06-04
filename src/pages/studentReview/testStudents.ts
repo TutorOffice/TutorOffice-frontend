@@ -1,6 +1,6 @@
 import testPhoto from '../../assets/images/test-student.jpg';
 
-const testStudents  = [
+const testStudents = [
   { id: 1, activStatus: true, photo: testPhoto, name: 'Иван Иванов', subject: 'Английский', subjectLevel: 'B2' },
   { id: 2, activStatus: true, photo: testPhoto, name: 'Петр Петров', subject: 'Английский', subjectLevel: 'A1' },
   { id: 3, activStatus: true, photo: testPhoto, name: 'Денис Денисов', subject: 'Английский', subjectLevel: 'B2' },

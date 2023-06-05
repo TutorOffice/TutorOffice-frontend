@@ -4,7 +4,6 @@ import { FC, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FieldValues, UseFormRegister } from 'react-hook-form';
 
-
 interface PolicyProps {
   name: string;
   register?: UseFormRegister<FieldValues>;

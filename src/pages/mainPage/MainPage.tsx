@@ -11,7 +11,6 @@ import Wrapper from '@/components/wrapper/Wrapper';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
-
 const MainPage = () => {
   const [showCookieWindow, setShowCookieWindow] = useState(true);
   const closeCookieWindow = () => {

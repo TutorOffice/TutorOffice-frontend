@@ -2,7 +2,6 @@ import s from './CalendarControls.module.css';
 
 import React from 'react';
 
-
 interface CalendarControlsProps {
   currentMonth: string;
   currentYear: string;

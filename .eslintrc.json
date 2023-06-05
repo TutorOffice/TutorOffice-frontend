@@ -7,41 +7,46 @@
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
     "plugin:import/recommended",
     "plugin:import/errors",
-    "plugin:import/warnings"
+    "plugin:import/warnings",
+    "prettier"
   ],
-  "settings": {
-    "react": {
-      "version": "detect"
-    },
-    "import/resolver": {
-      "typescript": {}
-    }
-  },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "project": "./tsconfig.json",
+    "ecmaVersion": "latest",
+    "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
-    },
-    "ecmaVersion": "latest",
-    "sourceType": "module"
+    }
   },
   "plugins": [
     "@typescript-eslint",
     "react",
-    "import",
-    "prettier"
+    "prettier",
+    "import"
   ],
-  "ignorePatterns": [
-    "**/*.stories.*",
-    "vite.config.ts"
-  ],
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [
+        ".ts",
+        ".tsx"
+      ]
+    },
+    "import/resolver": {
+      "typescript": {
+        "project": "./tsconfig"
+      }
+    }
+  },
   "rules": {
+    "import/no-named-as-default-member": "off",
+    "react-hooks/exhaustive-deps": "off",
+    "import/no-named-as-default": "off",
+    "prettier/prettier": "error",
     "import/first": "error",
     "prefer-const": "error",
-    "import/newline-after-import": ["error", { "count": 2 }],
     "react/react-in-jsx-scope": "off",
     "no-console": "warn",
     "no-debugger": "warn",
@@ -69,5 +74,9 @@
         "unnamedComponents": "arrow-function"
       }
     ]
-  }
+  },
+  "ignorePatterns": [
+    "src/**/*.test.ts",
+    "src/**/*.stories.tsx"
+  ]
 }

@@ -5,7 +5,6 @@ import { btnClass, btnType, Button, ButtonGroup } from '@/shared/ui';
 import { Link } from 'react-router-dom';
 import React from 'react';
 
-
 interface ErrorInfoProps {
   imageUrl: string;
   title: string;

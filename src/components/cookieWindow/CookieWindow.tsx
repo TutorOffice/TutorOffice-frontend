@@ -6,7 +6,6 @@ import { ReactComponent as CloseCookie } from '@/assets/icons/close-cookie.svg';
 
 import React from 'react';
 
-
 interface CookieWindowProps {
   onClose: () => void;
 }

@@ -4,7 +4,6 @@ import { btnClass, btnType, Button } from '@/shared/ui';
 
 import React from 'react';
 
-
 interface InformationContentProps {
   children: React.ReactNode;
   title: string;

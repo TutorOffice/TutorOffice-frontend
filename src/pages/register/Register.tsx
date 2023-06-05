@@ -16,7 +16,6 @@ import React from 'react';
 import { SubmitHandler } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 
-
 export interface FormValues {
   firstName: string;
   lastName: string;

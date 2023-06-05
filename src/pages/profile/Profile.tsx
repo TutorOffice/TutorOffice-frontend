@@ -9,7 +9,6 @@ import Wrapper from '@/components/wrapper/Wrapper';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-
 const Profile = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const openModal = () => {

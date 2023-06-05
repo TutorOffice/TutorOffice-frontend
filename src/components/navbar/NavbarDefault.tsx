@@ -4,7 +4,6 @@ import { navLinks } from '@/shared/utils';
 
 import { NavLink } from 'react-router-dom';
 
-
 const NavbarDefault = () => {
   return (
     <ul className={s.navbar__list}>

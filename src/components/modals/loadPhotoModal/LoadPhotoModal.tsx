@@ -4,7 +4,6 @@ import { btnClass, btnType, Button, Modal } from '@/shared/ui';
 
 import React from 'react';
 
-
 interface LoadPhotoModalProps {
   isOpen: boolean;
   onClose: () => void;

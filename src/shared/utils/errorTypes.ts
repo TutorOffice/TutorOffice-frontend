@@ -2,7 +2,6 @@ import image400 from '@/assets/images/405.png';
 import image401 from '@/assets/images/401.png';
 import image404 from '@/assets/images/404.png';
 
-
 export const errorTypes = [
   {
     id: 1,

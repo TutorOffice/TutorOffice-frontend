@@ -4,7 +4,6 @@ import { navLinksAuth } from '@/shared/utils';
 
 import { NavLink } from 'react-router-dom';
 
-
 const NavbarAuth = () => {
   return (
     <ul className={s.navbar__list}>

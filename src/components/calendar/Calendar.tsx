@@ -1,14 +1,14 @@
 import s from './Calendar.module.css';
-import CalendarItem from './calendarItem/CalendarItem';
 import CalendarControls from './calendarControls/CalendarControls';
+import CalendarItem from './calendarItem/CalendarItem';
 
 import CalendarWeekDays from './calendarWeekDays/CalendarWeekDays';
 
 import { getCurrentMonth, getCurrentYear, getDaysArray, momentConfig } from '@/shared/utils';
 
-import moment from 'moment';
 import { useState } from 'react';
 
+import moment from 'moment';
 
 const Calendar = () => {
   moment.updateLocale('ru', momentConfig);

@@ -3,7 +3,6 @@ import LessonIsCanceledModal from '../lessonIsCanceledModal/LessonIsCanceledModa
 
 import React, { useState } from 'react';
 
-
 interface CancelLessonModalProps {
   isOpen: boolean;
   onClose: () => void;

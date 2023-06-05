@@ -11,7 +11,6 @@ import clsx from 'clsx';
 import React, { ChangeEvent, InputHTMLAttributes } from 'react';
 import { FieldError, FieldValues, UseFormRegister } from 'react-hook-form';
 
-
 export enum inputTypes {
   text = 'text',
   password = 'password',

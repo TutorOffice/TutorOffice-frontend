@@ -7,7 +7,6 @@ import CalendarModal from '@/components/modals/calendarModal/CalendarModal';
 import React, { useState } from 'react';
 import clsx from 'clsx';
 
-
 interface CalendarItemProps {
   day: momentType;
   isCurrentDay: boolean;

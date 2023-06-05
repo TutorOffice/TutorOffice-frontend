@@ -3,7 +3,6 @@ import mailImage from '@/assets/images/mail.png';
 
 import { useNavigate } from 'react-router-dom';
 
-
 const CheckMailRegister = () => {
   const navigate = useNavigate();
   const goToMain = () => {

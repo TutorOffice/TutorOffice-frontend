@@ -3,7 +3,6 @@ import { btnClass, btnType, Button, Modal } from '../../../shared/ui';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
 interface LessonIsCanceledModalProps {
   isOpen: boolean;
   onClose: () => void;

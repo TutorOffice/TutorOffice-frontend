@@ -3,7 +3,6 @@ import Information from '@/components/information/Information';
 
 import { useNavigate } from 'react-router-dom';
 
-
 const CheckMailPass = () => {
   const navigate = useNavigate();
   const goToMain = () => {

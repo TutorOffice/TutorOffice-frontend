@@ -2,7 +2,6 @@ import s from './wrapper.module.css';
 
 import React from 'react';
 
-
 interface WrapperProps {
   children: React.ReactNode;
 }

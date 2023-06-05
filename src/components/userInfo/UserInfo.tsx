@@ -2,7 +2,6 @@ import s from './UserInfo.module.css';
 
 import React from 'react';
 
-
 interface UserInfoProps {
   photo: string;
   fullName: string;

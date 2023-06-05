@@ -8,7 +8,6 @@ import { FormValues } from '@/pages/register/Register';
 
 import { SubmitHandler } from 'react-hook-form';
 
-
 const ChangePass = () => {
   const onSubmit: SubmitHandler<FormValues> = (data) => {
     return data;

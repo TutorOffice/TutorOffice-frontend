@@ -2,7 +2,6 @@ import s from './LoadImage.module.css';
 
 import React from 'react';
 
-
 interface LoadImageProps {
   image: string;
   onClick?: () => void;

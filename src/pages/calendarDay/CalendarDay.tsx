@@ -11,7 +11,6 @@ import { btnClass, btnType, Button } from '@/shared/ui';
 
 import { Link, useParams } from 'react-router-dom';
 
-
 const testStudents = [
   { id: 1, photo: testPhoto, time: '10:30 - 11:30', name: 'Алексей Феофанов', lessonStatus: true },
   { id: 2, photo: testPhoto, time: '10:30 - 11:30', name: 'Алексей Феофанов', lessonStatus: false },

@@ -9,6 +9,7 @@ import { TValidationSubmitFormResolver } from '@/shared/types/validation';
 
 import { SubmitHandler } from 'react-hook-form';
 
+
 const ChangePassFromMail = () => {
   const onSubmit: SubmitHandler<FormValues> = (data) => {
     return data;

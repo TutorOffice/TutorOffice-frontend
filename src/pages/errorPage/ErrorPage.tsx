@@ -3,6 +3,7 @@ import Layout from '@/components/layout/Layout';
 import Wrapper from '@/components/wrapper/Wrapper';
 import { errorTypes } from '@/shared/utils/errorTypes';
 
+
 const ErrorPage = () => {
   return (
     <Layout>

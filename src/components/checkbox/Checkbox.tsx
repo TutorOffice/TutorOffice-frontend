@@ -3,6 +3,7 @@ import s from './Checkbox.module.css';
 import React, { createElement, FC, useState } from 'react';
 import { FieldValues, UseFormRegister } from 'react-hook-form';
 
+
 interface checkboxProps {
   register?: UseFormRegister<FieldValues>;
   children: React.ReactNode;

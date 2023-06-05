@@ -1,5 +1,6 @@
 import * as yup from 'yup';
 
+
 export const cyrillicPattern = /^[\u0400-\u04FF]+$/;
 export const registerSchema = yup
   .object({

@@ -1,6 +1,7 @@
 import { btnClass, btnType } from './button/Button';
 import { inputTypes } from './input/Input';
 
+
 export enum validateType {
   email = 'email',
   firstName = 'firstName',

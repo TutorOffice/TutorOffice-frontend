@@ -1,5 +1,6 @@
 import moment from 'moment';
 
+
 export type momentType = ReturnType<typeof moment>;
 
 const TOTAL_DAYS = 42;

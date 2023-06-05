@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
 import { btnClass, btnType, Button, ButtonGroup, Modal } from '../../../shared/ui';
 import LessonIsCanceledModal from '../lessonIsCanceledModal/LessonIsCanceledModal';
+
+import React, { useState } from 'react';
+
 
 interface CancelLessonModalProps {
   isOpen: boolean;

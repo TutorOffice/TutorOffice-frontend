@@ -9,6 +9,7 @@ import Wrapper from '@/components/wrapper/Wrapper';
 
 import { Link, useNavigate } from 'react-router-dom';
 
+
 const NoLesson = () => {
   const navigate = useNavigate();
   const goToCalendar = () => {

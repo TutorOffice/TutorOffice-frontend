@@ -11,23 +11,6 @@
   font-weight: 600;
 }
 
-.profile__button {
-  text-decoration: none;
-  color: var(--orange);
-  font-family: 'Raleway';
-  font-size: 18px;
-  font-weight: 600;
-  transition: color 0.3s ease-in-out;
-}
-
-.profile__button:hover {
-  color: var(--orange-hover);
-}
-
-.profile__button:active {
-  color: var(--orange-pressed);
-}
-
 .profile__form {
   width: 100%;
   align-self: flex-start;

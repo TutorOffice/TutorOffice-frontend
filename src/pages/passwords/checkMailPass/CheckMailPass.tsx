@@ -1,5 +1,6 @@
-import Information from '../../../components/information/Information';
-import mailImage from '../../../assets/images/mail.png';
+import mailImage from '@/assets/images/mail.png';
+import Information from '@/components/information/Information';
+
 import { useNavigate } from 'react-router-dom';
 
 const CheckMailPass = () => {

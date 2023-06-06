@@ -1,11 +1,13 @@
+import s from './Profile.module.css';
+
+import Layout from '@/components/layout/Layout';
+import { btnClass, btnType, Button, ButtonGroup, Input, inputTypes, LoadImage } from '@/shared/ui';
+import userPhoto from '@/assets/images/profile-photo.jpg';
+import LoadPhotoModal from '@/components/modals/loadPhotoModal/LoadPhotoModal';
+import Wrapper from '@/components/wrapper/Wrapper';
+
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import s from './Profile.module.css';
-import Layout from '../../components/layout/Layout';
-import { btnClass, btnType, Button, ButtonGroup, Input, inputTypes, LoadImage } from '../../shared/ui';
-import userPhoto from '../../assets/images/profile-photo.jpg';
-import LoadPhotoModal from '../../components/modals/loadPhotoModal/LoadPhotoModal';
-import Wrapper from '../../components/wrapper/Wrapper';
 
 const Profile = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -22,8 +24,10 @@ const Profile = () => {
         <Wrapper>
           <header className={s.profile__header}>
             <h2 className={s.profile__title}>Редактирование профиля</h2>
-            <Link to='/' className={s.profile__button}>
-              Назад на главную
+            <Link to='/'>
+              <Button variant={btnClass.common} type={btnType.button}>
+                Назад на главную
+              </Button>
             </Link>
           </header>
           <form className={s.profile__form}>

@@ -28,7 +28,7 @@
   display: grid;
   grid-template-columns:
     minmax(270px, 1.67fr)
-    minmax(45px, 1fr)
+    minmax(105px, 1.67fr)
     minmax(120px, 1.67fr)
     minmax(50px, 1fr)
     195px;

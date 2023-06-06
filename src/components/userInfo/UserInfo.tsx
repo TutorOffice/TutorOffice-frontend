@@ -1,5 +1,6 @@
-import React from 'react';
 import s from './UserInfo.module.css';
+
+import React from 'react';
 
 interface UserInfoProps {
   photo: string;
@@ -29,9 +30,9 @@ const UserInfo: React.FC<UserInfoProps> = ({ photo, fullName, phone, mail }) => 
                 fill='black'
               />
             </svg>
-            <span className={s.contact__text}>+7 (921) 123-45-67</span>
+            <span className={s.contact__text}>{phone}</span>
           </a>
-          <a className={s.contact__item} href='mailto:repetitor@mail.ru'>
+          <a className={s.contact__item} href={mail}>
             <svg
               className={s.contact__icon}
               width='23'
@@ -48,7 +49,7 @@ const UserInfo: React.FC<UserInfoProps> = ({ photo, fullName, phone, mail }) => 
                 strokeLinejoin='round'
               />
             </svg>
-            <span className={s.contact__text}>repetitor@mail.ru</span>
+            <span className={s.contact__text}>{mail}</span>
           </a>
         </div>
       </div>

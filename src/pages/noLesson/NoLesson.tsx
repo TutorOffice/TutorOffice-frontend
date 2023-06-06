@@ -1,12 +1,13 @@
-import { useNavigate, Link } from 'react-router-dom';
-import Layout from '../../components/layout/Layout';
-import UserInfo from '../../components/userInfo/UserInfo';
-import userPhoto from '../../assets/images/user-photo.jpg';
-import HeaderMain from '../../components/headerMain/HeaderMain';
-import { btnClass, btnType, Button } from '../../shared/ui';
-import noLesson from '../../assets/images/no-lesson.png';
-import InformationContent from '../../components/information/informationContent/InformationContent';
-import Wrapper from '../../components/wrapper/Wrapper';
+import Layout from '@/components/layout/Layout';
+import UserInfo from '@/components/userInfo/UserInfo';
+import userPhoto from '@/assets/images/user-photo.jpg';
+import HeaderMain from '@/components/headerMain/HeaderMain';
+import { btnClass, btnType, Button } from '@/shared/ui';
+import noLesson from '@/assets/images/no-lesson.png';
+import InformationContent from '@/components/information/informationContent/InformationContent';
+import Wrapper from '@/components/wrapper/Wrapper';
+
+import { Link, useNavigate } from 'react-router-dom';
 
 const NoLesson = () => {
   const navigate = useNavigate();

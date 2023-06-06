@@ -1,6 +1,8 @@
-import React from 'react';
-import { btnClass, btnType, Button, Modal } from '../../../shared/ui';
 import s from './LoadPhotoModal.module.css';
+
+import { btnClass, btnType, Button, Modal } from '@/shared/ui';
+
+import React from 'react';
 
 interface LoadPhotoModalProps {
   isOpen: boolean;

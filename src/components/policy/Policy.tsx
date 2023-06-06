@@ -1,6 +1,7 @@
+import s from './Policy.module.css';
+
 import { FC, useState } from 'react';
 import { Link } from 'react-router-dom';
-import s from './Policy.module.css';
 import { FieldValues, UseFormRegister } from 'react-hook-form';
 
 interface PolicyProps {

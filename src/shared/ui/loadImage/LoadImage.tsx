@@ -1,5 +1,6 @@
-import React from 'react';
 import s from './LoadImage.module.css';
+
+import React from 'react';
 
 interface LoadImageProps {
   image: string;

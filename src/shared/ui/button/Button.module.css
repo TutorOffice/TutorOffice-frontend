@@ -52,3 +52,18 @@
 .buttonBack:active {
   color: var(--orange-pressed);
 }
+
+.buttonCommon {
+  padding: 0;
+  align-self: flex-start;
+  color: var(--orange);
+  transition: color 0.3s ease-in-out;
+}
+
+.buttonCommon:hover {
+  color: var(--orange-hover);
+}
+
+.buttonCommon:active {
+  color: var(--orange-pressed);
+}

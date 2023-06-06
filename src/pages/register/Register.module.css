@@ -11,17 +11,6 @@
 
 .backLink {
   margin-left: 5px;
-  color: var(--orange);
-  text-decoration: none;
-  transition: color 0.3s ease-in-out;
-}
-
-.backLink:hover {
-  color: var(--orange-hover);
-}
-
-.backLink:active {
-  color: var(--orange-pressed);
 }
 
 .registerImg {

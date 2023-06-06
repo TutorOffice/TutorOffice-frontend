@@ -1,8 +1,16 @@
 import { defineConfig } from 'vite';
-import reactRefresh from '@vitejs/plugin-react-refresh';
 import svgr from 'vite-plugin-svgr';
+import eslint from 'vite-plugin-eslint';
+import react from '@vitejs/plugin-react';
 
-// https://vitejs.dev/config/
+import { resolve } from 'path';
+
 export default defineConfig({
-  plugins: [reactRefresh(), svgr()],
+  plugins: [react(), svgr(), eslint()],
+  base: '/vite-deploy-demo/',
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, './src'),
+    },
+  },
 });

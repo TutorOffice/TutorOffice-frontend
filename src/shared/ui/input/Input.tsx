@@ -1,10 +1,14 @@
-import React, { ChangeEvent } from 'react';
-import clsx from 'clsx';
 import s from './Input.module.css';
-import close from '../../../assets/icons/pass-close.svg';
-import open from '../../../assets/icons/pass-open.svg';
+
 import { usePassword } from './usePassword';
+
 import { validateType } from '../index';
+
+import close from '@/assets/icons/pass-close.svg';
+import open from '@/assets/icons/pass-open.svg';
+
+import clsx from 'clsx';
+import React, { ChangeEvent, InputHTMLAttributes } from 'react';
 import { FieldError, FieldValues, UseFormRegister } from 'react-hook-form';
 
 export enum inputTypes {
@@ -12,10 +16,9 @@ export enum inputTypes {
   password = 'password',
   phone = 'phone',
   email = 'email',
-  checkbox = 'checkbox',
 }
 
-interface InputProps {
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   type: inputTypes;
   onChange?: (e: ChangeEvent) => void;
   isDisabled?: boolean;
@@ -34,7 +37,6 @@ interface InputProps {
 
 const Input: React.FC<InputProps> = ({
   ref,
-  onChange,
   type,
   isDisabled = false,
   placeholder = '',
@@ -70,7 +72,7 @@ const Input: React.FC<InputProps> = ({
           {...(ref ? ref : undefined)}
           {...(register && name && { ...register(name) })}
           type={isOpen ? 'text' : type}
-          maxLength={type === 'phone' ? 18 : undefined}
+          maxLength={type === 'phone' ? 13 : undefined}
           data-tel-input={type === 'phone' ? 'data-tel-input' : null}
           placeholder={placeholder}
           disabled={isDisabled}

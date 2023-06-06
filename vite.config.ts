@@ -7,6 +7,7 @@ import { resolve } from 'path';
 
 export default defineConfig({
   plugins: [react(), svgr(), eslint()],
+  base: '/vite-deploy-demo/',
   resolve: {
     alias: {
       '@': resolve(__dirname, './src'),

@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 import MainPage from '@/pages/mainPage/MainPage';
 import Login from '@/pages/login/Login';
 import Register from '@/pages/register/Register';
@@ -15,6 +16,7 @@ import ErrorPage from '@/pages/errorPage/ErrorPage';
 import HomeWork from '@/pages/homeWork/HomeWork';
 import StudentReview from '@/pages/studentReview/StudentReview';
 
+// eslint-disable-next-line import/order
 import { Route, Routes } from 'react-router-dom';
 
 const App = () => {

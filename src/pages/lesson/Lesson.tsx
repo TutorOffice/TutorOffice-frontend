@@ -1,18 +1,14 @@
 import s from './Lesson.module.css';
 
-import HeaderMain from '@/components/headerMain/HeaderMain';
 import Layout from '@/components/layout/Layout';
-import UserInfo from '@/components/userInfo/UserInfo';
 import Wrapper from '@/components/wrapper/Wrapper';
 import { btnClass, btnType, Button } from '@/shared/ui';
-import userPhoto from '@/assets/images/user-photo.jpg';
 import testPhoto from '@/assets/images/test-student.jpg';
 import statusTrue from '@/assets/icons/status-true.svg';
 import statusFalse from '@/assets/icons/status-false.svg';
-
+import HeaderAuth from '@/components/headerAuth/HeaderAuth';
 import CancelLessonModal from '@/components/modals/cancelLessonModal/CancelLessonModal';
 
-import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
 const testData = { id: 1, photo: testPhoto, time: '10:30 - 11:30', name: 'Алексей Феофанов', lessonStatus: true };
@@ -30,19 +26,7 @@ const Lesson = () => {
   return (
     <Layout>
       <Wrapper>
-        <HeaderMain bottom={40}>
-          <UserInfo
-            photo={userPhoto}
-            fullName='Гурин Александр Максимович'
-            phone='+7 936 619-98-06'
-            mail='gurinalex065@yandex.ru'
-          />
-          <Link to='/profile'>
-            <Button type={btnType.button} variant={btnClass.ghost}>
-              Выйти
-            </Button>
-          </Link>
-        </HeaderMain>
+        <HeaderAuth bottom={40} />
         <Button type={btnType.button} variant={btnClass.back} bottom={60}>
           Назад
         </Button>
@@ -59,7 +43,7 @@ const Lesson = () => {
                   alt='Статус задания'
                 />
               </div>
-              <Button type={btnType.button} variant={btnClass.back}>
+              <Button type={btnType.button} variant={btnClass.common}>
                 Написать
               </Button>
             </div>

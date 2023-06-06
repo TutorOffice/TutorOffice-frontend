@@ -1,0 +1,55 @@
+.homeworkItem {
+  width: 100%;
+  padding-bottom: 35px;
+  border-bottom: 1px solid var(--gray);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.homeworkItem__photo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+}
+
+.status__img {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+}
+
+.status__count_sent {
+  color: var(--orange-pressed);
+}
+
+.status__count_todo {
+  color: var(--red);
+}
+
+.status__count_done {
+  color: var(--green);
+}
+
+.mailButton {
+  width: 60px;
+  height: 60px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.mailButton:hover {
+  opacity: 0.7;
+}
+
+.mailButton__img {
+  width: 100%;
+}

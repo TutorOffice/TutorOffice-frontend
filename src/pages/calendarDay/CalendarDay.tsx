@@ -1,15 +1,13 @@
 import s from './CalendarDay.module.css';
 
 import testPhoto from '@/assets/images/test-student.jpg';
-import userPhoto from '@/assets/images/user-photo.jpg';
-import HeaderMain from '@/components/headerMain/HeaderMain';
+import HeaderAuth from '@/components/headerAuth/HeaderAuth';
 import Layout from '@/components/layout/Layout';
 import OfficeItem from '@/components/officeItem/OfficeItem';
-import UserInfo from '@/components/userInfo/UserInfo';
 import Wrapper from '@/components/wrapper/Wrapper';
-import { btnClass, btnType, Button } from '@/shared/ui';
+import { Button, btnClass, btnType } from '@/shared/ui';
 
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const testStudents = [
   { id: 1, photo: testPhoto, time: '10:30 - 11:30', name: 'Алексей Феофанов', lessonStatus: true },
@@ -27,19 +25,10 @@ const CalendarDay = () => {
   return (
     <Layout>
       <Wrapper>
-        <HeaderMain bottom={200}>
-          <UserInfo
-            photo={userPhoto}
-            fullName='Гурин Александр Максимович'
-            phone='+7 936 619-98-06'
-            mail='gurinalex065@yandex.ru'
-          />
-          <Link to='/profile'>
-            <Button type={btnType.button} variant={btnClass.primary}>
-              Редактировать профиль
-            </Button>
-          </Link>
-        </HeaderMain>
+        <HeaderAuth bottom={40} />
+        <Button bottom={60} variant={btnClass.back} type={btnType.button}>
+          Назад
+        </Button>
         <div className={s.office__content}>
           <h2 className={s.office__title}>Расписание на {date}</h2>
           <ul className={s.students__list}>

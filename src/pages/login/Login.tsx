@@ -37,16 +37,18 @@ const Login = () => {
       <div className={s.login__links}>
         <p>
           <Link to='/change-pass'>
-            <Button type={btnType.button} variant={btnClass.back}>
+            <Button type={btnType.button} variant={btnClass.common}>
               Забыли пароль?
             </Button>
           </Link>
         </p>
         <div className={s.login__links_row}>
           <span>Нет аккаунта?</span>
-          <Button type={btnType.button} variant={btnClass.back}>
-            Зарегистрироваться
-          </Button>
+          <Link to='/register'>
+            <Button type={btnType.button} variant={btnClass.common}>
+              Зарегистрироваться
+            </Button>
+          </Link>
         </div>
       </div>
     </Layout>

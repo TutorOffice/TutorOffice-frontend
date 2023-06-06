@@ -89,7 +89,9 @@ const Register = () => {
       <p>
         Уже есть аккаунт?
         <Link to='/login' className={s.backLink}>
-          Войти
+          <Button variant={btnClass.common} type={btnType.button}>
+            Войти
+          </Button>
         </Link>
       </p>
     </Layout>

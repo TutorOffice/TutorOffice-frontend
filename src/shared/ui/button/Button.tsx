@@ -9,6 +9,7 @@ export enum btnClass {
   primary = 'primary',
   ghost = 'ghost',
   back = 'back',
+  common = 'common',
 }
 
 export enum btnType {
@@ -32,6 +33,7 @@ const Button: React.FC<ButtonProps> = ({ onClick, children, variant, isDisabled 
     [s.buttonPrimary]: variant === btnClass.primary && !isDisabled,
     [s.buttonGhost]: variant === btnClass.ghost && !isDisabled,
     [s.buttonBack]: variant === btnClass.back && !isDisabled,
+    [s.buttonCommon]: variant === btnClass.common && !isDisabled,
   });
   const [goBack] = useBack();
 

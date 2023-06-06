@@ -20,7 +20,7 @@ const Information: React.FC<InformationProps> = ({ children, title, btnText, ima
   return (
     <Layout>
       <Wrapper>
-        <Button variant={btnClass.back} type={btnType.submit} bottom={200}>
+        <Button variant={btnClass.back} type={btnType.button} bottom={200}>
           Назад
         </Button>
         <InformationContent onClick={onClick} title={title} btnText={btnText} image={image}>

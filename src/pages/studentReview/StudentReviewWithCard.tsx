@@ -1,6 +1,6 @@
 import s from './StudentReview.module.css';
 import { btnClass, btnType, Button } from '../../shared/ui';
-import StudentCard from '../../components/studentCard/StudentCard';
+import UserCard from '../../components/userCard/UserCard';
 import testStudents from './testStudents';
 
 const StudentReviewWithCard = () => {
@@ -25,13 +25,13 @@ const StudentReviewWithCard = () => {
       </p>
       <div className={s.studentReview__cards_container}>
         {testStudents.map((stud) => (
-          <StudentCard
+          <UserCard
             key={stud.id}
-            studentStatus={stud.activStatus}
+            studentStatus={stud.activeStatus}
             photo={stud.photo}
             name={stud.name}
-            subject={stud.subject}
-            subjectLevel={stud.subjectLevel}
+            studentSubject={stud.studentSubject}
+            studentSubjectLevel={stud.studentSubjectLevel}
           />
         ))}
       </div>

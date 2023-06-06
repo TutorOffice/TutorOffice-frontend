@@ -1,4 +1,5 @@
 import s from './StudentReview.module.css';
+
 import { btnClass, btnType, Button } from '../../shared/ui';
 import studentsImage from '../../assets/images/students.png';
 

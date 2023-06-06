@@ -1,7 +1,10 @@
-import { Link } from 'react-router-dom';
+/* eslint-disable react/prop-types */
 import s from './UserCard.module.css';
+
 import { btnClass, btnType, Button } from '../../shared/ui';
 import virtualStudentPhoto from '../../assets/images/virtual-student.png';
+
+import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 
 interface UserCardProps {

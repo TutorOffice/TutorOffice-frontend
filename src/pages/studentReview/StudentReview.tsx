@@ -1,12 +1,13 @@
+import StudentReviewWithCard from './StudentReviewWithCard';
+import StudentReviewBlank from './StudentReviewBlank';
+import testStudents from './testStudents';
+
 import Layout from '../../components/layout/Layout';
 import { btnClass, btnType, Button } from '../../shared/ui';
 import Wrapper from '../../components/wrapper/Wrapper';
 import UserInfo from '../../components/userInfo/UserInfo';
 import HeaderMain from '../../components/headerMain/HeaderMain';
 import userPhoto from '../../assets/images/user-photo.jpg';
-import StudentReviewWithCard from './StudentReviewWithCard';
-import StudentReviewBlank from './StudentReviewBlank';
-import testStudents from './testStudents';
 
 const StudentReview = () => {
   return (

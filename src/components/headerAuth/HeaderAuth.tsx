@@ -12,6 +12,7 @@ interface HeaderAuthProps {
 
 const HeaderAuth: React.FC<HeaderAuthProps> = ({ bottom }) => {
   const logout = () => {
+    // eslint-disable-next-line no-console
     console.log('Вы вышли из системы.');
   };
 

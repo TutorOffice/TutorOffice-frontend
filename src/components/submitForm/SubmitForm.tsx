@@ -2,7 +2,7 @@ import s from './SubmitForm.module.css';
 
 import { FormValues } from '@/pages/register/Register';
 
-import { changePassSchema, loginSchema, registerSchema } from '@/shared/utils/validationSchemas';
+import { addStudentSchema, changePassSchema, loginSchema, registerSchema } from '@/shared/utils/validationSchemas';
 
 import { TValidationSubmitFormResolver } from '@/shared/types/validation';
 
@@ -15,6 +15,8 @@ interface SubmitFormProps {
   children: React.ReactNode;
   onSubmit: SubmitHandler<FormValues>;
   resolverType: string;
+  top?: string;
+  bottom?: string;
 }
 
 const getResolver = (type: string) => {
@@ -22,12 +24,14 @@ const getResolver = (type: string) => {
     return yupResolver(registerSchema);
   } else if (type === TValidationSubmitFormResolver.LOGIN) {
     return yupResolver(loginSchema);
+  } else if (type === TValidationSubmitFormResolver.ADD_STUDENT) {
+    return yupResolver(addStudentSchema);
   } else {
     return yupResolver(changePassSchema);
   }
 };
 
-const SubmitForm: React.FC<SubmitFormProps> = ({ children, onSubmit, resolverType }) => {
+const SubmitForm: React.FC<SubmitFormProps> = ({ children, onSubmit, resolverType, top, bottom }) => {
   const {
     register,
     handleSubmit,
@@ -37,7 +41,7 @@ const SubmitForm: React.FC<SubmitFormProps> = ({ children, onSubmit, resolverTyp
     mode: 'onBlur',
   });
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className={s.submitForm}>
+    <form onSubmit={handleSubmit(onSubmit)} style={{ marginTop: top, marginBottom: bottom }} className={s.submitForm}>
       {Array.isArray(children)
         ? children.map((child) => {
             return child.props.name

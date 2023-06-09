@@ -11,6 +11,7 @@ export enum validateType {
   confirmPassword = 'confirmPassword',
   userType = 'userType',
   policy = 'policy',
+  level = 'level',
 }
 
 export { default as Button } from './button/Button';

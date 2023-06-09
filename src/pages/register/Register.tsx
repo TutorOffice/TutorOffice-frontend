@@ -39,7 +39,7 @@ const Register = () => {
         Назад
       </Button>
       <h2 className={s.register__title}>Регистрация</h2>
-      <SubmitForm resolverType={TValidationSubmitFormResolver.REGISTER} onSubmit={onSubmit}>
+      <SubmitForm top='35px' bottom='30px' resolverType={TValidationSubmitFormResolver.REGISTER} onSubmit={onSubmit}>
         <Input name={validateType.lastName} type={inputTypes.text} labelText='Фамилия' isRequired={true} />
 
         <Input name={validateType.firstName} type={inputTypes.text} labelText='Имя' isRequired={true} />

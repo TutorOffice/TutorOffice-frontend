@@ -1,6 +1,6 @@
 import s from './Navbar.module.css';
 
-import { navLinksAuth } from '@/shared/utils';
+import { navLinksAuth } from '@/shared/constants';
 
 import { NavLink } from 'react-router-dom';
 

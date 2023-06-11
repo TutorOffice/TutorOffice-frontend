@@ -7,7 +7,7 @@ import Policy from '@/components/policy/Policy';
 import registerImage from '@/assets/images/register-image.png';
 import Layout from '@/components/layout/Layout';
 
-import usePhoneMask from '@/shared/utils/usePhoneMask';
+import usePhoneMask from '@/shared/validation/usePhoneMask';
 import CheckboxForm from '@/components/checkbox/Checkbox';
 import Checkbox from '@/shared/ui/checkbox/Checkbox';
 import { TValidationSubmitFormResolver } from '@/shared/types/validation';

@@ -5,7 +5,6 @@ import { FormValues } from '../register/Register';
 import Layout from '@/components/layout/Layout';
 import SubmitForm from '@/components/submitForm/SubmitForm';
 import { btnClass, btnType, Button, Input, inputTypes, validateType } from '@/shared/ui';
-
 import { TValidationSubmitFormResolver } from '@/shared/types/validation';
 
 import { SubmitHandler } from 'react-hook-form';
@@ -13,15 +12,23 @@ import { Link } from 'react-router-dom';
 
 const Login = () => {
   const onSubmit: SubmitHandler<FormValues> = (data) => {
-    return data;
+    // eslint-disable-next-line no-console
+    console.log(data);
   };
+
   return (
     <Layout>
       <Button type={btnType.button} variant={btnClass.back} bottom={200}>
         Назад
       </Button>
       <h2 className={s.login__title}>Вход в личный кабинет</h2>
-      <SubmitForm top='35px' bottom='30px' resolverType={TValidationSubmitFormResolver.LOGIN} onSubmit={onSubmit}>
+      <SubmitForm
+        btnText='Войти'
+        top='35px'
+        bottom='30px'
+        resolverType={TValidationSubmitFormResolver.LOGIN}
+        onSubmit={onSubmit}
+      >
         <Input name={validateType.email} type={inputTypes.email} labelText='Введите e-mail' isRequired={true} />
         <Input
           name={validateType.password}
@@ -30,9 +37,9 @@ const Login = () => {
           isRequired={true}
           isPassword={true}
         />
-        <Button type={btnType.submit} variant={btnClass.primary}>
+        {/* <Button type={btnType.submit} variant={btnClass.primary}>
           Войти
-        </Button>
+        </Button> */}
       </SubmitForm>
       <div className={s.login__links}>
         <p>

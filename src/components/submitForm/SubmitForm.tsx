@@ -1,20 +1,19 @@
 import s from './SubmitForm.module.css';
 
 import { FormValues } from '@/pages/register/Register';
-
-import { addStudentSchema, changePassSchema, loginSchema, registerSchema } from '@/shared/utils/validationSchemas';
-
+import { addStudentSchema, changePassSchema, loginSchema, registerSchema } from '@/shared/validation/validationSchemas';
 import { TValidationSubmitFormResolver } from '@/shared/types/validation';
+import { Button, btnClass, btnType } from '@/shared/ui';
 
 import React, { createElement } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-
 import { yupResolver } from '@hookform/resolvers/yup';
 
 interface SubmitFormProps {
   children: React.ReactNode;
   onSubmit: SubmitHandler<FormValues>;
   resolverType: string;
+  btnText?: string;
   top?: string;
   bottom?: string;
 }
@@ -31,7 +30,7 @@ const getResolver = (type: string) => {
   }
 };
 
-const SubmitForm: React.FC<SubmitFormProps> = ({ children, onSubmit, resolverType, top, bottom }) => {
+const SubmitForm: React.FC<SubmitFormProps> = ({ children, onSubmit, resolverType, top, bottom, btnText }) => {
   const {
     register,
     handleSubmit,
@@ -58,6 +57,9 @@ const SubmitForm: React.FC<SubmitFormProps> = ({ children, onSubmit, resolverTyp
               : child;
           })
         : children}
+      <Button type={btnType.submit} variant={btnClass.primary}>
+        {btnText}
+      </Button>
     </form>
   );
 };

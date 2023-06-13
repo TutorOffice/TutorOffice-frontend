@@ -1,0 +1,27 @@
+.educationalMaterialsBlank {
+  display: flex;
+  justify-content: space-between;
+}
+
+.educationalMaterials__title {
+  font-family: 'Raleway';
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.educationalMaterials__blank {
+  display: flex;
+  flex-direction: column;
+  padding: 200px 15px 0 0;
+}
+
+.educationalMaterials__content {
+  font-family: 'Roboto';
+  font-size: 18px;
+  line-height: 21px;
+  padding: 20px 0 40px 0;
+}
+
+.educationalMaterials__image {
+  margin: 100px 105px 0 0;
+}

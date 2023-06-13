@@ -21,7 +21,7 @@ const Login = () => {
         Назад
       </Button>
       <h2 className={s.login__title}>Вход в личный кабинет</h2>
-      <SubmitForm resolverType={TValidationSubmitFormResolver.LOGIN} onSubmit={onSubmit}>
+      <SubmitForm top='35px' bottom='30px' resolverType={TValidationSubmitFormResolver.LOGIN} onSubmit={onSubmit}>
         <Input name={validateType.email} type={inputTypes.email} labelText='Введите e-mail' isRequired={true} />
         <Input
           name={validateType.password}

@@ -42,3 +42,12 @@ export const changePassSchema = yup
       .email('E-mail введен некорректно. Пример: example@domain.ru'),
   })
   .required('');
+
+export const addStudentSchema = yup.object({
+  firstName: yup.string().required('Введите имя').matches(cyrillicPattern, 'Имя указано некорректно'),
+  lastName: yup.string().required('Введите фамилию').matches(cyrillicPattern, 'Фамилия указана некорректно'),
+  patronymic: yup.string(),
+  phone: yup.string().max(18).matches(/\d+/, ' '),
+  email: yup.string().email(' E-mail введен некорректно. Пример: example@domain.ru'),
+  level: yup.string().max(2),
+});

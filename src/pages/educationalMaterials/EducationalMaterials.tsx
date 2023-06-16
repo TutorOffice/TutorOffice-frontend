@@ -12,7 +12,7 @@ const EducationalMaterials = () => {
   return (
     <Layout>
       <Wrapper>
-        <HeaderAuth bottom={100} />
+        <HeaderAuth bottom={testData.length ? 70 : 100} />
         {testData.length ? <EducationalMaterialsWithCards /> : <EducationalMaterialsBlank userStatus={userStatus} />}
       </Wrapper>
     </Layout>

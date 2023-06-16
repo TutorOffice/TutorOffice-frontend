@@ -6,7 +6,7 @@ import UserCard from '@/components/userCard/UserCard';
 const EducationalMaterialsWithCards = () => {
   return (
     <>
-      <h2 className={s.educationalMaterials__title}>Учебные материалы</h2>
+      <h2 className={s.educationalMaterials__titleWithCards}>Учебные материалы</h2>
       <div className={s.educationalMaterials__cards_container}>
         {testData.map((stud) => (
           <UserCard

@@ -14,12 +14,12 @@ interface ITestData {
 }
 
 const testData: ITestData[] = [
-  /* {
+  {
     id: 1,
     statusUser: 'student',
     activeStatus: true,
     photo: testPhoto,
-    name: 'Иван Иванов',
+    name: 'Иван Иванович Иванов',
     studentSubject: 'Английский',
     studentSubjectLevel: 'B2',
     isTutorials: true,
@@ -73,7 +73,7 @@ const testData: ITestData[] = [
     studentSubject: 'Английский',
     studentSubjectLevel: 'C1',
     isTutorials: true,
-  }, */
+  },
 ];
 
 export default testData;

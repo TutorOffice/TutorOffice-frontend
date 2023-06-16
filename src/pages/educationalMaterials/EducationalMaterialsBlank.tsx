@@ -4,9 +4,18 @@ import AddStudentModal from '@/components/modals/addStudentModal/AddStudentModal
 import { btnClass, btnType, Button } from '@/shared/ui';
 import educationalMaterialsImage from '@/assets/images/EducationalMaterialsBlank.png';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 
-const EducationalMaterialsBlank = () => {
+export enum UserStatus {
+  Sudent,
+  Tutor,
+}
+
+interface EducationalMaterialsBlankProps {
+  userStatus: UserStatus;
+}
+
+const EducationalMaterialsBlank: React.FC<EducationalMaterialsBlankProps> = ({ userStatus }) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
 
   const openModal = () => {
@@ -21,12 +30,21 @@ const EducationalMaterialsBlank = () => {
       <div className={s.educationalMaterialsBlank}>
         <div className={s.educationalMaterials__blank}>
           <h2 className={s.educationalMaterials__title}>Здесь будут учебные материалы</h2>
-          <p className={s.educationalMaterials__content}>
-            Когда у Вас появятся ученики, Вы сможете загружать учебные материалы для каждого из них.
-          </p>
-          <Button onClick={openModal} type={btnType.button} variant={btnClass.primary}>
-            Добавить ученика
-          </Button>
+          {userStatus === UserStatus.Tutor && (
+            <>
+              <p className={s.educationalMaterials__content}>
+                Когда у Вас появятся ученики, Вы сможете загружать учебные материалы для каждого из них.
+              </p>
+              <Button onClick={openModal} type={btnType.button} variant={btnClass.primary}>
+                Добавить ученика
+              </Button>
+            </>
+          )}
+          {userStatus === UserStatus.Sudent && (
+            <p className={s.educationalMaterials__content}>
+              Когда у Вас появятся преподаватели, Вы сможете просматривать все учебные материалы от каждого из них.
+            </p>
+          )}
         </div>
         <img className={s.educationalMaterials__image} src={educationalMaterialsImage} alt='Учебные материалы' />
       </div>

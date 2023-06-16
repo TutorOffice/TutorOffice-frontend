@@ -1,22 +1,19 @@
-import testData from './testData';
-import EducationalMaterialsBlank from './EducationalMaterialsBlank';
+import testData from './testStudents';
+import EducationalMaterialsBlank, { UserStatus } from './EducationalMaterialsBlank';
+import EducationalMaterialsWithCards from './EducationalMaterialsWithCards';
 
 import HeaderAuth from '@/components/headerAuth/HeaderAuth';
 import Layout from '@/components/layout/Layout';
 import Wrapper from '@/components/wrapper/Wrapper';
-import { Button, btnClass, btnType } from '@/shared/ui';
+
+const userStatus = UserStatus.Sudent;
 
 const EducationalMaterials = () => {
   return (
     <Layout>
       <Wrapper>
-        <HeaderAuth bottom={testData.length ? 40 : 100} />
-        {Boolean(testData.length) && (
-          <Button bottom={60} variant={btnClass.back} type={btnType.button}>
-            Назад
-          </Button>
-        )}
-        <EducationalMaterialsBlank />
+        <HeaderAuth bottom={100} />
+        {testData.length ? <EducationalMaterialsWithCards /> : <EducationalMaterialsBlank userStatus={userStatus} />}
       </Wrapper>
     </Layout>
   );

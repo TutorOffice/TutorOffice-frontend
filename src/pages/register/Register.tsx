@@ -1,16 +1,16 @@
 import s from './Register.module.css';
 
-import { btnClass, btnType, Button, Input, inputTypes, validateType } from '../../shared/ui/index';
+import { btnClass, btnType, Button, Input, inputTypes } from '../../shared/ui';
 
 import SubmitForm from '@/components/submitForm/SubmitForm';
 import Policy from '@/components/policy/Policy';
 import registerImage from '@/assets/images/register-image.png';
 import Layout from '@/components/layout/Layout';
-
-import usePhoneMask from '@/shared/validation/usePhoneMask';
+import { usePhoneMask } from '@/shared/utils';
 import CheckboxForm from '@/components/checkbox/Checkbox';
 import Checkbox from '@/shared/ui/checkbox/Checkbox';
 import { TValidationSubmitFormResolver } from '@/shared/types/validation';
+import { validateType } from '@/shared/validation/validateTypes';
 
 import React from 'react';
 import { SubmitHandler } from 'react-hook-form';
@@ -29,7 +29,8 @@ const Register = () => {
   const phoneRef = React.useRef(null);
 
   const onSubmit: SubmitHandler<FormValues> = (data) => {
-    return data;
+    // eslint-disable-next-line no-console
+    console.log(data);
   };
 
   usePhoneMask();
@@ -39,26 +40,29 @@ const Register = () => {
         Назад
       </Button>
       <h2 className={s.register__title}>Регистрация</h2>
-      <SubmitForm top='35px' bottom='30px' resolverType={TValidationSubmitFormResolver.REGISTER} onSubmit={onSubmit}>
+      <SubmitForm
+        btnText='Зарегистрироваться'
+        top='35px'
+        bottom='30px'
+        resolverType={TValidationSubmitFormResolver.REGISTER}
+        onSubmit={onSubmit}
+      >
         <Input name={validateType.lastName} type={inputTypes.text} labelText='Фамилия' isRequired={true} />
-
         <Input name={validateType.firstName} type={inputTypes.text} labelText='Имя' isRequired={true} />
-
-        <Input name={validateType.patronymic} type={inputTypes.text} labelText='Отчество' isRequired={true} />
-
+        <Input name={validateType.patronymic} type={inputTypes.text} labelText='Отчество' />
         <Input
           name={validateType.email}
           type={inputTypes.email}
           labelText='E-mail'
           isRequired={true}
-          placeholder={'example@domaim.ru'}
+          placeholder='example@domaim.ru'
         />
         <Input
           ref={phoneRef}
           name={validateType.phone}
           type={inputTypes.phone}
           labelText='Телефон'
-          placeholder={'+7 999 999 99 99'}
+          placeholder='+7 999 999 99 99'
         />
         <Input
           name={validateType.password}
@@ -81,9 +85,6 @@ const Register = () => {
           <Checkbox name='tutor' TextValue='Преподаватель' type='radio' id='tutor' />
         </CheckboxForm>
         <Policy name={validateType.policy} />
-        <Button type={btnType.submit} variant={btnClass.primary} isDisabled={false}>
-          Зарегистрироваться
-        </Button>
         <img className={s.registerImg} src={registerImage} alt='Регистрация' />
       </SubmitForm>
       <p>

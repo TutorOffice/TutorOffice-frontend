@@ -17,10 +17,9 @@ export const registerSchema = yup
     firstName: yup.string().required(firstNameMessages.required).matches(cyrillicPattern, firstNameMessages.incorrect),
     patronymic: yup
       .string()
-      .required(patronymicMessages.required)
-      .matches(cyrillicPattern, patronymicMessages.incorrect),
+      .matches(cyrillicPattern, { excludeEmptyString: true, message: patronymicMessages.incorrect }),
     email: yup.string().required(emailMessages.required).email(emailMessages.incorrect),
-    phone: yup.string().required(phoneMessages.required).max(18).matches(/\d+/, phoneMessages.incorrect),
+    phone: yup.string().max(18).matches(/\d+/, { excludeEmptyString: true, message: phoneMessages.incorrect }),
     password: yup
       .string()
       .required(passwordMessages.required)
@@ -39,7 +38,7 @@ export const registerSchema = yup
 
 export const loginSchema = yup
   .object({
-    email: yup.string().required('Введите E-mail').email('E-mail введен некорректно. Пример: example@domain.ru'),
+    email: yup.string().required(emailMessages.required).email(emailMessages.incorrect),
     password: yup
       .string()
       .required(passwordMessages.required)
@@ -58,11 +57,31 @@ export const changePassSchema = yup
   })
   .required('');
 
+export const changePassFromMailSchema = yup
+  .object({
+    password: yup
+      .string()
+      .required(passwordMessages.required)
+      .min(passwordPattern.min, passwordMessages.min)
+      .matches(passwordPattern.number, passwordMessages.number)
+      .matches(passwordPattern.special, passwordMessages.special)
+      .matches(passwordPattern.latin, passwordMessages.latin)
+      .matches(passwordPattern.upperCase, passwordMessages.upperCase)
+      .matches(passwordPattern.valid, passwordMessages.valid),
+    confirmPassword: yup
+      .string()
+      .oneOf([yup.ref('password')], passwordMessages.mismatch)
+      .required(passwordMessages.required),
+  })
+  .required('');
+
 export const addStudentSchema = yup.object({
   firstName: yup.string().required(firstNameMessages.required).matches(cyrillicPattern, firstNameMessages.incorrect),
   lastName: yup.string().required(lastNameMessages.required).matches(cyrillicPattern, lastNameMessages.incorrect),
-  patronymic: yup.string().matches(cyrillicPattern, patronymicMessages.incorrect),
-  phone: yup.string().max(18).matches(/\d+/, phoneMessages.incorrect),
+  patronymic: yup
+    .string()
+    .matches(cyrillicPattern, { excludeEmptyString: true, message: patronymicMessages.incorrect }),
+  phone: yup.string().max(18).matches(/\d+/, { excludeEmptyString: true, message: phoneMessages.incorrect }),
   email: yup.string().email(emailMessages.incorrect),
   level: yup.string().max(2),
 });

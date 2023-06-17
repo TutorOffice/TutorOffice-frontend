@@ -2,7 +2,7 @@ import s from './Input.module.css';
 
 import { usePassword } from './usePassword';
 
-import { validateType } from '../index';
+import { validateType } from '../../validation/validateTypes';
 
 import close from '@/assets/icons/pass-close.svg';
 import open from '@/assets/icons/pass-open.svg';

@@ -4,8 +4,9 @@ import { FormValues } from '../register/Register';
 
 import Layout from '@/components/layout/Layout';
 import SubmitForm from '@/components/submitForm/SubmitForm';
-import { btnClass, btnType, Button, Input, inputTypes, validateType } from '@/shared/ui';
+import { btnClass, btnType, Button, Input, inputTypes } from '@/shared/ui';
 import { TValidationSubmitFormResolver } from '@/shared/types/validation';
+import { validateType } from '@/shared/validation/validateTypes';
 
 import { SubmitHandler } from 'react-hook-form';
 import { Link } from 'react-router-dom';
@@ -37,9 +38,6 @@ const Login = () => {
           isRequired={true}
           isPassword={true}
         />
-        {/* <Button type={btnType.submit} variant={btnClass.primary}>
-          Войти
-        </Button> */}
       </SubmitForm>
       <div className={s.login__links}>
         <p>

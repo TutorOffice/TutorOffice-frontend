@@ -1,44 +1,41 @@
 import s from './SubmitForm.module.css';
 
 import { FormValues } from '@/pages/register/Register';
-import { addStudentSchema, changePassSchema, loginSchema, registerSchema } from '@/shared/validation/validationSchemas';
-import { TValidationSubmitFormResolver } from '@/shared/types/validation';
 import { Button, btnClass, btnType } from '@/shared/ui';
+
+import { getResolver } from '@/shared/validation/getResolver';
 
 import React, { createElement } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
 
 interface SubmitFormProps {
   children: React.ReactNode;
   onSubmit: SubmitHandler<FormValues>;
   resolverType: string;
   btnText?: string;
+  btnWidth?: string;
   top?: string;
   bottom?: string;
 }
 
-const getResolver = (type: string) => {
-  if (type === TValidationSubmitFormResolver.REGISTER) {
-    return yupResolver(registerSchema);
-  } else if (type === TValidationSubmitFormResolver.LOGIN) {
-    return yupResolver(loginSchema);
-  } else if (type === TValidationSubmitFormResolver.ADD_STUDENT) {
-    return yupResolver(addStudentSchema);
-  } else {
-    return yupResolver(changePassSchema);
-  }
-};
-
-const SubmitForm: React.FC<SubmitFormProps> = ({ children, onSubmit, resolverType, top, bottom, btnText }) => {
+const SubmitForm: React.FC<SubmitFormProps> = ({
+  children,
+  onSubmit,
+  resolverType,
+  top,
+  bottom,
+  btnText,
+  btnWidth,
+}) => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm<FormValues>({
     resolver: getResolver(resolverType),
     mode: 'onBlur',
   });
+
   return (
     <form onSubmit={handleSubmit(onSubmit)} style={{ marginTop: top, marginBottom: bottom }} className={s.submitForm}>
       {Array.isArray(children)
@@ -57,9 +54,11 @@ const SubmitForm: React.FC<SubmitFormProps> = ({ children, onSubmit, resolverTyp
               : child;
           })
         : children}
-      <Button type={btnType.submit} variant={btnClass.primary}>
-        {btnText}
-      </Button>
+      {btnText && (
+        <Button width={btnWidth} isDisabled={!isValid} type={btnType.submit} variant={btnClass.primary}>
+          {btnText}
+        </Button>
+      )}
     </form>
   );
 };

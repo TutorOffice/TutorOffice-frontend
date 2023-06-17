@@ -28,7 +28,7 @@ interface ButtonProps {
   width?: string;
 }
 
-const Button: React.FC<ButtonProps> = ({ onClick, children, variant, isDisabled = false, type, bottom = 0, width }) => {
+const Button: React.FC<ButtonProps> = ({ onClick, children, variant, isDisabled, type, bottom = 0, width }) => {
   const className = clsx({
     [s.button]: true,
     [s.buttonPrimary]: variant === btnClass.primary && !isDisabled,

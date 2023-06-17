@@ -1,8 +1,7 @@
 import s from './SubmitForm.module.css';
 
-import { FormValues } from '@/pages/register/Register';
-import { Button, btnClass, btnType } from '@/shared/ui';
-
+import { IFormValues } from '@/shared/validation';
+import { Button, ButtonGroup, btnClass, btnType } from '@/shared/ui';
 import { getResolver } from '@/shared/validation/getResolver';
 
 import React, { createElement } from 'react';
@@ -10,12 +9,13 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 
 interface SubmitFormProps {
   children: React.ReactNode;
-  onSubmit: SubmitHandler<FormValues>;
+  onSubmit: SubmitHandler<IFormValues>;
   resolverType: string;
   btnText?: string;
   btnWidth?: string;
   top?: string;
   bottom?: string;
+  btnGroup?: boolean;
 }
 
 const SubmitForm: React.FC<SubmitFormProps> = ({
@@ -24,17 +24,38 @@ const SubmitForm: React.FC<SubmitFormProps> = ({
   resolverType,
   top,
   bottom,
-  btnText,
+  btnText = 'Сохранить',
   btnWidth,
+  btnGroup,
 }) => {
   const {
     register,
     handleSubmit,
     formState: { errors, isValid },
-  } = useForm<FormValues>({
+  } = useForm<IFormValues>({
     resolver: getResolver(resolverType),
     mode: 'onBlur',
   });
+
+  let submitControls;
+  if (btnGroup) {
+    submitControls = (
+      <ButtonGroup width='100%'>
+        <Button width='100%' isDisabled={!isValid} type={btnType.submit} variant={btnClass.primary}>
+          {btnText}
+        </Button>
+        <Button width='100%' type={btnType.reset} variant={btnClass.ghost}>
+          Отменить
+        </Button>
+      </ButtonGroup>
+    );
+  } else {
+    submitControls = (
+      <Button width={btnWidth} isDisabled={!isValid} type={btnType.submit} variant={btnClass.primary}>
+        {btnText}
+      </Button>
+    );
+  }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} style={{ marginTop: top, marginBottom: bottom }} className={s.submitForm}>
@@ -54,11 +75,7 @@ const SubmitForm: React.FC<SubmitFormProps> = ({
               : child;
           })
         : children}
-      {btnText && (
-        <Button width={btnWidth} isDisabled={!isValid} type={btnType.submit} variant={btnClass.primary}>
-          {btnText}
-        </Button>
-      )}
+      {submitControls}
     </form>
   );
 };

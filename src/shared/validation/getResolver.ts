@@ -6,7 +6,7 @@ import {
   registerSchema,
 } from './validationSchemas';
 
-import { TValidationSubmitFormResolver } from '../types/validation';
+import { TValidationSubmitFormResolver } from './formResolver';
 
 import { yupResolver } from '@hookform/resolvers/yup';
 

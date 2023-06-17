@@ -5,6 +5,12 @@
   justify-content: flex-start;
 }
 
+.checkbox__text {
+	font-family: 'Roboto';
+	font-weight: 400;
+	font-size: 18px;
+}
+
 .customRadio {
   position: absolute;
   z-index: -1;

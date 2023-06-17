@@ -2,8 +2,7 @@ import s from './Input.module.css';
 
 import { usePassword } from './usePassword';
 
-import { validateType } from '../../validation/validateTypes';
-
+import { validateType } from '@/shared/validation';
 import close from '@/assets/icons/pass-close.svg';
 import open from '@/assets/icons/pass-open.svg';
 
@@ -64,7 +63,7 @@ const Input: React.FC<InputProps> = ({
       <label>
         <p className={s.labelText}>
           {labelText}
-          {isRequired && <span className={s.required}>*</span>}
+          {isRequired && <span className={s.required__icon}>*</span>}
         </p>
       </label>
       <div className={s.inputBlock}>
@@ -78,13 +77,13 @@ const Input: React.FC<InputProps> = ({
           disabled={isDisabled}
           className={classNameInput}
         />
-        {errors && <p className={s.required}>{errors.message}</p>}
         {isPassword && iconVisibility && (
           <button type='button' onClick={setIsOpen} className={s.passHide}>
-            <img src={isOpen ? open : close} alt='Иконка скрытия/отображения пароля' />
+            <img className={s.passHide__icon} src={isOpen ? open : close} alt='Иконка скрытия/отображения пароля' />
           </button>
         )}
       </div>
+      {errors && <p className={s.required}>{errors.message}</p>}
       <p className={classNameTip}>{commentTip}</p>
     </div>
   );

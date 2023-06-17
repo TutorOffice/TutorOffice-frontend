@@ -7,13 +7,11 @@ interface ButtonGroupProps {
   children: React.ReactNode;
   bottom?: number;
   width?: string;
-  isRow?: boolean;
 }
 
-const ButtonGroup: React.FC<ButtonGroupProps> = ({ children, bottom = 0, width = 'auto', isRow }) => {
+const ButtonGroup: React.FC<ButtonGroupProps> = ({ children, bottom = 0, width = 'auto' }) => {
   const className = clsx({
     [s.group__buttons]: true,
-    [s.group__buttons_row]: isRow,
   });
 
   return (

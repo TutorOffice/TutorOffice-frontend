@@ -1,5 +1,7 @@
 import s from './Policy.module.css';
 
+import { Button, btnClass, btnType } from '@/shared/ui';
+
 import { FC, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FieldValues, UseFormRegister } from 'react-hook-form';
@@ -27,15 +29,19 @@ const Policy: FC<PolicyProps> = ({ name, register }) => {
           checked={isChecked}
           onChange={onChange}
         />
-        <label htmlFor='policy'>
+        <label className={s.policy__label} htmlFor='policy'>
           <span>
             Я согласен с
             <Link to='/' className={s.policy__link}>
-              Политикой конфиденциальности
+              <Button type={btnType.button} variant={btnClass.common}>
+                Политикой конфиденциальности
+              </Button>
             </Link>
             <br /> и
             <Link to='/' className={s.policy__link}>
-              Условиями использования сервиса
+              <Button type={btnType.button} variant={btnClass.common}>
+                Условиями использования сервиса
+              </Button>
             </Link>
           </span>
         </label>

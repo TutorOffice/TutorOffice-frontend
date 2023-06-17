@@ -20,3 +20,9 @@
   bottom: 61px;
   left: 110%;
 }
+
+.register__desc {
+	font-family: 'Roboto';
+	font-weight: 400;
+	font-size: 18px;
+}

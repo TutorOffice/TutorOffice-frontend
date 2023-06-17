@@ -1,7 +1,7 @@
 import SubmitForm from '@/components/submitForm/SubmitForm';
 
 import { Input, Modal, inputTypes } from '@/shared/ui';
-import { TValidationSubmitFormResolver } from '@/shared/types/validation';
+import { TValidationSubmitFormResolver } from '@/shared/validation/formResolver';
 import { validateType } from '@/shared/validation/validateTypes';
 
 import { SubmitHandler } from 'react-hook-form';

@@ -1,16 +1,14 @@
 import s from './ChangePass.module.css';
 
 import Layout from '@/components/layout/Layout';
-import { btnClass, btnType, Button, Input, inputTypes } from '@/shared/ui';
-import { TValidationSubmitFormResolver } from '@/shared/types/validation';
 import SubmitForm from '@/components/submitForm/SubmitForm';
-import { FormValues } from '@/pages/register/Register';
-import { validateType } from '@/shared/validation/validateTypes';
+import { btnClass, btnType, Button, Input, inputTypes } from '@/shared/ui';
+import { TValidationSubmitFormResolver, IFormValues, validateType } from '@/shared/validation';
 
 import { SubmitHandler } from 'react-hook-form';
 
 const ChangePass = () => {
-  const onSubmit: SubmitHandler<FormValues> = (data) => {
+  const onSubmit: SubmitHandler<IFormValues> = (data) => {
     // eslint-disable-next-line no-console
     console.log(data);
   };

@@ -22,17 +22,17 @@ export const registerSchema = yup
     phone: yup.string().max(18).matches(/\d+/, { excludeEmptyString: true, message: phoneMessages.incorrect }),
     password: yup
       .string()
-      .required(passwordMessages.required)
-      .min(passwordPattern.min, passwordMessages.min)
-      .matches(passwordPattern.number, passwordMessages.number)
-      .matches(passwordPattern.special, passwordMessages.special)
-      .matches(passwordPattern.latin, passwordMessages.latin)
-      .matches(passwordPattern.upperCase, passwordMessages.upperCase)
-      .matches(passwordPattern.valid, passwordMessages.valid),
+      .required('')
+      .min(passwordPattern.min, '')
+      .matches(passwordPattern.number, '')
+      .matches(passwordPattern.special, '')
+      .matches(passwordPattern.latin, '')
+      .matches(passwordPattern.upperCase, '')
+      .matches(passwordPattern.valid, ''),
     confirmPassword: yup
       .string()
       .oneOf([yup.ref('password')], passwordMessages.mismatch)
-      .required(passwordMessages.required),
+      .required(''),
   })
   .required('');
 

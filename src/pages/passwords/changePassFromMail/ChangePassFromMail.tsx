@@ -1,18 +1,14 @@
 import s from './ChangePassFromMail.module.css';
 
-import { btnClass, btnType, Button, ButtonGroup, Input, inputTypes } from '../../../shared/ui';
-
+import { btnClass, btnType, Button, Input, inputTypes } from '@/shared/ui';
 import Layout from '@/components/layout/Layout';
 import SubmitForm from '@/components/submitForm/SubmitForm';
-import { FormValues } from '@/pages/register/Register';
-import { TValidationSubmitFormResolver } from '@/shared/types/validation';
-
-import { validateType } from '@/shared/validation/validateTypes';
+import { TValidationSubmitFormResolver, IFormValues, validateType } from '@/shared/validation';
 
 import { SubmitHandler } from 'react-hook-form';
 
 const ChangePassFromMail = () => {
-  const onSubmit: SubmitHandler<FormValues> = (data) => {
+  const onSubmit: SubmitHandler<IFormValues> = (data) => {
     // eslint-disable-next-line no-console
     console.log(data);
   };
@@ -23,7 +19,12 @@ const ChangePassFromMail = () => {
         Назад
       </Button>
       <h2 className={s.changePassFromMail__title}>Сбросить пароль</h2>
-      <SubmitForm onSubmit={onSubmit} resolverType={TValidationSubmitFormResolver.CHANGE_PASS_FROM_MAIL}>
+      <SubmitForm
+        btnGroup={true}
+        btnText='Сохранить'
+        onSubmit={onSubmit}
+        resolverType={TValidationSubmitFormResolver.CHANGE_PASS_FROM_MAIL}
+      >
         <Input
           name={validateType.password}
           type={inputTypes.password}
@@ -39,14 +40,6 @@ const ChangePassFromMail = () => {
           isRequired={true}
           isPassword={true}
         />
-        <ButtonGroup width='100%'>
-          <Button type={btnType.submit} variant={btnClass.primary}>
-            Сохранить
-          </Button>
-          <Button type={btnType.button} variant={btnClass.ghost}>
-            Отменить
-          </Button>
-        </ButtonGroup>
       </SubmitForm>
     </Layout>
   );

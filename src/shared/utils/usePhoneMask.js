@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const usePhoneMask = () => {
+export const usePhoneMask = () => {
   useEffect(() => {
     var phoneInputs = document.querySelectorAll('input[data-tel-input]');
     var getInputNumbersValue = function (input) {
@@ -77,5 +77,3 @@ const usePhoneMask = () => {
     }
   }, []);
 };
-
-export default usePhoneMask;

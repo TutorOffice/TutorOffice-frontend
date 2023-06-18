@@ -13,19 +13,14 @@
   justify-content: flex-start;
 }
 
+.policy__label {
+	font-family: 'Roboto';
+	font-weight: 400;
+	font-size: 18px;
+}
+
 .policy__link {
   margin-left: 5px;
-  color: var(--orange);
-  text-decoration: none;
-  transition: color 0.3s ease-in-out;
-}
-
-.policy__link:hover {
-  color: var(--orange-hover);
-}
-
-.policy__link:active {
-  color: var(--orange-pressed);
 }
 
 .customCheckbox {

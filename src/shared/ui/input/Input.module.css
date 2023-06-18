@@ -41,6 +41,10 @@
   padding-bottom: 12px;
 }
 
+.required__icon {
+	color: var(--red);
+}
+
 .commentTip {
   padding-left: 10px;
   font-family: 'Roboto', sans-serif;
@@ -53,7 +57,12 @@
 }
 
 .required {
+	padding-left: 10px;
   color: var(--red);
+	font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
 }
 
 .error {
@@ -79,8 +88,12 @@
   right: 0;
   top: 0;
   padding: 12px;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.passHide__icon {
+	width: 20px;
+	height: 20px;
 }

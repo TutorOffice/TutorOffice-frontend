@@ -1,35 +1,24 @@
 import s from './Register.module.css';
 
-import { btnClass, btnType, Button, Input, inputTypes, validateType } from '../../shared/ui/index';
-
+import registerImage from '@/assets/images/register-image.png';
+import { Checkbox, Button, Input, btnClass, btnType, inputTypes } from '@/shared/ui';
+import { usePhoneMask } from '@/shared/utils';
+import { IFormValues, TValidationSubmitFormResolver, validateType } from '@/shared/validation';
 import SubmitForm from '@/components/submitForm/SubmitForm';
 import Policy from '@/components/policy/Policy';
-import registerImage from '@/assets/images/register-image.png';
 import Layout from '@/components/layout/Layout';
-
-import usePhoneMask from '@/shared/utils/usePhoneMask';
 import CheckboxForm from '@/components/checkbox/Checkbox';
-import Checkbox from '@/shared/ui/checkbox/Checkbox';
-import { TValidationSubmitFormResolver } from '@/shared/types/validation';
 
 import React from 'react';
 import { SubmitHandler } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 
-export interface FormValues {
-  firstName: string;
-  lastName: string;
-  email: string;
-  patronymic: string;
-  password: string;
-  phone: string;
-}
-
 const Register = () => {
   const phoneRef = React.useRef(null);
 
-  const onSubmit: SubmitHandler<FormValues> = (data) => {
-    return data;
+  const onSubmit: SubmitHandler<IFormValues> = (data) => {
+    // eslint-disable-next-line no-console
+    console.log(data);
   };
 
   usePhoneMask();
@@ -39,26 +28,30 @@ const Register = () => {
         Назад
       </Button>
       <h2 className={s.register__title}>Регистрация</h2>
-      <SubmitForm top='35px' bottom='30px' resolverType={TValidationSubmitFormResolver.REGISTER} onSubmit={onSubmit}>
+      <SubmitForm
+        btnText='Зарегистрироваться'
+        btnWidth='100%'
+        top='35px'
+        bottom='30px'
+        resolverType={TValidationSubmitFormResolver.REGISTER}
+        onSubmit={onSubmit}
+      >
         <Input name={validateType.lastName} type={inputTypes.text} labelText='Фамилия' isRequired={true} />
-
         <Input name={validateType.firstName} type={inputTypes.text} labelText='Имя' isRequired={true} />
-
-        <Input name={validateType.patronymic} type={inputTypes.text} labelText='Отчество' isRequired={true} />
-
+        <Input name={validateType.patronymic} type={inputTypes.text} labelText='Отчество' />
         <Input
           name={validateType.email}
           type={inputTypes.email}
           labelText='E-mail'
           isRequired={true}
-          placeholder={'example@domaim.ru'}
+          placeholder='example@domaim.ru'
         />
         <Input
           ref={phoneRef}
           name={validateType.phone}
           type={inputTypes.phone}
           labelText='Телефон'
-          placeholder={'+7 999 999 99 99'}
+          placeholder='+7 999 999 99 99'
         />
         <Input
           name={validateType.password}
@@ -77,16 +70,13 @@ const Register = () => {
           isRequired={true}
         />
         <CheckboxForm>
-          <Checkbox name='student' TextValue='Ученик' type='radio' id='student' />
-          <Checkbox name='tutor' TextValue='Преподаватель' type='radio' id='tutor' />
+          <Checkbox name='student' text='Ученик' type='radio' id='student' />
+          <Checkbox name='tutor' text='Преподаватель' type='radio' id='tutor' />
         </CheckboxForm>
         <Policy name={validateType.policy} />
-        <Button type={btnType.submit} variant={btnClass.primary} isDisabled={false}>
-          Зарегистрироваться
-        </Button>
         <img className={s.registerImg} src={registerImage} alt='Регистрация' />
       </SubmitForm>
-      <p>
+      <p className={s.register__desc}>
         Уже есть аккаунт?
         <Link to='/login' className={s.backLink}>
           <Button variant={btnClass.common} type={btnType.button}>

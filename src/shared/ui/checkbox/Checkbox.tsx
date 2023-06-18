@@ -1,6 +1,6 @@
 import s from './checkbox.module.css';
 
-import React, { FC } from 'react';
+import React from 'react';
 import { FieldValues, UseFormRegister } from 'react-hook-form';
 
 interface CheckboxProps {
@@ -8,12 +8,12 @@ interface CheckboxProps {
   name: string;
   type: string;
   id: string;
-  TextValue: string;
+  text: string;
   isTutor?: boolean;
   setIsTutor?: (isTutor: boolean) => void;
 }
 
-const Checkbox: FC<CheckboxProps> = ({ isTutor = false, setIsTutor, TextValue, name, register, type, id }) => {
+const Checkbox: React.FC<CheckboxProps> = ({ isTutor = false, setIsTutor, text, name, register, type, id }) => {
   const onChange = () => {
     if (setIsTutor) {
       setIsTutor(!isTutor);
@@ -31,7 +31,9 @@ const Checkbox: FC<CheckboxProps> = ({ isTutor = false, setIsTutor, TextValue, n
         checked={name === 'student' ? !isTutor : isTutor}
         onClick={onChange}
       />
-      <label htmlFor={name === 'student' ? 'student' : 'tutor'}>{TextValue}</label>
+      <label className={s.checkbox__text} htmlFor={name === 'student' ? 'student' : 'tutor'}>
+        {text}
+      </label>
     </div>
   );
 };

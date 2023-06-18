@@ -36,6 +36,8 @@ const UserCard: React.FC<UserCardProps> = ({
             {name.split(' ')[0]}
             <br />
             {name.split(' ')[1]}
+            <br />
+            {name.split(' ')[2] || <br />}
           </p>
           {studentSubject && <p className={s.card__subject}>{studentSubject}</p>}
           {tutorSubject && (

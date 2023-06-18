@@ -15,6 +15,7 @@ import Lesson from '@/pages/lesson/Lesson';
 import ErrorPage from '@/pages/errorPage/ErrorPage';
 import HomeWork from '@/pages/homeWork/HomeWork';
 import StudentReview from '@/pages/studentReview/StudentReview';
+import EducationalMaterials from '@/pages/educationalMaterials/EducationalMaterials';
 
 // eslint-disable-next-line import/order
 import { Route, Routes } from 'react-router-dom';
@@ -38,6 +39,7 @@ const App = () => {
       <Route path='/calendar/:date/:lessonId' element={<Lesson />} />
       <Route path='/homework' element={<HomeWork />} />
       <Route path='/not-found' element={<ErrorPage />} />
+      <Route path='/educational-materials' element={<EducationalMaterials />} />
     </Routes>
   );
 };

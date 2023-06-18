@@ -1,0 +1,47 @@
+.educationalMaterialsBlank {
+  display: flex;
+  justify-content: space-between;
+}
+
+.educationalMaterials__title {
+  font-family: 'Raleway';
+  font-size: 24px;
+  font-weight: 600;
+  display: flex;
+  width: 100%;
+}
+
+.educationalMaterials__titleWithCards {
+  font-family: 'Raleway';
+  font-size: 30px;
+  font-weight: 600;
+  display: flex;
+  width: 100%;
+}
+
+.educationalMaterials__blank {
+  display: flex;
+  flex-direction: column;
+  padding: 200px 15px 0 0;
+}
+
+.educationalMaterials__content {
+  font-family: 'Roboto';
+  font-size: 18px;
+  line-height: 21px;
+  padding: 20px 0 40px 0;
+}
+
+.educationalMaterials__image {
+  margin: 100px 105px 0 0;
+}
+
+.educationalMaterials__cards_container {
+  width: 100%;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(32%, 1fr));
+  gap: 18px 20px;
+  justify-content: center;
+  margin-top: 40px;
+}

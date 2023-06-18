@@ -7,7 +7,7 @@ import educationalMaterialsImage from '@/assets/images/EducationalMaterialsBlank
 import React, { useState } from 'react';
 
 export enum UserStatus {
-  Sudent,
+  Student,
   Tutor,
 }
 
@@ -40,7 +40,7 @@ const EducationalMaterialsBlank: React.FC<EducationalMaterialsBlankProps> = ({ u
               </Button>
             </>
           )}
-          {userStatus === UserStatus.Sudent && (
+          {userStatus === UserStatus.Student && (
             <p className={s.educationalMaterials__content}>
               Когда у Вас появятся преподаватели, Вы сможете просматривать все учебные материалы от каждого из них.
             </p>

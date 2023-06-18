@@ -6,7 +6,7 @@ import HeaderAuth from '@/components/headerAuth/HeaderAuth';
 import Layout from '@/components/layout/Layout';
 import Wrapper from '@/components/wrapper/Wrapper';
 
-const userStatus = UserStatus.Sudent;
+const userStatus = UserStatus.Student;
 
 const EducationalMaterials = () => {
   return (

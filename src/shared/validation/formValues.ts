@@ -5,4 +5,5 @@ export interface IFormValues {
   patronymic: string;
   password: string;
   phone: string;
+  subject?: string;
 }

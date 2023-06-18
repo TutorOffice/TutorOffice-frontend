@@ -16,6 +16,7 @@ interface SubmitFormProps {
   top?: string;
   bottom?: string;
   btnGroup?: boolean;
+  defaultValues?: IFormValues;
 }
 
 const SubmitForm: React.FC<SubmitFormProps> = ({
@@ -24,15 +25,17 @@ const SubmitForm: React.FC<SubmitFormProps> = ({
   resolverType,
   top,
   bottom,
-  btnText = 'Сохранить',
+  btnText,
   btnWidth,
   btnGroup,
+  defaultValues,
 }) => {
   const {
     register,
     handleSubmit,
     formState: { errors, isValid },
   } = useForm<IFormValues>({
+    defaultValues: defaultValues,
     resolver: getResolver(resolverType),
     mode: 'onBlur',
   });
@@ -49,7 +52,7 @@ const SubmitForm: React.FC<SubmitFormProps> = ({
         </Button>
       </ButtonGroup>
     );
-  } else {
+  } else if (btnText) {
     submitControls = (
       <Button width={btnWidth} isDisabled={!isValid} type={btnType.submit} variant={btnClass.primary}>
         {btnText}

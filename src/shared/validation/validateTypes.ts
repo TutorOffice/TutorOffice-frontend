@@ -9,4 +9,5 @@ export enum validateType {
   userType = 'userType',
   policy = 'policy',
   level = 'level',
+  subject = 'subject',
 }

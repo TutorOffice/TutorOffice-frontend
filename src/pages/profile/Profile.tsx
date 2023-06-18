@@ -1,13 +1,16 @@
 import s from './Profile.module.css';
 
 import Layout from '@/components/layout/Layout';
-import { btnClass, btnType, Button, ButtonGroup, Input, inputTypes, LoadImage } from '@/shared/ui';
-import userPhoto from '@/assets/images/profile-photo.jpg';
+import HeaderMain from '@/components/headerMain/HeaderMain';
 import LoadPhotoModal from '@/components/modals/loadPhotoModal/LoadPhotoModal';
-import Wrapper from '@/components/wrapper/Wrapper';
+import SubmitForm from '@/components/submitForm/SubmitForm';
+import userPhoto from '@/assets/images/profile-photo.jpg';
+import { btnClass, btnType, Button, Input, inputTypes, LoadImage } from '@/shared/ui';
+import { IFormValues, TValidationSubmitFormResolver, validateType } from '@/shared/validation';
 
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { SubmitHandler } from 'react-hook-form';
 
 const Profile = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -18,45 +21,57 @@ const Profile = () => {
     setIsOpenModal(false);
   };
 
+  const onSubmit: SubmitHandler<IFormValues> = (data) => {
+    // eslint-disable-next-line no-console
+    console.log(data);
+  };
+
   return (
     <>
       <Layout>
-        <Wrapper>
-          <header className={s.profile__header}>
-            <h2 className={s.profile__title}>Редактирование профиля</h2>
-            <Link to='/'>
-              <Button variant={btnClass.common} type={btnType.button}>
-                Назад на главную
-              </Button>
-            </Link>
-          </header>
-          <form className={s.profile__form}>
-            <LoadImage image={userPhoto} onClick={openModal} />
-            <fieldset className={s.profile__fieldset}>
-              <Input type={inputTypes.text} labelText='Фамилия' />
-              <Input type={inputTypes.text} labelText='Имя' />
-              <Input type={inputTypes.text} labelText='Отчество' />
-              <Input type={inputTypes.email} labelText='E-mail' />
-              <Input type={inputTypes.phone} labelText='Телефон' />
-            </fieldset>
-            <fieldset className={s.profile__pass}>
-              <Input type={inputTypes.password} iconVisibility={false} isPassword={true} labelText='Пароль' />
-              <Link to='/change-pass'>
-                <Button type={btnType.button} variant={btnClass.ghost}>
-                  Сменить пароль
-                </Button>
-              </Link>
-            </fieldset>
-            <ButtonGroup>
-              <Button type={btnType.submit} variant={btnClass.primary}>
-                Сохранить изменения
-              </Button>
-              <Button type={btnType.reset} variant={btnClass.ghost}>
-                Отменить
-              </Button>
-            </ButtonGroup>
-          </form>
-        </Wrapper>
+        <HeaderMain bottom={100}>
+          <h2 className={s.profile__title}>Редактирование профиля</h2>
+          <Link to='/'>
+            <Button variant={btnClass.common} type={btnType.button}>
+              Назад на главную
+            </Button>
+          </Link>
+        </HeaderMain>
+        <SubmitForm
+          defaultValues={{
+            firstName: 'Иван',
+            lastName: 'Грозный',
+            email: 'grozniyIvan@gmail.com',
+            patronymic: 'Васильевич',
+            password: 'Gr0zniy_',
+            subject: 'Английский язык',
+            phone: '+7(999) 999-99-99',
+          }}
+          resolverType={TValidationSubmitFormResolver.PROFILE}
+          btnGroup={true}
+          btnText='Сохранить изменения'
+          onSubmit={onSubmit}
+        >
+          <LoadImage image={userPhoto} onClick={openModal} />
+          <Input name={validateType.lastName} type={inputTypes.text} labelText='Фамилия' />
+          <Input name={validateType.firstName} type={inputTypes.text} labelText='Имя' />
+          <Input name={validateType.patronymic} type={inputTypes.text} labelText='Отчество' />
+          <Input name={validateType.email} type={inputTypes.email} labelText='E-mail' />
+          <Input name={validateType.phone} type={inputTypes.phone} labelText='Телефон' />
+          <Input
+            name={validateType.password}
+            type={inputTypes.password}
+            isPassword={true}
+            iconVisibility={false}
+            labelText='Пароль'
+          />
+          <Link to='/change-pass' className={s.change_pass}>
+            <Button width='100%' type={btnType.button} variant={btnClass.ghost}>
+              Сменить пароль
+            </Button>
+          </Link>
+          <Input name={validateType.subject} type={inputTypes.text} labelText='Предмет' />
+        </SubmitForm>
       </Layout>
       <LoadPhotoModal isOpen={isOpenModal} onClose={closeModal} />
     </>

@@ -85,3 +85,19 @@ export const addStudentSchema = yup.object({
   email: yup.string().email(emailMessages.incorrect),
   level: yup.string().max(2),
 });
+
+export const profileSchema = yup.object({
+  lastName: yup.string().matches(cyrillicPattern, lastNameMessages.incorrect),
+  firstName: yup.string().matches(cyrillicPattern, firstNameMessages.incorrect),
+  patronymic: yup.string().matches(cyrillicPattern, patronymicMessages.incorrect),
+  email: yup.string().email(emailMessages.incorrect),
+  phone: yup.string().max(18).matches(/\d+/, phoneMessages.incorrect),
+  password: yup
+    .string()
+    .min(passwordPattern.min, '')
+    .matches(passwordPattern.number, '')
+    .matches(passwordPattern.special, '')
+    .matches(passwordPattern.latin, '')
+    .matches(passwordPattern.upperCase, '')
+    .matches(passwordPattern.valid, ''),
+});

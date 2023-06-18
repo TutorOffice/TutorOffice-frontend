@@ -3,6 +3,7 @@ import {
   changePassFromMailSchema,
   changePassSchema,
   loginSchema,
+  profileSchema,
   registerSchema,
 } from './validationSchemas';
 
@@ -22,5 +23,7 @@ export const getResolver = (type: string) => {
       return yupResolver(changePassSchema);
     case TValidationSubmitFormResolver.CHANGE_PASS_FROM_MAIL:
       return yupResolver(changePassFromMailSchema);
+    case TValidationSubmitFormResolver.PROFILE:
+      return yupResolver(profileSchema);
   }
 };

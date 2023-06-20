@@ -1,4 +1,4 @@
-import s from './StudentReview.module.css';
+import s from './Students.module.css';
 
 import AddStudentModal from '@/components/modals/addStudentModal/AddStudentModal';
 import { btnClass, btnType, Button } from '@/shared/ui';
@@ -6,7 +6,7 @@ import studentsImage from '@/assets/images/students.png';
 
 import { useState } from 'react';
 
-const StudentReviewBlank = () => {
+const StudentsBlank = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
 
   const openModal = () => {
@@ -18,21 +18,19 @@ const StudentReviewBlank = () => {
 
   return (
     <>
-      <div className={s.studentReviewBlank}>
-        <div className={s.studentReview__blank}>
-          <h2 className={s.studentReview__title}>У Вас пока нет ни одного ученика</h2>
-          <p className={s.studentReview__content}>
-            Вы можете добавить нового ученика, указав его фамилию, имя и e-mail.
-          </p>
+      <div className={s.studentsBlank}>
+        <div className={s.students__blank}>
+          <h2 className={s.students__title}>У Вас пока нет ни одного ученика</h2>
+          <p className={s.students__content}>Вы можете добавить нового ученика, указав его фамилию, имя и e-mail.</p>
           <Button onClick={openModal} type={btnType.button} variant={btnClass.primary}>
             Добавить ученика
           </Button>
         </div>
-        <img className={s.studentReview__image} src={studentsImage} alt='Ученики' />
+        <img className={s.students__image} src={studentsImage} alt='Ученики' />
       </div>
       <AddStudentModal isOpen={isOpenModal} onClose={closeModal} />
     </>
   );
 };
 
-export default StudentReviewBlank;
+export default StudentsBlank;

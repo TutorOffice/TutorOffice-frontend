@@ -1,5 +1,5 @@
-import StudentReviewWithCard from './StudentReviewWithCard';
-import StudentReviewBlank from './StudentReviewBlank';
+import StudentsWithCard from './StudentsWithCard';
+import StudentsBlank from './StudentsBlank';
 import testStudents from './testStudents';
 
 import Layout from '../../components/layout/Layout';
@@ -8,7 +8,7 @@ import Wrapper from '../../components/wrapper/Wrapper';
 
 import HeaderAuth from '@/components/headerAuth/HeaderAuth';
 
-const StudentReview = () => {
+const Students = () => {
   return (
     <Layout>
       <Wrapper>
@@ -16,10 +16,10 @@ const StudentReview = () => {
         <Button type={btnType.button} variant={btnClass.back} bottom={60}>
           Назад
         </Button>
-        {testStudents.length ? <StudentReviewWithCard /> : <StudentReviewBlank />}
+        {testStudents.length ? <StudentsWithCard /> : <StudentsBlank />}
       </Wrapper>
     </Layout>
   );
 };
 
-export default StudentReview;
+export default Students;

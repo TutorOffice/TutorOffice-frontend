@@ -13,7 +13,7 @@ import CalendarDay from '@/pages/calendarDay/CalendarDay';
 import Lesson from '@/pages/lesson/Lesson';
 import ErrorPage from '@/pages/errorPage/ErrorPage';
 import HomeWork from '@/pages/homeWork/HomeWork';
-import StudentReview from '@/pages/studentReview/StudentReview';
+import Students from '@/pages/students/Students';
 import EducationalMaterials from '@/pages/educationalMaterials/EducationalMaterials';
 
 import { Route, Routes } from 'react-router-dom';
@@ -33,7 +33,7 @@ const App = () => {
       <Route path='/no-lesson' element={<NoLesson />} />
       <Route path='/calendar' element={<CalendarPage />} />
       <Route path='/calendar/:date' element={<CalendarDay />} />
-      <Route path='/students' element={<StudentReview />} />
+      <Route path='/students' element={<Students />} />
       <Route path='/calendar/:date/:lessonId' element={<Lesson />} />
       <Route path='/homework' element={<HomeWork />} />
       <Route path='/not-found' element={<ErrorPage />} />

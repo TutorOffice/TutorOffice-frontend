@@ -1,9 +1,13 @@
 .layout {
   width: 100%;
+	max-width: 1440px;
   display: flex;
+	margin: 0 auto;
 }
 
 .main {
+	box-sizing: content-box;
+	max-width: 1000px;
   padding: 50px 85px;
   flex: 1;
 }

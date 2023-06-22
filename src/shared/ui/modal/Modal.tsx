@@ -1,6 +1,8 @@
 import s from './modal.module.css';
 
-import React, { useEffect } from 'react';
+import { useOverlay } from '@/shared/hooks';
+
+import React from 'react';
 
 interface modalProps {
   children: React.ReactNode;
@@ -23,26 +25,7 @@ const Modal: React.FC<modalProps> = ({
   isErrorUpload = false,
   isErrorUploadText = '',
 }) => {
-  useEffect(() => {
-    document.addEventListener('keydown', keyboardHandler);
-    if (isOpen) document.body.style.overflowY = 'hidden';
-
-    return () => {
-      document.removeEventListener('keydown', keyboardHandler);
-      document.body.style.overflowY = 'auto';
-    };
-  }, [isOpen, onClose]);
-
-  const handleOverlay = (e: React.MouseEvent) => {
-    if (e.target === e.currentTarget) {
-      onClose();
-    }
-  };
-  const keyboardHandler = (e: KeyboardEvent) => {
-    if (e.key === 'Escape') {
-      onClose();
-    }
-  };
+  const handleOverlay = useOverlay(isOpen, onClose);
 
   if (isOpen) {
     return (

@@ -2,30 +2,22 @@
   position: fixed;
   bottom: 20px;
   width: 100%;
-  max-width: 1000px;
+  max-width: 830px;
   padding: 34px 45px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+	gap: 20px;
   background-color: var(--blue);
   border-radius: 20px;
 }
 
-.cookie__body {
-}
-
 .cookie__text {
-  text-align: left;
   color: var(--white);
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   font-weight: 400;
-}
-
-.cookie__buttons {
-  display: flex;
-  gap: 20px;
-  font-weight: 600;
+	line-height: calc(16 / 14);
 }
 
 .close__cookie {
@@ -34,4 +26,10 @@
   right: 5px;
   cursor: pointer;
   padding: 10px;
+}
+
+@media screen and (max-width: 1250px) {
+	.cookie {
+		max-width: 690px;
+	}
 }

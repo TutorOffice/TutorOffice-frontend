@@ -29,7 +29,7 @@ const StudentReviewWithCard = () => {
         </div>
         <p className={s.studentReviewWithCard__description}>
           Если Ваш ученик примет Ваше приглашение зарегистрироваться на сайте, то он станет{' '}
-          <span className={s.student_activ}>активным учеником</span> и будет полноценным участником процесса: сможет
+          <span className={s.student_active}>активным учеником</span> и будет полноценным участником процесса: сможет
           общаться с Вами, получать и выполнять домашние задания, менять информацию о себе, смотреть учебные материалы.
         </p>
         <p className={s.studentReviewWithCard__description}>

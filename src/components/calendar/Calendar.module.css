@@ -10,7 +10,7 @@
   width: 100%;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: repeat(6, minmax(auto, 120px));
+  grid-template-rows: repeat(6, 1fr);
   gap: 1px;
   background-color: var(--blue);
   border: 1px solid var(--blue);

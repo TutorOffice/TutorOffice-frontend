@@ -30,7 +30,7 @@ const ChangePass = () => {
           labelText='E-mail, указанный при регистрации'
           isRequired={true}
         />
-        <p className={s.changePass__comment}>Мы отправим Вам письмо на почту с ссылкой для смены пароля.</p>
+        <p className={s.changePass__comment}>Мы отправим Вам письмо на почту со ссылкой для смены пароля.</p>
       </SubmitForm>
     </Layout>
   );

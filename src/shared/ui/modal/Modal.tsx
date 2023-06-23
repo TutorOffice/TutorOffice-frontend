@@ -4,18 +4,18 @@ import { useOverlay } from '@/shared/hooks';
 
 import React from 'react';
 
-interface modalProps {
-  children: React.ReactNode;
+export interface ModalProps {
+  width: string;
   isOpen: boolean;
   onClose: () => void;
+  children?: React.ReactNode;
   title?: string;
-  width: string;
   isErrorUpload?: boolean;
   isErrorUploadText?: string;
   smallFont?: boolean;
 }
 
-const Modal: React.FC<modalProps> = ({
+const Modal: React.FC<ModalProps> = ({
   children,
   isOpen,
   onClose,

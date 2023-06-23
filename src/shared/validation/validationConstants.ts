@@ -1,4 +1,5 @@
 export const cyrillicPattern = /^[\u0400-\u04FF]+$/;
+export const cyrillicLatinPattern = /^[a-zа-я]+$/giu;
 
 export const passwordPattern = {
   min: 6,
@@ -41,6 +42,6 @@ export const emailMessages = {
 };
 
 export const phoneMessages = {
-  required: 'Введите телефон',
-  incorrect: 'Телефон указано некорректно',
+  required: 'Введите номер телефона',
+  incorrect: 'Номер телефона указано некорректно',
 };

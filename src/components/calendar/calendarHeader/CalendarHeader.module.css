@@ -1,8 +1,20 @@
+.calendar__header {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 40px;
+}
+
 .calendar__controls {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 40px;
+}
+
+.calendar__title {
+  font-family: 'Raleway';
+  font-size: 30px;
+  font-weight: 600;
 }
 
 .button {

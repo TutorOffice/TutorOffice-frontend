@@ -11,14 +11,7 @@ interface LoadPhotoModalProps {
 
 const LoadPhotoModal: React.FC<LoadPhotoModalProps> = ({ isOpen, onClose }) => {
   return (
-    <Modal
-      isOpen={isOpen}
-      onClose={onClose}
-      title='Загрузка новой фотографии'
-      width='590px'
-      isErrorUpload={true}
-      isErrorUploadText='Если у вас возникают проблемы с загрузкой, попробуйте выбрать фотографию меньшего размера.'
-    >
+    <Modal isOpen={isOpen} onClose={onClose} title='Загрузка новой фотографии' width='590px'>
       <span className={s.modalText}>
         Ученикам будет проще узнать вас, если вы загрузите свою настоящую фотографию. Вы можете загрузить изображение
         размером не больше 3Мб, в формате JPG, GIF или PNG.

@@ -39,7 +39,7 @@ const MainPage = () => {
             информацию и многое другое.
           </p>
           <Button type={btnType.button} variant={btnClass.primary}>
-            Попробовать
+            О проекте
           </Button>
         </div>
         <img className={s.main__image} src={mainImage} alt='Репетитор и ученик' />

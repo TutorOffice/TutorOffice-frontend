@@ -6,6 +6,7 @@ export {
   getDaysArray,
   getIsWeekend,
   getCurrentYear,
+  getToday,
 } from './moment';
 export type { momentType } from './moment';
 export { formatDate } from './formatDate';

@@ -1,10 +1,11 @@
 import s from './CalendarItem.module.css';
 
 import { formatDate, momentType } from '@/shared/utils';
-import CalendarModal from '@/components/modals/calendarModal/CalendarModal';
+import ModalWithButtons from '@/components/modals/modalWithButtons/modalWithButtons';
 
 import React, { useState } from 'react';
 import clsx from 'clsx';
+import { useNavigate } from 'react-router-dom';
 
 interface CalendarItemProps {
   day: momentType;
@@ -15,6 +16,7 @@ interface CalendarItemProps {
 
 const CalendarItem: React.FC<CalendarItemProps> = ({ day, isCurrentDay, isCurrentMonth, isLessons }) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
+  const navigate = useNavigate();
 
   const openModal = () => {
     setIsOpenModal(true);
@@ -25,6 +27,10 @@ const CalendarItem: React.FC<CalendarItemProps> = ({ day, isCurrentDay, isCurren
 
   const monthDay = day.format('DD.MM');
   const date = formatDate(day.format('DD MMMM YYYY'));
+
+  const viewSchedule = () => {
+    navigate(`/calendar/${date}`);
+  };
 
   const itemClassName = clsx({
     [s.calendarItem]: true,
@@ -45,7 +51,15 @@ const CalendarItem: React.FC<CalendarItemProps> = ({ day, isCurrentDay, isCurren
       <div onClick={openModal} className={itemClassName}>
         <div className={contentClassName}>{monthDay}</div>
       </div>
-      <CalendarModal title={date} isOpen={isOpenModal} onClose={closeModal} />
+      <ModalWithButtons
+        width='714px'
+        title={date}
+        isOpen={isOpenModal}
+        onClose={closeModal}
+        ghostBtnText='Добавить урок'
+        primaryBthText='Посмотреть расписание'
+        onClickPrimaryBtn={viewSchedule}
+      />
     </>
   );
 };

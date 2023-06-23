@@ -1,12 +1,13 @@
+import s from './ErrorPage.module.css';
+
 import ErrorInfo from '@/components/errorInfo/ErrorInfo';
 import Layout from '@/components/layout/Layout';
-import Wrapper from '@/components/wrapper/Wrapper';
 import { errorTypes } from '@/shared/constants';
 
 const ErrorPage = () => {
   return (
     <Layout>
-      <Wrapper>
+      <div className={s.errorPage}>
         {errorTypes.map((obj) => (
           <div key={obj.id}>
             {obj.code === '400' ? (
@@ -14,7 +15,7 @@ const ErrorPage = () => {
             ) : null}
           </div>
         ))}
-      </Wrapper>
+      </div>
     </Layout>
   );
 };

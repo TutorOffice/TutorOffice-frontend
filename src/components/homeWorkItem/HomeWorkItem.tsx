@@ -19,8 +19,10 @@ interface HomeWorkItemProps {
 const HomeWorkItem: React.FC<HomeWorkItemProps> = ({ photo, fullName, lesson, sent, todo, done }) => {
   return (
     <div className={s.homeworkItem}>
-      <img className={s.homeworkItem__photo} src={photo} alt='Фото ученика' />
-      <p>{fullName}</p>
+      <div className={s.homeworkItem__stud}>
+        <img className={s.homeworkItem__photo} src={photo} alt='Фото ученика' />
+        <p>{fullName}</p>
+      </div>
       <p>{lesson}</p>
       <div className={s.status}>
         <img className={s.status__img} src={sentIcon} alt='Отправлено' />

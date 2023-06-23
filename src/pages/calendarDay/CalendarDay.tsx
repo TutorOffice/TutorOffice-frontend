@@ -4,9 +4,10 @@ import testPhoto from '@/assets/images/test-student.jpg';
 import HeaderAuth from '@/components/headerAuth/HeaderAuth';
 import Layout from '@/components/layout/Layout';
 import OfficeItem from '@/components/officeItem/OfficeItem';
-import Wrapper from '@/components/wrapper/Wrapper';
 import { Button, btnClass, btnType } from '@/shared/ui';
+import { getToday, momentConfig } from '@/shared/utils';
 
+import moment from 'moment';
 import { useParams } from 'react-router-dom';
 
 const testStudents = [
@@ -22,37 +23,39 @@ const CalendarDay = () => {
   };
   const { date } = useParams<Params>() as Params;
 
+  moment.updateLocale('ru', momentConfig);
+  const today = getToday(moment());
+  const currentDate = date === today ? `сегодня (${date})` : date;
+
   return (
     <Layout>
-      <Wrapper>
-        <HeaderAuth bottom={40} />
-        <Button bottom={60} variant={btnClass.back} type={btnType.button}>
-          Назад
-        </Button>
-        <div className={s.office__content}>
-          <h2 className={s.office__title}>Расписание на {date}</h2>
-          <ul className={s.students__list}>
-            <div className={s.list__title}>
-              <span>Ученик</span>
-              <span>Время</span>
-              <span>Д/з</span>
-              <span>Статус</span>
-              <span></span>
-            </div>
-            {testStudents.map((stud) => (
-              <OfficeItem
-                key={stud.id}
-                date={date}
-                lessonId={stud.id}
-                photo={stud.photo}
-                time={stud.time}
-                name={stud.name}
-                lessonStatus={stud.lessonStatus}
-              />
-            ))}
-          </ul>
-        </div>
-      </Wrapper>
+      <HeaderAuth bottom={40} />
+      <Button type={btnType.button} variant={btnClass.back} bottom={60}>
+        Назад
+      </Button>
+      <div className={s.office__content}>
+        <h2 className={s.office__title}>Расписание на {currentDate}</h2>
+        <ul className={s.students__list}>
+          <div className={s.list__title}>
+            <span>Ученик</span>
+            <span>Время</span>
+            <span>Д/з</span>
+            <span>Статус</span>
+            <span></span>
+          </div>
+          {testStudents.map((stud) => (
+            <OfficeItem
+              key={stud.id}
+              date={date}
+              lessonId={stud.id}
+              photo={stud.photo}
+              time={stud.time}
+              name={stud.name}
+              lessonStatus={stud.lessonStatus}
+            />
+          ))}
+        </ul>
+      </div>
     </Layout>
   );
 };

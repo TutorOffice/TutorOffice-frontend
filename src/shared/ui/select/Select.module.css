@@ -1,0 +1,25 @@
+.root {
+    width: 100%;
+}
+
+.input {
+    cursor: pointer;
+}
+
+.hide {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.showOptions svg {
+    transform: rotate(180deg);
+}
+
+.closeOptions svg {
+    transform: rotate(0);
+}

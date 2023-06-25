@@ -7,7 +7,7 @@ import close from '@/assets/icons/pass-close.svg';
 import open from '@/assets/icons/pass-open.svg';
 
 import clsx from 'clsx';
-import React, { ChangeEvent, InputHTMLAttributes } from 'react';
+import React, { ChangeEvent, InputHTMLAttributes, ReactNode } from 'react';
 import { FieldError, FieldValues, UseFormRegister } from 'react-hook-form';
 
 export enum inputTypes {
@@ -32,6 +32,8 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   register?: UseFormRegister<FieldValues>;
   errors?: FieldError | undefined;
   ref?: React.RefObject<HTMLInputElement>;
+  className?: string;
+  children?: ReactNode;
 }
 
 const Input: React.FC<InputProps> = ({
@@ -48,8 +50,11 @@ const Input: React.FC<InputProps> = ({
   iconVisibility = true,
   name,
   register,
+  className,
+  children,
+  ...props
 }) => {
-  const classNameInput = clsx({
+  const classNameInput = clsx(className, {
     [s.input]: true,
     [s.error]: isError,
   });
@@ -76,12 +81,14 @@ const Input: React.FC<InputProps> = ({
           placeholder={placeholder}
           disabled={isDisabled}
           className={classNameInput}
+          {...props}
         />
         {isPassword && iconVisibility && (
           <button type='button' onClick={setIsOpen} className={s.passHide}>
             <img className={s.passHide__icon} src={isOpen ? open : close} alt='Иконка скрытия/отображения пароля' />
           </button>
         )}
+        {children}
       </div>
       {errors && <p className={s.required}>{errors.message}</p>}
       <p className={classNameTip}>{commentTip}</p>

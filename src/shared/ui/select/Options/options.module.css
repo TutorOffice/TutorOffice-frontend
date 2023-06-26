@@ -1,0 +1,30 @@
+.root {
+    position: absolute;
+    width: 100%;
+    background: var(--white, #FFF);
+    border-radius: 12px;
+    border: 0.5px solid var(--black, #071D48);
+    background: var(--white, #FFF);
+}
+
+.option {
+    padding: 9px 16px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.option:not(:last-child) {
+    border-bottom: 1px solid var(--black, #071D48);
+}
+
+.option:hover {
+    background: var(--inactive, #EFEEEE);
+}
+
+.option:last-child {
+    border-radius: 0 0 12px 12px;
+}
+
+.option:first-child {
+    border-radius: 12px 12px 0 0;
+}

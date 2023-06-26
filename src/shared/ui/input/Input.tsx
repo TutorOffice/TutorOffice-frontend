@@ -7,7 +7,7 @@ import close from '@/assets/icons/pass-close.svg';
 import open from '@/assets/icons/pass-open.svg';
 
 import clsx from 'clsx';
-import React, { ChangeEvent, InputHTMLAttributes, ReactNode } from 'react';
+import React, { InputHTMLAttributes, ReactNode } from 'react';
 import { FieldError, FieldValues, UseFormRegister } from 'react-hook-form';
 
 export enum inputTypes {
@@ -19,7 +19,6 @@ export enum inputTypes {
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   type: inputTypes;
-  onChange?: (e: ChangeEvent) => void;
   isDisabled?: boolean;
   placeholder?: string;
   labelText?: string;
@@ -31,13 +30,13 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   name?: validateType;
   register?: UseFormRegister<FieldValues>;
   errors?: FieldError | undefined;
-  ref?: React.RefObject<HTMLInputElement>;
+  inputRef?: React.RefObject<HTMLInputElement>;
   className?: string;
   children?: ReactNode;
 }
 
 const Input: React.FC<InputProps> = ({
-  ref,
+  inputRef,
   type,
   isDisabled = false,
   placeholder = '',
@@ -73,7 +72,7 @@ const Input: React.FC<InputProps> = ({
       </label>
       <div className={s.inputBlock}>
         <input
-          {...(ref ? ref : undefined)}
+          ref={inputRef}
           {...(register && name && { ...register(name) })}
           type={isOpen ? 'text' : type}
           maxLength={type === 'phone' ? 13 : undefined}

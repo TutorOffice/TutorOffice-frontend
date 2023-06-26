@@ -1,7 +1,7 @@
 import s from './Register.module.css';
 
 import registerImage from '@/assets/images/register-image.png';
-import { Checkbox, Button, Input, btnClass, btnType, inputTypes } from '@/shared/ui';
+import { btnClass, btnType, Button, Checkbox, Input, inputTypes } from '@/shared/ui';
 import { usePhoneMask } from '@/shared/utils';
 import { IFormValues, TValidationSubmitFormResolver, validateType } from '@/shared/validation';
 import SubmitForm from '@/components/submitForm/SubmitForm';
@@ -47,7 +47,7 @@ const Register = () => {
           placeholder='example@domaim.ru'
         />
         <Input
-          ref={phoneRef}
+          inputRef={phoneRef}
           name={validateType.phone}
           type={inputTypes.phone}
           labelText='Телефон'

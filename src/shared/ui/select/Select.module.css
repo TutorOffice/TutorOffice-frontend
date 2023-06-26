@@ -6,6 +6,15 @@
     cursor: pointer;
 }
 
+.input:hover {
+    outline: 1px solid var(--black, #071D48);
+
+}
+
+.inputFocus {
+    outline: 1px solid var(--black, #071D48);
+}
+
 .hide {
     position: absolute;
     right: 0;
@@ -17,9 +26,12 @@
 }
 
 .showOptions svg {
+    transition: all .3s ease-in-out;
     transform: rotate(180deg);
 }
 
 .closeOptions svg {
+    transition: all .3s ease-in-out;
     transform: rotate(0);
 }
+

@@ -10,10 +10,23 @@ export default {
   component: Select,
 } as Meta<typeof Select>;
 
+const options = [
+  {
+    label: 'Apple 🍎',
+    value: 'Apple 🍎',
+  },
+  {
+    label: 'Orange 🍊',
+    value: 'Orange 🍊',
+  },
+  {
+    label: 'Banana 🍌',
+    value: 'Banana 🍌',
+  },
+];
+
 export const Selects: StoryFn<typeof Select> = () => (
-  <div style={{ width: '500px' }}>
-    <Select />
-    <div>123</div>
-    <div>submit</div>
+  <div style={{ maxWidth: '500px' }}>
+    <Select options={options} />
   </div>
 );

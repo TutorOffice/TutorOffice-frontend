@@ -1,14 +1,13 @@
 import '../../../index.css';
 
-import Select from './Select';
-
 import type { Meta } from '@storybook/react';
 import { StoryFn } from '@storybook/react';
+import Dropdown from '@/shared/ui/dropdown/Dropdown';
 
 export default {
-  title: 'Select',
-  component: Select,
-} as Meta<typeof Select>;
+  title: 'Dropdown',
+  component: Dropdown,
+} as Meta<typeof Dropdown>;
 
 const options = [
   {
@@ -25,8 +24,8 @@ const options = [
   },
 ];
 
-export const Selects: StoryFn<typeof Select> = () => (
+export const Dropdowns: StoryFn<typeof Dropdown> = () => (
   <div style={{ maxWidth: '500px' }}>
-    <Select options={options} placeholder='Placeholder' />
+    <Dropdown />
   </div>
 );

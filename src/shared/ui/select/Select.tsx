@@ -15,11 +15,12 @@ interface Option {
 
 interface ISelect {
   options: Option[];
+  placeholder: string;
 }
 
 const initialSelectOptions = [{ label: '🍇', value: '🍇' }];
 
-const Select = ({ options = initialSelectOptions }: ISelect) => {
+const Select = ({ options = initialSelectOptions, placeholder }: ISelect) => {
   const [showOptions, setShowOptions] = useState(false);
   const [optionValue, setOptionValue] = useState<string>('');
   const classNameOptions = clsx(s.hide, {
@@ -65,7 +66,7 @@ const Select = ({ options = initialSelectOptions }: ISelect) => {
         inputRef={inputRef}
         value={optionValue}
         onChange={handlerOptionValue}
-        placeholder='Выберите ученика'
+        placeholder={placeholder}
         className={classNameSelect}
         type={inputTypes.text}
       >

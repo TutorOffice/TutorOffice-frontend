@@ -16,18 +16,19 @@ interface Option {
 interface ISelect {
   options: Option[];
   placeholder: string;
+  className?: string;
 }
 
 const initialSelectOptions = [{ label: '🍇', value: '🍇' }];
 
-const Select = ({ options = initialSelectOptions, placeholder }: ISelect) => {
+const Select = ({ options = initialSelectOptions, placeholder, className }: ISelect) => {
   const [showOptions, setShowOptions] = useState(false);
   const [optionValue, setOptionValue] = useState<string>('');
   const classNameOptions = clsx(s.hide, {
     [s.showOptions]: showOptions,
     [s.closeOptions]: !showOptions,
   });
-  const classNameSelect = clsx(s.input, {
+  const classNameSelect = clsx(className, s.input, {
     [s.inputFocus]: showOptions,
   });
   const ref = useRef<HTMLDivElement>(null);
@@ -69,10 +70,12 @@ const Select = ({ options = initialSelectOptions, placeholder }: ISelect) => {
         placeholder={placeholder}
         className={classNameSelect}
         type={inputTypes.text}
+        right={
+          <button type='button' className={classNameOptions}>
+            <Icon />
+          </button>
+        }
       >
-        <button type='button' className={classNameOptions}>
-          <Icon />
-        </button>
         {showOptions && <Options options={options} optionValue={optionValue} setOptionValue={setOptionValue} />}
       </Input>
     </div>

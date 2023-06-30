@@ -1,23 +1,16 @@
-import s from './Input.module.css';
+import s from './InputPassword.module.css';
 
 import { validateType } from '@/shared/validation';
 
-import InputPassword from '@/shared/ui/input/InputPassword/InputPassword';
+import { usePassword } from '@/shared/ui/input/usePassword';
+import close from '@/assets/icons/pass-close.svg';
+import open from '@/assets/icons/pass-open.svg';
 
 import clsx from 'clsx';
 import React, { InputHTMLAttributes, ReactNode } from 'react';
 import { FieldError, FieldValues, UseFormRegister } from 'react-hook-form';
 
-export enum inputTypes {
-  text = 'text',
-  password = 'password',
-  phone = 'phone',
-  email = 'email',
-  button = 'button',
-}
-
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  type: inputTypes;
+interface InputPassword extends InputHTMLAttributes<HTMLInputElement> {
   isDisabled?: boolean;
   placeholder?: string;
   labelText?: string;
@@ -35,9 +28,8 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   right?: ReactNode | ReactNode[];
 }
 
-const Input: React.FC<InputProps> = ({
+const InputPassword: React.FC<InputPassword> = ({
   inputRef,
-  type,
   isDisabled = false,
   placeholder = '',
   labelText = '',
@@ -48,7 +40,6 @@ const Input: React.FC<InputProps> = ({
   name,
   register,
   className,
-  children,
   right,
   ...props
 }) => {
@@ -60,24 +51,7 @@ const Input: React.FC<InputProps> = ({
     [s.commentTip]: true,
     [s.errorTip]: isError,
   });
-
-  if (type === inputTypes.password) {
-    return (
-      <InputPassword
-        inputRef={inputRef}
-        isDisabled={isDisabled}
-        placeholder={placeholder}
-        labelText={labelText}
-        commentTip={commentTip}
-        isRequired={isRequired}
-        isError={isError}
-        name={name}
-        register={register}
-        className={className}
-        {...props}
-      />
-    );
-  }
+  const [isOpen, setIsOpen] = usePassword();
 
   return (
     <div className={s.inputs}>
@@ -92,19 +66,21 @@ const Input: React.FC<InputProps> = ({
           <input
             ref={inputRef}
             {...(register && name && { ...register(name) })}
-            type={type}
-            maxLength={type === 'phone' ? 13 : undefined}
-            data-tel-input={type === 'phone' ? 'data-tel-input' : null}
             placeholder={placeholder}
             disabled={isDisabled}
+            type={isOpen ? 'text' : 'password'}
             className={classNameInput}
             {...props}
           />
         </div>
         <div className={s.right}>
-          <div className={s.rightCentered}>{right}</div>
+          <div className={s.rightCentered}>
+            {right}
+            <button type='button' onClick={setIsOpen}>
+              <img className={s.passHide__icon} src={isOpen ? open : close} alt='Иконка скрытия/отображения пароля' />
+            </button>
+          </div>
         </div>
-        {children}
       </div>
       {errors && <p className={s.required}>{errors.message}</p>}
       <p className={classNameTip}>{commentTip}</p>
@@ -112,4 +88,4 @@ const Input: React.FC<InputProps> = ({
   );
 };
 
-export default Input;
+export default InputPassword;

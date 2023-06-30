@@ -15,15 +15,6 @@
     outline: 1px solid var(--black, #071D48);
 }
 
-.hide {
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 .showOptions svg {
     transition: all .3s ease-in-out;

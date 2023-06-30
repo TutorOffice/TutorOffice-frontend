@@ -16,3 +16,9 @@
   border: 1px solid var(--blue);
   border-radius: 20px;
 }
+
+@media screen and (max-width: 1100px) {
+	.calendarWrapper {
+		margin-top: 60px;
+	}
+}

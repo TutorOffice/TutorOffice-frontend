@@ -2,6 +2,10 @@
   position: relative;
 }
 
+.register__goBack {
+	margin-bottom: 100px;
+}
+
 .register__title {
   margin-bottom: 35px;
   font-family: 'Raleway';
@@ -9,20 +13,54 @@
   font-weight: 600;
 }
 
-.backLink {
+.register__container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.register__formContainer {
+	flex-shrink: 0;
+}
+
+.loginLink {
   margin-left: 5px;
 }
 
-.registerImg {
-  width: 425px;
-  height: 308px;
-  position: absolute;
-  bottom: 61px;
-  left: 110%;
+.register__img {
+	max-width: 100%;
+	align-self: flex-end;
+	margin-bottom: 80px;
 }
 
 .register__desc {
 	font-family: 'Roboto';
 	font-weight: 400;
 	font-size: 18px;
+}
+
+@media screen and (max-width: 1250px) {
+	.register__container {
+		flex-direction: column;
+	}
+
+	.register__img {
+		margin: 35px 0 40px 0;
+	}
+}
+
+@media screen and (max-width: 1100px) {
+	.register__goBack {
+		margin: 50px 0 40px 0;
+	}
+}
+
+@media screen and (max-width: 819px) {
+	.register__title {
+		margin-bottom: 40px;
+		font-size: 22px;
+	}
+
+	.register__img {
+		max-width: 297px;
+	}
 }

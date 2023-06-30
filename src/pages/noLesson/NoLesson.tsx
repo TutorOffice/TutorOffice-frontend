@@ -1,12 +1,6 @@
 import Layout from '@/components/layout/Layout';
-import UserInfo from '@/components/userInfo/UserInfo';
-import userPhoto from '@/assets/images/user-photo.jpg';
-import HeaderMain from '@/components/headerMain/HeaderMain';
-import { btnClass, btnType, Button } from '@/shared/ui';
 import noLesson from '@/assets/images/no-lesson.png';
 import InformationContent from '@/components/information/informationContent/InformationContent';
-import Wrapper from '@/components/wrapper/Wrapper';
-
 import HeaderAuth from '@/components/headerAuth/HeaderAuth';
 
 import { useNavigate } from 'react-router-dom';

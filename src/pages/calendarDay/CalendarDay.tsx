@@ -30,9 +30,11 @@ const CalendarDay = () => {
   return (
     <Layout>
       <HeaderAuth bottom={40} />
-      <Button type={btnType.button} variant={btnClass.back} bottom={60}>
-        Назад
-      </Button>
+      <div className={s.calendarDay__goBack}>
+        <Button type={btnType.button} variant={btnClass.back}>
+          Назад
+        </Button>
+      </div>
       <div className={s.office__content}>
         <h2 className={s.office__title}>Расписание на {currentDate}</h2>
         <ul className={s.students__list}>

@@ -4,8 +4,9 @@
 }
 
 .user__photo {
+	margin-right: 15px;
   object-fit: cover;
-  margin-right: 15px;
+  border-radius: 50%;
 }
 
 .user__info {

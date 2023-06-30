@@ -5,33 +5,23 @@ import NavbarDefault from './NavbarDefault';
 
 import logo from '@/assets/images/logo.png';
 import { Burger } from '@/shared/ui';
+import { useOverlay } from '@/shared/hooks';
 
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import clsx from 'clsx';
 
 const isAuth = true;
 
 const Navbar = () => {
   const [isVisibleMenu, setIsVisibleMenu] = useState(false);
-  useEffect(() => {
-    if (isVisibleMenu) document.body.style.overflowY = 'hidden';
-    return () => {
-      document.body.style.overflowY = 'auto';
-    };
-  }, [isVisibleMenu]);
-
   const openMenu = () => {
     setIsVisibleMenu(true);
   };
   const closeMenu = () => {
     setIsVisibleMenu(false);
   };
-  const handleOverlay = (e: React.MouseEvent) => {
-    if (e.target === e.currentTarget) {
-      closeMenu();
-    }
-  };
+  const handleOverlay = useOverlay(isVisibleMenu, closeMenu);
 
   return (
     <div onClick={handleOverlay} className={isVisibleMenu ? s.overlay : ''}>

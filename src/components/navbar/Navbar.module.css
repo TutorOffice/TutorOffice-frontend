@@ -144,7 +144,7 @@
   opacity: 0.6;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1100px) {
   .navbar {
     transition: transform 0.3s ease-in-out;
     transform: translateX(-100%);
@@ -177,10 +177,10 @@
 	}
 
 	.closeButton {
-		display: block;
+		display: block; 
 	}
 
 	.contacts {
-padding-left: 43px;
+		padding-left: 43px;
 	}
 }

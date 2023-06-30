@@ -1,5 +1,5 @@
 .burger {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
   display: none;
@@ -10,6 +10,7 @@
 	border-bottom-right-radius: 60px;
   border: none;
   transition: opacity 0.3s ease;
+	z-index: 2;
 }
 
 .burger:hover {
@@ -32,7 +33,7 @@
   transition: transform 0.3s;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1100px) {
   .burger {
     width: 129px;
     height: 90px;

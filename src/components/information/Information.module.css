@@ -1,16 +1,5 @@
 .information__backBtn {
   margin-bottom: 200px;
-  align-self: flex-start;
-  color: var(--orange);
-  transition: color 0.3s ease-in-out;
-}
-
-.information__backBtn:hover {
-  color: var(--orange-hover);
-}
-
-.information__backBtn:active {
-  color: var(--orange-pressed);
 }
 
 .information__content {

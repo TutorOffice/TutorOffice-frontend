@@ -1,3 +1,5 @@
+import s from './NoLesson.module.css';
+
 import Layout from '@/components/layout/Layout';
 import noLesson from '@/assets/images/no-lesson.png';
 import InformationContent from '@/components/information/informationContent/InformationContent';
@@ -13,7 +15,7 @@ const NoLesson = () => {
 
   return (
     <Layout>
-      <HeaderAuth bottom={200} />
+      <HeaderAuth className={s.noLesson__header} />
       <InformationContent
         onClick={goToCalendar}
         title='Сегодня у тебя выходной!'
@@ -21,7 +23,7 @@ const NoLesson = () => {
         image={noLesson}
       >
         <span>
-          На сегодня уроков не запланированно. Вы можете посмотреть расписание занятий на другой день в своём календаре.
+          На сегодня уроков не запланировано. Вы можете посмотреть расписание занятий на другой день в своём календаре.
         </span>
       </InformationContent>
     </Layout>

@@ -7,18 +7,17 @@ import userPhoto from '@/assets/images/user-photo.jpg';
 import React from 'react';
 
 interface HeaderAuthProps {
-  bottom?: number;
   className?: string;
 }
 
-const HeaderAuth: React.FC<HeaderAuthProps> = ({ bottom, className }) => {
+const HeaderAuth: React.FC<HeaderAuthProps> = ({ className }) => {
   const logout = () => {
     // eslint-disable-next-line no-console
     console.log('Вы вышли из системы.');
   };
 
   return (
-    <HeaderMain className={className} bottom={bottom}>
+    <HeaderMain className={className}>
       <UserInfo
         photo={userPhoto}
         fullName='Гурин Александр Максимович'

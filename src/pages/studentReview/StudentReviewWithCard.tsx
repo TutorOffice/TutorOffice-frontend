@@ -1,9 +1,9 @@
 import s from './StudentReview.module.css';
+
 import testStudents from './testStudents';
 
-import { btnClass, btnType, Button } from '../../shared/ui';
-import UserCard from '../../components/userCard/UserCard';
-
+import { btnClass, btnType, Button } from '@/shared/ui';
+import UserCard from '@/components/userCard/UserCard';
 import AddStudentModal from '@/components/modals/addStudentModal/AddStudentModal';
 
 import { useState } from 'react';

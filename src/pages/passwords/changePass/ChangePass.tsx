@@ -15,7 +15,7 @@ const ChangePass = () => {
 
   return (
     <Layout>
-      <Button type={btnType.button} variant={btnClass.back} bottom={200}>
+      <Button className={s.changePass__goBackBtn} type={btnType.button} variant={btnClass.back}>
         Назад
       </Button>
       <h2 className={s.changePass__title}>Сбросить пароль</h2>

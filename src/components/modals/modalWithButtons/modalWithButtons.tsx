@@ -1,3 +1,5 @@
+import s from './ModalWithButtons.module.css';
+
 import { btnClass, btnType, Button, ButtonGroup, Modal } from '@/shared/ui';
 import { ModalProps } from '@/shared/ui/modal/Modal';
 
@@ -24,7 +26,7 @@ const ModalWithButtons: React.FC<ModalWithButtonsProps> = ({
   return (
     <>
       <Modal title={title} isOpen={isOpen} onClose={onClose} width={width} smallFont={smallFont}>
-        <ButtonGroup justifyContent='center' width='100%' bottom={0}>
+        <ButtonGroup className={s.modal__btnGroup} width='100%'>
           <Button onClick={onClickGhostBtn} type={btnType.button} variant={btnClass.ghost}>
             {ghostBtnText}
           </Button>

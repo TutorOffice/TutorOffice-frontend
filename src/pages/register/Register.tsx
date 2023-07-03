@@ -31,10 +31,9 @@ const Register = () => {
       <div className={s.register__container}>
         <div className={s.register__formContainer}>
           <SubmitForm
+            className={s.register__form}
             btnText='Зарегистрироваться'
             btnWidth='100%'
-            top='35px'
-            bottom='30px'
             resolverType={TValidationSubmitFormResolver.REGISTER}
             onSubmit={onSubmit}
           >

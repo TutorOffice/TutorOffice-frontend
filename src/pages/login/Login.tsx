@@ -21,9 +21,9 @@ const Login = () => {
       </Button>
       <h2 className={s.login__title}>Вход в личный кабинет</h2>
       <SubmitForm
+        className={s.login__form}
         btnText='Войти'
         btnWidth='100%'
-        bottom='30px'
         resolverType={TValidationSubmitFormResolver.LOGIN}
         onSubmit={onSubmit}
       >

@@ -1,4 +1,4 @@
-import s from './OfficeItem.module.css';
+import s from './CalendarDayItem.module.css';
 
 import { btnClass, btnType, Button } from '@/shared/ui';
 import statusTrue from '@/assets/icons/status-true.svg';
@@ -7,7 +7,7 @@ import statusFalse from '@/assets/icons/status-false.svg';
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 
-interface OfficeItemProps {
+interface CalendarDayItemProps {
   photo: string;
   time: string;
   name: string;
@@ -16,19 +16,19 @@ interface OfficeItemProps {
   date: string;
 }
 
-const OfficeItem: React.FC<OfficeItemProps> = ({ photo, time, name, lessonStatus, lessonId, date }) => {
+const CalendarDayItem: React.FC<CalendarDayItemProps> = ({ photo, time, name, lessonStatus, lessonId, date }) => {
   const [status, setStatusIcon] = useState(lessonStatus);
   const onSetStatus = () => {
     setStatusIcon(!status);
   };
 
   return (
-    <li className={s.officeItem}>
-      <div className={s.officeItem__user}>
-        <img className={s.officeItem__photo} src={photo} alt='Фото пользователя' />
+    <li className={s.calendarDayItem}>
+      <div className={s.calendarDayItem__user}>
+        <img className={s.calendarDayItem__photo} src={photo} alt='Фото пользователя' />
         <p>{name}</p>
       </div>
-      <p className={s.officeItem__time}>{time}</p>
+      <p className={s.calendarDayItem__time}>{time}</p>
       <p className={s.lookHomework}>Посмотреть</p>
       <img
         onClick={onSetStatus}
@@ -45,4 +45,4 @@ const OfficeItem: React.FC<OfficeItemProps> = ({ photo, time, name, lessonStatus
   );
 };
 
-export default OfficeItem;
+export default CalendarDayItem;

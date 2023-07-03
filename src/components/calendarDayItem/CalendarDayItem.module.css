@@ -1,4 +1,4 @@
-.officeItem {
+.calendarDayItem {
   display: grid;
   grid-template-columns:
     minmax(270px, 1.67fr)
@@ -14,16 +14,16 @@
   font-size: 18px;
 }
 
-.officeItem__user {
+.calendarDayItem__user {
   display: flex;
   align-items: center;
 }
 
-.officeItem__photo {
+.calendarDayItem__photo {
   margin-right: 20px;
 }
 
-.officeItem__time {
+.calendarDayItem__time {
   font-family: 'Roboto';
   font-weight: 400;
 }

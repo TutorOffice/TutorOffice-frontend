@@ -6,6 +6,7 @@ import { getResolver } from '@/shared/validation/getResolver';
 
 import React, { createElement } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import clsx from 'clsx';
 
 interface SubmitFormProps {
   children: React.ReactNode;
@@ -13,22 +14,20 @@ interface SubmitFormProps {
   resolverType: string;
   btnText?: string;
   btnWidth?: string;
-  top?: string;
-  bottom?: string;
   btnGroup?: boolean;
   defaultValues?: IFormValues;
+  className?: string;
 }
 
 const SubmitForm: React.FC<SubmitFormProps> = ({
   children,
   onSubmit,
   resolverType,
-  top,
-  bottom,
   btnText,
   btnWidth,
   btnGroup,
   defaultValues,
+  className,
 }) => {
   const {
     register,
@@ -60,8 +59,10 @@ const SubmitForm: React.FC<SubmitFormProps> = ({
     );
   }
 
+  const formClassName = clsx(className, { [s.submitForm]: true });
+
   return (
-    <form onSubmit={handleSubmit(onSubmit)} style={{ marginTop: top, marginBottom: bottom }} className={s.submitForm}>
+    <form onSubmit={handleSubmit(onSubmit)} className={formClassName}>
       {Array.isArray(children)
         ? children.map((child) => {
             return child.props.name

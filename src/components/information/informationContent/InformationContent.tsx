@@ -1,16 +1,12 @@
 import s from '../Information.module.css';
 
+import { InformationProps } from '../Information';
+
 import { btnClass, btnType, Button } from '@/shared/ui';
 
 import React from 'react';
 
-interface InformationContentProps {
-  children: React.ReactNode;
-  title: string;
-  btnText: string;
-  image: string;
-  onClick?: () => void;
-}
+type InformationContentProps = InformationProps;
 
 const InformationContent: React.FC<InformationContentProps> = ({ children, title, image, onClick, btnText }) => {
   return (

@@ -6,18 +6,13 @@ import React from 'react';
 
 interface HeaderMainProps {
   children: React.ReactNode;
-  bottom?: number;
   className?: string;
 }
 
-const HeaderMain: React.FC<HeaderMainProps> = ({ children, className, bottom }) => {
+const HeaderMain: React.FC<HeaderMainProps> = ({ children, className }) => {
   const headerClassName = clsx(className, { [s.header]: true });
 
-  return (
-    <header style={{ marginBottom: bottom }} className={headerClassName}>
-      {children}
-    </header>
-  );
+  return <header className={headerClassName}>{children}</header>;
 };
 
 export default HeaderMain;

@@ -24,12 +24,12 @@ interface ButtonProps {
   variant: btnClass;
   isDisabled?: boolean;
   type: btnType;
-  bottom?: number;
   width?: string;
+  className?: string;
 }
 
-const Button: React.FC<ButtonProps> = ({ onClick, children, variant, isDisabled, type, bottom = 0, width }) => {
-  const className = clsx({
+const Button: React.FC<ButtonProps> = ({ onClick, children, variant, isDisabled, type, width, className }) => {
+  const buttonClassName = clsx(className, {
     [s.button]: true,
     [s.buttonPrimary]: variant === btnClass.primary && !isDisabled,
     [s.buttonGhost]: variant === btnClass.ghost && !isDisabled,
@@ -43,8 +43,8 @@ const Button: React.FC<ButtonProps> = ({ onClick, children, variant, isDisabled,
       type={type}
       onClick={variant === btnClass.back ? goBack : onClick}
       disabled={isDisabled}
-      className={className}
-      style={{ marginBottom: bottom, width: width }}
+      className={buttonClassName}
+      style={{ width: width }}
     >
       {children}
     </button>

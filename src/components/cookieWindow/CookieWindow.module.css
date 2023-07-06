@@ -32,4 +32,18 @@
 	.cookie {
 		max-width: 690px;
 	}
+
+	.cookie__text p:first-child {
+		margin-bottom: 5px;
+	}
+}
+
+@media screen and (max-width: 819px) {
+	.cookie {
+		padding: 25px 40px;
+	}
+
+	.cookie__text {
+		font-size: 12px;
+	}
 }

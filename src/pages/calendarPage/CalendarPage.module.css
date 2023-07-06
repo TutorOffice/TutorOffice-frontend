@@ -1,0 +1,9 @@
+.calendarPage__header {
+	margin-bottom: 70px;
+}
+
+@media screen and (max-width: 1100px) {
+	.calendarPage__header {
+		margin-bottom: 0;
+	}
+}

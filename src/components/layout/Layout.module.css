@@ -7,7 +7,21 @@
 
 .main {
 	box-sizing: content-box;
+	width: 100%;
 	max-width: 1000px;
   padding: 50px 85px;
   flex: 1;
+}
+
+@media screen and (max-width: 1250px) {
+	.main {
+		padding: 50px 40px;
+	}
+}
+
+@media screen and (max-width: 1100px) {
+	.main {
+		max-width: 100%;
+		padding: 90px 40px 40px;
+	}
 }

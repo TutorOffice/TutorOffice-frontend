@@ -1,3 +1,5 @@
+import s from './EducationalMaterials.module.css';
+
 import testData from './testStudents';
 import EducationalMaterialsBlank, { UserStatus } from './EducationalMaterialsBlank';
 import EducationalMaterialsWithCards from './EducationalMaterialsWithCards';
@@ -10,7 +12,7 @@ const userStatus = UserStatus.Tutor;
 const EducationalMaterials = () => {
   return (
     <Layout>
-      <HeaderAuth bottom={testData.length ? 70 : 100} />
+      <HeaderAuth className={s.educationalMaterials__header} />
       {testData.length ? <EducationalMaterialsWithCards /> : <EducationalMaterialsBlank userStatus={userStatus} />}
     </Layout>
   );

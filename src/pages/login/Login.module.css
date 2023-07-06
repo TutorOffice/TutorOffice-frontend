@@ -1,3 +1,7 @@
+.login__goBack {
+	margin-bottom: 200px;
+}
+
 .login__title {
   margin-bottom: 35px;
   font-family: 'Raleway';
@@ -5,12 +9,30 @@
   font-weight: 600;
 }
 
-.login__links {
-  display: flex;
-  flex-direction: column;
-  row-gap: 20px;
+.login__form {
+	margin-bottom: 30px;
 }
+
+.link_changePass {
+	display: block;
+	margin-bottom: 20px;
+}
+
 .login__links_row {
   display: flex;
   column-gap: 10px;
+	font-size: 18px;
+}
+
+@media screen and (max-width: 1100px) {
+	.login__goBack {
+		margin: 50px 0 40px 0;
+	}
+}
+
+@media screen and (max-width: 819px) {
+	.login__title {
+		margin-bottom: 40px;
+		font-size: 22px;
+	}
 }

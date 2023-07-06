@@ -29,7 +29,7 @@ const Profile = () => {
   return (
     <>
       <Layout>
-        <HeaderMain bottom={100}>
+        <HeaderMain className={s.profile__header}>
           <h2 className={s.profile__title}>Редактирование профиля</h2>
           <Link to='/'>
             <Button variant={btnClass.common} type={btnType.button}>
@@ -38,6 +38,7 @@ const Profile = () => {
           </Link>
         </HeaderMain>
         <SubmitForm
+          className={s.profile__form}
           defaultValues={{
             firstName: 'Иван',
             lastName: 'Грозный',

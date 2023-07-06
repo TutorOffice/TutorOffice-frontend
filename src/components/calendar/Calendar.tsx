@@ -6,7 +6,7 @@ import CalendarWeekDays from './calendarWeekDays/CalendarWeekDays';
 
 import { getCurrentMonth, getCurrentYear, getDaysArray, momentConfig } from '@/shared/utils';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import moment from 'moment';
 
 const Calendar = () => {

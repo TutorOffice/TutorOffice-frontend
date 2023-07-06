@@ -1,16 +1,17 @@
-.office__header {
-  width: 100%;
-  margin-bottom: 150px;
-  display: flex;
-  justify-content: space-between;
+.calendarDay__header {
+	margin-bottom: 40px;
 }
 
-.office__content {
+.calendarDay__goBack {
+	margin-bottom: 60px;
+}
+
+.calendarDay__content {
   width: 100%;
   display: grid;
 }
 
-.office__title {
+.calendarDay__title {
   margin-bottom: 50px;
   font-family: 'Raleway';
   font-size: 30px;
@@ -36,4 +37,10 @@
   gap: 50px;
   font-family: 'Raleway';
   font-size: 20px;
+}
+
+@media screen and (max-width: 1100px) {
+	.calendarDay__goBack {
+		margin-bottom: 40px;
+	}
 }

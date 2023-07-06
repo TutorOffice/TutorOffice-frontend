@@ -1,3 +1,7 @@
+.profile__header {
+	margin-bottom: 100px;
+}
+
 .profile__title {
   font-family: 'Raleway';
   font-size: 24px;
@@ -13,4 +17,15 @@
 	position: absolute;
 	bottom: 215px;
 	left: 520px;
+}
+
+@media screen and (max-width: 1100px) {
+	.profile__header {
+		margin-bottom: 0;
+		padding-left: 80px;
+	}
+
+	.profile__form {
+		margin-top: 60px;
+	}
 }

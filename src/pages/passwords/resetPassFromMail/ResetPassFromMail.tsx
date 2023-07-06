@@ -1,4 +1,4 @@
-import s from './ChangePass.module.css';
+import s from './ResetPassFromMail.module.css';
 
 import Layout from '@/components/layout/Layout';
 import SubmitForm from '@/components/submitForm/SubmitForm';
@@ -7,7 +7,7 @@ import { TValidationSubmitFormResolver, IFormValues, validateType } from '@/shar
 
 import { SubmitHandler } from 'react-hook-form';
 
-const ChangePass = () => {
+const ResetPassFromMail = () => {
   const onSubmit: SubmitHandler<IFormValues> = (data) => {
     // eslint-disable-next-line no-console
     console.log(data);
@@ -15,11 +15,12 @@ const ChangePass = () => {
 
   return (
     <Layout>
-      <Button type={btnType.button} variant={btnClass.back} bottom={200}>
+      <Button className={s.resetPassFromMail__goBackBtn} type={btnType.button} variant={btnClass.back}>
         Назад
       </Button>
-      <h2 className={s.changePass__title}>Сбросить пароль</h2>
+      <h2 className={s.resetPassFromMail__title}>Сбросить пароль</h2>
       <SubmitForm
+        btnWidth='100%'
         btnText='Получить ссылку'
         onSubmit={onSubmit}
         resolverType={TValidationSubmitFormResolver.CHANGE_PASS}
@@ -30,10 +31,10 @@ const ChangePass = () => {
           labelText='E-mail, указанный при регистрации'
           isRequired={true}
         />
-        <p className={s.changePass__comment}>Мы отправим Вам письмо на почту со ссылкой для смены пароля.</p>
+        <p className={s.resetPassFromMail__comment}>Мы отправим Вам на почту письмо со ссылкой для сброса пароля.</p>
       </SubmitForm>
     </Layout>
   );
 };
 
-export default ChangePass;
+export default ResetPassFromMail;

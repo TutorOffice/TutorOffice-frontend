@@ -27,3 +27,50 @@
   font-size: 18px;
   line-height: calc(21 / 18);
 }
+
+.information__image {
+	max-width: 100%;
+}
+
+@media screen and (max-width: 1250px) {
+	.information__backBtn {
+		margin-bottom: 150px;
+	}
+
+	.information__content {
+		flex-direction: column;
+	}
+
+	.information__text {
+		text-align: center;
+		order: 2;
+	}
+
+	.information__image {
+		margin-bottom: 50px;
+	}
+
+	.information__desc {
+		margin-bottom: 40px;
+	}
+}
+
+@media screen and (max-width: 1100px) {
+	.information__backBtn {
+		margin: 50px 0 40px 0;
+	}
+}
+
+@media screen and (max-width: 819px) {
+	.information__image {
+		width: 183px;
+	}
+
+	.information__title {
+		font-size: 22px;
+	}
+
+	.information__desc {
+		font-size: 16px;
+	}
+}

@@ -1,5 +1,4 @@
 import s from '../Information.module.css';
-
 import { InformationProps } from '../Information';
 
 import { btnClass, btnType, Button } from '@/shared/ui';
@@ -18,7 +17,7 @@ const InformationContent: React.FC<InformationContentProps> = ({ children, title
           {btnText}
         </Button>
       </div>
-      <img src={image} alt='Конверт' />
+      <img className={s.information__image} src={image} alt='Конверт' />
     </div>
   );
 };

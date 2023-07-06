@@ -12,7 +12,7 @@ const userStatus = UserStatus.Tutor;
 const EducationalMaterials = () => {
   return (
     <Layout>
-      <HeaderAuth className={s.edMaterials__header} />
+      <HeaderAuth className={s.educationalMaterials__header} />
       {testData.length ? <EducationalMaterialsWithCards /> : <EducationalMaterialsBlank userStatus={userStatus} />}
     </Layout>
   );

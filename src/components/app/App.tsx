@@ -1,8 +1,9 @@
 import MainPage from '@/pages/mainPage/MainPage';
 import Login from '@/pages/login/Login';
 import Register from '@/pages/register/Register';
-import ChangePass from '@/pages/passwords/changePass/ChangePass';
-import ChangePassFromMail from '@/pages/passwords/changePassFromMail/ChangePassFromMail';
+import ChangePassword from '@/pages/passwords/changePassword/ChangePassword';
+import ResetPassword from '@/pages/passwords/resetPassword/ResetPassword';
+import ResetPassFromMail from '@/pages/passwords/resetPassFromMail/ResetPassFromMail';
 import SuccessPass from '@/pages/passwords/successPass/SuccessPass';
 import CheckMailRegister from '@/pages/register/checkMailRegister/CheckMailRegister';
 import CheckMailPass from '@/pages/passwords/checkMailPass/CheckMailPass';
@@ -24,8 +25,9 @@ const App = () => {
       <Route path='/' element={<MainPage />} />
       <Route path='/login' element={<Login />} />
       <Route path='/register' element={<Register />} />
-      <Route path='/change-pass' element={<ChangePass />} />
-      <Route path='/change-pass-from-mail' element={<ChangePassFromMail />} />
+      <Route path='/change-pass' element={<ChangePassword />} />
+      <Route path='/reset-pass' element={<ResetPassword />} />
+      <Route path='/reset-pass-from-mail' element={<ResetPassFromMail />} />
       <Route path='/success-pass' element={<SuccessPass />} />
       <Route path='/check-mail-register' element={<CheckMailRegister />} />
       <Route path='/check-mail-pass' element={<CheckMailPass />} />

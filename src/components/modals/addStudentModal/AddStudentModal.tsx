@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/namespace, import/default
 import SubmitForm from '@/components/submitForm/SubmitForm';
 import { Input, Modal, inputTypes } from '@/shared/ui';
 import { validateType, TValidationSubmitFormResolver } from '@/shared/validation';

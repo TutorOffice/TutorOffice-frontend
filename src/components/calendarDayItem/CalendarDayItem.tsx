@@ -19,7 +19,7 @@ interface CalendarDayItemProps {
 const CalendarDayItem: React.FC<CalendarDayItemProps> = ({ photo, time, name, lessonStatus, lessonId, date }) => {
   const [status, setStatusIcon] = useState(lessonStatus);
   const onSetStatus = () => {
-    setStatusIcon(!status);
+    setStatusIcon((prev) => !prev);
   };
 
   return (
@@ -37,7 +37,7 @@ const CalendarDayItem: React.FC<CalendarDayItemProps> = ({ photo, time, name, le
         alt='Статус задания'
       />
       <Link to={`/calendar/${date}/${lessonId}`}>
-        <Button type={btnType.button} variant={btnClass.ghost}>
+        <Button className={s.calendarDayItem__button} type={btnType.button} variant={btnClass.ghost}>
           Открыть
         </Button>
       </Link>

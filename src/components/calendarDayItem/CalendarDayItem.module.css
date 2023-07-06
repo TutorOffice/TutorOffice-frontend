@@ -1,13 +1,13 @@
 .calendarDayItem {
   display: grid;
-  grid-template-columns:
-    minmax(270px, 1.67fr)
-    minmax(105px, 1.67fr)
-    minmax(120px, 1.67fr)
-    minmax(50px, 1fr)
-    195px;
-  align-items: center;
-  gap: 50px;
+	grid-template-columns:
+  minmax(240px, 1.6fr)
+  minmax(105px, 0.7fr)
+  minmax(107px, 0.7fr)
+  minmax(40px, 0.3fr)
+  196px;
+  gap: 13px;
+	align-items: center;
   padding-bottom: 30px;
   border-bottom: 1px solid #b8bbbf;
   font-family: 'Raleway';
@@ -20,7 +20,10 @@
 }
 
 .calendarDayItem__photo {
-  margin-right: 20px;
+	width: 70px;
+	margin-right: 20px;
+	object-fit: cover;
+	border-radius: 50%;
 }
 
 .calendarDayItem__time {
@@ -44,4 +47,36 @@
 
 .lookHomework:hover {
   opacity: 0.6;
+}
+
+@media screen and (max-width: 1250px) {
+	.calendarDayItem {
+		grid-template-columns:
+		minmax(210px, 1.6fr)
+		minmax(105px, 0.7fr)
+		minmax(107px, 0.7fr)
+		minmax(40px, 0.3fr)
+		156px;
+	}
+
+	.calendarDayItem__button {
+		padding: 15px 40px;
+	}
+}
+
+@media screen and (max-width: 1100px) {
+	.calendarDayItem__photo {
+		width: 50px;
+		margin-right: 10px;
+	}
+
+	.calendarDayItem__button {
+		padding: 10px 40px;
+	}
+}
+
+@media screen and (max-width: 819px) {
+	.calendarDayItem__photo {
+		width: 30px;
+	}
 }

@@ -20,7 +20,7 @@ const HeaderAuth: React.FC<HeaderAuthProps> = ({ className }) => {
     <HeaderMain className={className}>
       <UserInfo
         photo={userPhoto}
-        fullName='Гурин Александр Максимович'
+        fullName='Грозный Иван Васильевич'
         phone='+7 936 619-98-06'
         mail='gurinalex065@yandex.ru'
       />

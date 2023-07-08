@@ -1,8 +1,16 @@
 .student__title {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   font-family: 'Raleway';
   font-size: 30px;
   font-weight: 600;
   line-height: 35.22px;
   width: 100%;
+}
+
+.student__header {
+  margin-bottom: 40px;
+}
+
+.student__backButton {
+  margin-bottom: 60px;
 }

@@ -1,6 +1,8 @@
 import s from './CalendarItem.module.css';
 
 import { formatDate, momentType } from '@/shared/utils';
+
+// eslint-disable-next-line import/no-unresolved
 import ModalWithButtons from '@/components/modals/modalWithButtons/ModalWithButtons';
 
 import React, { useState } from 'react';

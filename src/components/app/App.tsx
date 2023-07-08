@@ -14,6 +14,7 @@ import Lesson from '@/pages/lesson/Lesson';
 import ErrorPage from '@/pages/errorPage/ErrorPage';
 import HomeWork from '@/pages/homeWork/HomeWork';
 import Students from '@/pages/students/Students';
+import Student from '@/pages/student/Student';
 import EducationalMaterials from '@/pages/educationalMaterials/EducationalMaterials';
 
 import { Route, Routes } from 'react-router-dom';
@@ -34,6 +35,7 @@ const App = () => {
       <Route path='/calendar' element={<CalendarPage />} />
       <Route path='/calendar/:date' element={<CalendarDay />} />
       <Route path='/students' element={<Students />} />
+      <Route path='/students/student/:id' element={<Student />} />
       <Route path='/calendar/:date/:lessonId' element={<Lesson />} />
       <Route path='/homework' element={<HomeWork />} />
       <Route path='/not-found' element={<ErrorPage />} />

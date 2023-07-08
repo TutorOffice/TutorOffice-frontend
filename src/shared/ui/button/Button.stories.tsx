@@ -31,7 +31,7 @@ const STATES = [
   { variant: btnClass.back, children: 'Back', type: btnType.button },
 ];
 export const All: StoryFn<typeof Button> = () => (
-  <ButtonGroup isRow={true}>
+  <ButtonGroup>
     {STATES.map((props, index) => (
       <Button key={index} {...props}>
         {props.children}

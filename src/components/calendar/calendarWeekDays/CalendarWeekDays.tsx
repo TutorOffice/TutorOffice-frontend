@@ -8,8 +8,8 @@ const CalendarWeekDays = () => {
       <p className={s.weekday}>ср</p>
       <p className={s.weekday}>чт</p>
       <p className={s.weekday}>пт</p>
-      <p className={s.weekend}>суб</p>
-      <p className={s.weekend}>воскр</p>
+      <p className={s.weekend}>сб</p>
+      <p className={s.weekend}>вс</p>
     </div>
   );
 };

@@ -1,11 +1,13 @@
 .homework {
   width: 100%;
-  max-width: 830px;
+}
+
+.homework__header {
+	margin-bottom: 70px;
 }
 
 .homework__title {
   margin-bottom: 40px;
-  text-align: center;
   font-family: 'Raleway';
   font-weight: 600;
   font-size: 30px;

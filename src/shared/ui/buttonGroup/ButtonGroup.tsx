@@ -5,17 +5,17 @@ import clsx from 'clsx';
 
 interface ButtonGroupProps {
   children: React.ReactNode;
-  bottom?: number;
   width?: string;
+  className?: string;
 }
 
-const ButtonGroup: React.FC<ButtonGroupProps> = ({ children, bottom = 0, width = 'auto' }) => {
+const ButtonGroup: React.FC<ButtonGroupProps> = ({ children, width = 'auto' }) => {
   const className = clsx({
     [s.group__buttons]: true,
   });
 
   return (
-    <div style={{ marginBottom: bottom, width: width }} className={className}>
+    <div style={{ width: width }} className={className}>
       {children}
     </div>
   );

@@ -5,8 +5,7 @@
   font-family: 'Roboto', sans-serif;
   overflow: hidden;
   width: 270px;
-  height: 100%;
-  min-height: 1024px;
+  height: 100vh;
   padding: 20px 0 72px;
   display: flex;
   flex-direction: column;
@@ -15,10 +14,27 @@
   border-bottom-right-radius: 60px;
 }
 
+.overlay {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+.navbar__logo_link {
+	width: 250px;
+	margin-bottom: 70px;
+}
+
 .navbar__logo {
-  margin-bottom: 70px;
+	width: 100%;
   object-fit: cover;
-  width: 250px;
 }
 
 .navbar__menu {
@@ -92,4 +108,79 @@
   color: var(--white);
   font-size: 18px;
   font-weight: 700;
+}
+
+.closeButton {
+	display: none;
+  position: absolute;
+  top: 36px;
+  right: 36px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.closeButton:before,
+.closeButton:after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 21px;
+  height: 2px;
+  background-color: var(--white);
+}
+
+.closeButton:before {
+  transform: rotate(45deg);
+}
+
+.closeButton:after {
+  transform: rotate(-45deg);
+}
+
+.closeButton:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 1100px) {
+  .navbar {
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-100%);
+		position: absolute;
+    z-index: 2;
+		padding-top: 25px;
+  }
+	.navbar.active {
+		transform: translateX(0);
+	}
+
+	.navbar__logo_link {
+		box-sizing: content-box;
+		display: block;
+		width: 142px;
+		margin-bottom: 150px;
+		padding-left: 49px;
+	}
+
+	.navbar__link_active {
+		font-size: 16px;
+	}
+
+	.navbar__link {
+		font-size: 16px;
+	}
+
+	.navbar__menu {
+		padding-left: 49px;
+	}
+
+	.closeButton {
+		display: block; 
+	}
+
+	.contacts {
+		padding-left: 43px;
+	}
 }

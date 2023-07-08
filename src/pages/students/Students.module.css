@@ -5,8 +5,9 @@
   width: 100%;
 }
 
-.studentsWithCard__description {
-  width: 66%;
+.studentsReviewWithCard__description {
+	width: 100%;
+  max-width: 66%;
   font-family: 'Roboto';
   font-size: 14px;
   font-weight: 400;
@@ -14,7 +15,7 @@
   margin-bottom: 16px;
 }
 
-.student_activ {
+.student_active {
   font-weight: 600;
 }
 
@@ -48,6 +49,10 @@
   padding: 20px 0 30px 0;
 }
 
+.students__header {
+	margin-bottom: 70px;
+}
+
 .students__withCards {
   display: flex;
   justify-content: space-between;
@@ -68,4 +73,10 @@
 
 .students__image {
   margin: 80px 85px 0 20px;
+}
+
+@media screen and (max-width: 1250px) {
+	.studentReviewWithCard__description {
+		max-width: 100%;
+	}
 }

@@ -1,4 +1,4 @@
-import s from './ChangePassFromMail.module.css';
+import s from './ResetPassword.module.css';
 
 import { btnClass, btnType, Button, Input, inputTypes } from '@/shared/ui';
 import Layout from '@/components/layout/Layout';
@@ -7,7 +7,7 @@ import { TValidationSubmitFormResolver, IFormValues, validateType } from '@/shar
 
 import { SubmitHandler } from 'react-hook-form';
 
-const ChangePassFromMail = () => {
+const ResetPassword = () => {
   const onSubmit: SubmitHandler<IFormValues> = (data) => {
     // eslint-disable-next-line no-console
     console.log(data);
@@ -15,10 +15,10 @@ const ChangePassFromMail = () => {
 
   return (
     <Layout>
-      <Button type={btnType.button} variant={btnClass.back} bottom={200}>
+      <Button className={s.resetPassword__goBackBtn} type={btnType.button} variant={btnClass.back}>
         Назад
       </Button>
-      <h2 className={s.changePassFromMail__title}>Сбросить пароль</h2>
+      <h2 className={s.resetPassword__title}>Сбросить пароль</h2>
       <SubmitForm
         btnGroup={true}
         btnText='Сохранить'
@@ -45,4 +45,4 @@ const ChangePassFromMail = () => {
   );
 };
 
-export default ChangePassFromMail;
+export default ResetPassword;

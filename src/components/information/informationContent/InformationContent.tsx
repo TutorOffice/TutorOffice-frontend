@@ -1,16 +1,11 @@
 import s from '../Information.module.css';
+import { InformationProps } from '../Information';
 
 import { btnClass, btnType, Button } from '@/shared/ui';
 
 import React from 'react';
 
-interface InformationContentProps {
-  children: React.ReactNode;
-  title: string;
-  btnText: string;
-  image: string;
-  onClick?: () => void;
-}
+type InformationContentProps = InformationProps;
 
 const InformationContent: React.FC<InformationContentProps> = ({ children, title, image, onClick, btnText }) => {
   return (
@@ -22,7 +17,7 @@ const InformationContent: React.FC<InformationContentProps> = ({ children, title
           {btnText}
         </Button>
       </div>
-      <img src={image} alt='Конверт' />
+      <img className={s.information__image} src={image} alt='Конверт' />
     </div>
   );
 };

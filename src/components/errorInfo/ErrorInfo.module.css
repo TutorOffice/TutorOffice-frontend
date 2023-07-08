@@ -9,9 +9,15 @@
 }
 
 .title {
+	font-family: 'Raleway';
+	font-size: 30px;
+	font-weight: 600;
   margin-bottom: 20px;
 }
 
 .description {
+	font-family: 'Roboto';
+	font-size: 18px;
+	font-weight: 400;
   margin-bottom: 50px;
 }

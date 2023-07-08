@@ -1,5 +1,6 @@
-import testData from './testStudents';
 import s from './EducationalMaterials.module.css';
+
+import testData from './testStudents';
 
 import UserCard from '@/components/userCard/UserCard';
 

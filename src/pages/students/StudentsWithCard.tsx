@@ -1,9 +1,8 @@
 import s from './Students.module.css';
 import testStudents from './testStudents';
 
-import { btnClass, btnType, Button } from '../../shared/ui';
-import UserCard from '../../components/userCard/UserCard';
-
+import { btnClass, btnType, Button } from '@/shared/ui';
+import UserCard from '@/components/userCard/UserCard';
 import AddStudentModal from '@/components/modals/addStudentModal/AddStudentModal';
 
 import { useState } from 'react';
@@ -29,7 +28,7 @@ const StudentsWithCard = () => {
         </div>
         <p className={s.studentsWithCard__description}>
           Если Ваш ученик примет Ваше приглашение зарегистрироваться на сайте, то он станет{' '}
-          <span className={s.student_activ}>активным учеником</span> и будет полноценным участником процесса: сможет
+          <span className={s.student_active}>активным учеником</span> и будет полноценным участником процесса: сможет
           общаться с Вами, получать и выполнять домашние задания, менять информацию о себе, смотреть учебные материалы.
         </p>
         <p className={s.studentsWithCard__description}>

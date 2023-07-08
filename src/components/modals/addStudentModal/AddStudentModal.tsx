@@ -1,8 +1,8 @@
-import SubmitForm from '@/components/submitForm/SubmitForm';
+import s from './AddStudentModal.module.css';
 
+import SubmitForm from '@/components/submitForm/SubmitForm';
 import { Input, Modal, inputTypes } from '@/shared/ui';
-import { TValidationSubmitFormResolver } from '@/shared/validation/formResolver';
-import { validateType } from '@/shared/validation/validateTypes';
+import { validateType, TValidationSubmitFormResolver } from '@/shared/validation';
 
 import { SubmitHandler } from 'react-hook-form';
 import React from 'react';
@@ -30,9 +30,9 @@ const AddStudentModal: React.FC<AddStudentModalProps> = ({ isOpen, onClose }) =>
   return (
     <Modal title='Добавление ученика' isOpen={isOpen} onClose={onClose} width='590px'>
       <SubmitForm
+        className={s.modal__form}
         btnText='Сохранить'
         btnWidth='100%'
-        top='10px'
         resolverType={TValidationSubmitFormResolver.ADD_STUDENT}
         onSubmit={onSubmit}
       >

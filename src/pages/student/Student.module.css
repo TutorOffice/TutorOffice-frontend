@@ -14,3 +14,11 @@
 .student__backButton {
   margin-bottom: 60px;
 }
+
+.student__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  max-width: 915px;
+  gap: 25px;
+}

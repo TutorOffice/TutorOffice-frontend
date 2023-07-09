@@ -1,0 +1,99 @@
+.userCardFull {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 40px 50px;
+  width: 400px;
+  min-width: 345px;
+  border: 1px solid var(--black);
+  border-radius: 20px;
+}
+
+.userCardFull__button_primary {
+  width: 100%;
+}
+
+.userCardFull__button_common {
+  margin-bottom: 30px;
+}
+
+.userCardFull__wrapper {
+  display: flex;
+  font-family: 'Roboto';
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  margin-bottom: 40px;
+}
+
+.userCardFull__photo {
+  object-fit: cover;
+  margin-right: 20px;
+  width: 65px;
+  height: 65px;
+}
+
+.userCardFull__name,
+.userCardFull__contactItem,
+.userCardFull__homeWorkTitle {
+  font-family: 'Raleway';
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 120%;
+}
+
+.userCardFull__name,
+.userCardFull__homeWorkTitle {
+  margin-bottom: 10px;
+}
+
+.userCardFull__contactItem {
+  margin-bottom: 15px;
+}
+
+.userCardFull__contactItem span {
+  font-family: 'Roboto';
+  font-size: 18px;
+  line-height: 117%;
+  font-weight: 400;
+}
+
+.userCardFull__subject {
+  font-size: 18px;
+  line-height: 117%;
+  margin-bottom: 5px;
+}
+
+.studentStatus {
+  color: var(--dark-gray);
+}
+
+.userCardFull__homeWorkStatusContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  font-family: 'Roboto';
+  font-size: 18px;
+  line-height: 117%;
+  font-weight: 400;
+}
+
+.userCardFull__homeWorkStatusDone,
+.userCardFull__homeWorkStatusArrowUp,
+.userCardFull__homeWorkStatusToDo {
+  display: flex;
+  align-items: center;
+  width: 85px;
+}
+
+.userCardFull__homeWorkStatusDone {
+  color: var(--green);
+}
+
+.userCardFull__homeWorkStatusArrowUp {
+  color: var(--orange-pressed);
+}
+
+.userCardFull__homeWorkStatusToDo {
+  color: var(--red)
+}

@@ -1,15 +1,17 @@
-/* eslint-disable react/prop-types */
 import s from './UserCard.module.css';
 
-import { btnClass, btnType, Button } from '../../shared/ui';
-import virtualStudentPhoto from '../../assets/images/virtual-student.png';
+import { btnClass, btnType, Button } from '@/shared/ui';
+import virtualStudentPhoto from '@/assets/images/virtual-student.png';
 
 import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 
 interface UserCardProps {
+  id: number;
   photo: string;
-  name: string;
+  first_name: string;
+  last_name: string;
+  patronymic?: string;
   studentStatus?: boolean;
   studentSubject?: string;
   studentSubjectLevel?: string;
@@ -18,14 +20,17 @@ interface UserCardProps {
 }
 
 const UserCard: React.FC<UserCardProps> = ({
+  id,
   photo,
   studentStatus,
-  name,
+  first_name,
+  last_name,
+  patronymic,
   studentSubject,
   studentSubjectLevel,
   tutorSubject,
   isTutorials,
-}) => {
+}: UserCardProps) => {
   const studentStatusClass = clsx({ [s.studentStatus]: !studentStatus });
   return (
     <div className={s.card}>
@@ -33,11 +38,11 @@ const UserCard: React.FC<UserCardProps> = ({
         <img className={s.card__photo} src={studentStatus ? photo : virtualStudentPhoto} alt='Фото пользователя' />
         <div className={studentStatusClass}>
           <p className={s.card__name}>
-            {name.split(' ')[0]}
+            {last_name}
             <br />
-            {name.split(' ')[1]}
+            {first_name}
             <br />
-            {name.split(' ')[2] || <br />}
+            {patronymic || <br />}
           </p>
           {studentSubject && <p className={s.card__subject}>{studentSubject}</p>}
           {tutorSubject && (
@@ -50,8 +55,8 @@ const UserCard: React.FC<UserCardProps> = ({
           {studentSubjectLevel && <p>Уровень - {studentSubjectLevel}</p>}
         </div>
       </div>
-      <Link to='#'>
-        <Button type={btnType.button} variant={btnClass.back}>
+      <Link to={isTutorials ? '#' : `/student/${id}`}>
+        <Button type={btnType.button} variant={btnClass.common}>
           {isTutorials ? 'Учебные материалы' : 'Посмотреть'}
         </Button>
       </Link>

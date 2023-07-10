@@ -7,9 +7,12 @@ import Layout from '@/components/layout/Layout';
 import studentImage from '@/assets/images/student.png';
 import { Button, btnClass, btnType } from '@/shared/ui';
 
-const stud = testStudents[0];
+import { useState } from 'react';
 
 const Student = () => {
+  const [id] = useState(document.location.pathname.slice(9));
+  const stud = testStudents[+id];
+
   return (
     <Layout>
       <HeaderAuth className={s.student__header} />
@@ -22,7 +25,9 @@ const Student = () => {
           key={stud.id}
           studentStatus={stud.activeStatus}
           photo={stud.photo}
-          name={stud.name}
+          first_name={stud.first_name}
+          last_name={stud.last_name}
+          patronymic={stud.patronymic}
           studentSubject={stud.studentSubject}
           studentSubjectLevel={stud.studentSubjectLevel}
           email={stud.email}

@@ -1,17 +1,19 @@
 import s from './UserCardFulll.module.css';
 
-import { btnClass, btnType, Button } from '../../shared/ui';
-import virtualStudentPhoto from '../../assets/images/virtual-student.png';
-import doneIcon from '../../assets/icons/status-true.svg';
-import arrowUpIcon from '../../assets/icons/arrow-up.svg';
-import toDoIcon from '../../assets/icons/status-false.svg';
+import { btnClass, btnType, Button } from '@/shared/ui';
+import virtualStudentPhoto from '@/assets/images/virtual-student.png';
+import doneIcon from '@/assets/icons/status-true.svg';
+import arrowUpIcon from '@/assets/icons/arrow-up.svg';
+import toDoIcon from '@/assets/icons/status-false.svg';
 
 import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 
 interface UserCardFullProps {
   photo: string;
-  name: string;
+  first_name: string;
+  last_name: string;
+  patronymic?: string;
   email: string;
   phone: string;
   studentStatus?: boolean;
@@ -27,7 +29,9 @@ interface UserCardFullProps {
 const UserCardFull: React.FC<UserCardFullProps> = ({
   photo,
   studentStatus,
-  name,
+  first_name,
+  last_name,
+  patronymic,
   email,
   phone,
   studentSubject,
@@ -47,11 +51,11 @@ const UserCardFull: React.FC<UserCardFullProps> = ({
         />
         <div className={studentStatusClass}>
           <p className={s.userCardFull__name}>
-            {name.split(' ')[0]}
+            {last_name}
             <br />
-            {name.split(' ')[1]}
+            {first_name}
             <br />
-            {name.split(' ')[2] || <br />}
+            {patronymic || <br />}
           </p>
           {studentSubject && <p className={s.userCardFull__subject}>{studentSubject}</p>}
           {studentSubjectLevel && <p>Уровень - {studentSubjectLevel}</p>}

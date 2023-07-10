@@ -41,9 +41,12 @@ const StudentsWithCard = () => {
           {testStudents.map((stud) => (
             <UserCard
               key={stud.id}
+              id={stud.id}
               studentStatus={stud.activeStatus}
               photo={stud.photo}
-              name={stud.name}
+              first_name={stud.first_name}
+              last_name={stud.last_name}
+              patronymic={stud.patronymic}
               studentSubject={stud.studentSubject}
               studentSubjectLevel={stud.studentSubjectLevel}
             />

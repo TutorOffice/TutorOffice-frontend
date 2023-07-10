@@ -1,4 +1,4 @@
-import testPhoto from '@/assets/images/test-student.jpg';
+import testPhoto from '../../assets/images/test-student.jpg';
 
 const testStudents = [
   {

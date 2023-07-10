@@ -15,8 +15,9 @@ const NoLesson = () => {
 
   return (
     <Layout>
-      <HeaderAuth className={s.noLesson__header} />
+      <HeaderAuth />
       <InformationContent
+        className={s.noLesson__content}
         onClick={goToCalendar}
         title='Сегодня у тебя выходной!'
         btnText='Перейти к расписанию'

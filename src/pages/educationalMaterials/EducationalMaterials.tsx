@@ -1,19 +1,25 @@
-import s from './EducationalMaterials.module.css';
+import testStudents from './testStudents';
+import EducationalMaterialsWithCards from './educationalMaterialWithCards/EducationalMaterialsWithCards';
 
-import testData from './testStudents';
-import EducationalMaterialsBlank, { UserStatus } from './EducationalMaterialsBlank';
-import EducationalMaterialsWithCards from './EducationalMaterialsWithCards';
-
+import educationalMaterialsImage from '@/assets/images/EducationalMaterialsBlank.png';
 import HeaderAuth from '@/components/headerAuth/HeaderAuth';
 import Layout from '@/components/layout/Layout';
-
-const userStatus = UserStatus.Tutor;
+import NoStudents from '@/components/noStudents/NoStudents';
 
 const EducationalMaterials = () => {
   return (
     <Layout>
-      <HeaderAuth className={s.educationalMaterials__header} />
-      {testData.length ? <EducationalMaterialsWithCards /> : <EducationalMaterialsBlank userStatus={userStatus} />}
+      <HeaderAuth />
+      {testStudents.length ? (
+        <EducationalMaterialsWithCards />
+      ) : (
+        <NoStudents
+          title='Здесь будут учебные материалы'
+          text='Когда у Вас появятся ученики, Вы сможете загружать учебные материалы для каждого из них.'
+          image={educationalMaterialsImage}
+          withButton={true}
+        />
+      )}
     </Layout>
   );
 };

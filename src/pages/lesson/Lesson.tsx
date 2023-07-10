@@ -35,12 +35,12 @@ const Lesson = () => {
   };
 
   return (
-    <Layout>
-      <HeaderAuth className={s.lesson__header} />
-      <Button className={s.lesson__goBackBtn} type={btnType.button} variant={btnClass.back}>
-        Назад
-      </Button>
-      <div className={s.lesson}>
+    <>
+      <Layout>
+        <HeaderAuth />
+        <Button className={s.lesson__goBackBtn} type={btnType.button} variant={btnClass.back}>
+          Назад
+        </Button>
         <LessonPageUserInfo />
         <div className={s.note}>
           <p className={s.note__title}>Заметки к уроку</p>
@@ -49,7 +49,7 @@ const Lesson = () => {
         <Button type={btnType.button} variant={btnClass.primary} onClick={openModal}>
           Отменить урок
         </Button>
-      </div>
+      </Layout>
       <ModalWithButtons
         width='590px'
         isOpen={isOpenModal}
@@ -69,7 +69,7 @@ const Lesson = () => {
         btnText='На главную'
         onClickButton={goToMainPage}
       />
-    </Layout>
+    </>
   );
 };
 

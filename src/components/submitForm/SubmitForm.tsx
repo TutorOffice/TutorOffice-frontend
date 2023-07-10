@@ -17,6 +17,7 @@ interface SubmitFormProps {
   btnGroup?: boolean;
   defaultValues?: IFormValues;
   className?: string;
+  submitBtnClassName?: string;
 }
 
 const SubmitForm: React.FC<SubmitFormProps> = ({
@@ -28,6 +29,7 @@ const SubmitForm: React.FC<SubmitFormProps> = ({
   btnGroup,
   defaultValues,
   className,
+  submitBtnClassName,
 }) => {
   const {
     register,
@@ -43,7 +45,13 @@ const SubmitForm: React.FC<SubmitFormProps> = ({
   if (btnGroup) {
     submitControls = (
       <ButtonGroup width='100%'>
-        <Button width='100%' isDisabled={!isValid} type={btnType.submit} variant={btnClass.primary}>
+        <Button
+          className={submitBtnClassName}
+          width='100%'
+          isDisabled={!isValid}
+          type={btnType.submit}
+          variant={btnClass.primary}
+        >
           {btnText}
         </Button>
         <Button width='100%' type={btnType.reset} variant={btnClass.ghost}>

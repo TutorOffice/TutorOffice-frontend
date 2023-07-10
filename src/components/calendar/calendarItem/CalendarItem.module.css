@@ -72,3 +72,15 @@
 .notCurrentMonth {
   color: var(--gray);
 }
+
+@media screen and (max-width: 1250px) {
+	.item__content {
+		font-size: 26px;
+	}
+}
+
+@media screen and (max-width: 819px) {
+	.item__content {
+		font-size: 22px;
+	}
+}

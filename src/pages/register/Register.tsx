@@ -48,7 +48,7 @@ const Register = () => {
               placeholder='example@domaim.ru'
             />
             <Input
-              inputref={phoneRef}
+              inputRef={phoneRef}
               name={validateType.phone}
               type={inputTypes.phone}
               labelText='Телефон'

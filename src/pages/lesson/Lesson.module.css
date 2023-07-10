@@ -1,13 +1,5 @@
-.lesson {
-  align-self: flex-start;
-}
-
-.lesson__header {
-	margin-bottom: 40px;
-}
-
 .lesson__goBackBtn {
-	margin-bottom: 60px;
+	margin: 40px 0 60px;
 }
 
 .note {
@@ -34,4 +26,10 @@
   font-family: 'Roboto';
   font-size: 18px;
   color: var(--gray);
+}
+
+@media screen and (max-width: 1100px) {
+	.lesson__goBackBtn {
+		margin: 50px 0 40px;
+	}
 }

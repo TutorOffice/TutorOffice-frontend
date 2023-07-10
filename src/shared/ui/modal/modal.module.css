@@ -82,3 +82,9 @@
 .closeButton:hover {
   opacity: 0.6;
 }
+
+@media screen and (max-width: 1100px) {
+	.title {
+		font-size: 22px;
+	}
+}

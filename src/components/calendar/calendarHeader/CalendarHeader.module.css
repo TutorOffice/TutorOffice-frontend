@@ -54,3 +54,14 @@
   font-size: 24px;
   font-weight: 600;
 }
+
+@media screen and (max-width: 1100px) {
+	.calendar__title {
+		font-size: 28px;
+	}
+
+	.calendar__month {
+		margin: 0 30px 0;
+		font-size: 22px;
+	}
+}

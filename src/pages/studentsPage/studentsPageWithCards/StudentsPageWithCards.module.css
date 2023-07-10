@@ -33,11 +33,6 @@
   font-weight: 600;
 }
 
-.student_virtual {
-  font-weight: 600;
-  color: var(--dark-gray);
-}
-
 .studentsPageWithCards__container {
   width: 100%;
   display: grid;

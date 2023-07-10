@@ -14,7 +14,7 @@ import CalendarDay from '@/pages/calendarDay/CalendarDay';
 import Lesson from '@/pages/lesson/Lesson';
 import ErrorPage from '@/pages/errorPage/ErrorPage';
 import HomeWork from '@/pages/homeWork/HomeWork';
-import StudentsPage from '@/pages/studentReview/StudentsPage';
+import StudentsPage from '@/pages/studentsPage/StudentsPage';
 import EducationalMaterials from '@/pages/educationalMaterials/EducationalMaterials';
 
 import { Route, Routes } from 'react-router-dom';

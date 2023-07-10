@@ -18,12 +18,12 @@ interface HomeWorkItemProps {
 
 const HomeWorkItem: React.FC<HomeWorkItemProps> = ({ photo, fullName, lesson, sent, todo, done }) => {
   return (
-    <div className={s.homeworkItem}>
+    <li className={s.homeworkItem}>
       <div className={s.homeworkItem__stud}>
         <img className={s.homeworkItem__photo} src={photo} alt='Фото ученика' />
-        <p>{fullName}</p>
+        <p className={s.homeworkItem__name}>{fullName}</p>
       </div>
-      <p>{lesson}</p>
+      <p className={s.homeworkItem__subject}>{lesson}</p>
       <div className={s.status}>
         <img className={s.status__img} src={sentIcon} alt='Отправлено' />
         <span className={s.status__count_sent}>{sent}</span>
@@ -39,7 +39,7 @@ const HomeWorkItem: React.FC<HomeWorkItemProps> = ({ photo, fullName, lesson, se
       <button className={s.mailButton}>
         <img className={s.mailButton__img} src={mailIcon} alt='Сообщения' />
       </button>
-    </div>
+    </li>
   );
 };
 

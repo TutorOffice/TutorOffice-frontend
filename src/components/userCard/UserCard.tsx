@@ -34,7 +34,7 @@ const UserCard: React.FC<UserCardProps> = ({
   const cardClassName = clsx(s.card__wrapper, { [s.virtualStudent]: !isActive });
 
   return (
-    <div className={s.card}>
+    <li className={s.card}>
       <div className={cardClassName}>
         <div className={s.card__header}>
           <img className={s.card__photo} src={isActive ? photo : virtualStudentPhoto} alt='Фото пользователя' />
@@ -56,7 +56,7 @@ const UserCard: React.FC<UserCardProps> = ({
           {btnText}
         </Button>
       </Link>
-    </div>
+    </li>
   );
 };
 

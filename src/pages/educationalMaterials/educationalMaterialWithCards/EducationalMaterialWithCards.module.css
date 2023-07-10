@@ -1,0 +1,27 @@
+.educationalMaterialsWithCards__title {
+	margin: 70px 0 40px;
+	margin-bottom: 40px;
+  font-family: 'Raleway';
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.educationalMaterialsWithCards__container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(30%, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+
+
+@media screen and (max-width: 1100px) {
+	.educationalMaterialsWithCards__title {
+		margin-top: 60px;
+		font-size: 28px;
+	}
+
+	.educationalMaterialsWithCards__container {
+		gap: 30px;
+	}
+}

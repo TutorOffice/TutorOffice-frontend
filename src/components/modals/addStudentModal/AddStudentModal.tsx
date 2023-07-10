@@ -1,5 +1,3 @@
-import s from './AddStudentModal.module.css';
-
 import SubmitForm from '@/components/submitForm/SubmitForm';
 import { Input, Modal, inputTypes } from '@/shared/ui';
 import { validateType, TValidationSubmitFormResolver } from '@/shared/validation';
@@ -30,7 +28,6 @@ const AddStudentModal: React.FC<AddStudentModalProps> = ({ isOpen, onClose }) =>
   return (
     <Modal title='Добавление ученика' isOpen={isOpen} onClose={onClose} width='590px'>
       <SubmitForm
-        className={s.modal__form}
         btnText='Сохранить'
         btnWidth='100%'
         resolverType={TValidationSubmitFormResolver.ADD_STUDENT}

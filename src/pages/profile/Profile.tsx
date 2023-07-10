@@ -37,42 +37,45 @@ const Profile = () => {
             </Button>
           </Link>
         </HeaderMain>
-        <SubmitForm
-          className={s.profile__form}
-          defaultValues={{
-            firstName: 'Иван',
-            lastName: 'Грозный',
-            email: 'grozniyIvan@gmail.com',
-            patronymic: 'Васильевич',
-            password: 'Gr0zniy_',
-            subject: 'Английский язык',
-            phone: '+7(999) 999-99-99',
-          }}
-          resolverType={TValidationSubmitFormResolver.PROFILE}
-          btnGroup={true}
-          btnText='Сохранить изменения'
-          onSubmit={onSubmit}
-        >
-          <LoadImage image={userPhoto} onClick={openModal} />
-          <Input name={validateType.lastName} type={inputTypes.text} labelText='Фамилия' />
-          <Input name={validateType.firstName} type={inputTypes.text} labelText='Имя' />
-          <Input name={validateType.patronymic} type={inputTypes.text} labelText='Отчество' />
-          <Input name={validateType.email} type={inputTypes.email} labelText='E-mail' />
-          <Input name={validateType.phone} type={inputTypes.phone} labelText='Телефон' />
-          <Input
-            name={validateType.password}
-            type={inputTypes.password}
-            isPassword={true}
-            iconVisibility={false}
-            labelText='Пароль'
-          />
+        <div className={s.profile__formWrapper}>
+          <SubmitForm
+            className={s.profile__form}
+            defaultValues={{
+              firstName: 'Иван',
+              lastName: 'Грозный',
+              email: 'grozniyIvan@gmail.com',
+              patronymic: 'Васильевич',
+              password: 'Gr0zniy_',
+              subject: 'Английский язык',
+              phone: '+7(999) 999-99-99',
+            }}
+            resolverType={TValidationSubmitFormResolver.PROFILE}
+            btnGroup={true}
+            btnText='Сохранить изменения'
+            submitBtnClassName={s.profile__submitButton}
+            onSubmit={onSubmit}
+          >
+            <LoadImage className={s.profile__loadPhoto} image={userPhoto} onClick={openModal} />
+            <Input name={validateType.lastName} type={inputTypes.text} labelText='Фамилия' />
+            <Input name={validateType.firstName} type={inputTypes.text} labelText='Имя' />
+            <Input name={validateType.patronymic} type={inputTypes.text} labelText='Отчество' />
+            <Input name={validateType.email} type={inputTypes.email} labelText='E-mail' />
+            <Input name={validateType.phone} type={inputTypes.phone} labelText='Телефон' />
+            <Input
+              name={validateType.password}
+              type={inputTypes.password}
+              isPassword={true}
+              iconVisibility={false}
+              labelText='Пароль'
+            />
+            <Input name={validateType.subject} type={inputTypes.text} labelText='Предмет' />
+          </SubmitForm>
           <Link to='/change-pass' className={s.change_pass}>
-            <Button width='100%' type={btnType.button} variant={btnClass.ghost}>
+            <Button className={s.changePass__button} type={btnType.button} variant={btnClass.ghost}>
               Сменить пароль
             </Button>
           </Link>
-          <Input name={validateType.subject} type={inputTypes.text} labelText='Предмет' />
-        </SubmitForm>
+        </div>
       </Layout>
       <LoadPhotoModal isOpen={isOpenModal} onClose={closeModal} />
     </>

@@ -42,7 +42,7 @@ const StudentsPageWithCards = () => {
             статус), его учебные материалы.
           </p>
         </div>
-        <div className={s.studentsPageWithCards__container}>
+        <ul className={s.studentsPageWithCards__container}>
           {testStudents.map((stud) => (
             <UserCard
               key={stud.id}
@@ -56,7 +56,7 @@ const StudentsPageWithCards = () => {
               btnText='Посмотреть'
             />
           ))}
-        </div>
+        </ul>
       </div>
       <AddStudentModal isOpen={isOpenModal} onClose={closeModal} />
     </>

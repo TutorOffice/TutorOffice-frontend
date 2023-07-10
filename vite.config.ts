@@ -6,7 +6,7 @@ import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
 
 export default defineConfig({
-  plugins: [react(), svgr(), eslint()],
+  plugins: [react(), svgr(), eslint({ exclude: ['/virtual:/**', 'node_modules/**'] })],
   resolve: {
     alias: {
       '@': resolve(__dirname, './src'),

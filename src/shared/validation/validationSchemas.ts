@@ -1,10 +1,10 @@
 import {
-  passwordPattern,
-  passwordMessages,
-  lastNameMessages,
-  firstNameMessages,
-  patronymicMessages,
   emailMessages,
+  firstNameMessages,
+  lastNameMessages,
+  passwordMessages,
+  passwordPattern,
+  patronymicMessages,
   phoneMessages,
   cyrillicLatinPattern,
 } from './validationConstants';

@@ -3,19 +3,28 @@
   margin-bottom: 20px;
   padding: 10px 0;
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(7, minmax(auto, 143px));
   text-align: center;
 }
 
-.weekday {
+.weekday, .weekend {
   font-family: 'Raleway';
   font-weight: 600;
   font-size: 20px;
 }
 
 .weekend {
-  font-family: 'Raleway';
-  font-weight: 600;
-  font-size: 20px;
   color: red;
+}
+
+@media screen and (max-width: 1100px) {
+	.weekdays {
+		margin-bottom: 10px;
+	}
+}
+
+@media screen and (max-width: 819px) {
+	.weekday, .weekend {
+		font-size: 18px;
+	}
 }

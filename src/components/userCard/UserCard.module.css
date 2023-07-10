@@ -1,44 +1,92 @@
 .card {
   display: flex;
-  flex-direction: column;
+	flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   padding: 25px;
-  gap: 20px;
   width: 100%;
   border: 1px solid var(--black);
   border-radius: 20px;
 }
 
 .card__wrapper {
+	margin-bottom: 20px;
   display: flex;
+	flex-direction: column;
   font-family: 'Roboto';
   font-size: 14px;
   font-weight: 400;
-  line-height: 16px;
+}
+
+.virtualStudent {
+	color: var(--dark-gray);
+}
+
+.card__header {
+	display: flex;
 }
 
 .card__photo {
-  object-fit: cover;
-  margin-right: 20px;
+	margin: 0 20px 10px 0;
   width: 65px;
-  height: 65px;
+	object-fit: cover;
+	border-radius: 50%;
 }
 
 .card__name {
   font-family: 'Raleway';
   font-size: 20px;
   font-weight: 600;
-  line-height: 120%;
-  margin-bottom: 10px;
+}
+
+.card__subjectBlock {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	margin-left: 85px;
 }
 
 .card__subject {
   font-size: 18px;
-  line-height: 117%;
-  margin-bottom: 5px;
 }
 
 .studentStatus {
   color: var(--dark-gray);
+}
+
+@media screen and (max-width: 1250px) {
+	.card__subjectBlock {
+		margin-left: 0;
+	}
+}
+
+@media screen and (max-width:819px) {
+	.card {
+		padding: 20px;
+	}
+
+	.card__wrapper {
+		margin-bottom: 15px;
+	}
+
+	.card__photo {
+		margin: 0 15px 15px 0;
+		width: 55px;
+	}
+
+	.card__name  {
+		font-size: 18px;
+	}
+
+	.card__subject {
+		font-size: 16px;
+	}
+
+	.studentStatus {
+		font-size: 12px;
+	}
+
+	.card__button {
+		font-size: 16px;
+	}
 }

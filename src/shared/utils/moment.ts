@@ -1,3 +1,5 @@
+import { formatDate } from './formatDate';
+
 import moment from 'moment';
 
 export type momentType = ReturnType<typeof moment>;
@@ -33,6 +35,9 @@ export const getDaysArray: (today: momentType) => Array<momentType> = (today) =>
   return [...Array(TOTAL_DAYS)].map(() => startDay.add(1, 'day').clone());
 };
 
+export const getToday: (today: momentType) => string = (today) => {
+  return formatDate(today.clone().format('DD MMMM YYYY'));
+};
 export const getCurrentMonth: (today: momentType) => string = (today) => {
   return today.clone().format('MMMM');
 };

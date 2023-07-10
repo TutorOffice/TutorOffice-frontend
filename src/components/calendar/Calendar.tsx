@@ -1,13 +1,12 @@
 import s from './Calendar.module.css';
-import CalendarControls from './calendarControls/CalendarControls';
-import CalendarItem from './calendarItem/CalendarItem';
 
+import CalendarHeader from './calendarHeader/CalendarHeader';
+import CalendarItem from './calendarItem/CalendarItem';
 import CalendarWeekDays from './calendarWeekDays/CalendarWeekDays';
 
 import { getCurrentMonth, getCurrentYear, getDaysArray, momentConfig } from '@/shared/utils';
 
-import { useState } from 'react';
-
+import React, { useState } from 'react';
 import moment from 'moment';
 
 const Calendar = () => {
@@ -27,7 +26,7 @@ const Calendar = () => {
 
   return (
     <div className={s.calendarWrapper}>
-      <CalendarControls
+      <CalendarHeader
         currentMonth={currentMonth}
         currentYear={currentYear}
         prevHandler={prevHandler}

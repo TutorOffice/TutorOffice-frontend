@@ -1,16 +1,8 @@
-.office__header {
-  width: 100%;
-  margin-bottom: 150px;
-  display: flex;
-  justify-content: space-between;
+.calendarDay__goBack {
+	margin: 40px 0 60px 0;
 }
 
-.office__content {
-  width: 100%;
-  display: grid;
-}
-
-.office__title {
+.calendarDay__title {
   margin-bottom: 50px;
   font-family: 'Raleway';
   font-size: 30px;
@@ -26,14 +18,42 @@
 
 .list__title {
   display: grid;
-  grid-template-columns:
-    minmax(270px, 1.67fr)
-    minmax(105px, 1.67fr)
-    minmax(120px, 1.67fr)
-    minmax(50px, 1fr)
-    195px;
-  align-items: center;
-  gap: 50px;
+	grid-template-columns:
+  minmax(240px, 1.6fr)
+  minmax(105px, 0.7fr)
+  minmax(107px, 0.7fr)
+  minmax(40px, 0.3fr)
+  196px;
+  gap: 13px;
+	align-items: center;
   font-family: 'Raleway';
   font-size: 20px;
+}
+
+@media screen and (max-width: 1250px) {
+	.list__title {
+		grid-template-columns:
+		minmax(210px, 1.6fr)
+		minmax(105px, 0.7fr)
+		minmax(107px, 0.7fr)
+		minmax(40px, 0.3fr)
+		156px;
+	}
+}
+
+@media screen and (max-width: 1100px) {
+	.list__title {
+		font-size: 22px;
+	}
+
+	.calendarDay__goBack {
+		margin: 50px 0 40px 0;
+	}
+}
+
+@media screen and (max-width: 819px) {
+	.calendarDay__title {
+		margin-bottom: 40px;
+    font-size: 28px;
+	}
 }

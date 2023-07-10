@@ -1,0 +1,39 @@
+.resetPassFromMail__goBackBtn {
+	margin-bottom: 200px;
+}
+
+.resetPassFromMail__title {
+  margin-bottom: 35px;
+  font-family: 'Raleway';
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.resetPassFromMail__comment {
+  max-width: 400px;
+  font-family: 'Roboto';
+  font-size: 18px;
+  line-height: calc(21 / 18);
+  margin: 20px 0 25px;
+}
+
+@media screen and (max-width:1100px) {
+	.resetPassFromMail__goBackBtn {
+		margin: 50px 0 40px 0;
+	}
+
+	.resetPassFromMail__title {
+		margin-bottom: 40px;
+	}
+}
+
+@media screen and (max-width: 819px) {
+	.resetPassFromMail__title {
+		font-size: 22px;
+	}
+
+	.resetPassFromMail__comment {
+		max-width: 430px;
+		margin-top: 10px;
+	}
+}

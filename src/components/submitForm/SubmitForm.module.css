@@ -1,7 +1,7 @@
 .submitForm {
+	width: 100%;
   max-width: 490px;
   display: flex;
   flex-direction: column;
   row-gap: 15px;
-  position: relative;
 }

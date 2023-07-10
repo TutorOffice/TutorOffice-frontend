@@ -1,61 +1,62 @@
 /* eslint-disable react/prop-types */
 import s from './UserCard.module.css';
 
-import { btnClass, btnType, Button } from '../../shared/ui';
-import virtualStudentPhoto from '../../assets/images/virtual-student.png';
+import { btnClass, btnType, Button } from '@/shared/ui';
+import virtualStudentPhoto from '@/assets/images/virtual-student.png';
+import { userRole } from '@/shared/types/userRole';
 
 import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 
 interface UserCardProps {
+  isActive: boolean;
   photo: string;
-  name: string;
-  studentStatus?: boolean;
-  studentSubject?: string;
-  studentSubjectLevel?: string;
-  tutorSubject?: string;
-  isTutorials?: boolean;
+  firstName: string;
+  lastName: string;
+  patronymic?: string;
+  subject: string;
+  studentSubjectLevel: string;
+  role: userRole;
+  btnText: string;
 }
 
 const UserCard: React.FC<UserCardProps> = ({
+  role,
   photo,
-  studentStatus,
-  name,
-  studentSubject,
+  isActive = false,
+  firstName,
+  lastName,
+  patronymic,
+  subject,
   studentSubjectLevel,
-  tutorSubject,
-  isTutorials,
+  btnText,
 }) => {
-  const studentStatusClass = clsx({ [s.studentStatus]: !studentStatus });
+  const cardClassName = clsx(s.card__wrapper, { [s.virtualStudent]: !isActive });
+
   return (
-    <div className={s.card}>
-      <div className={s.card__wrapper}>
-        <img className={s.card__photo} src={studentStatus ? photo : virtualStudentPhoto} alt='Фото пользователя' />
-        <div className={studentStatusClass}>
-          <p className={s.card__name}>
-            {name.split(' ')[0]}
-            <br />
-            {name.split(' ')[1]}
-            <br />
-            {name.split(' ')[2] || <br />}
+    <li className={s.card}>
+      <div className={cardClassName}>
+        <div className={s.card__header}>
+          <img className={s.card__photo} src={isActive ? photo : virtualStudentPhoto} alt='Фото пользователя' />
+          <div className={s.card__name}>
+            <p>{lastName}</p>
+            <p>{firstName}</p>
+            {role === userRole.tutor ? patronymic : <br />}
+          </div>
+        </div>
+        <div className={s.card__subjectBlock}>
+          <p className={s.card__subject}>
+            {role === userRole.student ? subject : `Преподаватель английского\u00A0языка`}
           </p>
-          {studentSubject && <p className={s.card__subject}>{studentSubject}</p>}
-          {tutorSubject && (
-            <p className={s.card__subject}>
-              Преподаватель
-              <br />
-              {tutorSubject}
-            </p>
-          )}
-          {studentSubjectLevel && <p>Уровень - {studentSubjectLevel}</p>}
+          {role === userRole.student && <p>{`Уровень - ${studentSubjectLevel}`}</p>}
         </div>
       </div>
       <Link to='#'>
-        <Button type={btnType.button} variant={btnClass.back}>
-          {isTutorials ? 'Учебные материалы' : 'Посмотреть'}
+        <Button className={s.card__button} type={btnType.button} variant={btnClass.common}>
+          {btnText}
         </Button>
       </Link>
-    </div>
+    </li>
   );
 };
 

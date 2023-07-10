@@ -1,0 +1,66 @@
+import testPhoto from '../../assets/images/test-student.jpg';
+
+const testStudents = [
+  {
+    id: 1,
+    isActive: true,
+    photo: testPhoto,
+    firstName: 'Иван',
+    lastName: 'Иванов',
+    patronymic: 'Иванович',
+    subject: 'Английский',
+    studentSubjectLevel: 'B2',
+  },
+  {
+    id: 2,
+    isActive: true,
+    photo: testPhoto,
+    firstName: 'Иван',
+    lastName: 'Иванов',
+    patronymic: 'Иванович',
+    subject: 'Английский',
+    studentSubjectLevel: 'A1',
+  },
+  {
+    id: 3,
+    isActive: true,
+    photo: testPhoto,
+    firstName: 'Иван',
+    lastName: 'Иванов',
+    patronymic: 'Иванович',
+    subject: 'Английский',
+    studentSubjectLevel: 'B2',
+  },
+  {
+    id: 4,
+    isActive: true,
+    photo: testPhoto,
+    firstName: 'Иван',
+    lastName: 'Иванов',
+    patronymic: 'Иванович',
+    subject: 'Английский',
+    studentSubjectLevel: 'A2',
+  },
+  {
+    id: 5,
+    isActive: false,
+    photo: testPhoto,
+    firstName: 'Иван',
+    lastName: 'Иванов',
+    patronymic: 'Иванович',
+    subject: 'Китайский',
+    studentSubjectLevel: 'B2',
+  },
+  {
+    id: 6,
+    isActive: false,
+    photo: testPhoto,
+    firstName: 'Иван',
+    lastName: 'Иванов',
+    patronymic: 'Иванович',
+    subject: 'Английский',
+    studentSubjectLevel: 'C1',
+  },
+];
+
+export default testStudents;

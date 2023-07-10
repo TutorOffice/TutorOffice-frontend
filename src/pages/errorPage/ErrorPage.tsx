@@ -1,20 +1,26 @@
+import s from './ErrorPage.module.css';
+
 import ErrorInfo from '@/components/errorInfo/ErrorInfo';
 import Layout from '@/components/layout/Layout';
-import Wrapper from '@/components/wrapper/Wrapper';
 import { errorTypes } from '@/shared/constants';
 
-const ErrorPage = () => {
+interface ErrorPageProps {
+  errorCode: string | number;
+}
+
+// eslint-disable-next-line react/prop-types
+const ErrorPage: React.FC<ErrorPageProps> = ({ errorCode = 404 }) => {
   return (
     <Layout>
-      <Wrapper>
+      <div className={s.errorPage}>
         {errorTypes.map((obj) => (
           <div key={obj.id}>
-            {obj.code === '400' ? (
-              <ErrorInfo imageUrl={obj.imageUrl} title={obj.title} description={obj.description} code={obj.code} />
+            {obj.code === errorCode ? (
+              <ErrorInfo imageUrl={obj.imageUrl} title={obj.title} description={obj.description} errorCode={obj.code} />
             ) : null}
           </div>
         ))}
-      </Wrapper>
+      </div>
     </Layout>
   );
 };

@@ -1,0 +1,60 @@
+.studentsPageWithCards {
+	margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.studentsPageWithCards__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.studentsPageWithCards__title {
+  font-family: 'Raleway';
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.studentsPageWithCards__desc {
+	width: 100%;
+  font-family: 'Roboto';
+  font-size: 14px;
+  font-weight: 400;
+  line-height: calc(16 / 14);
+  margin-bottom: 20px;
+}
+
+.student_active {
+  font-weight: 600;
+}
+
+.studentsPageWithCards__container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(30%, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+
+@media screen and (max-width: 1100px) {
+	.studentsPageWithCards {
+		margin-top: 60px;
+	}
+
+	.studentsPageWithCards__title {
+		font-size: 28px;
+	}
+
+	.studentsPageWithCards__desc {
+		margin-bottom: 30px;
+	}
+
+	.studentsPageWithCards__container {
+		gap: 30px;
+	}
+}

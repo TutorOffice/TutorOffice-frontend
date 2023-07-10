@@ -1,3 +1,14 @@
+.main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.main__header {
+	margin-bottom: 150px;
+	justify-content: flex-end!important;
+}
+
 .main__content {
   max-width: 748px;
   margin-bottom: 70px;
@@ -26,4 +37,29 @@
 .main__image {
   width: 410px;
   height: 285px;
+}
+
+@media screen and (max-width: 1100px) {
+	.main__header {
+		margin-bottom: 0;
+	}
+
+	.main__content {
+		margin-top: 60px;
+	}
+}
+
+@media screen and (max-width: 819px) {
+	.main__content {
+		margin-bottom: 50px;
+	}
+	
+	.main__title {
+		font-size: 28px;
+	}
+
+	.main__desc {
+		margin-bottom: 40px;
+		font-size: 16px;
+	}
 }

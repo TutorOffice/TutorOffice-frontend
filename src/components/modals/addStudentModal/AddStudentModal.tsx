@@ -1,8 +1,7 @@
+// eslint-disable-next-line import/namespace, import/default
 import SubmitForm from '@/components/submitForm/SubmitForm';
-
 import { Input, Modal, inputTypes } from '@/shared/ui';
-import { TValidationSubmitFormResolver } from '@/shared/validation/formResolver';
-import { validateType } from '@/shared/validation/validateTypes';
+import { validateType, TValidationSubmitFormResolver } from '@/shared/validation';
 
 import { SubmitHandler } from 'react-hook-form';
 import React from 'react';
@@ -32,7 +31,6 @@ const AddStudentModal: React.FC<AddStudentModalProps> = ({ isOpen, onClose }) =>
       <SubmitForm
         btnText='Сохранить'
         btnWidth='100%'
-        top='10px'
         resolverType={TValidationSubmitFormResolver.ADD_STUDENT}
         onSubmit={onSubmit}
       >

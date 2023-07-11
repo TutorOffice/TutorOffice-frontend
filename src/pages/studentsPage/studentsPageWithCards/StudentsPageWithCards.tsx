@@ -54,6 +54,7 @@ const StudentsPageWithCards = () => {
               subject={stud.subject}
               studentSubjectLevel={stud.studentSubjectLevel}
               btnText='Посмотреть'
+              id={stud.id}
             />
           ))}
         </ul>

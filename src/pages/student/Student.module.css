@@ -1,0 +1,24 @@
+.student__title {
+  margin-bottom: 40px;
+  font-family: 'Raleway';
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 35.22px;
+  width: 100%;
+}
+
+.student__header {
+  margin-bottom: 40px;
+}
+
+.student__backButton {
+  margin-bottom: 60px;
+}
+
+.student__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  max-width: 915px;
+  gap: 25px;
+}

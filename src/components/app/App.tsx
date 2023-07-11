@@ -16,6 +16,7 @@ import ErrorPage from '@/pages/errorPage/ErrorPage';
 import HomeWork from '@/pages/homeWork/HomeWork';
 import StudentsPage from '@/pages/studentsPage/StudentsPage';
 import EducationalMaterials from '@/pages/educationalMaterials/EducationalMaterials';
+import Student from '@/pages/student/Student';
 
 import { Route, Routes } from 'react-router-dom';
 
@@ -40,6 +41,7 @@ const App = () => {
       <Route path='/homework' element={<HomeWork />} />
       <Route path='/not-found' element={<ErrorPage />} />
       <Route path='/educational-materials' element={<EducationalMaterials />} />
+      <Route path='/student/:id' element={<Student />} />
     </Routes>
   );
 };

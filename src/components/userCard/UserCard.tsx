@@ -18,6 +18,7 @@ interface UserCardProps {
   studentSubjectLevel: string;
   role: userRole;
   btnText: string;
+  id: number;
 }
 
 const UserCard: React.FC<UserCardProps> = ({
@@ -30,6 +31,7 @@ const UserCard: React.FC<UserCardProps> = ({
   subject,
   studentSubjectLevel,
   btnText,
+  id,
 }) => {
   const cardClassName = clsx(s.card__wrapper, { [s.virtualStudent]: !isActive });
 
@@ -51,7 +53,7 @@ const UserCard: React.FC<UserCardProps> = ({
           {role === userRole.student && <p>{`Уровень - ${studentSubjectLevel}`}</p>}
         </div>
       </div>
-      <Link to='#'>
+      <Link to={`/student/${id}`}>
         <Button className={s.card__button} type={btnType.button} variant={btnClass.common}>
           {btnText}
         </Button>

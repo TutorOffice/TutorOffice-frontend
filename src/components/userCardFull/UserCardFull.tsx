@@ -11,8 +11,8 @@ import clsx from 'clsx';
 
 interface UserCardFullProps {
   photo: string;
-  first_name: string;
-  last_name: string;
+  firstName: string;
+  lastName: string;
   patronymic?: string;
   email: string;
   phone: string;
@@ -21,16 +21,16 @@ interface UserCardFullProps {
   studentSubjectLevel?: string;
   tutorSubject?: string;
   isTutorials?: boolean;
-  homeWorkDone: number;
-  homeWorkArrowUp: number;
-  homeWorkToDo: number;
+  homeWorkDone: number | string;
+  homeWorkArrowUp: number | string;
+  homeWorkToDo: number | string;
 }
 
 const UserCardFull: React.FC<UserCardFullProps> = ({
   photo,
   studentStatus,
-  first_name,
-  last_name,
+  firstName,
+  lastName,
   patronymic,
   email,
   phone,
@@ -51,9 +51,9 @@ const UserCardFull: React.FC<UserCardFullProps> = ({
         />
         <div className={studentStatusClass}>
           <p className={s.userCardFull__name}>
-            {last_name}
+            {lastName}
             <br />
-            {first_name}
+            {firstName}
             <br />
             {patronymic || <br />}
           </p>

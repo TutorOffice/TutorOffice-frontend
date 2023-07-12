@@ -7,11 +7,11 @@ import Layout from '@/components/layout/Layout';
 import studentImage from '@/assets/images/student.png';
 import { Button, btnClass, btnType } from '@/shared/ui';
 
-import { useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 const Student = () => {
-  const [id] = useState(document.location.pathname.slice(9));
-  const stud = testStudents[+id];
+  const { id } = useParams();
+  const stud = id ? testStudents[+id - 1] : testStudents[0];
 
   return (
     <Layout>
@@ -25,8 +25,8 @@ const Student = () => {
           key={stud.id}
           studentStatus={stud.activeStatus}
           photo={stud.photo}
-          first_name={stud.first_name}
-          last_name={stud.last_name}
+          firstName={stud.firstName}
+          lastName={stud.lastName}
           patronymic={stud.patronymic}
           studentSubject={stud.studentSubject}
           studentSubjectLevel={stud.studentSubjectLevel}

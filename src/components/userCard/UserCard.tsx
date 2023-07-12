@@ -18,7 +18,7 @@ interface UserCardProps {
   studentSubjectLevel: string;
   role: userRole;
   btnText: string;
-  id: number;
+  id: number | string;
 }
 
 const UserCard: React.FC<UserCardProps> = ({
@@ -40,11 +40,13 @@ const UserCard: React.FC<UserCardProps> = ({
       <div className={cardClassName}>
         <div className={s.card__header}>
           <img className={s.card__photo} src={isActive ? photo : virtualStudentPhoto} alt='Фото пользователя' />
-          <div className={s.card__name}>
-            <p>{lastName}</p>
-            <p>{firstName}</p>
-            {role === userRole.tutor ? patronymic : <br />}
-          </div>
+          <p className={s.card__name}>
+            {lastName}
+            <br />
+            {firstName}
+            <br />
+            {patronymic || <br />}
+          </p>
         </div>
         <div className={s.card__subjectBlock}>
           <p className={s.card__subject}>
@@ -53,7 +55,7 @@ const UserCard: React.FC<UserCardProps> = ({
           {role === userRole.student && <p>{`Уровень - ${studentSubjectLevel}`}</p>}
         </div>
       </div>
-      <Link to={`/student/${id}`}>
+      <Link to={`/students/${id}`}>
         <Button className={s.card__button} type={btnType.button} variant={btnClass.common}>
           {btnText}
         </Button>

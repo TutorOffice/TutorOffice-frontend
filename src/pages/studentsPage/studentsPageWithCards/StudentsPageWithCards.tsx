@@ -51,6 +51,7 @@ const StudentsPageWithCards = () => {
               photo={stud.photo}
               firstName={stud.firstName}
               lastName={stud.lastName}
+              patronymic={stud.patronymic}
               subject={stud.subject}
               studentSubjectLevel={stud.studentSubjectLevel}
               btnText='Посмотреть'

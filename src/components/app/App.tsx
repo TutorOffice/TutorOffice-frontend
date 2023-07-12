@@ -41,7 +41,7 @@ const App = () => {
       <Route path='/homework' element={<HomeWork />} />
       <Route path='/not-found' element={<ErrorPage />} />
       <Route path='/educational-materials' element={<EducationalMaterials />} />
-      <Route path='/student/:id' element={<Student />} />
+      <Route path='/students/:id' element={<Student />} />
     </Routes>
   );
 };

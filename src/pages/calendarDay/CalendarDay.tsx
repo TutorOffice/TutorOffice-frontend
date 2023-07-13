@@ -7,8 +7,8 @@ import CalendarDayItem from '@/components/calendarDayItem/CalendarDayItem';
 import { Button, btnClass, btnType } from '@/shared/ui';
 import { getToday, momentConfig } from '@/shared/utils';
 
-import moment from 'moment';
 import { useParams } from 'react-router-dom';
+import moment from 'moment';
 
 const CalendarDay = () => {
   type Params = {

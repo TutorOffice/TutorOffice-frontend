@@ -1,4 +1,4 @@
-import s from './UserCardFulll.module.css';
+import s from './UserCardFull.module.css';
 
 import { btnClass, btnType, Button } from '@/shared/ui';
 import virtualStudentPhoto from '@/assets/images/virtual-student.png';
@@ -8,7 +8,6 @@ import toDoIcon from '@/assets/icons/status-false.svg';
 
 import { Link } from 'react-router-dom';
 import clsx from 'clsx';
-
 interface UserCardFullProps {
   photo: string;
   firstName: string;
@@ -41,6 +40,7 @@ const UserCardFull: React.FC<UserCardFullProps> = ({
   homeWorkToDo,
 }: UserCardFullProps) => {
   const studentStatusClass = clsx({ [s.studentStatus]: !studentStatus });
+
   return (
     <div className={s.userCardFull}>
       <div className={s.userCardFull__wrapper}>
@@ -58,7 +58,7 @@ const UserCardFull: React.FC<UserCardFullProps> = ({
             {patronymic || <br />}
           </p>
           {studentSubject && <p className={s.userCardFull__subject}>{studentSubject}</p>}
-          {studentSubjectLevel && <p>Уровень - {studentSubjectLevel}</p>}
+          {studentSubjectLevel && <p className={s.userCardFull_subjectLevel}>Уровень - {studentSubjectLevel}</p>}
         </div>
       </div>
       <div className={s.userCardFull__contactItem}>
@@ -83,7 +83,7 @@ const UserCardFull: React.FC<UserCardFullProps> = ({
         </p>
       </div>
       <Link to='#' className={s.userCardFull__button_primary}>
-        <Button type={btnType.button} variant={btnClass.primary} className={s.userCardFull__button_primary}>
+        <Button width='100%' type={btnType.button} variant={btnClass.primary}>
           Написать
         </Button>
       </Link>

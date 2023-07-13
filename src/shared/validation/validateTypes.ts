@@ -6,6 +6,7 @@ export enum validateType {
   phone = 'phone',
   password = 'password',
   confirmPassword = 'confirmPassword',
+  currentPassword = 'currentPassword',
   userType = 'userType',
   policy = 'policy',
   level = 'level',

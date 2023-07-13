@@ -7,8 +7,9 @@ import SmallModalWithButton from '@/components/modals/smallModalWithButton/Small
 import LessonPageUserInfo from '@/components/lessonPageUserInfo/LessonPageUserInfo';
 import { btnClass, btnType, Button } from '@/shared/ui';
 
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+
+import { useState } from 'react';
 
 const Lesson = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);

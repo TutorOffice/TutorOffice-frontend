@@ -2,7 +2,7 @@ import testStudents from './testStudents';
 import StudentsPageWithCards from './studentsPageWithCards/StudentsPageWithCards';
 
 import Layout from '@/components/layout/Layout';
-import HeaderAuth from '@/components/headerAuth/HeaderAuth';
+import HeaderAuth from '@/components/header/headerAuth/HeaderAuth';
 import NoStudents from '@/components/noStudents/NoStudents';
 import studentsImage from '@/assets/images/students.png';
 

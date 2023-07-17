@@ -1,7 +1,7 @@
 import s from './Profile.module.css';
 
 import Layout from '@/components/layout/Layout';
-import HeaderMain from '@/components/headerMain/HeaderMain';
+import HeaderMain from '@/components/header/headerMain/HeaderMain';
 import LoadPhotoModal from '@/components/modals/loadPhotoModal/LoadPhotoModal';
 import SubmitForm from '@/components/submitForm/SubmitForm';
 import userPhoto from '@/assets/images/profile-photo.jpg';

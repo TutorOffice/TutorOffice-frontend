@@ -2,7 +2,7 @@ import testStudents from './testStudents';
 import EducationalMaterialsWithCards from './educationalMaterialWithCards/EducationalMaterialsWithCards';
 
 import educationalMaterialsImage from '@/assets/images/EducationalMaterialsBlank.png';
-import HeaderAuth from '@/components/headerAuth/HeaderAuth';
+import HeaderAuth from '@/components/header/headerAuth/HeaderAuth';
 import Layout from '@/components/layout/Layout';
 import NoStudents from '@/components/noStudents/NoStudents';
 

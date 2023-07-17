@@ -17,6 +17,7 @@ import HomeWork from '@/pages/homeWork/HomeWork';
 import StudentsPage from '@/pages/studentsPage/StudentsPage';
 import EducationalMaterials from '@/pages/educationalMaterials/EducationalMaterials';
 import Student from '@/pages/student/Student';
+import AboutProject from '@/pages/aboutProject/AboutProject';
 
 import { Route, Routes } from 'react-router-dom';
 
@@ -42,6 +43,7 @@ const App = () => {
       <Route path='/not-found' element={<ErrorPage errorCode='404' />} />
       <Route path='/educational-materials' element={<EducationalMaterials />} />
       <Route path='/students/:id' element={<Student />} />
+      <Route path='/about' element={<AboutProject />} />
     </Routes>
   );
 };

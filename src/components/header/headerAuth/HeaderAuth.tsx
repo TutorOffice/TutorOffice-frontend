@@ -1,5 +1,5 @@
 import HeaderMain from '../headerMain/HeaderMain';
-import UserInfo from '../userInfo/UserInfo';
+import UserInfo from '../../userInfo/UserInfo';
 
 import { Button, btnClass, btnType } from '@/shared/ui';
 import userPhoto from '@/assets/images/user-photo.jpg';

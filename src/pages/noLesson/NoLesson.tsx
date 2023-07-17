@@ -3,7 +3,7 @@ import s from './NoLesson.module.css';
 import Layout from '@/components/layout/Layout';
 import noLesson from '@/assets/images/no-lesson.png';
 import InformationContent from '@/components/information/informationContent/InformationContent';
-import HeaderAuth from '@/components/headerAuth/HeaderAuth';
+import HeaderAuth from '@/components/header/headerAuth/HeaderAuth';
 
 import { useNavigate } from 'react-router-dom';
 

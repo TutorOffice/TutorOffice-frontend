@@ -1,7 +1,7 @@
 import s from './Student.module.css';
 import testStudents from './testStudents';
 
-import HeaderAuth from '@/components/headerAuth/HeaderAuth';
+import HeaderAuth from '@/components/header/headerAuth/HeaderAuth';
 import UserCardFull from '@/components/userCardFull/UserCardFull';
 import Layout from '@/components/layout/Layout';
 import studentImage from '@/assets/images/student.png';

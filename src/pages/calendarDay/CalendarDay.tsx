@@ -1,7 +1,7 @@
 import s from './CalendarDay.module.css';
 import { testStudents } from './testStudents';
 
-import HeaderAuth from '@/components/headerAuth/HeaderAuth';
+import HeaderAuth from '@/components/header/headerAuth/HeaderAuth';
 import Layout from '@/components/layout/Layout';
 import CalendarDayItem from '@/components/calendarDayItem/CalendarDayItem';
 import { Button, btnClass, btnType } from '@/shared/ui';

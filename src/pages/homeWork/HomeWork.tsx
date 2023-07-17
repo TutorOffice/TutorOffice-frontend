@@ -3,7 +3,7 @@ import s from './HomeWork.module.css';
 import { testData } from './testStudents';
 
 import Layout from '@/components/layout/Layout';
-import HeaderAuth from '@/components/headerAuth/HeaderAuth';
+import HeaderAuth from '@/components/header/headerAuth/HeaderAuth';
 import HomeWorkItem from '@/components/homeWorkItem/HomeWorkItem';
 
 const HomeWork = () => {

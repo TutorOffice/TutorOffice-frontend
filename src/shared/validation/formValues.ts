@@ -6,4 +6,5 @@ export interface IFormValues {
   password: string;
   phone: string;
   subject?: string;
+  feedbackMessage: string;
 }

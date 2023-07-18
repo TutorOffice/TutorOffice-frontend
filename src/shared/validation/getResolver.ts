@@ -2,6 +2,7 @@ import {
   addStudentSchema,
   changePassFromMailSchema,
   changePassSchema,
+  feedbackSchema,
   loginSchema,
   profileSchema,
   registerSchema,
@@ -25,5 +26,7 @@ export const getResolver = (type: string) => {
       return yupResolver(changePassFromMailSchema);
     case TValidationSubmitFormResolver.PROFILE:
       return yupResolver(profileSchema);
+    case TValidationSubmitFormResolver.FEEDBACK:
+      return yupResolver(feedbackSchema);
   }
 };

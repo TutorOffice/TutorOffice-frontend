@@ -18,6 +18,7 @@ import StudentsPage from '@/pages/studentsPage/StudentsPage';
 import EducationalMaterials from '@/pages/educationalMaterials/EducationalMaterials';
 import Student from '@/pages/student/Student';
 import AboutProject from '@/pages/aboutProject/AboutProject';
+import Feedback from '@/pages/feedback/Feedback';
 
 import { Route, Routes } from 'react-router-dom';
 
@@ -44,6 +45,7 @@ const App = () => {
       <Route path='/educational-materials' element={<EducationalMaterials />} />
       <Route path='/students/:id' element={<Student />} />
       <Route path='/about' element={<AboutProject />} />
+      <Route path='/feedback' element={<Feedback />} />
     </Routes>
   );
 };

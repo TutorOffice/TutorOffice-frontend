@@ -110,3 +110,12 @@ export const profileSchema = yup.object({
     .matches(passwordPattern.upperCase, '')
     .matches(passwordPattern.valid, ''),
 });
+
+export const feedbackSchema = yup.object({
+  firstName: yup
+    .string()
+    .required(firstNameMessages.required)
+    .matches(cyrillicLatinPattern, firstNameMessages.incorrect),
+  email: yup.string().required(emailMessages.required).email(emailMessages.incorrect),
+  feedbackMessage: yup.string().matches(cyrillicLatinPattern, { excludeEmptyString: true }),
+});

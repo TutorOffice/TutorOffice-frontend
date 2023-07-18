@@ -7,6 +7,17 @@
     margin-bottom: 10px;
 }
 
+.textarea {
+	resize: none;
+	padding: 12px;
+}
+
+.textarea::placeholder {
+	font-family: 'Roboto';
+	font-size: 18px;
+	font-weight: 400;
+}
+
 .input::placeholder {
     color: var(--gray);
 }

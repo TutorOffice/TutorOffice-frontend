@@ -14,6 +14,7 @@ export enum inputTypes {
   phone = 'phone',
   email = 'email',
   button = 'button',
+  textarea = 'textarea',
 }
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
@@ -54,6 +55,7 @@ const Input: React.FC<InputProps> = ({
 }) => {
   const classNameInput = clsx(className, {
     [s.input]: true,
+    [s.textarea]: type === inputTypes.textarea,
     [s.error]: isError,
   });
   const classNameTip = clsx({
@@ -89,17 +91,25 @@ const Input: React.FC<InputProps> = ({
       </label>
       <div className={s.inputBlock}>
         <div>
-          <input
-            ref={inputRef}
-            {...(register && name && { ...register(name) })}
-            type={type}
-            maxLength={type === 'phone' ? 13 : undefined}
-            data-tel-input={type === 'phone' ? 'data-tel-input' : null}
-            placeholder={placeholder}
-            disabled={isDisabled}
-            className={classNameInput}
-            {...props}
-          />
+          {type === 'textarea' ? (
+            <textarea
+              {...(register && name && { ...register(name) })}
+              placeholder={placeholder}
+              className={classNameInput}
+            />
+          ) : (
+            <input
+              ref={inputRef}
+              {...(register && name && { ...register(name) })}
+              type={type}
+              maxLength={type === 'phone' ? 13 : undefined}
+              data-tel-input={type === 'phone' ? 'data-tel-input' : null}
+              placeholder={placeholder}
+              disabled={isDisabled}
+              className={classNameInput}
+              {...props}
+            />
+          )}
         </div>
         <div className={s.right}>
           <div className={s.rightCentered}>{right}</div>

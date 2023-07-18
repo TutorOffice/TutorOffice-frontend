@@ -1,0 +1,29 @@
+.feedback__title {
+	margin: 70px 0 40px;
+	font-family: 'Raleway';
+	font-size: 30px;
+	font-weight: 600;
+}
+
+.feedback__form {
+	max-width: 575px;
+}
+
+.feedback__input {
+	max-width: 490px;
+}
+
+.feedback__message {
+	height: 207px;
+}
+
+.feedback__message::placeholder {
+  font-size: 16px;
+}
+
+@media screen and (max-width: 1100px) {
+	.feedback__title {
+		margin: 60px 0 40px;
+		font-size: 28px;
+	}
+}

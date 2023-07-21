@@ -58,7 +58,6 @@ const Register = () => {
               name={validateType.password}
               type={inputTypes.password}
               labelText='Пароль'
-              isPassword={true}
               isRequired={true}
               commentTip='Пароль должен содержать не менее 7 символов, буквы в верхнем
 					и нижнем регистре, цифры и спец. символ (ex: ! @ # $ % - & * _)'
@@ -67,7 +66,6 @@ const Register = () => {
               name={validateType.confirmPassword}
               type={inputTypes.password}
               labelText='Повторите пароль'
-              isPassword={true}
               isRequired={true}
             />
             <CheckboxForm>

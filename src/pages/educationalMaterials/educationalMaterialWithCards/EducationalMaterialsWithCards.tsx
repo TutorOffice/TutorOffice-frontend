@@ -21,6 +21,7 @@ const EducationalMaterialsWithCards = () => {
             subject={stud.subject}
             studentSubjectLevel={stud.studentSubjectLevel}
             btnText='Учебные материалы'
+            linkPath={stud.id.toString()}
           />
         ))}
       </ul>

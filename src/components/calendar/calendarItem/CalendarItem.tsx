@@ -1,7 +1,8 @@
 import s from './CalendarItem.module.css';
 
 import { formatDate, momentType } from '@/shared/utils';
-import ModalWithButtons from '@/components/modals/modalWithButtons/ModalWithButtons';
+
+import ModalWithButtons from '@/components/modals/modalWithButtons/modalWithButtons';
 
 import React, { useState } from 'react';
 import clsx from 'clsx';

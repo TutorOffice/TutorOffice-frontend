@@ -2,10 +2,11 @@ import s from './Lesson.module.css';
 
 import Layout from '@/components/layout/Layout';
 import HeaderAuth from '@/components/header/headerAuth/HeaderAuth';
-import ModalWithButtons from '@/components/modals/modalWithButtons/ModalWithButtons';
 import SmallModalWithButton from '@/components/modals/smallModalWithButton/SmallModalWithButton';
 import LessonPageUserInfo from '@/components/lessonPageUserInfo/LessonPageUserInfo';
 import { btnClass, btnType, Button } from '@/shared/ui';
+
+import ModalWithButtons from '@/components/modals/modalWithButtons/modalWithButtons';
 
 import { useNavigate } from 'react-router-dom';
 

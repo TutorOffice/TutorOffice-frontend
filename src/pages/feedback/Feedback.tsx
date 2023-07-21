@@ -3,10 +3,11 @@ import s from './Feedback.module.css';
 import HeaderAuth from '@/components/header/headerAuth/HeaderAuth';
 import HeaderNoAuth from '@/components/header/headerNoAuth/HeaderNoAuth';
 import Layout from '@/components/layout/Layout';
-import ModalWithButtons from '@/components/modals/modalWithButtons/ModalWithButtons';
 import SubmitForm from '@/components/submitForm/SubmitForm';
 import { Input, inputTypes } from '@/shared/ui';
 import { IFormValues, TValidationSubmitFormResolver, validateType } from '@/shared/validation';
+
+import ModalWithButtons from '@/components/modals/modalWithButtons/modalWithButtons';
 
 import { useState } from 'react';
 

@@ -39,6 +39,7 @@ export const registerSchema = yup
       .string()
       .oneOf([yup.ref('password')], passwordMessages.mismatch)
       .required(''),
+    policy: yup.boolean(),
   })
   .required('');
 

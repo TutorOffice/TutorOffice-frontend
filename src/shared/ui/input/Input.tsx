@@ -91,7 +91,7 @@ const Input: React.FC<InputProps> = ({
       </label>
       <div className={s.inputBlock}>
         <div>
-          {type === 'textarea' ? (
+          {type === inputTypes.textarea ? (
             <textarea
               {...(register && name && { ...register(name) })}
               placeholder={placeholder}

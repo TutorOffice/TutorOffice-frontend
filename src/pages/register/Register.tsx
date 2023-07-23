@@ -1,13 +1,12 @@
 import s from './Register.module.css';
 
 import registerImage from '@/assets/images/register-image.png';
-import { btnClass, btnType, Button, Checkbox, Input, inputTypes } from '@/shared/ui';
+import { btnClass, btnType, Button, Input, inputTypes, Radio } from '@/shared/ui';
 import { usePhoneMask } from '@/shared/utils';
 import { IFormValues, TValidationSubmitFormResolver, validateType } from '@/shared/validation';
 import SubmitForm from '@/components/submitForm/SubmitForm';
-import Policy from '@/components/policy/Policy';
 import Layout from '@/components/layout/Layout';
-import CheckboxForm from '@/components/checkbox/Checkbox';
+import Policy from '@/components/policy/Policy';
 
 import React from 'react';
 import { SubmitHandler } from 'react-hook-form';
@@ -68,11 +67,15 @@ const Register = () => {
               labelText='Повторите пароль'
               isRequired={true}
             />
-            <CheckboxForm>
-              <Checkbox name='student' text='Ученик' type='radio' id='student' />
-              <Checkbox name='tutor' text='Преподаватель' type='radio' id='tutor' />
-            </CheckboxForm>
-            <Policy name={validateType.policy} />
+            <Radio
+              className={s.register__radio}
+              radioItems={[
+                { id: 1, value: 'tutor', text: 'Преподаватель' },
+                { id: 2, value: 'student', text: 'Ученик' },
+              ]}
+              name={validateType.userRole}
+            />
+            <Policy className={s.register__policy} name={validateType.policy} />
           </SubmitForm>
           <p className={s.register__desc}>
             Уже есть аккаунт?

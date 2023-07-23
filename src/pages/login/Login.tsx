@@ -28,13 +28,7 @@ const Login = () => {
         onSubmit={onSubmit}
       >
         <Input name={validateType.email} type={inputTypes.email} labelText='Введите e-mail' isRequired={true} />
-        <Input
-          name={validateType.password}
-          type={inputTypes.password}
-          labelText='Введите пароль'
-          isRequired={true}
-          isPassword={true}
-        />
+        <Input name={validateType.password} type={inputTypes.password} labelText='Введите пароль' isRequired={true} />
       </SubmitForm>
       <Link to='/change-pass' className={s.link_changePass}>
         <Button type={btnType.button} variant={btnClass.common}>

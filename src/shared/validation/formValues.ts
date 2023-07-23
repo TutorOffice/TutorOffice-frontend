@@ -7,4 +7,6 @@ export interface IFormValues {
   phone: string;
   subject?: string;
   feedbackMessage: string;
+  role: string;
+  policy: boolean;
 }

@@ -42,6 +42,14 @@
 	font-size: 18px;
 }
 
+.register__radio {
+	margin: 25px 0 40px;
+}
+
+.register__policy {
+	margin-bottom: 40px;
+}
+
 @media screen and (max-width: 1250px) {
 	.register__container {
 		flex-direction: column;

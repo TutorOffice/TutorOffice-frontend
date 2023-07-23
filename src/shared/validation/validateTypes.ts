@@ -7,7 +7,7 @@ export enum validateType {
   password = 'password',
   confirmPassword = 'confirmPassword',
   currentPassword = 'currentPassword',
-  userType = 'userType',
+  userRole = 'userRole',
   policy = 'policy',
   level = 'level',
   subject = 'subject',

@@ -29,6 +29,7 @@ const STATES = [
     isDisabled: true,
   },
   { variant: btnClass.back, children: 'Back', type: btnType.button },
+	{ variant: btnClass.common, children: 'Common', type: btnType.button },
 ];
 export const All: StoryFn<typeof Button> = () => (
   <ButtonGroup>

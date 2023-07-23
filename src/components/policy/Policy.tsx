@@ -7,15 +7,19 @@ import { validateType } from '@/shared/validation';
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { FieldValues, UseFormRegister } from 'react-hook-form';
+import clsx from 'clsx';
 
 interface PolicyProps {
-  register?: UseFormRegister<FieldValues>;
   name: validateType;
+  register?: UseFormRegister<FieldValues>;
+  className?: string;
 }
 
-const Policy: FC<PolicyProps> = ({ register, name }) => {
+const Policy: FC<PolicyProps> = ({ register, name, className }) => {
+  const policyClassName = clsx(className, { [s.policy]: true });
+
   return (
-    <div className={s.policy}>
+    <div className={policyClassName}>
       <Checkbox register={register} name={name} />
       <p className={s.policy__text}>
         Я согласен с

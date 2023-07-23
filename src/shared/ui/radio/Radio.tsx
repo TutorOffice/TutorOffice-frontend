@@ -1,39 +1,41 @@
-import s from './checkbox.module.css';
+import s from './Radio.module.css';
 
-import React from 'react';
+import RadioItem from './radioItem/RadioItem';
+
+import clsx from 'clsx';
+import React, { ChangeEvent, useState } from 'react';
 import { FieldValues, UseFormRegister } from 'react-hook-form';
 
 interface CheckboxProps {
-  register?: UseFormRegister<FieldValues>;
   name: string;
-  type: string;
-  id: string;
-  text: string;
-  isTutor?: boolean;
-  setIsTutor?: (isTutor: boolean) => void;
+  radioItems: Array<{ id: string | number; value: string; text: string }>;
+  register?: UseFormRegister<FieldValues>;
+  className?: string;
 }
 
-const Checkbox: React.FC<CheckboxProps> = ({ isTutor = false, setIsTutor, text, name, register, type, id }) => {
-  const onChange = () => {
-    if (setIsTutor) {
-      setIsTutor(!isTutor);
-    }
+const Checkbox: React.FC<CheckboxProps> = ({ name, radioItems, register, className }) => {
+  const [value, setValue] = useState(radioItems[0].value);
+  const changeValue = (e: ChangeEvent<HTMLInputElement>) => {
+    setValue(e.target.value);
   };
+
+  const radioClassName = clsx(className, { [s.radio]: true });
+
   return (
-    <div className={s.checkbox__wrapper}>
-      <input
-        {...(register && { ...register(name) })}
-        className={s.customRadio}
-        name={!isTutor ? 'tutor' : 'student'}
-        type={type}
-        id={id}
-        value={!isTutor ? 'tutor' : 'student'}
-        checked={name === 'student' ? !isTutor : isTutor}
-        onClick={onChange}
-      />
-      <label className={s.checkbox__text} htmlFor={name === 'student' ? 'student' : 'tutor'}>
-        {text}
-      </label>
+    <div className={radioClassName}>
+      {radioItems.map((obj) => {
+        return (
+          <RadioItem
+            key={obj.id}
+            itemValue={obj.value}
+            labelText={obj.text}
+            register={register}
+            name={name}
+            value={value}
+            changeValue={changeValue}
+          />
+        );
+      })}
     </div>
   );
 };

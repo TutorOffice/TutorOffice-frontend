@@ -1,20 +1,21 @@
-// import '../../../index.css';
+import { validateType } from '@/shared/validation';
+import '../../../index.css';
 
-// import Radio from './Radio';
+import Radio from './Radio';
 
-// import CheckboxForm from '../../../components/checkbox/Checkbox';
+import type { Meta } from '@storybook/react';
+import { StoryFn } from '@storybook/react';
 
-// import type { Meta } from '@storybook/react';
-// import { StoryFn } from '@storybook/react';
+export default {
+  title: 'Radio',
+  component: Radio,
+} as Meta<typeof Radio>;
 
-// export default {
-//   title: 'Checkbox',
-//   component: Checkbox,
-// } as Meta<typeof Checkbox>;
+const radioItems=[
+	{ id: 1, value: 'tutor', text: 'Преподаватель' },
+	{ id: 2, value: 'student', text: 'Ученик' },
+]
 
-// export const Checkboxes: StoryFn<typeof Checkbox> = () => (
-//   <CheckboxForm>
-//     <Checkbox text='Ученик' name='student' type='radio' id='student' />
-//     <Checkbox text='Преподователь' name='tutor' type='radio' id='tutor' />
-//   </CheckboxForm>
-// );
+export const Radios: StoryFn<typeof Radio> = () => (
+	<Radio radioItems={radioItems} name={validateType.userRole} />
+);

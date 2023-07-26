@@ -8,3 +8,5 @@ export { default as Modal } from './modal/Modal';
 export { default as ButtonGroup } from './buttonGroup/ButtonGroup';
 export { default as Checkbox } from './checkbox/Checkbox';
 export { default as Burger } from './burger/Burger';
+export { default as Radio } from './radio/Radio';
+export { default as Select } from './select/Select';

@@ -1,39 +1,36 @@
-import s from './checkbox.module.css';
+import s from './Checkbox.module.css';
 
-import React from 'react';
+import { validateType } from '@/shared/validation';
+
+import clsx from 'clsx';
+import React, { useState } from 'react';
 import { FieldValues, UseFormRegister } from 'react-hook-form';
 
 interface CheckboxProps {
+  name?: validateType;
   register?: UseFormRegister<FieldValues>;
-  name: string;
-  type: string;
-  id: string;
-  text: string;
-  isTutor?: boolean;
-  setIsTutor?: (isTutor: boolean) => void;
+  className?: string;
 }
 
-const Checkbox: React.FC<CheckboxProps> = ({ isTutor = false, setIsTutor, text, name, register, type, id }) => {
+const Checkbox: React.FC<CheckboxProps> = ({ name, register, className }) => {
+  const [isChecked, setIsChecked] = useState(false);
   const onChange = () => {
-    if (setIsTutor) {
-      setIsTutor(!isTutor);
-    }
+    setIsChecked(!isChecked);
   };
+
+  const checkboxClassName = clsx(className, { [s.checkbox]: true });
+
   return (
     <div className={s.checkbox__wrapper}>
       <input
-        {...(register && { ...register(name) })}
-        className={s.customRadio}
-        name={!isTutor ? 'tutor' : 'student'}
-        type={type}
-        id={id}
-        value={!isTutor ? 'tutor' : 'student'}
-        checked={name === 'student' ? !isTutor : isTutor}
-        onClick={onChange}
+        {...(register && name && { ...register(name) })}
+        type='checkbox'
+        id='checkbox'
+        className={checkboxClassName}
+        checked={isChecked}
+        onChange={onChange}
       />
-      <label className={s.checkbox__text} htmlFor={name === 'student' ? 'student' : 'tutor'}>
-        {text}
-      </label>
+      <label htmlFor='checkbox' />
     </div>
   );
 };

@@ -19,6 +19,7 @@ import EducationalMaterials from '@/pages/educationalMaterials/EducationalMateri
 import Student from '@/pages/student/Student';
 import AboutProject from '@/pages/aboutProject/AboutProject';
 import Feedback from '@/pages/feedback/Feedback';
+import UserEducationalMaterials from '@/pages/userEducationalMaterials/UserEducationalMaterials';
 
 import AddLesson from '@/pages/addLesson/AddLesson';
 
@@ -40,15 +41,16 @@ const App = () => {
       <Route path='/no-lesson' element={<NoLesson />} />
       <Route path='/calendar' element={<CalendarPage />} />
       <Route path='/calendar/:date' element={<CalendarDay />} />
-      <Route path='/students' element={<StudentsPage />} />
       <Route path='/calendar/:date/:lessonId' element={<Lesson />} />
-      <Route path='/homework' element={<HomeWork />} />
-      <Route path='/not-found' element={<ErrorPage errorCode='404' />} />
-      <Route path='/educational-materials' element={<EducationalMaterials />} />
+      <Route path='/students' element={<StudentsPage />} />
       <Route path='/students/:id' element={<Student />} />
+      <Route path='/homework' element={<HomeWork />} />
+      <Route path='/educational-materials' element={<EducationalMaterials />} />
+      <Route path='/educational-materials/:userId' element={<UserEducationalMaterials />} />
       <Route path='/about' element={<AboutProject />} />
       <Route path='/feedback' element={<Feedback />} />
       <Route path='/add-lesson' element={<AddLesson />} />
+      <Route path='/not-found' element={<ErrorPage errorCode='404' />} />
     </Routes>
   );
 };

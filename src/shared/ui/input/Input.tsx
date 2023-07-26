@@ -26,7 +26,6 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   isRequired?: boolean;
   isError?: boolean;
   isPassword?: boolean;
-  iconVisibility?: boolean;
   name?: validateType;
   register?: UseFormRegister<FieldValues>;
   errors?: FieldError | undefined;

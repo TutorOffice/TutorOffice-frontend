@@ -6,6 +6,9 @@
     border: 0.5px solid var(--black, #071D48);
     background: var(--white, #FFF);
     margin-top: 10px;
+    max-height: 150px;
+    overflow: auto;
+    z-index: 2;
 }
 
 .option {

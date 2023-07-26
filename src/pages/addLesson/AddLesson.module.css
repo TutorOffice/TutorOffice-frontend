@@ -1,0 +1,59 @@
+.lesson__goBackBtn {
+    margin: 40px 0 60px;
+}
+
+.row__time {
+    display: flex;
+    gap: 25px;
+}
+
+.item__time {
+    width: 150px;
+    display: flex;
+    align-items: center;
+}
+
+.separator__time {
+    width: 45px;
+    display: flex;
+    justify-content: center;
+}
+
+.item__time_col {
+    display: flex;
+    flex-direction: column;
+}
+
+.text__item {
+    color: var(--black, #071D48);
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.last {
+    color: var(--red);
+}
+
+.InformationContent h2 {
+    text-align: left;
+}
+
+@media screen and (max-width: 1250px) {
+    .InformationContent {
+        flex-direction: unset;
+    }
+
+    .InformationContent div {
+        order: unset;
+    }
+
+}
+
+@media screen and (max-width: 819px) {
+
+    .InformationContent img {
+        display: none;
+    }
+}

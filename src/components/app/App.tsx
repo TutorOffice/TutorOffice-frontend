@@ -20,6 +20,8 @@ import Student from '@/pages/student/Student';
 import AboutProject from '@/pages/aboutProject/AboutProject';
 import Feedback from '@/pages/feedback/Feedback';
 
+import AddLesson from '@/pages/addLesson/AddLesson';
+
 import { Route, Routes } from 'react-router-dom';
 
 const App = () => {
@@ -46,6 +48,7 @@ const App = () => {
       <Route path='/students/:id' element={<Student />} />
       <Route path='/about' element={<AboutProject />} />
       <Route path='/feedback' element={<Feedback />} />
+      <Route path='/add-lesson' element={<AddLesson />} />
     </Routes>
   );
 };

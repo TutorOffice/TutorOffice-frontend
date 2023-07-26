@@ -1,0 +1,17 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    align-items: flex-start;
+}
+
+
+.root textarea {
+    border-radius: 12px;
+    border: 1px solid var(--black, #071D48);
+    resize: none;
+    padding: 10px;
+    height: 108px;
+
+}

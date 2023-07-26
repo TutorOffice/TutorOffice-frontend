@@ -1,7 +1,9 @@
+import s from './HeaderAuth.module.css';
+
 import HeaderMain from '../headerMain/HeaderMain';
 import UserInfo from '../../userInfo/UserInfo';
 
-import { Button, btnClass, btnType } from '@/shared/ui';
+import { btnClass, btnType, Button } from '@/shared/ui';
 import userPhoto from '@/assets/images/user-photo.jpg';
 
 import React from 'react';
@@ -9,6 +11,20 @@ import React from 'react';
 interface HeaderAuthProps {
   className?: string;
 }
+
+const ExitButton = () => {
+  return (
+    <svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40' fill='none'>
+      <path
+        d='M15.75 33.25H9.91667C9.14312 33.25 8.40125 32.9427 7.85427 32.3957C7.30729 31.8487 7 31.1069 7 30.3333V9.91667C7 9.14312 7.30729 8.40125 7.85427 7.85427C8.40125 7.30729 9.14312 7 9.91667 7H15.75M25.958 27.4167L33.2497 20.125M33.2497 20.125L25.958 12.8333M33.2497 20.125L15.75 20.125'
+        stroke='#2459BF'
+        strokeWidth='2'
+        strokeLinecap='round'
+        strokeLinejoin='round'
+      />
+    </svg>
+  );
+};
 
 const HeaderAuth: React.FC<HeaderAuthProps> = ({ className }) => {
   const logout = () => {
@@ -24,8 +40,9 @@ const HeaderAuth: React.FC<HeaderAuthProps> = ({ className }) => {
         phone='+7 936 619-98-06'
         mail='gurinalex065@yandex.ru'
       />
-      <Button onClick={logout} type={btnType.button} variant={btnClass.ghost}>
-        Выйти
+      <Button onClick={logout} type={btnType.button} variant={btnClass.ghost} className={s.button}>
+        <span className={s.exitText}>Выйти</span>
+        <ExitButton />
       </Button>
     </HeaderMain>
   );

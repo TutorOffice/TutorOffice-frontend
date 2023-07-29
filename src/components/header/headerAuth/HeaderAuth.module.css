@@ -1,0 +1,22 @@
+.button svg {
+    display: none;
+}
+
+@media screen and (max-width: 733px) {
+    .button {
+        padding: 0;
+        outline: unset;
+    }
+
+    .button:hover {
+        outline: unset;
+    }
+
+    .button svg {
+        display: block;
+    }
+
+    .exitText {
+        display: none;
+    }
+}

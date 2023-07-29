@@ -14,12 +14,12 @@ interface Option {
 }
 
 interface ISelect {
-  options: Option[];
-  placeholder: string;
+  options?: Option[];
+  placeholder?: string;
   className?: string;
 }
 
-const initialSelectOptions = [{ label: '🍇', value: '🍇' }];
+const initialSelectOptions = [{ label: 'Виноград 🍇', value: '🍇' }];
 
 const Select = ({ options = initialSelectOptions, placeholder, className }: ISelect) => {
   const [showOptions, setShowOptions] = useState(false);

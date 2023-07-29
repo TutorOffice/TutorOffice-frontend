@@ -21,6 +21,8 @@ import AboutProject from '@/pages/aboutProject/AboutProject';
 import Feedback from '@/pages/feedback/Feedback';
 import UserEducationalMaterials from '@/pages/userEducationalMaterials/UserEducationalMaterials';
 
+import AddLesson from '@/pages/addLesson/AddLesson';
+
 import { Route, Routes } from 'react-router-dom';
 
 const App = () => {
@@ -47,6 +49,7 @@ const App = () => {
       <Route path='/educational-materials/:userId' element={<UserEducationalMaterials />} />
       <Route path='/about' element={<AboutProject />} />
       <Route path='/feedback' element={<Feedback />} />
+      <Route path='/add-lesson' element={<AddLesson />} />
       <Route path='/not-found' element={<ErrorPage errorCode='404' />} />
     </Routes>
   );

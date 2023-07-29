@@ -33,6 +33,10 @@ const CalendarItem: React.FC<CalendarItemProps> = ({ day, isCurrentDay, isCurren
     navigate(`/calendar/${date}`);
   };
 
+  const viewAddLesson = () => {
+    navigate(`/add-lesson`);
+  };
+
   const itemClassName = clsx({
     [s.calendarItem]: true,
     [s.notCurrentMonth]: !isCurrentMonth,
@@ -60,6 +64,7 @@ const CalendarItem: React.FC<CalendarItemProps> = ({ day, isCurrentDay, isCurren
         ghostBtnText='Добавить урок'
         primaryBthText='Посмотреть расписание'
         onClickPrimaryBtn={viewSchedule}
+        onClickGhostBtn={viewAddLesson}
       />
     </>
   );

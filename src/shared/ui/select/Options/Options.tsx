@@ -14,13 +14,11 @@ interface IOptions {
 const Options = ({ options, optionValue, setOptionValue }: IOptions) => {
   return (
     <div className={s.root}>
-      {options
-        .filter((option) => option.value.toLowerCase().includes(optionValue.toLowerCase()))
-        .map((option, index) => (
-          <div className={s.option} onClick={() => setOptionValue(option.value)} key={index}>
-            {option.label}
-          </div>
-        ))}
+      {options.map((option, index) => (
+        <div className={s.option} onClick={() => setOptionValue(option.value)} key={index}>
+          {option.label}
+        </div>
+      ))}
     </div>
   );
 };

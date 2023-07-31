@@ -12,4 +12,5 @@ export enum validateType {
   level = 'level',
   subject = 'subject',
   feedbackMessage = 'feedbackMessage',
+  select = 'select',
 }

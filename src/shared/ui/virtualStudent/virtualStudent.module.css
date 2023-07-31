@@ -1,0 +1,62 @@
+.root {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+}
+
+
+.root span {
+    color: var(--gray);
+    font-family: Raleway, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.rootClicked span {
+    color: var(--black);
+}
+
+.root:hover span {
+    color: var(--black);
+    transition: all 0.3s ease-in-out;
+}
+
+
+.root:hover .svg {
+    stroke: var(--black);
+    transition: all 0.3s ease-in-out;
+
+}
+
+.rootClicked .svg {
+    stroke: var(--black);
+}
+
+.popup {
+    position: absolute;
+    top: 0;
+    margin-top: 30px;
+    border-radius: 10px;
+    border: 1px solid var(--black);
+    padding: 10px;
+    text-align: left;
+    background-color: #fff;
+
+}
+
+.popup span {
+    color: var(--black);
+    /* Desktop/body */
+    font-family: Roboto, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.virtualTipq {
+    color: var(--gray) !important;
+}

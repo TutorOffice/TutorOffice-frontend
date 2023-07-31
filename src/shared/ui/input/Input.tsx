@@ -50,6 +50,7 @@ const Input: React.FC<InputProps> = ({
   className,
   children,
   right,
+  value,
   ...props
 }) => {
   const classNameInput = clsx(className, {
@@ -79,7 +80,6 @@ const Input: React.FC<InputProps> = ({
       />
     );
   }
-
   return (
     <div className={s.inputs}>
       <label>
@@ -98,6 +98,7 @@ const Input: React.FC<InputProps> = ({
             />
           ) : (
             <input
+              value={value}
               ref={inputRef}
               {...(register && name && { ...register(name) })}
               type={type}

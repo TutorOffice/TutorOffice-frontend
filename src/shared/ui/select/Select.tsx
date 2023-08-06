@@ -9,7 +9,7 @@ import { validateType } from '@/shared/validation';
 
 import React, { ChangeEvent, useEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
-import { FieldValues, UseFormRegister } from 'react-hook-form';
+import { Control, Controller, FieldValues, UseFormRegister } from 'react-hook-form';
 
 interface Option {
   readonly label: string;
@@ -20,22 +20,26 @@ interface ISelect {
   options?: Option[];
   placeholder?: string;
   className?: string;
-  name?: validateType;
+  name: validateType;
   register?: UseFormRegister<FieldValues>;
+  control?: Control<FieldValues>;
 }
 
 const initialSelectOptions = [{ label: 'Виноград 🍇', value: '🍇' }];
 
-const Select = ({ options = initialSelectOptions, placeholder, className, name, register }: ISelect) => {
+const Select = ({ options = initialSelectOptions, placeholder, className, name, register, control }: ISelect) => {
   const [showOptions, setShowOptions] = useState(false);
   const [optionValue, setOptionValue] = useState<string>('');
+
   const classNameOptions = clsx(s.hide, {
     [s.showOptions]: showOptions,
     [s.closeOptions]: !showOptions,
   });
+
   const classNameSelect = clsx(className, s.input, {
     [s.inputFocus]: showOptions,
   });
+
   const ref = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -47,10 +51,6 @@ const Select = ({ options = initialSelectOptions, placeholder, className, name, 
     setShowOptions(!showOptions);
     inputRef.current?.focus();
   };
-
-  useEffect(() => {
-    console.log(optionValue);
-  }, [optionValue]);
 
   useEffect(() => {
     const checkIfClickedOutside = (e: TouchEvent | MouseEvent) => {
@@ -72,24 +72,38 @@ const Select = ({ options = initialSelectOptions, placeholder, className, name, 
 
   return (
     <div ref={ref} className={s.root} onClick={handlerOptions}>
-      <Input
-        register={register}
+      <Controller
         name={name}
-        inputRef={inputRef}
-        value={optionValue}
-        onChange={handlerOptionValue}
-        placeholder={placeholder}
-        className={classNameSelect}
-        type={inputTypes.text}
-        right={
-          <button type='button' className={classNameOptions}>
-            <Icon />
-          </button>
-        }
-      >
-        {showOptions && <Options options={options} optionValue={optionValue} setOptionValue={setOptionValue} />}
-      </Input>
+        control={control}
+        render={({ field }) => (
+          <Input
+            register={register}
+            name={name}
+            inputRef={inputRef}
+            value={optionValue}
+            onChange={handlerOptionValue}
+            placeholder={placeholder}
+            className={classNameSelect}
+            type={inputTypes.text}
+            right={
+              <button type='button' className={classNameOptions}>
+                <Icon />
+              </button>
+            }
+          >
+            {showOptions && (
+              <Options
+                optionValue={optionValue}
+                options={options}
+                setHookFormValue={field.onChange}
+                setOptionValue={setOptionValue}
+              />
+            )}
+          </Input>
+        )}
+      />
     </div>
   );
 };
+
 export default Select;

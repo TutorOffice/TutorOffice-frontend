@@ -11,5 +11,6 @@ export enum validateType {
   policy = 'policy',
   subject = 'subject',
   feedbackMessage = 'feedbackMessage',
+  level = 'level',
   storybook = 'storybook',
 }

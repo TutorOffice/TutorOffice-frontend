@@ -2,7 +2,6 @@ import s from './Register.module.css';
 
 import registerImage from '@/assets/images/register-image.png';
 import { btnClass, btnType, Button, Input, inputTypes, Radio } from '@/shared/ui';
-import { usePhoneMask } from '@/shared/utils';
 import { IFormValues, TValidationSubmitFormResolver, validateType } from '@/shared/validation';
 import SubmitForm from '@/components/submitForm/SubmitForm';
 import Layout from '@/components/layout/Layout';
@@ -20,7 +19,6 @@ const Register = () => {
     console.log(data);
   };
 
-  usePhoneMask();
   return (
     <Layout>
       <Button className={s.register__goBack} type={btnType.button} variant={btnClass.back}>

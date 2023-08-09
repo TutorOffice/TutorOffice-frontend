@@ -4,6 +4,8 @@ import { validateType } from '@/shared/validation';
 
 import InputPassword from '@/shared/ui/input/InputPassword/InputPassword';
 
+import InputPhone from '@/shared/ui/input/InputPhone/InputPhone';
+
 import clsx from 'clsx';
 import React, { InputHTMLAttributes, ReactNode } from 'react';
 import { FieldError, FieldValues, UseFormRegister } from 'react-hook-form';
@@ -80,6 +82,25 @@ const Input: React.FC<InputProps> = ({
       />
     );
   }
+
+  if (type === inputTypes.phone) {
+    return (
+      <InputPhone
+        inputRef={inputRef}
+        isDisabled={isDisabled}
+        placeholder={placeholder}
+        labelText={labelText}
+        commentTip={commentTip}
+        isRequired={isRequired}
+        isError={isError}
+        name={name}
+        register={register}
+        className={className}
+        {...props}
+      />
+    );
+  }
+
   return (
     <div className={s.inputs}>
       <label>
@@ -102,8 +123,6 @@ const Input: React.FC<InputProps> = ({
               ref={inputRef}
               {...(register && name && { ...register(name) })}
               type={type}
-              maxLength={type === 'phone' ? 13 : undefined}
-              data-tel-input={type === 'phone' ? 'data-tel-input' : null}
               placeholder={placeholder}
               disabled={isDisabled}
               className={classNameInput}

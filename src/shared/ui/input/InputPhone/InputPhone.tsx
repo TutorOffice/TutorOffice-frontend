@@ -48,7 +48,6 @@ const InputPhone: React.FC<InputPhone> = ({
     [s.commentTip]: true,
     [s.errorTip]: isError,
   });
-
   const getInputNumbersValue = (input) => {
     return input.value.replace(/\D/g, '');
   };

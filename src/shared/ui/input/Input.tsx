@@ -64,7 +64,6 @@ const Input: React.FC<InputProps> = ({
     [s.commentTip]: true,
     [s.errorTip]: isError,
   });
-
   if (type === inputTypes.password) {
     return (
       <InputPassword
@@ -100,7 +99,6 @@ const Input: React.FC<InputProps> = ({
       />
     );
   }
-
   return (
     <div className={s.inputs}>
       <label>

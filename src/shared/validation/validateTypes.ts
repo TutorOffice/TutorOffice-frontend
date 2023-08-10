@@ -13,4 +13,5 @@ export enum validateType {
   feedbackMessage = 'feedbackMessage',
   level = 'level',
   storybook = 'storybook',
+  sortBy = 'sortBy',
 }

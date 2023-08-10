@@ -9,10 +9,27 @@ interface RadioItemProps {
   labelText: string;
   value: string;
   changeValue: (e: ChangeEvent<HTMLInputElement>) => void;
+  changeValueStorybook?: (value: string) => void;
   register?: UseFormRegister<FieldValues>;
 }
 
-const RadioItem: React.FC<RadioItemProps> = ({ name, itemValue, labelText, register, value, changeValue }) => {
+const RadioItem: React.FC<RadioItemProps> = ({
+  name,
+  itemValue,
+  labelText,
+  register,
+  value,
+  changeValue,
+  changeValueStorybook,
+}) => {
+  const handleValue = (e: ChangeEvent<HTMLInputElement>) => {
+    if (changeValueStorybook) {
+      changeValueStorybook(e.target.value);
+      changeValue(e);
+    }
+    changeValue(e);
+  };
+
   return (
     <div className={s.radioItem}>
       <input
@@ -23,7 +40,7 @@ const RadioItem: React.FC<RadioItemProps> = ({ name, itemValue, labelText, regis
         type='radio'
         value={itemValue}
         checked={value === itemValue}
-        onChange={changeValue}
+        onChange={handleValue}
       />
       <label htmlFor={itemValue} className={s.radioItem__label}>
         {labelText}

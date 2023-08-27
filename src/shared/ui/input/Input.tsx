@@ -4,6 +4,8 @@ import { validateType } from '@/shared/validation';
 
 import InputPassword from '@/shared/ui/input/InputPassword/InputPassword';
 
+import InputPhone from '@/shared/ui/input/InputPhone/InputPhone';
+
 import clsx from 'clsx';
 import React, { InputHTMLAttributes, ReactNode } from 'react';
 import { FieldError, FieldValues, UseFormRegister } from 'react-hook-form';
@@ -26,7 +28,6 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   isRequired?: boolean;
   isError?: boolean;
   isPassword?: boolean;
-  iconVisibility?: boolean;
   name?: validateType;
   register?: UseFormRegister<FieldValues>;
   errors?: FieldError | undefined;
@@ -51,6 +52,7 @@ const Input: React.FC<InputProps> = ({
   className,
   children,
   right,
+  value,
   ...props
 }) => {
   const classNameInput = clsx(className, {
@@ -62,7 +64,6 @@ const Input: React.FC<InputProps> = ({
     [s.commentTip]: true,
     [s.errorTip]: isError,
   });
-
   if (type === inputTypes.password) {
     return (
       <InputPassword
@@ -81,6 +82,23 @@ const Input: React.FC<InputProps> = ({
     );
   }
 
+  if (type === inputTypes.phone) {
+    return (
+      <InputPhone
+        inputRef={inputRef}
+        isDisabled={isDisabled}
+        placeholder={placeholder}
+        labelText={labelText}
+        commentTip={commentTip}
+        isRequired={isRequired}
+        isError={isError}
+        name={name}
+        register={register}
+        className={className}
+        {...props}
+      />
+    );
+  }
   return (
     <div className={s.inputs}>
       <label>
@@ -99,11 +117,10 @@ const Input: React.FC<InputProps> = ({
             />
           ) : (
             <input
+              value={value}
               ref={inputRef}
               {...(register && name && { ...register(name) })}
               type={type}
-              maxLength={type === 'phone' ? 13 : undefined}
-              data-tel-input={type === 'phone' ? 'data-tel-input' : null}
               placeholder={placeholder}
               disabled={isDisabled}
               className={classNameInput}

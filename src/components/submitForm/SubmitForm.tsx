@@ -1,7 +1,7 @@
 import s from './SubmitForm.module.css';
 
 import { IFormValues } from '@/shared/validation';
-import { Button, ButtonGroup, btnClass, btnType } from '@/shared/ui';
+import { btnClass, btnType, Button, ButtonGroup } from '@/shared/ui';
 import { getResolver } from '@/shared/validation/getResolver';
 
 import React, { createElement } from 'react';
@@ -34,6 +34,7 @@ const SubmitForm: React.FC<SubmitFormProps> = ({
   const {
     register,
     handleSubmit,
+    control,
     formState: { errors, isValid },
   } = useForm<IFormValues>({
     defaultValues: defaultValues,
@@ -78,6 +79,7 @@ const SubmitForm: React.FC<SubmitFormProps> = ({
                   ...{
                     ...child.props,
                     register,
+                    control,
                     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                     // @ts-expect-error
                     errors: errors[child.props.name],

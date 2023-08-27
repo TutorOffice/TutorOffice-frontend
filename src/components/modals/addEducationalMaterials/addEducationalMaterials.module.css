@@ -1,0 +1,15 @@
+.text {
+    font-family: Roboto, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.button {
+    text-align: center;
+}
+
+.hideInput {
+    display: none;
+}

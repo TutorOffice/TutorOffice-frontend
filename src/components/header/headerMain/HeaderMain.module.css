@@ -1,18 +1,25 @@
 .header {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 @media screen and (max-width: 1100px) {
-	.header {
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 40px;
-		width: auto;
-		height: 90px;
-		margin-left: 150px;
-	}
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 40px;
+        width: auto;
+        height: 90px;
+        margin-left: 150px;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    .header {
+        margin-left: 90px;
+
+    }
 }

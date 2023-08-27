@@ -2,7 +2,7 @@ import s from './CalendarItem.module.css';
 
 import { formatDate, momentType } from '@/shared/utils';
 
-import ModalWithButtons from '@/components/modals/modalWithButtons/ModalWithButtons';
+import ModalWithButtons from '@/components/modals/modalWithButtons/modalWithButtons';
 
 import React, { useState } from 'react';
 import clsx from 'clsx';
@@ -33,6 +33,10 @@ const CalendarItem: React.FC<CalendarItemProps> = ({ day, isCurrentDay, isCurren
     navigate(`/calendar/${date}`);
   };
 
+  const viewAddLesson = () => {
+    navigate(`/add-lesson`);
+  };
+
   const itemClassName = clsx({
     [s.calendarItem]: true,
     [s.notCurrentMonth]: !isCurrentMonth,
@@ -60,6 +64,7 @@ const CalendarItem: React.FC<CalendarItemProps> = ({ day, isCurrentDay, isCurren
         ghostBtnText='Добавить урок'
         primaryBthText='Посмотреть расписание'
         onClickPrimaryBtn={viewSchedule}
+        onClickGhostBtn={viewAddLesson}
       />
     </>
   );

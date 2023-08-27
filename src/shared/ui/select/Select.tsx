@@ -5,8 +5,11 @@ import { ReactComponent as Icon } from '@/assets/icons/select-down.svg';
 
 import Options from '@/shared/ui/select/Options/Options';
 
+import { validateType } from '@/shared/validation';
+
 import React, { ChangeEvent, useEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
+import { Control, Controller, FieldValues, UseFormRegister } from 'react-hook-form';
 
 interface Option {
   readonly label: string;
@@ -14,23 +17,29 @@ interface Option {
 }
 
 interface ISelect {
-  options: Option[];
-  placeholder: string;
+  options?: Option[];
+  placeholder?: string;
   className?: string;
+  name: validateType;
+  register?: UseFormRegister<FieldValues>;
+  control?: Control<FieldValues>;
 }
 
-const initialSelectOptions = [{ label: '🍇', value: '🍇' }];
+const initialSelectOptions = [{ label: 'Виноград 🍇', value: '🍇' }];
 
-const Select = ({ options = initialSelectOptions, placeholder, className }: ISelect) => {
+const Select = ({ options = initialSelectOptions, placeholder, className, name, register, control }: ISelect) => {
   const [showOptions, setShowOptions] = useState(false);
   const [optionValue, setOptionValue] = useState<string>('');
+
   const classNameOptions = clsx(s.hide, {
     [s.showOptions]: showOptions,
     [s.closeOptions]: !showOptions,
   });
+
   const classNameSelect = clsx(className, s.input, {
     [s.inputFocus]: showOptions,
   });
+
   const ref = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -44,12 +53,6 @@ const Select = ({ options = initialSelectOptions, placeholder, className }: ISel
   };
 
   useEffect(() => {
-    if (showOptions) {
-      setOptionValue('');
-    }
-  }, [showOptions]);
-
-  useEffect(() => {
     const checkIfClickedOutside = (e: TouchEvent | MouseEvent) => {
       if (showOptions && ref.current && !ref.current.contains(e.target as Node)) {
         setShowOptions(false);
@@ -61,24 +64,46 @@ const Select = ({ options = initialSelectOptions, placeholder, className }: ISel
     };
   }, [showOptions]);
 
+  useEffect(() => {
+    if (showOptions) {
+      setOptionValue('');
+    }
+  }, [showOptions]);
+
   return (
     <div ref={ref} className={s.root} onClick={handlerOptions}>
-      <Input
-        inputRef={inputRef}
-        value={optionValue}
-        onChange={handlerOptionValue}
-        placeholder={placeholder}
-        className={classNameSelect}
-        type={inputTypes.text}
-        right={
-          <button type='button' className={classNameOptions}>
-            <Icon />
-          </button>
-        }
-      >
-        {showOptions && <Options options={options} optionValue={optionValue} setOptionValue={setOptionValue} />}
-      </Input>
+      <Controller
+        name={name}
+        control={control}
+        render={({ field }) => (
+          <Input
+            register={register}
+            name={name}
+            inputRef={inputRef}
+            value={optionValue}
+            onChange={handlerOptionValue}
+            placeholder={placeholder}
+            className={classNameSelect}
+            type={inputTypes.text}
+            right={
+              <button type='button' className={classNameOptions}>
+                <Icon />
+              </button>
+            }
+          >
+            {showOptions && (
+              <Options
+                optionValue={optionValue}
+                options={options}
+                setHookFormValue={field.onChange}
+                setOptionValue={setOptionValue}
+              />
+            )}
+          </Input>
+        )}
+      />
     </div>
   );
 };
+
 export default Select;

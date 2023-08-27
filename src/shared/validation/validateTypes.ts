@@ -9,7 +9,9 @@ export enum validateType {
   currentPassword = 'currentPassword',
   userRole = 'userRole',
   policy = 'policy',
-  level = 'level',
   subject = 'subject',
   feedbackMessage = 'feedbackMessage',
+  level = 'level',
+  storybook = 'storybook',
+  sortBy = 'sortBy',
 }

@@ -7,6 +7,8 @@ import UserCard from '@/components/userCard/UserCard';
 import AddStudentModal from '@/components/modals/addStudentModal/AddStudentModal';
 import { userRole } from '@/shared/types/userRole';
 
+import VirtualStudent from '@/shared/ui/virtualStudent/VirtualStudent';
+
 import { useState } from 'react';
 
 const StudentsPageWithCards = () => {
@@ -29,18 +31,7 @@ const StudentsPageWithCards = () => {
           </Button>
         </div>
         <div className={s.studentsPageWithCards__desc}>
-          <p>
-            Если Ваш ученик примет Ваше приглашение зарегистрироваться на сайте, то он станет{' '}
-            <span className={s.student_active}>активным учеником</span> и будет полноценным участником процесса: сможет
-            общаться с Вами, получать и выполнять домашние задания, менять информацию о себе, смотреть учебные
-            материалы.
-          </p>
-          <p>
-            Если ученик не хочет или не имеет возможности пользоваться сайтом, Вы можете добавить его как{' '}
-            <span className={s.student_virtual}>виртуального ученика</span>. У Вас будет возможность вносить и
-            отслеживать информацию о нём: его уроки в расписании, выданные ему д/з (без возможности отслеживать их
-            статус), его учебные материалы.
-          </p>
+          <VirtualStudent />
         </div>
         <ul className={s.studentsPageWithCards__container}>
           {testStudents.map((stud) => (

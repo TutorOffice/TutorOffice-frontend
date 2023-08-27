@@ -6,9 +6,15 @@ import clsx from 'clsx';
 import React, { ChangeEvent, useState } from 'react';
 import { FieldValues, UseFormRegister } from 'react-hook-form';
 
+export interface RadioItems {
+  id: string | number;
+  value: string;
+  text: string;
+}
+
 interface CheckboxProps {
   name: string;
-  radioItems: Array<{ id: string | number; value: string; text: string }>;
+  radioItems: RadioItems[];
   register?: UseFormRegister<FieldValues>;
   className?: string;
 }

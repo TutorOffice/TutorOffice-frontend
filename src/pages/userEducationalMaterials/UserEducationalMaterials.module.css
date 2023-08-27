@@ -1,0 +1,54 @@
+.topContent {
+	margin: 70px 0 40px 0;
+	display: flex;
+	justify-content: space-between;
+}
+
+.topContent__userInfo {
+	display: flex;
+	gap: 20px;
+}
+
+.userInfo__photo {
+	width: 65px;
+	height: 65px;
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+.userInfo__name {
+	margin-bottom: 10px;
+	font-family: 'Raleway';
+	font-size: 20px;
+}
+
+.userInfo__subject {
+	margin-bottom: 5px;
+	font-family: 'Roboto';
+	font-size: 18px;
+}
+
+.userInfo__level {
+	font-family: 'Roboto';
+	font-size: 14px;
+}
+
+.edMaterialsItem {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-family: 'Roboto';
+	font-size: 18px;
+}
+
+.edMaterials__list {
+	margin-bottom: 40px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.edMaterialsItem__name {
+	font-family: 'Raleway';
+	font-size: 18px;
+}

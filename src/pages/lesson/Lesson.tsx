@@ -6,7 +6,7 @@ import SmallModalWithButton from '@/components/modals/smallModalWithButton/Small
 import LessonPageUserInfo from '@/components/lessonPageUserInfo/LessonPageUserInfo';
 import { btnClass, btnType, Button } from '@/shared/ui';
 
-import ModalWithButtons from '@/components/modals/modalWithButtons/modalWithButtons';
+import ModalWithButtons from '@/components/modals/modalWithButtons/ModalWithButtons';
 
 import { useNavigate } from 'react-router-dom';
 

@@ -7,7 +7,7 @@ import SubmitForm from '@/components/submitForm/SubmitForm';
 import { Input, inputTypes } from '@/shared/ui';
 import { IFormValues, TValidationSubmitFormResolver, validateType } from '@/shared/validation';
 
-import ModalWithButtons from '@/components/modals/modalWithButtons/modalWithButtons';
+import ModalWithButtons from '@/components/modals/modalWithButtons/ModalWithButtons';
 
 import { useState } from 'react';
 

@@ -9,13 +9,13 @@ interface ButtonGroupProps {
   className?: string;
 }
 
-const ButtonGroup: React.FC<ButtonGroupProps> = ({ children, width = 'auto' }) => {
-  const className = clsx({
+const ButtonGroup: React.FC<ButtonGroupProps> = ({ className, children, width = 'auto' }) => {
+  const buttonGroupClassName = clsx(className, {
     [s.group__buttons]: true,
   });
 
   return (
-    <div style={{ width: width }} className={className}>
+    <div style={{ width: width }} className={buttonGroupClassName}>
       {children}
     </div>
   );

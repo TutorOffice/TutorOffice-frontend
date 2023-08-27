@@ -7,10 +7,10 @@ import testPhoto from '../../assets/images/test-student.jpg';
 import Layout from '@/components/layout/Layout';
 import HeaderAuth from '@/components/header/headerAuth/HeaderAuth';
 import { Button, Checkbox, btnClass, btnType } from '@/shared/ui';
-import ModalWithButtons from '@/components/modals/modalWithButtons/ModalWithButtons';
 import SmallModalWithButton from '@/components/modals/smallModalWithButton/SmallModalWithButton';
-
 import LoadFileModal from '@/components/modals/loadFileModal/LoadFileModal';
+
+import ModalWithButtons from '@/components/modals/modalWithButtons/modalWithButtons';
 
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';

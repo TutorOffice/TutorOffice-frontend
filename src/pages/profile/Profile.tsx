@@ -2,7 +2,7 @@ import s from './Profile.module.css';
 
 import Layout from '@/components/layout/Layout';
 import HeaderMain from '@/components/header/headerMain/HeaderMain';
-import LoadPhotoModal from '@/components/modals/loadPhotoModal/LoadPhotoModal';
+import LoadFileModal from '@/components/modals/loadFileModal/LoadFileModal';
 import SubmitForm from '@/components/submitForm/SubmitForm';
 import userPhoto from '@/assets/images/profile-photo.jpg';
 import { btnClass, btnType, Button, Input, inputTypes, LoadImage } from '@/shared/ui';
@@ -77,7 +77,13 @@ const Profile = () => {
           </Link>
         </div>
       </Layout>
-      <LoadPhotoModal isOpen={isOpenModal} onClose={closeModal} />
+      <LoadFileModal
+        isOpen={isOpenModal}
+        onClose={closeModal}
+        title='Загрузка новой фотографии'
+        modalDescription='Ученикам будет проще узнать вас, если вы загрузите свою настоящую фотографию. Вы можете загрузить изображение
+        размером не больше 3Мб, в формате JPG, GIF или PNG.'
+      />
     </>
   );
 };

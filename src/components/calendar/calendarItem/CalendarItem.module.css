@@ -13,16 +13,12 @@
 
 .calendarItem::after {
 	content: "";
-  padding-top: 85%;
+  padding-top: 83%;
   display: block;
 }
 
 .calendarItem:hover {
-/*   padding: 8px 18px 0 0; */
   border: 2px solid var(--blue);
-}
-.calendarItem:active {
-  background-color: var(--blue);
 }
 
 .item__content {
@@ -30,44 +26,20 @@
 }
 
 .currentDay {
-  border: 7px solid var(--blue);
+  border: 4px solid var(--blue);
 }
 .currentDay_content {
 	padding: 3px 13px 0 0;
 }
 .currentDay:hover {
-  border: 7px solid var(--blue);
+  border: 4px solid var(--blue);
 }
 .currentDay_content:hover {
 	padding: 3px 13px 0 0;
 }
-.currentDay:active {
-  background-color: var(--blue);
-  border-color: rgba(7, 29, 72, 0.6);
-}
-.currentDay_content:active {
-	padding: 3px 13px 0 0;
-}
-
-.currentDay.isLessons:hover {
-  border: 7px solid var(--green);
-}
-.currentDay.isLessons:active {
-  border: 7px solid rgba(7, 29, 72, 0.6);
-  background-color: #27bf24;
-}
 
 .isLessons {
-  border-color: var(--green);
-  background-color: var(--light-green);
-}
-.isLessons:hover {
-  border: none;
-  background-color: #83db81;
-}
-.isLessons:active {
-  border: none;
-  background-color: #27bf24;
+  background-color: var(--orange);
 }
 
 .notCurrentMonth {

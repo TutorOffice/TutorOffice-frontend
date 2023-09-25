@@ -3,6 +3,7 @@
   display: flex;
   justify-content: flex-end;
   background-color: var(--white);
+  border: 2px solid transparent;
   font-family: 'Raleway';
   font-size: 30px;
   font-weight: 600;
@@ -17,7 +18,7 @@
 }
 
 .calendarItem:hover {
-  padding: 8px 18px 0 0;
+/*   padding: 8px 18px 0 0; */
   border: 2px solid var(--blue);
 }
 .calendarItem:active {

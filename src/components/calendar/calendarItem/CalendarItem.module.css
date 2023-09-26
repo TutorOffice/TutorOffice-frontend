@@ -21,6 +21,22 @@
   border: 2px solid var(--blue);
 }
 
+.calendarItem:nth-child(1):hover {
+  border-radius: 20px 0 0 0;
+}
+
+.calendarItem:nth-child(7):hover {
+  border-radius: 0 20px 0 0 ;
+}
+
+.calendarItem:nth-child(36):hover {
+  border-radius: 0 0 0 20px;
+}
+
+.calendarItem:nth-child(42):hover {
+  border-radius: 0 0 20px 0;
+}
+
 .item__content {
 	padding: 10px 20px 0 0;
 }

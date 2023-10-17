@@ -1,5 +1,12 @@
-declare module '*.module.css'
-declare module '*.jpg'
-declare module '*.png'
-declare module '*.svg'
-// and so on for whatever flavor of css you're using
+import { DefaultMantineColor, MantineColorsTuple } from '@mantine/core'
+
+type ExtendedCustomColors =
+  | 'primaryColorName'
+  | 'secondaryColorName'
+  | DefaultMantineColor
+
+declare module '@mantine/core' {
+  export interface MantineThemeColorsOverride {
+    colors: Record<ExtendedCustomColors, MantineColorsTuple>
+  }
+}

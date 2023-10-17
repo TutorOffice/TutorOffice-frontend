@@ -70,11 +70,14 @@
     "eslint-config-prettier": "^8.8.0",
     "eslint-kit": "^10.5.2",
     "husky": "^8.0.0",
+    "postcss": "^8.4.31",
+    "postcss-preset-mantine": "^1.9.0",
+    "postcss-simple-vars": "^7.0.1",
+    "prettier": "^3.0.3",
     "prop-types": "^15.8.1",
     "react-hook-form": "^7.43.5",
     "storybook": "^7.0.12",
     "typescript": "^5.0.4",
-    "vite-plugin-eslint": "^1.8.1",
-    "prettier": "^3.0.3"
+    "vite-plugin-eslint": "^1.8.1"
   }
 }

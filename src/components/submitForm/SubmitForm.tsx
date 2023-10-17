@@ -1,23 +1,23 @@
-import s from './SubmitForm.module.css';
+import clsx from 'clsx'
+import React, { createElement } from 'react'
+import { SubmitHandler, useForm } from 'react-hook-form'
 
-import { IFormValues } from '@/shared/validation';
-import { btnClass, btnType, Button, ButtonGroup } from '@/shared/ui';
-import { getResolver } from '@/shared/validation/getResolver';
+import { Button, ButtonGroup } from '@/shared/ui'
+import { IFormValues } from '@/shared/validation'
+import { getResolver } from '@/shared/validation/getResolver'
 
-import React, { createElement } from 'react';
-import { SubmitHandler, useForm } from 'react-hook-form';
-import clsx from 'clsx';
+import s from './SubmitForm.module.css'
 
 interface SubmitFormProps {
-  children: React.ReactNode;
-  onSubmit: SubmitHandler<IFormValues>;
-  resolverType: string;
-  btnText?: string;
-  btnWidth?: string;
-  btnGroup?: boolean;
-  defaultValues?: IFormValues;
-  className?: string;
-  submitBtnClassName?: string;
+  children: React.ReactNode
+  onSubmit: SubmitHandler<IFormValues>
+  resolverType: string
+  btnText?: string
+  btnWidth?: string
+  btnGroup?: boolean
+  defaultValues?: IFormValues
+  className?: string
+  submitBtnClassName?: string
 }
 
 const SubmitForm: React.FC<SubmitFormProps> = ({
@@ -37,38 +37,34 @@ const SubmitForm: React.FC<SubmitFormProps> = ({
     control,
     formState: { errors, isValid },
   } = useForm<IFormValues>({
-    defaultValues: defaultValues,
+    defaultValues,
     resolver: getResolver(resolverType),
     mode: 'onBlur',
-  });
+  })
 
-  let submitControls;
+  let submitControls
   if (btnGroup) {
     submitControls = (
-      <ButtonGroup width='100%'>
+      <ButtonGroup width="100%">
         <Button
           className={submitBtnClassName}
-          width='100%'
+          width="100%"
           isDisabled={!isValid}
-          type={btnType.submit}
-          variant={btnClass.primary}
         >
           {btnText}
         </Button>
-        <Button width='100%' type={btnType.reset} variant={btnClass.ghost}>
-          Отменить
-        </Button>
+        <Button width="100%">Отменить</Button>
       </ButtonGroup>
-    );
+    )
   } else if (btnText) {
     submitControls = (
-      <Button width={btnWidth} isDisabled={!isValid} type={btnType.submit} variant={btnClass.primary}>
+      <Button width={btnWidth} isDisabled={!isValid}>
         {btnText}
       </Button>
-    );
+    )
   }
 
-  const formClassName = clsx(className, { [s.submitForm]: true });
+  const formClassName = clsx(className, { [s.submitForm]: true })
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={formClassName}>
@@ -86,12 +82,12 @@ const SubmitForm: React.FC<SubmitFormProps> = ({
                     key: child.props.name,
                   },
                 })
-              : child;
+              : child
           })
         : children}
       {submitControls}
     </form>
-  );
-};
+  )
+}
 
-export default SubmitForm;
+export default SubmitForm

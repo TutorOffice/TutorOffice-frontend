@@ -1,38 +1,38 @@
-import s from './Checkbox.module.css';
+import clsx from 'clsx'
+import React, { useState } from 'react'
+import { FieldValues, UseFormRegister } from 'react-hook-form'
 
-import { validateType } from '@/shared/validation';
+import { validateType } from '@/shared/validation'
 
-import clsx from 'clsx';
-import React, { useState } from 'react';
-import { FieldValues, UseFormRegister } from 'react-hook-form';
+import s from './Checkbox.module.css'
 
 interface CheckboxProps {
-  name?: validateType;
-  register?: UseFormRegister<FieldValues>;
-  className?: string;
+  name?: validateType
+  register?: UseFormRegister<FieldValues>
+  className?: string
 }
 
 const Checkbox: React.FC<CheckboxProps> = ({ name, register, className }) => {
-  const [isChecked, setIsChecked] = useState(false);
+  const [isChecked, setIsChecked] = useState(false)
   const onChange = () => {
-    setIsChecked(!isChecked);
-  };
+    setIsChecked(!isChecked)
+  }
 
-  const checkboxClassName = clsx(className, { [s.checkbox]: true });
+  const checkboxClassName = clsx(className, { [s.checkbox]: true })
 
   return (
     <div className={s.checkbox__wrapper}>
       <input
         {...(register && name && { ...register(name) })}
-        type='checkbox'
-        id='checkbox'
+        type="checkbox"
+        id="checkbox"
         className={checkboxClassName}
         checked={isChecked}
         onChange={onChange}
       />
-      <label htmlFor='checkbox' />
+      <label htmlFor="checkbox" />
     </div>
-  );
-};
+  )
+}
 
-export default Checkbox;
+export default Checkbox

@@ -1,14 +1,12 @@
-import s from './Input.module.css';
+import clsx from 'clsx'
+import React, { InputHTMLAttributes, ReactNode } from 'react'
+import { FieldError, FieldValues, UseFormRegister } from 'react-hook-form'
 
-import { validateType } from '@/shared/validation';
+import InputPassword from '@/shared/ui/input/InputPassword/InputPassword'
+import InputPhone from '@/shared/ui/input/InputPhone/InputPhone'
+import { validateType } from '@/shared/validation'
 
-import InputPassword from '@/shared/ui/input/InputPassword/InputPassword';
-
-import InputPhone from '@/shared/ui/input/InputPhone/InputPhone';
-
-import clsx from 'clsx';
-import React, { InputHTMLAttributes, ReactNode } from 'react';
-import { FieldError, FieldValues, UseFormRegister } from 'react-hook-form';
+import s from './Input.module.css'
 
 export enum inputTypes {
   text = 'text',
@@ -20,21 +18,21 @@ export enum inputTypes {
 }
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  type: inputTypes;
-  isDisabled?: boolean;
-  placeholder?: string;
-  labelText?: string;
-  commentTip?: string;
-  isRequired?: boolean;
-  isError?: boolean;
-  isPassword?: boolean;
-  name?: validateType;
-  register?: UseFormRegister<FieldValues>;
-  errors?: FieldError | undefined;
-  inputRef?: React.RefObject<HTMLInputElement>;
-  className?: string;
-  children?: ReactNode;
-  right?: ReactNode | ReactNode[];
+  type: inputTypes
+  isDisabled?: boolean
+  placeholder?: string
+  labelText?: string
+  commentTip?: string
+  isRequired?: boolean
+  isError?: boolean
+  isPassword?: boolean
+  name?: validateType
+  register?: UseFormRegister<FieldValues>
+  errors?: FieldError | undefined
+  inputRef?: React.RefObject<HTMLInputElement>
+  className?: string
+  children?: ReactNode
+  right?: ReactNode | ReactNode[]
 }
 
 const Input: React.FC<InputProps> = ({
@@ -59,11 +57,11 @@ const Input: React.FC<InputProps> = ({
     [s.input]: true,
     [s.textarea]: type === inputTypes.textarea,
     [s.error]: isError,
-  });
+  })
   const classNameTip = clsx({
     [s.commentTip]: true,
     [s.errorTip]: isError,
-  });
+  })
   if (type === inputTypes.password) {
     return (
       <InputPassword
@@ -79,7 +77,7 @@ const Input: React.FC<InputProps> = ({
         className={className}
         {...props}
       />
-    );
+    )
   }
 
   if (type === inputTypes.phone) {
@@ -97,7 +95,7 @@ const Input: React.FC<InputProps> = ({
         className={className}
         {...props}
       />
-    );
+    )
   }
   return (
     <div className={s.inputs}>
@@ -136,7 +134,7 @@ const Input: React.FC<InputProps> = ({
       {errors && <p className={s.required}>{errors.message}</p>}
       <p className={classNameTip}>{commentTip}</p>
     </div>
-  );
-};
+  )
+}
 
-export default Input;
+export default Input

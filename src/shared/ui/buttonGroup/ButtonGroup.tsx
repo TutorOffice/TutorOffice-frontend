@@ -1,24 +1,28 @@
-import s from './ButtonGroup.module.css';
+import clsx from 'clsx'
+import React from 'react'
 
-import React from 'react';
-import clsx from 'clsx';
+import s from './ButtonGroup.module.css'
 
 interface ButtonGroupProps {
-  children: React.ReactNode;
-  width?: string;
-  className?: string;
+  children: React.ReactNode
+  width?: string
+  className?: string
 }
 
-const ButtonGroup: React.FC<ButtonGroupProps> = ({ className, children, width = 'auto' }) => {
+const ButtonGroup: React.FC<ButtonGroupProps> = ({
+  className,
+  children,
+  width = 'auto',
+}) => {
   const buttonGroupClassName = clsx(className, {
     [s.group__buttons]: true,
-  });
+  })
 
   return (
-    <div style={{ width: width }} className={buttonGroupClassName}>
+    <div style={{ width }} className={buttonGroupClassName}>
       {children}
     </div>
-  );
-};
+  )
+}
 
-export default ButtonGroup;
+export default ButtonGroup

@@ -1,31 +1,35 @@
-import s from './Radio.module.css';
+import clsx from 'clsx'
+import React, { ChangeEvent, useState } from 'react'
+import { FieldValues, UseFormRegister } from 'react-hook-form'
 
-import RadioItem from './radioItem/RadioItem';
-
-import clsx from 'clsx';
-import React, { ChangeEvent, useState } from 'react';
-import { FieldValues, UseFormRegister } from 'react-hook-form';
+import s from './Radio.module.css'
+import RadioItem from './radioItem/RadioItem'
 
 export interface RadioItems {
-  id: string | number;
-  value: string;
-  text: string;
+  id: string | number
+  value: string
+  text: string
 }
 
 interface CheckboxProps {
-  name: string;
-  radioItems: RadioItems[];
-  register?: UseFormRegister<FieldValues>;
-  className?: string;
+  name: string
+  radioItems: RadioItems[]
+  register?: UseFormRegister<FieldValues>
+  className?: string
 }
 
-const Checkbox: React.FC<CheckboxProps> = ({ name, radioItems, register, className }) => {
-  const [value, setValue] = useState(radioItems[0].value);
+const Checkbox: React.FC<CheckboxProps> = ({
+  name,
+  radioItems,
+  register,
+  className,
+}) => {
+  const [value, setValue] = useState(radioItems[0].value)
   const changeValue = (e: ChangeEvent<HTMLInputElement>) => {
-    setValue(e.target.value);
-  };
+    setValue(e.target.value)
+  }
 
-  const radioClassName = clsx(className, { [s.radio]: true });
+  const radioClassName = clsx(className, { [s.radio]: true })
 
   return (
     <div className={radioClassName}>
@@ -40,10 +44,10 @@ const Checkbox: React.FC<CheckboxProps> = ({ name, radioItems, register, classNa
             value={value}
             changeValue={changeValue}
           />
-        );
+        )
       })}
     </div>
-  );
-};
+  )
+}
 
-export default Checkbox;
+export default Checkbox

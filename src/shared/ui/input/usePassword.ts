@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import { useState } from 'react'
 
 export function usePassword(): [boolean, () => void] {
-  const [open, setOpen] = useState<boolean>(false);
+  const [open, setOpen] = useState<boolean>(false)
 
   function handleClick() {
-    setOpen(!open);
+    setOpen(!open)
   }
 
-  return [open, handleClick];
+  return [open, handleClick]
 }

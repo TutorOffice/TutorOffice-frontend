@@ -1,31 +1,42 @@
-import s from './CalendarDayItem.module.css';
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
-import { btnClass, btnType, Button } from '@/shared/ui';
-import statusTrue from '@/assets/icons/status-true.svg';
-import statusFalse from '@/assets/icons/status-false.svg';
+import statusFalse from '@/assets/icons/status-false.svg'
+import statusTrue from '@/assets/icons/status-true.svg'
+import { Button } from '@/shared/ui'
 
-import { Link } from 'react-router-dom';
-import React, { useState } from 'react';
+import s from './CalendarDayItem.module.css'
 
 interface CalendarDayItemProps {
-  photo: string;
-  time: string;
-  name: string;
-  lessonStatus: boolean;
-  lessonId: number;
-  date: string;
+  photo: string
+  time: string
+  name: string
+  lessonStatus: boolean
+  lessonId: number
+  date: string
 }
 
-const CalendarDayItem: React.FC<CalendarDayItemProps> = ({ photo, time, name, lessonStatus, lessonId, date }) => {
-  const [status, setStatusIcon] = useState(lessonStatus);
+const CalendarDayItem: React.FC<CalendarDayItemProps> = ({
+  photo,
+  time,
+  name,
+  lessonStatus,
+  lessonId,
+  date,
+}) => {
+  const [status, setStatusIcon] = useState(lessonStatus)
   const onSetStatus = () => {
-    setStatusIcon((prev) => !prev);
-  };
+    setStatusIcon((prev) => !prev)
+  }
 
   return (
     <li className={s.calendarDayItem}>
       <div className={s.calendarDayItem__user}>
-        <img className={s.calendarDayItem__photo} src={photo} alt='Фото пользователя' />
+        <img
+          className={s.calendarDayItem__photo}
+          src={photo}
+          alt="Фото пользователя"
+        />
         <p>{name}</p>
       </div>
       <p className={s.calendarDayItem__time}>{time}</p>
@@ -34,15 +45,13 @@ const CalendarDayItem: React.FC<CalendarDayItemProps> = ({ photo, time, name, le
         onClick={onSetStatus}
         className={s.statusIcon}
         src={status ? statusTrue : statusFalse}
-        alt='Статус задания'
+        alt="Статус задания"
       />
       <Link to={`/calendar/${date}/${lessonId}`}>
-        <Button className={s.calendarDayItem__button} type={btnType.button} variant={btnClass.ghost}>
-          Открыть
-        </Button>
+        <Button className={s.calendarDayItem__button}>Открыть</Button>
       </Link>
     </li>
-  );
-};
+  )
+}
 
-export default CalendarDayItem;
+export default CalendarDayItem

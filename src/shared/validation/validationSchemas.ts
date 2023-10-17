@@ -1,4 +1,7 @@
+import * as yup from 'yup'
+
 import {
+  cyrillicLatinPattern,
   emailMessages,
   firstNameMessages,
   lastNameMessages,
@@ -6,10 +9,7 @@ import {
   passwordPattern,
   patronymicMessages,
   phoneMessages,
-  cyrillicLatinPattern,
-} from './validationConstants';
-
-import * as yup from 'yup';
+} from './validationConstants'
 
 export const registerSchema = yup
   .object({
@@ -21,11 +21,18 @@ export const registerSchema = yup
       .string()
       .required(firstNameMessages.required)
       .matches(cyrillicLatinPattern, firstNameMessages.incorrect),
-    patronymic: yup
+    patronymic: yup.string().matches(cyrillicLatinPattern, {
+      excludeEmptyString: true,
+      message: patronymicMessages.incorrect,
+    }),
+    email: yup
       .string()
-      .matches(cyrillicLatinPattern, { excludeEmptyString: true, message: patronymicMessages.incorrect }),
-    email: yup.string().required(emailMessages.required).email(emailMessages.incorrect),
-    phone: yup.string().max(18).matches(/\d+/, { excludeEmptyString: true, message: phoneMessages.incorrect }),
+      .required(emailMessages.required)
+      .email(emailMessages.incorrect),
+    phone: yup.string().max(18).matches(/\d+/, {
+      excludeEmptyString: true,
+      message: phoneMessages.incorrect,
+    }),
     password: yup
       .string()
       .required('')
@@ -42,11 +49,14 @@ export const registerSchema = yup
     userRole: yup.string(),
     policy: yup.boolean(),
   })
-  .required('');
+  .required('')
 
 export const loginSchema = yup
   .object({
-    email: yup.string().required(emailMessages.required).email(emailMessages.incorrect),
+    email: yup
+      .string()
+      .required(emailMessages.required)
+      .email(emailMessages.incorrect),
     password: yup
       .string()
       .required(passwordMessages.required)
@@ -57,13 +67,16 @@ export const loginSchema = yup
       .matches(passwordPattern.upperCase, passwordMessages.upperCase)
       .matches(passwordPattern.valid, passwordMessages.valid),
   })
-  .required('');
+  .required('')
 
 export const changePassSchema = yup
   .object({
-    email: yup.string().required(emailMessages.required).email(emailMessages.incorrect),
+    email: yup
+      .string()
+      .required(emailMessages.required)
+      .email(emailMessages.incorrect),
   })
-  .required('');
+  .required('')
 
 export const changePassFromMailSchema = yup
   .object({
@@ -81,26 +94,39 @@ export const changePassFromMailSchema = yup
       .oneOf([yup.ref('password')], passwordMessages.mismatch)
       .required(passwordMessages.required),
   })
-  .required('');
+  .required('')
 
 export const addStudentSchema = yup.object({
   firstName: yup
     .string()
     .required(firstNameMessages.required)
     .matches(cyrillicLatinPattern, firstNameMessages.incorrect),
-  lastName: yup.string().required(lastNameMessages.required).matches(cyrillicLatinPattern, lastNameMessages.incorrect),
-  patronymic: yup
+  lastName: yup
     .string()
-    .matches(cyrillicLatinPattern, { excludeEmptyString: true, message: patronymicMessages.incorrect }),
-  phone: yup.string().max(18).matches(/\d+/, { excludeEmptyString: true, message: phoneMessages.incorrect }),
+    .required(lastNameMessages.required)
+    .matches(cyrillicLatinPattern, lastNameMessages.incorrect),
+  patronymic: yup.string().matches(cyrillicLatinPattern, {
+    excludeEmptyString: true,
+    message: patronymicMessages.incorrect,
+  }),
+  phone: yup.string().max(18).matches(/\d+/, {
+    excludeEmptyString: true,
+    message: phoneMessages.incorrect,
+  }),
   email: yup.string().email(emailMessages.incorrect),
   level: yup.string().max(2),
-});
+})
 
 export const profileSchema = yup.object({
-  lastName: yup.string().matches(cyrillicLatinPattern, lastNameMessages.incorrect),
-  firstName: yup.string().matches(cyrillicLatinPattern, firstNameMessages.incorrect),
-  patronymic: yup.string().matches(cyrillicLatinPattern, patronymicMessages.incorrect),
+  lastName: yup
+    .string()
+    .matches(cyrillicLatinPattern, lastNameMessages.incorrect),
+  firstName: yup
+    .string()
+    .matches(cyrillicLatinPattern, firstNameMessages.incorrect),
+  patronymic: yup
+    .string()
+    .matches(cyrillicLatinPattern, patronymicMessages.incorrect),
   email: yup.string().email(emailMessages.incorrect),
   phone: yup.string().max(18).matches(/\d+/, phoneMessages.incorrect),
   password: yup
@@ -111,13 +137,18 @@ export const profileSchema = yup.object({
     .matches(passwordPattern.latin, '')
     .matches(passwordPattern.upperCase, '')
     .matches(passwordPattern.valid, ''),
-});
+})
 
 export const feedbackSchema = yup.object({
   firstName: yup
     .string()
     .required(firstNameMessages.required)
     .matches(cyrillicLatinPattern, firstNameMessages.incorrect),
-  email: yup.string().required(emailMessages.required).email(emailMessages.incorrect),
-  feedbackMessage: yup.string().matches(cyrillicLatinPattern, { excludeEmptyString: true }),
-});
+  email: yup
+    .string()
+    .required(emailMessages.required)
+    .email(emailMessages.incorrect),
+  feedbackMessage: yup
+    .string()
+    .matches(cyrillicLatinPattern, { excludeEmptyString: true }),
+})

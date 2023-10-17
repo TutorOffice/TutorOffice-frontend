@@ -1,16 +1,16 @@
-import s from './RadioItem.module.css';
+import React, { ChangeEvent } from 'react'
+import { FieldValues, UseFormRegister } from 'react-hook-form'
 
-import React, { ChangeEvent } from 'react';
-import { FieldValues, UseFormRegister } from 'react-hook-form';
+import s from './RadioItem.module.css'
 
 interface RadioItemProps {
-  name: string;
-  itemValue: string;
-  labelText: string;
-  value: string;
-  changeValue: (e: ChangeEvent<HTMLInputElement>) => void;
-  changeValueStorybook?: (value: string) => void;
-  register?: UseFormRegister<FieldValues>;
+  name: string
+  itemValue: string
+  labelText: string
+  value: string
+  changeValue: (e: ChangeEvent<HTMLInputElement>) => void
+  changeValueStorybook?: (value: string) => void
+  register?: UseFormRegister<FieldValues>
 }
 
 const RadioItem: React.FC<RadioItemProps> = ({
@@ -24,11 +24,11 @@ const RadioItem: React.FC<RadioItemProps> = ({
 }) => {
   const handleValue = (e: ChangeEvent<HTMLInputElement>) => {
     if (changeValueStorybook) {
-      changeValueStorybook(e.target.value);
-      changeValue(e);
+      changeValueStorybook(e.target.value)
+      changeValue(e)
     }
-    changeValue(e);
-  };
+    changeValue(e)
+  }
 
   return (
     <div className={s.radioItem}>
@@ -37,7 +37,7 @@ const RadioItem: React.FC<RadioItemProps> = ({
         className={s.radioItem__input}
         name={name}
         id={itemValue}
-        type='radio'
+        type="radio"
         value={itemValue}
         checked={value === itemValue}
         onChange={handleValue}
@@ -46,7 +46,7 @@ const RadioItem: React.FC<RadioItemProps> = ({
         {labelText}
       </label>
     </div>
-  );
-};
+  )
+}
 
-export default RadioItem;
+export default RadioItem

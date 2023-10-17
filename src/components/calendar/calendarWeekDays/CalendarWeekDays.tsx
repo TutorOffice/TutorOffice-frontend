@@ -1,4 +1,4 @@
-import s from './CalendarWeekDays.module.css';
+import s from './CalendarWeekDays.module.css'
 
 const CalendarWeekDays = () => {
   return (
@@ -11,7 +11,7 @@ const CalendarWeekDays = () => {
       <p className={s.weekend}>сб</p>
       <p className={s.weekend}>вс</p>
     </div>
-  );
-};
+  )
+}
 
-export default CalendarWeekDays;
+export default CalendarWeekDays

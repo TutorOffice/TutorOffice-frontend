@@ -1,26 +1,31 @@
-import s from './NoStudents.module.css';
+import React, { useState } from 'react'
 
-import AddStudentModal from '@/components/modals/addStudentModal/AddStudentModal';
-import { btnClass, btnType, Button } from '@/shared/ui';
+import AddStudentModal from '@/components/modals/addStudentModal/AddStudentModal'
+import { Button } from '@/shared/ui'
 
-import React, { useState } from 'react';
+import s from './NoStudents.module.css'
 
 interface NoStudentsProps {
-  title: string;
-  text: string;
-  image: string;
-  withButton: boolean;
+  title: string
+  text: string
+  image: string
+  withButton: boolean
 }
 
-const NoStudents: React.FC<NoStudentsProps> = ({ title, text, image, withButton }) => {
-  const [isOpenModal, setIsOpenModal] = useState(false);
+const NoStudents: React.FC<NoStudentsProps> = ({
+  title,
+  text,
+  image,
+  withButton,
+}) => {
+  const [isOpenModal, setIsOpenModal] = useState(false)
 
   const openModal = () => {
-    setIsOpenModal(true);
-  };
+    setIsOpenModal(true)
+  }
   const closeModal = () => {
-    setIsOpenModal(false);
-  };
+    setIsOpenModal(false)
+  }
 
   return (
     <>
@@ -28,17 +33,13 @@ const NoStudents: React.FC<NoStudentsProps> = ({ title, text, image, withButton 
         <div className={s.noStudents__content}>
           <h2 className={s.noStudents__title}>{title}</h2>
           <p className={s.noStudents__text}>{text}</p>
-          {withButton && (
-            <Button onClick={openModal} type={btnType.button} variant={btnClass.primary}>
-              Добавить ученика
-            </Button>
-          )}
+          {withButton && <Button onClick={openModal}>Добавить ученика</Button>}
         </div>
-        <img className={s.noStudents__image} src={image} alt='Ученики' />
+        <img className={s.noStudents__image} src={image} alt="Ученики" />
       </div>
       <AddStudentModal isOpen={isOpenModal} onClose={closeModal} />
     </>
-  );
-};
+  )
+}
 
-export default NoStudents;
+export default NoStudents

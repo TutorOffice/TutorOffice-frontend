@@ -1,10 +1,9 @@
-import s from './HomeWork.module.css';
+import HeaderAuth from '@/components/header/headerAuth/HeaderAuth'
+import HomeWorkItem from '@/components/homeWorkItem/HomeWorkItem'
+import Layout from '@/components/layout/Layout'
 
-import { testData } from './testStudents';
-
-import Layout from '@/components/layout/Layout';
-import HeaderAuth from '@/components/header/headerAuth/HeaderAuth';
-import HomeWorkItem from '@/components/homeWorkItem/HomeWorkItem';
+import s from './HomeWork.module.css'
+import { testData } from './testStudents'
 
 const HomeWork = () => {
   return (
@@ -25,7 +24,7 @@ const HomeWork = () => {
         ))}
       </ul>
     </Layout>
-  );
-};
+  )
+}
 
-export default HomeWork;
+export default HomeWork

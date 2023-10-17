@@ -1,13 +1,12 @@
+export { formatDate } from './formatDate'
+export type { momentType } from './moment'
 export {
-  momentConfig,
   getCurrentMonth,
-  getPrevMonth,
-  getNextMonth,
+  getCurrentYear,
   getDaysArray,
   getIsWeekend,
-  getCurrentYear,
+  getNextMonth,
+  getPrevMonth,
   getToday,
-} from './moment';
-export type { momentType } from './moment';
-export { formatDate } from './formatDate';
-export { usePhoneMask } from './usePhoneMask';
+  momentConfig,
+} from './moment'

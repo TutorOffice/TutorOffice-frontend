@@ -1,4 +1,4 @@
-import testPhoto from '@/assets/images/test-student.jpg';
+import testPhoto from '@/assets/images/test-student.jpg'
 
 const testStudents = [
   {
@@ -61,6 +61,6 @@ const testStudents = [
     subject: 'Английский',
     studentSubjectLevel: 'C1',
   },
-];
+]
 
-export default testStudents;
+export default testStudents

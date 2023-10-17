@@ -1,12 +1,12 @@
 export interface IFormValues {
-  firstName: string;
-  lastName: string;
-  email: string;
-  patronymic: string;
-  password: string;
-  phone: string;
-  subject?: string;
-  feedbackMessage: string;
-  role: string;
-  policy: boolean;
+  firstName: string
+  lastName: string
+  email: string
+  patronymic: string
+  password: string
+  phone: string
+  subject?: string
+  feedbackMessage: string
+  role: string
+  policy: boolean
 }

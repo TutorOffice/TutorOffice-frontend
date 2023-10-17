@@ -1,28 +1,29 @@
-import s from './UserCardFull.module.css';
+import clsx from 'clsx'
+import { Link } from 'react-router-dom'
 
-import { btnClass, btnType, Button } from '@/shared/ui';
-import virtualStudentPhoto from '@/assets/images/virtual-student.png';
-import doneIcon from '@/assets/icons/status-true.svg';
-import arrowUpIcon from '@/assets/icons/arrow-up.svg';
-import toDoIcon from '@/assets/icons/status-false.svg';
+import arrowUpIcon from '@/assets/icons/arrow-up.svg'
+import toDoIcon from '@/assets/icons/status-false.svg'
+import doneIcon from '@/assets/icons/status-true.svg'
+import virtualStudentPhoto from '@/assets/images/virtual-student.png'
+import { Button } from '@/shared/ui'
 
-import { Link } from 'react-router-dom';
-import clsx from 'clsx';
+import s from './UserCardFull.module.css'
+
 interface UserCardFullProps {
-  photo: string;
-  firstName: string;
-  lastName: string;
-  patronymic?: string;
-  email: string;
-  phone: string;
-  studentStatus?: boolean;
-  studentSubject?: string;
-  studentSubjectLevel?: string;
-  tutorSubject?: string;
-  isTutorials?: boolean;
-  homeWorkDone: number | string;
-  homeWorkArrowUp: number | string;
-  homeWorkToDo: number | string;
+  photo: string
+  firstName: string
+  lastName: string
+  patronymic?: string
+  email: string
+  phone: string
+  studentStatus?: boolean
+  studentSubject?: string
+  studentSubjectLevel?: string
+  tutorSubject?: string
+  isTutorials?: boolean
+  homeWorkDone: number | string
+  homeWorkArrowUp: number | string
+  homeWorkToDo: number | string
 }
 
 const UserCardFull: React.FC<UserCardFullProps> = ({
@@ -39,7 +40,7 @@ const UserCardFull: React.FC<UserCardFullProps> = ({
   homeWorkArrowUp,
   homeWorkToDo,
 }: UserCardFullProps) => {
-  const studentStatusClass = clsx({ [s.studentStatus]: !studentStatus });
+  const studentStatusClass = clsx({ [s.studentStatus]: !studentStatus })
 
   return (
     <div className={s.userCardFull}>
@@ -47,7 +48,7 @@ const UserCardFull: React.FC<UserCardFullProps> = ({
         <img
           className={s.userCardFull__photo}
           src={studentStatus ? photo : virtualStudentPhoto}
-          alt='Фото пользователя'
+          alt="Фото пользователя"
         />
         <div className={studentStatusClass}>
           <p className={s.userCardFull__name}>
@@ -57,8 +58,14 @@ const UserCardFull: React.FC<UserCardFullProps> = ({
             <br />
             {patronymic || <br />}
           </p>
-          {studentSubject && <p className={s.userCardFull__subject}>{studentSubject}</p>}
-          {studentSubjectLevel && <p className={s.userCardFull_subjectLevel}>Уровень - {studentSubjectLevel}</p>}
+          {studentSubject && (
+            <p className={s.userCardFull__subject}>{studentSubject}</p>
+          )}
+          {studentSubjectLevel && (
+            <p className={s.userCardFull_subjectLevel}>
+              Уровень - {studentSubjectLevel}
+            </p>
+          )}
         </div>
       </div>
       <div className={s.userCardFull__contactItem}>
@@ -67,28 +74,39 @@ const UserCardFull: React.FC<UserCardFullProps> = ({
       <div className={s.userCardFull__contactItem}>
         Телефон: <span>{phone}</span>
       </div>
-      <Button type={btnType.button} variant={btnClass.common} className={s.userCardFull__button_common}>
-        Удалить ученика
-      </Button>
+      <Button className={s.userCardFull__button_common}>Удалить ученика</Button>
       <div className={s.userCardFull__homeWorkTitle}>Домашние задания</div>
       <div className={s.userCardFull__homeWorkStatusContainer}>
         <p className={s.userCardFull__homeWorkStatusDone}>
-          <img className={s.userCardFull__homeWorkStatusIcon} src={doneIcon} alt='Done' /> {homeWorkDone}
+          <img
+            className={s.userCardFull__homeWorkStatusIcon}
+            src={doneIcon}
+            alt="Done"
+          />{' '}
+          {homeWorkDone}
         </p>
         <p className={s.userCardFull__homeWorkStatusArrowUp}>
-          <img className={s.userCardFull__homeWorkStatusIcon} src={arrowUpIcon} alt='ArrowUp' /> {homeWorkArrowUp}
+          <img
+            className={s.userCardFull__homeWorkStatusIcon}
+            src={arrowUpIcon}
+            alt="ArrowUp"
+          />{' '}
+          {homeWorkArrowUp}
         </p>
         <p className={s.userCardFull__homeWorkStatusToDo}>
-          <img className={s.userCardFull__homeWorkStatusIcon} src={toDoIcon} alt='ToDo' /> {homeWorkToDo}
+          <img
+            className={s.userCardFull__homeWorkStatusIcon}
+            src={toDoIcon}
+            alt="ToDo"
+          />{' '}
+          {homeWorkToDo}
         </p>
       </div>
-      <Link to='#' className={s.userCardFull__button_primary}>
-        <Button width='100%' type={btnType.button} variant={btnClass.primary}>
-          Написать
-        </Button>
+      <Link to="#" className={s.userCardFull__button_primary}>
+        <Button width="100%">Написать</Button>
       </Link>
     </div>
-  );
-};
+  )
+}
 
-export default UserCardFull;
+export default UserCardFull

@@ -1,3 +1,6 @@
+import { yupResolver } from '@hookform/resolvers/yup'
+
+import { TValidationSubmitFormResolver } from './formResolver'
 import {
   addStudentSchema,
   changePassFromMailSchema,
@@ -6,27 +9,23 @@ import {
   loginSchema,
   profileSchema,
   registerSchema,
-} from './validationSchemas';
-
-import { TValidationSubmitFormResolver } from './formResolver';
-
-import { yupResolver } from '@hookform/resolvers/yup';
+} from './validationSchemas'
 
 export const getResolver = (type: string) => {
   switch (type) {
     case TValidationSubmitFormResolver.REGISTER:
-      return yupResolver(registerSchema);
+      return yupResolver(registerSchema)
     case TValidationSubmitFormResolver.LOGIN:
-      return yupResolver(loginSchema);
+      return yupResolver(loginSchema)
     case TValidationSubmitFormResolver.ADD_STUDENT:
-      return yupResolver(addStudentSchema);
+      return yupResolver(addStudentSchema)
     case TValidationSubmitFormResolver.CHANGE_PASS:
-      return yupResolver(changePassSchema);
+      return yupResolver(changePassSchema)
     case TValidationSubmitFormResolver.CHANGE_PASS_FROM_MAIL:
-      return yupResolver(changePassFromMailSchema);
+      return yupResolver(changePassFromMailSchema)
     case TValidationSubmitFormResolver.PROFILE:
-      return yupResolver(profileSchema);
+      return yupResolver(profileSchema)
     case TValidationSubmitFormResolver.FEEDBACK:
-      return yupResolver(feedbackSchema);
+      return yupResolver(feedbackSchema)
   }
-};
+}

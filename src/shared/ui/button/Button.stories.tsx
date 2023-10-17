@@ -1,9 +1,10 @@
-import { btnClass, btnType, Button, ButtonGroup } from '../index';
+/*
+import '../../../index.css'
 
-import { withRouter } from 'storybook-addon-react-router-v6';
+import type { Meta, StoryFn } from '@storybook/react'
+import { withRouter } from 'storybook-addon-react-router-v6'
 
-import type { Meta, StoryFn } from '@storybook/react';
-import '../../../index.css';
+import { Button, ButtonGroup } from '../index'
 
 export default {
   title: 'Buttons',
@@ -14,7 +15,7 @@ export default {
       routePath: '/',
     },
   },
-} as Meta<typeof Button>;
+} as Meta<typeof Button>
 const STATES = [
   { variant: btnClass.primary, children: 'Primary', type: btnType.button },
   {
@@ -29,8 +30,8 @@ const STATES = [
     isDisabled: true,
   },
   { variant: btnClass.back, children: 'Back', type: btnType.button },
-	{ variant: btnClass.common, children: 'Common', type: btnType.button },
-];
+  { variant: btnClass.common, children: 'Common', type: btnType.button },
+]
 export const All: StoryFn<typeof Button> = () => (
   <ButtonGroup>
     {STATES.map((props, index) => (
@@ -39,4 +40,5 @@ export const All: StoryFn<typeof Button> = () => (
       </Button>
     ))}
   </ButtonGroup>
-);
+)
+*/

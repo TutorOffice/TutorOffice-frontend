@@ -1,4 +1,4 @@
-import testPhoto from '@/assets/images/test-student.jpg';
+import testPhoto from '@/assets/images/test-student.jpg'
 
 const testStudents = [
   {
@@ -91,6 +91,6 @@ const testStudents = [
     homeWorkArrowUp: 0,
     homeWorkToDo: 2,
   },
-];
+]
 
-export default testStudents;
+export default testStudents

@@ -1,80 +1,83 @@
-import s from './addEducationalMaterials.module.css';
+import React, { ChangeEvent, useEffect, useRef, useState } from 'react'
 
-import { btnClass, btnType, Button, Modal } from '@/shared/ui';
+import { Button, Modal } from '@/shared/ui'
 
-import React, { ChangeEvent, useEffect, useRef, useState } from 'react';
+import s from './addEducationalMaterials.module.css'
 
 interface IAddEducationMaterials {
-  isOpen: boolean;
-  onClose: () => void;
-  width: string;
+  isOpen: boolean
+  onClose: () => void
+  width: string
 }
 
-const AddEducationMaterials = ({ isOpen, onClose, width }: IAddEducationMaterials) => {
-  const inputRef = useRef<HTMLInputElement>(null);
-  const [selectedFile, setSelectedFile] = useState<File>();
-  const [errorMsg, setErrorMsg] = useState('');
-  const [isError, setIsError] = useState(false);
+const AddEducationMaterials = ({
+  isOpen,
+  onClose,
+  width,
+}: IAddEducationMaterials) => {
+  const inputRef = useRef<HTMLInputElement>(null)
+  const [selectedFile, setSelectedFile] = useState<File>()
+  const [errorMsg, setErrorMsg] = useState('')
+  const [isError, setIsError] = useState(false)
 
   const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
     if (!event.target.files?.length) {
-      return;
+      return
     }
-    setSelectedFile(event.target.files[0]);
-  };
+    setSelectedFile(event.target.files[0])
+  }
 
   const handleClick = () => {
-    inputRef.current?.click();
-  };
+    inputRef.current?.click()
+  }
 
   useEffect(() => {
-    validateSelectedFile();
-  }, [selectedFile]);
+    validateSelectedFile()
+  }, [selectedFile])
 
   const validateSelectedFile = () => {
-    const MAX_FILE_SIZE = 25; // 25MB
+    const MAX_FILE_SIZE = 25 // 25MB
 
     if (selectedFile) {
-      const fileSizeMb = selectedFile.size / 8 / 1024 / 1024;
+      const fileSizeMb = selectedFile.size / 8 / 1024 / 1024
 
       if (fileSizeMb > MAX_FILE_SIZE) {
-        setErrorMsg('File size is greater than maximum limit');
-        setIsError(true);
-        return;
+        setErrorMsg('File size is greater than maximum limit')
+        setIsError(true)
+        return
       }
 
-      setErrorMsg('');
-      setIsError(false);
-      return;
+      setErrorMsg('')
+      setIsError(false)
     }
-  };
+  }
   return (
     <>
       <Modal
-        title={'Добавить учебный материал'}
+        title="Добавить учебный материал"
         isOpen={isOpen}
         onClose={onClose}
         width={width}
         isErrorUploadText={errorMsg}
         isErrorUpload={isError}
       >
-        <p className={s.text}>Формат PDF, JPEG, Word или Excel не больше 25 Мб</p>
+        <p className={s.text}>
+          Формат PDF, JPEG, Word или Excel не больше 25 Мб
+        </p>
         <div className={s.button}>
-          <Button onClick={handleClick} variant={btnClass.primary} type={btnType.button}>
-            Выбрать файл
-          </Button>
+          <Button onClick={handleClick}>Выбрать файл</Button>
         </div>
         {selectedFile?.name}
         <input
           onChange={handleFileChange}
-          accept='application/pdf,image/jpeg,application/msword, application/vnd.ms-excel'
+          accept="application/pdf,image/jpeg,application/msword, application/vnd.ms-excel"
           className={s.hideInput}
           ref={inputRef}
-          type='file'
+          type="file"
         />
       </Modal>
     </>
-  );
-};
+  )
+}
 
-export default AddEducationMaterials;
+export default AddEducationMaterials

@@ -18,7 +18,9 @@ const HeaderNoAuth: React.FC<HeaderNoAuthProps> = ({ className }) => {
     <HeaderMain className={headerClassName}>
       <ButtonGroup>
         <Link to="/login">
-          <Button>Вход</Button>
+          <Button color="secondaryColor" variant="outline">
+            Вход
+          </Button>
         </Link>
         <Link to="/register">
           <Button>Регистрация</Button>

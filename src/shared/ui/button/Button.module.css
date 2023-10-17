@@ -1,0 +1,40 @@
+.root {
+    padding: 18px 60px;
+    height: 57px;
+
+    &[data-variant='filled'] {
+        color: var(--white);
+    }
+
+    &[data-disabled] {
+        color: var(--gray);
+    }
+
+}
+
+.primary {
+    color: var(--black);
+    font-family: Raleway, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.secondary {
+    color: var(--blue);
+    font-family: Raleway, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+
+@media screen and (max-width: 819px) {
+    .root {
+        padding: 10px 40px;
+        font-size: 16px;
+        height: 39px;
+    }
+}

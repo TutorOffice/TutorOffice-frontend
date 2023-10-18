@@ -20,7 +20,9 @@ const Login = () => {
 
   return (
     <Layout>
-      <Button className={s.login__goBack}>Назад</Button>
+      <Button variant="back" className={s.login__goBack}>
+        Назад
+      </Button>
       <h2 className={s.login__title}>Вход в личный кабинет</h2>
       <SubmitForm
         className={s.login__form}
@@ -43,12 +45,12 @@ const Login = () => {
         />
       </SubmitForm>
       <Link to="/change-pass" className={s.link_changePass}>
-        <Button>Забыли пароль?</Button>
+        <Button variant="transparent">Забыли пароль?</Button>
       </Link>
       <div className={s.login__links_row}>
         <span>Нет аккаунта?</span>
         <Link to="/register">
-          <Button>Зарегистрироваться</Button>
+          <Button variant="transparent">Зарегистрироваться</Button>
         </Link>
       </div>
     </Layout>

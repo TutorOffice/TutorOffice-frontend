@@ -6,8 +6,21 @@
         color: var(--white);
     }
 
-    &[data-disabled] {
-        color: var(--gray);
+    &[data-variant='filled'] {
+        color: var(--white);
+    }
+
+    &[data-variant='transparent'] {
+        padding: 0;
+        height: auto;
+        color: var(--orange);
+    }
+
+    &[data-variant='back'] {
+        padding: 0;
+        height: auto;
+        color: var(--orange);
+        background: transparent;
     }
 
 }

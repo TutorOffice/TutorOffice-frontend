@@ -25,7 +25,9 @@ const Register = () => {
 
   return (
     <Layout>
-      <Button className={s.register__goBack}>Назад</Button>
+      <Button variant="back" className={s.register__goBack}>
+        Назад
+      </Button>
       <h2 className={s.register__title}>Регистрация</h2>
       <div className={s.register__container}>
         <div className={s.register__formContainer}>
@@ -94,7 +96,7 @@ const Register = () => {
           <p className={s.register__desc}>
             Уже есть аккаунт?
             <Link to="/login" className={s.loginLink}>
-              <Button>Войти</Button>
+              <Button variant="transparent">Войти</Button>
             </Link>
           </p>
         </div>

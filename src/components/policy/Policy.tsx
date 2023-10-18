@@ -23,11 +23,11 @@ const Policy: FC<PolicyProps> = ({ register, name, className }) => {
       <p className={s.policy__text}>
         Я согласен с
         <Link to="/" className={s.policy__link}>
-          <Button>Политикой конфиденциальности</Button>
+          <Button variant="transparent">Политикой конфиденциальности</Button>
         </Link>
         <br /> и
         <Link to="/" className={s.policy__link}>
-          <Button>Условиями использования сервиса</Button>
+          <Button variant="transparent">Условиями использования сервиса</Button>
         </Link>
       </p>
     </div>

@@ -1,7 +1,7 @@
 .radio {
     cursor: pointer;
     background: transparent;
-    border-color: #071D48;
+    border-color: var(--black);
 }
 
 .label {
@@ -9,7 +9,7 @@
 }
 
 .icon path {
-    fill: #071D48;
+    fill: var(--black);
 
 }
 

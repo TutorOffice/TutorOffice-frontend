@@ -1,3 +1,4 @@
+/*
 import '../../../index.css'
 
 import type { Meta } from '@storybook/react'
@@ -11,3 +12,4 @@ export default {
 } as Meta<typeof Checkbox>
 
 export const Checkboxes: StoryFn<typeof Checkbox> = () => <Checkbox />
+*/

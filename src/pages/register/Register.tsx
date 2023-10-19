@@ -8,6 +8,7 @@ import Policy from '@/components/policy/Policy'
 import SubmitForm from '@/components/submitForm/SubmitForm'
 import { Button, Input, Radio } from '@/shared/ui'
 import InputPassword from '@/shared/ui/input/InputPassword/InputPassword'
+import InputPhone from '@/shared/ui/input/InputPhone/InputPhone'
 import {
   IFormValues,
   TValidationSubmitFormResolver,
@@ -43,7 +44,7 @@ const Register = () => {
             <Input label="Имя" />
             <Input label="Отчество" />
             <Input label="E-mail" />
-            <Input label="Телефон" placeholder="+7 999 999 99 99" />
+            <InputPhone label="Телефон" placeholder="+7 999 999 99 99" />
             <InputPassword
               label="Пароль"
               description="Пароль должен содержать не менее 7 символов, буквы в верхнем

@@ -8,6 +8,7 @@ import Layout from '@/components/layout/Layout'
 import ModalWithButtons from '@/components/modals/modalWithButtons/modalWithButtons'
 import SubmitForm from '@/components/submitForm/SubmitForm'
 import { Input } from '@/shared/ui'
+import TextArea from '@/shared/ui/textarea/Textarea'
 import { IFormValues, TValidationSubmitFormResolver } from '@/shared/validation'
 
 import s from './Feedback.module.css'
@@ -43,12 +44,14 @@ const Feedback = () => {
           className={s.feedback__form}
           onSubmit={onSubmit}
           resolverType={TValidationSubmitFormResolver.FEEDBACK}
-          btnText="Сохранить"
+          btnText="Отправить"
         >
-          <Input className={s.feedback__input} />
-          <Input className={s.feedback__input} />
-          <Input
+          <Input label="Имя" className={s.feedback__input} />
+          <Input label="Email" className={s.feedback__input} />
+          <TextArea
+            label="Ваше сообщение:"
             className={s.feedback__message}
+            minRows={5}
             placeholder="Здесь можно оставить любой отзыв, вопрос или предложение по работе сайта"
           />
         </SubmitForm>

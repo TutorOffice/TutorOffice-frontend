@@ -1,3 +1,4 @@
+/*
 import '../../../index.css'
 
 import type { Meta } from '@storybook/react'
@@ -20,3 +21,4 @@ const radioItems = [
 export const Radios: StoryFn<typeof Radio> = () => (
   <Radio radioItems={radioItems} name={validateType.userRole} />
 )
+*/

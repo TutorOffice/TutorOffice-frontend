@@ -45,7 +45,7 @@ const HeaderAuth: React.FC<HeaderAuthProps> = ({ className }) => {
         phone="+7 936 619-98-06"
         mail="gurinalex065@yandex.ru"
       />
-      <Button onClick={logout} className={s.button}>
+      <Button onClick={logout} variant="transparent" className={s.button}>
         <span className={s.exitText}>Выйти</span>
         <ExitButton />
       </Button>

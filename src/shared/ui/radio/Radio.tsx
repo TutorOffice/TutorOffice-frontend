@@ -1,53 +1,36 @@
-import clsx from 'clsx'
-import React, { ChangeEvent, useState } from 'react'
-import { FieldValues, UseFormRegister } from 'react-hook-form'
+import {
+  ElementProps,
+  Radio as MantRadio,
+  RadioProps as MantRadioProps,
+} from '@mantine/core'
+import React from 'react'
 
 import s from './Radio.module.css'
-import RadioItem from './radioItem/RadioItem'
 
-export interface RadioItems {
-  id: string | number
-  value: string
-  text: string
-}
-
-interface CheckboxProps {
-  name: string
-  radioItems: RadioItems[]
-  register?: UseFormRegister<FieldValues>
+interface TextAreaProps
+  extends MantRadioProps,
+    ElementProps<'input', keyof MantRadioProps> {
   className?: string
 }
 
-const Checkbox: React.FC<CheckboxProps> = ({
-  name,
-  radioItems,
-  register,
-  className,
-}) => {
-  const [value, setValue] = useState(radioItems[0].value)
-  const changeValue = (e: ChangeEvent<HTMLInputElement>) => {
-    setValue(e.target.value)
-  }
+const classNames = {
+  root: s.root,
+  radio: s.radio,
+  body: s.body,
+  icon: s.icon,
+  inner: s.inner,
+  label: s.label,
+}
 
-  const radioClassName = clsx(className, { [s.radio]: true })
-
+const Radio: React.FC<TextAreaProps> = ({ className, ...props }) => {
   return (
-    <div className={radioClassName}>
-      {radioItems.map((obj) => {
-        return (
-          <RadioItem
-            key={obj.id}
-            itemValue={obj.value}
-            labelText={obj.text}
-            register={register}
-            name={name}
-            value={value}
-            changeValue={changeValue}
-          />
-        )
-      })}
-    </div>
+    <MantRadio
+      size="lg"
+      classNames={classNames}
+      className={className}
+      {...props}
+    />
   )
 }
 
-export default Checkbox
+export default Radio

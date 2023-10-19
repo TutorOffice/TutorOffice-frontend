@@ -1,23 +1,35 @@
-import clsx from 'clsx'
-import { FC, TextareaHTMLAttributes } from 'react'
+import {
+  ElementProps,
+  Textarea as MantTextarea,
+  TextareaProps as MantTextareaProps,
+} from '@mantine/core'
+import React from 'react'
 
 import s from './Textarea.module.css'
 
-interface ITextarea extends TextareaHTMLAttributes<HTMLAreaElement> {
-  labelText?: string
-  commentTip?: string
+interface TextAreaProps
+  extends MantTextareaProps,
+    ElementProps<'input', keyof MantTextareaProps> {
+  className?: string
 }
 
-const Textarea: FC<ITextarea> = ({ labelText, commentTip, className }) => {
-  const ClassName = clsx(className, s.root)
+const classNames = {
+  input: s.input,
+  label: s.label,
+  error: s.error,
+  description: s.description,
+}
 
+const TextArea: React.FC<TextAreaProps> = ({ className, ...props }) => {
   return (
-    <div className={s.root}>
-      <label>{labelText}</label>
-      <textarea className={ClassName} />
-      <p>{commentTip}</p>
-    </div>
+    <MantTextarea
+      classNames={classNames}
+      className={className}
+      inputWrapperOrder={['label', 'input', 'description', 'error']}
+      autosize
+      {...props}
+    />
   )
 }
 
-export default Textarea
+export default TextArea

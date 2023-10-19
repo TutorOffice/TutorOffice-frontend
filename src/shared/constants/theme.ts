@@ -28,6 +28,4 @@ export const theme = createTheme({
       '#064499',
     ],
   },
-
-  defaultRadius: 'xl',
 })

@@ -7,6 +7,7 @@
     box-sizing: border-box;
 }
 
+
 :root {
     --black: #071d48;
     --orange: #ffbd59;
@@ -26,3 +27,4 @@ body {
     font-family: 'Inter', Arial, sans-serif;
     color: var(--black);
 }
+

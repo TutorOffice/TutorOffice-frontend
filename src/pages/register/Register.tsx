@@ -1,3 +1,4 @@
+import { Radio as MantRadio } from '@mantine/core'
 import React from 'react'
 import { SubmitHandler } from 'react-hook-form'
 import { Link } from 'react-router-dom'
@@ -18,8 +19,6 @@ import {
 import s from './Register.module.css'
 
 const Register = () => {
-  const phoneRef = React.useRef(null)
-
   const onSubmit: SubmitHandler<IFormValues> = (data) => {
     // eslint-disable-next-line no-console
     console.log(data)
@@ -51,14 +50,10 @@ const Register = () => {
 					и нижнем регистре, цифры и спец. символ (ex: ! @ # $ % - & * _)"
             />
             <InputPassword label="Повторите пароль" />
-            <Radio
-              className={s.register__radio}
-              radioItems={[
-                { id: 1, value: 'tutor', text: 'Преподаватель' },
-                { id: 2, value: 'student', text: 'Ученик' },
-              ]}
-              name={validateType.userRole}
-            />
+            <MantRadio.Group className={s.register__radio}>
+              <Radio value="Tutor" label="Преподователь" />
+              <Radio value="Student" label="Ученик" />
+            </MantRadio.Group>
             <Policy className={s.register__policy} name={validateType.policy} />
           </SubmitForm>
           <p className={s.register__desc}>

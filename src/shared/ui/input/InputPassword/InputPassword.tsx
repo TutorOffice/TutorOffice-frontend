@@ -29,7 +29,7 @@ const InputPassword: React.FC<InputProps> = ({ className, ...props }) => {
     <MantPasswordInput
       classNames={classNames}
       className={className}
-      inputWrapperOrder={['label', 'input', 'description', 'error']}
+      inputWrapperOrder={['label', 'input', 'error', 'description']}
       visibilityToggleIcon={({ reveal }) => (reveal ? <Close /> : <Open />)}
       {...props}
     />

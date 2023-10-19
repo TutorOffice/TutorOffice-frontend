@@ -7,6 +7,7 @@ import Layout from '@/components/layout/Layout'
 import Policy from '@/components/policy/Policy'
 import SubmitForm from '@/components/submitForm/SubmitForm'
 import { Button, Input, Radio } from '@/shared/ui'
+import InputPassword from '@/shared/ui/input/InputPassword/InputPassword'
 import {
   IFormValues,
   TValidationSubmitFormResolver,
@@ -43,12 +44,12 @@ const Register = () => {
             <Input label="Отчество" />
             <Input label="E-mail" />
             <Input label="Телефон" placeholder="+7 999 999 99 99" />
-            <Input
+            <InputPassword
               label="Пароль"
               description="Пароль должен содержать не менее 7 символов, буквы в верхнем
 					и нижнем регистре, цифры и спец. символ (ex: ! @ # $ % - & * _)"
             />
-            <Input label="Повторите пароль" />
+            <InputPassword label="Повторите пароль" />
             <Radio
               className={s.register__radio}
               radioItems={[

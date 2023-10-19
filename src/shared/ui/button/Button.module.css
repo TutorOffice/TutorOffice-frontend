@@ -1,6 +1,8 @@
 .root {
     padding: 18px 60px;
     height: 57px;
+    border-radius: 20px;
+
 
     &[data-variant='filled'] {
         color: var(--white);

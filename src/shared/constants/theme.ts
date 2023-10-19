@@ -1,7 +1,6 @@
 import { createTheme } from '@mantine/core'
 
 export const theme = createTheme({
-  primaryColor: 'orange',
   fontFamily: 'Raleway',
   colors: {
     primaryColor: [
@@ -11,7 +10,7 @@ export const theme = createTheme({
       '#ffc264',
       '#ffaf38',
       '#ffa31b',
-      '#ff9d09',
+      '#ffbd59',
       '#e38900',
       '#ca7800',
       '#b06700',

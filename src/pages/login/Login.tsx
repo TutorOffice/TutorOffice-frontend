@@ -3,12 +3,8 @@ import { Link } from 'react-router-dom'
 
 import Layout from '@/components/layout/Layout'
 import SubmitForm from '@/components/submitForm/SubmitForm'
-import { Button, Input, inputTypes } from '@/shared/ui'
-import {
-  IFormValues,
-  TValidationSubmitFormResolver,
-  validateType,
-} from '@/shared/validation'
+import { Button, Input } from '@/shared/ui'
+import { IFormValues, TValidationSubmitFormResolver } from '@/shared/validation'
 
 import s from './Login.module.css'
 
@@ -31,18 +27,8 @@ const Login = () => {
         resolverType={TValidationSubmitFormResolver.LOGIN}
         onSubmit={onSubmit}
       >
-        <Input
-          name={validateType.email}
-          type={inputTypes.email}
-          labelText="Введите e-mail"
-          isRequired={true}
-        />
-        <Input
-          name={validateType.password}
-          type={inputTypes.password}
-          labelText="Введите пароль"
-          isRequired={true}
-        />
+        <Input label="Введите e-mail" />
+        <Input label="Введите пароль" />
       </SubmitForm>
       <Link to="/change-pass" className={s.link_changePass}>
         <Button variant="transparent">Забыли пароль?</Button>

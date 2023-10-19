@@ -1,5 +1,4 @@
 import { ElementProps, TextInput, TextInputProps } from '@mantine/core'
-import clsx from 'clsx'
 import React from 'react'
 
 import s from './Input.module.css'
@@ -10,12 +9,14 @@ interface InputProps
   className?: string
 }
 
-const Input: React.FC<InputProps> = ({ className, ...props }) => {
-  const classes = clsx(className, {
-    [s.input]: true,
-  })
+const classNames = {
+  input: s.input,
+  label: s.label,
+  error: s.error,
+}
 
-  return <TextInput className={classes} {...props} />
+const Input: React.FC<InputProps> = ({ className, ...props }) => {
+  return <TextInput classNames={classNames} className={className} {...props} />
 }
 
 export default Input

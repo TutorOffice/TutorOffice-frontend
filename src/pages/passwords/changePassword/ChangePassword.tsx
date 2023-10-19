@@ -2,12 +2,8 @@ import { SubmitHandler } from 'react-hook-form'
 
 import Layout from '@/components/layout/Layout'
 import SubmitForm from '@/components/submitForm/SubmitForm'
-import { Button, Input, inputTypes } from '@/shared/ui'
-import {
-  IFormValues,
-  TValidationSubmitFormResolver,
-  validateType,
-} from '@/shared/validation'
+import { Button, Input } from '@/shared/ui'
+import { IFormValues, TValidationSubmitFormResolver } from '@/shared/validation'
 
 import s from './ChangePassword.module.css'
 
@@ -27,28 +23,12 @@ const ChangePassword = () => {
         onSubmit={onSubmit}
         resolverType={TValidationSubmitFormResolver.CHANGE_PASS_FROM_MAIL}
       >
+        <Input label="Введите текущий пароль" />
         <Input
-          name={validateType.currentPassword}
-          type={inputTypes.password}
-          labelText="Введите текущий пароль"
-          isRequired={true}
-          isPassword={true}
+          label="Введите новый пароль"
+          description="Пароль должен содержать не менее 6 символов, буквы в верхнем и нижнем регистре и цифры"
         />
-        <Input
-          name={validateType.password}
-          type={inputTypes.password}
-          labelText="Введите новый пароль"
-          isRequired={true}
-          isPassword={true}
-          commentTip="Пароль должен содержать не менее 6 символов, буквы в верхнем и нижнем регистре и цифры"
-        />
-        <Input
-          name={validateType.confirmPassword}
-          type={inputTypes.password}
-          labelText="Повторите новый пароль"
-          isRequired={true}
-          isPassword={true}
-        />
+        <Input label="Повторите новый пароль" />
       </SubmitForm>
     </Layout>
   )

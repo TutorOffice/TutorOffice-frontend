@@ -8,7 +8,7 @@ import {
 } from 'react-hook-form'
 
 import { ReactComponent as Icon } from '@/assets/icons/select-down.svg'
-import { Input, inputTypes } from '@/shared/ui'
+import { Input } from '@/shared/ui'
 import Options from '@/shared/ui/select/Options/Options'
 import { validateType } from '@/shared/validation'
 

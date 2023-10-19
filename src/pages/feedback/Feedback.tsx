@@ -7,12 +7,8 @@ import HeaderNoAuth from '@/components/header/headerNoAuth/HeaderNoAuth'
 import Layout from '@/components/layout/Layout'
 import ModalWithButtons from '@/components/modals/modalWithButtons/modalWithButtons'
 import SubmitForm from '@/components/submitForm/SubmitForm'
-import { Input, inputTypes } from '@/shared/ui'
-import {
-  IFormValues,
-  TValidationSubmitFormResolver,
-  validateType,
-} from '@/shared/validation'
+import { Input } from '@/shared/ui'
+import { IFormValues, TValidationSubmitFormResolver } from '@/shared/validation'
 
 import s from './Feedback.module.css'
 
@@ -49,25 +45,10 @@ const Feedback = () => {
           resolverType={TValidationSubmitFormResolver.FEEDBACK}
           btnText="Сохранить"
         >
-          <Input
-            className={s.feedback__input}
-            type={inputTypes.text}
-            name={validateType.firstName}
-            labelText="Имя"
-            isRequired={true}
-          />
-          <Input
-            className={s.feedback__input}
-            type={inputTypes.text}
-            name={validateType.email}
-            labelText="E-mail"
-            isRequired={true}
-          />
+          <Input className={s.feedback__input} />
+          <Input className={s.feedback__input} />
           <Input
             className={s.feedback__message}
-            type={inputTypes.textarea}
-            name={validateType.feedbackMessage}
-            labelText="Ваше сообщение:"
             placeholder="Здесь можно оставить любой отзыв, вопрос или предложение по работе сайта"
           />
         </SubmitForm>

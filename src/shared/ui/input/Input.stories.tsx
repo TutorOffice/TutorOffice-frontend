@@ -1,9 +1,10 @@
+/*
 import '../../../index.css'
 
 import type { Meta } from '@storybook/react'
 import { StoryFn } from '@storybook/react'
 
-import { Button, Input, inputTypes } from '../index'
+import { Button, Input } from '../index'
 
 export default {
   title: 'Input',
@@ -41,3 +42,4 @@ export const All: StoryFn<typeof Button> = () => (
     ))}
   </div>
 )
+*/

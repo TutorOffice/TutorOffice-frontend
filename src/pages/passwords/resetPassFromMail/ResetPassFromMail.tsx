@@ -2,12 +2,8 @@ import { SubmitHandler } from 'react-hook-form'
 
 import Layout from '@/components/layout/Layout'
 import SubmitForm from '@/components/submitForm/SubmitForm'
-import { Button, Input, inputTypes } from '@/shared/ui'
-import {
-  IFormValues,
-  TValidationSubmitFormResolver,
-  validateType,
-} from '@/shared/validation'
+import { Button, Input } from '@/shared/ui'
+import { IFormValues, TValidationSubmitFormResolver } from '@/shared/validation'
 
 import s from './ResetPassFromMail.module.css'
 
@@ -27,12 +23,7 @@ const ResetPassFromMail = () => {
         onSubmit={onSubmit}
         resolverType={TValidationSubmitFormResolver.CHANGE_PASS}
       >
-        <Input
-          name={validateType.email}
-          type={inputTypes.email}
-          labelText="E-mail, указанный при регистрации"
-          isRequired={true}
-        />
+        <Input label="E-mail, указанный при регистрации" />
         <p className={s.resetPassFromMail__comment}>
           Мы отправим Вам на почту письмо со ссылкой для сброса пароля.
         </p>

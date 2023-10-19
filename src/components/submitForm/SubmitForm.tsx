@@ -46,22 +46,12 @@ const SubmitForm: React.FC<SubmitFormProps> = ({
   if (btnGroup) {
     submitControls = (
       <ButtonGroup width="100%">
-        <Button
-          className={submitBtnClassName}
-          width="100%"
-          isDisabled={!isValid}
-        >
-          {btnText}
-        </Button>
-        <Button width="100%">Отменить</Button>
+        <Button className={submitBtnClassName}>{btnText}</Button>
+        <Button>Отменить</Button>
       </ButtonGroup>
     )
   } else if (btnText) {
-    submitControls = (
-      <Button width={btnWidth} isDisabled={!isValid}>
-        {btnText}
-      </Button>
-    )
+    submitControls = <Button>{btnText}</Button>
   }
 
   const formClassName = clsx(className, { [s.submitForm]: true })

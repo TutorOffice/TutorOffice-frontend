@@ -7,12 +7,8 @@ import HeaderMain from '@/components/header/headerMain/HeaderMain'
 import Layout from '@/components/layout/Layout'
 import LoadFileModal from '@/components/modals/loadFileModal/LoadFileModal'
 import SubmitForm from '@/components/submitForm/SubmitForm'
-import { Button, Input, inputTypes, LoadImage } from '@/shared/ui'
-import {
-  IFormValues,
-  TValidationSubmitFormResolver,
-  validateType,
-} from '@/shared/validation'
+import { Button, Input, LoadImage } from '@/shared/ui'
+import { IFormValues, TValidationSubmitFormResolver } from '@/shared/validation'
 
 import s from './Profile.module.css'
 
@@ -62,43 +58,13 @@ const Profile = () => {
               image={userPhoto}
               onClick={openModal}
             />
-            <Input
-              name={validateType.lastName}
-              type={inputTypes.text}
-              labelText="Фамилия"
-            />
-            <Input
-              name={validateType.firstName}
-              type={inputTypes.text}
-              labelText="Имя"
-            />
-            <Input
-              name={validateType.patronymic}
-              type={inputTypes.text}
-              labelText="Отчество"
-            />
-            <Input
-              name={validateType.email}
-              type={inputTypes.email}
-              labelText="E-mail"
-            />
-            <Input
-              name={validateType.phone}
-              type={inputTypes.phone}
-              labelText="Телефон"
-            />
-            <Input
-              name={validateType.password}
-              type={inputTypes.password}
-              isPassword={true}
-              iconVisibility={false}
-              labelText="Пароль"
-            />
-            <Input
-              name={validateType.subject}
-              type={inputTypes.text}
-              labelText="Предмет"
-            />
+            <Input label="Фамилия" />
+            <Input label="Имя" />
+            <Input label="Отчество" />
+            <Input label="E-mail" />
+            <Input label="Телефон" />
+            <Input label="Пароль" />
+            <Input label="Предмет" />
           </SubmitForm>
           <Link to="/change-pass" className={s.change_pass}>
             <Button className={s.changePass__button}>Сменить пароль</Button>

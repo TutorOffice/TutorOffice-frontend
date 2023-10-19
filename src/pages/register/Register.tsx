@@ -6,7 +6,7 @@ import registerImage from '@/assets/images/register-image.png'
 import Layout from '@/components/layout/Layout'
 import Policy from '@/components/policy/Policy'
 import SubmitForm from '@/components/submitForm/SubmitForm'
-import { Button, Input, inputTypes, Radio } from '@/shared/ui'
+import { Button, Input, Radio } from '@/shared/ui'
 import {
   IFormValues,
   TValidationSubmitFormResolver,
@@ -38,51 +38,17 @@ const Register = () => {
             resolverType={TValidationSubmitFormResolver.REGISTER}
             onSubmit={onSubmit}
           >
+            <Input label="Фамилия" />
+            <Input label="Имя" />
+            <Input label="Отчество" />
+            <Input label="E-mail" />
+            <Input label="Телефон" placeholder="+7 999 999 99 99" />
             <Input
-              name={validateType.lastName}
-              type={inputTypes.text}
-              labelText="Фамилия"
-              isRequired={true}
-            />
-            <Input
-              name={validateType.firstName}
-              type={inputTypes.text}
-              labelText="Имя"
-              isRequired={true}
-            />
-            <Input
-              name={validateType.patronymic}
-              type={inputTypes.text}
-              labelText="Отчество"
-            />
-            <Input
-              name={validateType.email}
-              type={inputTypes.email}
-              labelText="E-mail"
-              isRequired={true}
-              placeholder="example@domaim.ru"
-            />
-            <Input
-              inputRef={phoneRef}
-              name={validateType.phone}
-              type={inputTypes.phone}
-              labelText="Телефон"
-              placeholder="+7 999 999 99 99"
-            />
-            <Input
-              name={validateType.password}
-              type={inputTypes.password}
-              labelText="Пароль"
-              isRequired={true}
-              commentTip="Пароль должен содержать не менее 7 символов, буквы в верхнем
+              label="Пароль"
+              description="Пароль должен содержать не менее 7 символов, буквы в верхнем
 					и нижнем регистре, цифры и спец. символ (ex: ! @ # $ % - & * _)"
             />
-            <Input
-              name={validateType.confirmPassword}
-              type={inputTypes.password}
-              labelText="Повторите пароль"
-              isRequired={true}
-            />
+            <Input label="Повторите пароль" />
             <Radio
               className={s.register__radio}
               radioItems={[

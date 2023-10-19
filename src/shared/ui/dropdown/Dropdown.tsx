@@ -8,7 +8,7 @@ import {
 } from 'react-hook-form'
 
 import { ReactComponent as Icon } from '@/assets/icons/select-down.svg'
-import { Input, inputTypes } from '@/shared/ui'
+import { Input } from '@/shared/ui'
 import { RadioItems } from '@/shared/ui/radio/Radio'
 import RadioItem from '@/shared/ui/radio/radioItem/RadioItem'
 import { validateType } from '@/shared/validation'
@@ -78,7 +78,6 @@ const Dropdown: FC<DropdownProps> = ({
         control={control}
         render={({ field }) => (
           <Input
-            readOnly
             onClick={handlerOptions}
             placeholder="Сортировать"
             inputRef={inputRef}

@@ -6,6 +6,16 @@
 
 .label {
     cursor: pointer;
+    color: var(--black);
+    font-family: Raleway, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.body {
+    align-items: center;
 }
 
 .icon path {

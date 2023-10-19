@@ -43,3 +43,25 @@
     font-weight: 400;
     line-height: normal;
 }
+
+.description {
+    padding-left: 12px;
+    color: var(--black);
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.wrapper[data-error="true"] + .description {
+    color: var(--red);
+    padding-left: 12px;
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+

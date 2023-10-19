@@ -13,10 +13,19 @@ const classNames = {
   input: s.input,
   label: s.label,
   error: s.error,
+  description: s.description,
+  wrapper: s.wrapper,
 }
 
 const Input: React.FC<InputProps> = ({ className, ...props }) => {
-  return <TextInput classNames={classNames} className={className} {...props} />
+  return (
+    <TextInput
+      classNames={classNames}
+      className={className}
+      inputWrapperOrder={['label', 'input', 'description', 'error']}
+      {...props}
+    />
+  )
 }
 
 export default Input

@@ -32,6 +32,7 @@ const InputPhone: React.FC<InputProps> = ({
 }) => {
   return (
     <>
+      {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
       <InputBase<any>
         classNames={classNames}
         component={IMaskInput}

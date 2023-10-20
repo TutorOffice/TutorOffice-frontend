@@ -4,25 +4,8 @@
     border-radius: 20px;
 
 
-    &[data-variant='filled'] {
-        color: var(--white);
-    }
-
-    &[data-variant='filled'] {
-        color: var(--white);
-    }
-
-    &[data-variant='transparent'] {
-        padding: 0;
-        height: auto;
-        color: var(--orange);
-    }
-
-    &[data-variant='back'] {
-        padding: 0;
-        height: auto;
-        color: var(--orange);
-        background: transparent;
+    &[data-disabled=true] {
+        color: var(--gray);
     }
 
 }
@@ -34,15 +17,55 @@
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+
+    &[data-variant='transparent'] {
+        padding: 0;
+        height: auto;
+        color: var(--orange);
+
+        &[data-disabled=true] {
+            background: transparent;
+        }
+    }
+
+    &[data-variant='back'] {
+        padding: 0;
+        height: auto;
+        color: var(--orange);
+        background: transparent;
+    }
 }
 
 .secondary {
-    color: var(--blue);
+    color: var(--white);
     font-family: Raleway, sans-serif;
     font-size: 18px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+
+    &[data-variant='outline'] {
+        color: var(--blue);
+    }
+
+    &[data-variant='transparent'] {
+        padding: 0;
+        height: auto;
+        color: var(--black);
+        font-weight: 600;
+
+        &[data-disabled=true] {
+            background: transparent;
+            color: var(--gray);
+        }
+    }
+
+    &[data-variant='back'] {
+        padding: 0;
+        height: auto;
+        color: var(--orange);
+        background: transparent;
+    }
 }
 
 

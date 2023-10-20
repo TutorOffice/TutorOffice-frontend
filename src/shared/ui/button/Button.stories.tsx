@@ -1,44 +1,48 @@
-/*
-import '../../../index.css'
+import type { Meta, StoryObj } from '@storybook/react'
 
-import type { Meta, StoryFn } from '@storybook/react'
-import { withRouter } from 'storybook-addon-react-router-v6'
+import Button from './Button'
 
-import { Button, ButtonGroup } from '../index'
-
-export default {
-  title: 'Buttons',
+const meta: Meta<typeof Button> = {
   component: Button,
-  decorators: [withRouter],
-  parameters: {
-    reactRouter: {
-      routePath: '/',
-    },
-  },
-} as Meta<typeof Button>
-const STATES = [
-  { variant: btnClass.primary, children: 'Primary', type: btnType.button },
-  {
-    variant: btnClass.ghost,
-    children: 'Ghost',
-    type: btnType.button,
-  },
-  {
-    variant: btnClass.primary,
-    children: 'Disabled',
-    type: btnType.button,
-    isDisabled: true,
-  },
-  { variant: btnClass.back, children: 'Back', type: btnType.button },
-  { variant: btnClass.common, children: 'Common', type: btnType.button },
-]
-export const All: StoryFn<typeof Button> = () => (
-  <ButtonGroup>
-    {STATES.map((props, index) => (
-      <Button key={index} {...props}>
-        {props.children}
+}
+
+export default meta
+type Story = StoryObj<typeof Button>
+
+export const primary: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'row', gap: '20px' }}>
+      <Button variant="filled">Button</Button>
+      <Button disabled>Button</Button>
+    </div>
+  ),
+}
+
+export const secondary: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'row', gap: '20px' }}>
+      <Button color="secondaryColor" variant="filled">
+        Button
       </Button>
-    ))}
-  </ButtonGroup>
-)
-*/
+      <Button color="secondaryColor" variant="outline">
+        Button
+      </Button>
+      <Button disabled>Button</Button>
+    </div>
+  ),
+}
+export const textButton: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'row', gap: '20px' }}>
+      <Button color="secondaryColor" variant="transparent">
+        Button
+      </Button>
+      <Button color="secondaryColor" variant="transparent">
+        Button
+      </Button>
+      <Button color="secondaryColor" variant="transparent" disabled>
+        Button
+      </Button>
+    </div>
+  ),
+}

@@ -3,4 +3,19 @@
     background: transparent;
     border-color: var(--black);
 
+    &[data-error=true] {
+        border-color: var(--red);
+    }
+
+    &[data-error=true] {
+        border-color: var(--red);
+    }
+
 }
+
+.input[data-error='true'] + svg path {
+
+    stroke: var(--red);
+
+}
+

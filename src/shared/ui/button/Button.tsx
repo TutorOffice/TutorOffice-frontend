@@ -13,7 +13,7 @@ import s from './Button.module.css'
 
 type ButtonVariant = MantButtonVariant | 'back'
 
-interface ButtonProps
+export interface ButtonProps
   extends MantButtonProps,
     ElementProps<'button', keyof MantButtonProps> {
   children: ReactNode

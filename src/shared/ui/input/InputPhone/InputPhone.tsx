@@ -12,6 +12,7 @@ interface InputProps
   extends MantInputBaseProps,
     ElementProps<'input', keyof MantInputBaseProps> {
   className?: string
+  mask?: string
 }
 
 const classNames = {
@@ -22,13 +23,19 @@ const classNames = {
   wrapper: s.wrapper,
 }
 
-const InputPhone: React.FC<InputProps> = ({ className, ...props }) => {
+const maskDefaultValue = '+7 000 000 00 00'
+
+const InputPhone: React.FC<InputProps> = ({
+  className,
+  mask = maskDefaultValue,
+  ...props
+}) => {
   return (
     <>
       <InputBase<any>
         classNames={classNames}
         component={IMaskInput}
-        mask="+7 000 000 00 00"
+        mask={mask}
         {...props}
       />
     </>

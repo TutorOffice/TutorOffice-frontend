@@ -1,4 +1,5 @@
 import {
+  ComboboxData,
   ElementProps,
   Select as MantSelect,
   SelectProps as MantSelectProps,
@@ -13,6 +14,7 @@ interface SelectProps
   extends MantSelectProps,
     ElementProps<'input', keyof MantSelectProps> {
   className?: string
+  options: ComboboxData | undefined
 }
 
 const classNames = {
@@ -26,13 +28,15 @@ const classNames = {
   dropdown: s.dropdown,
 }
 
-const Select: React.FC<SelectProps> = ({ className, ...props }) => {
+const Select: React.FC<SelectProps> = ({ className, options, ...props }) => {
   return (
     <MantSelect
       withCheckIcon={false}
       rightSection={<ArrowIcon />}
       classNames={classNames}
       className={className}
+      data={options}
+      inputWrapperOrder={['label', 'input', 'description', 'error']}
       {...props}
     />
   )

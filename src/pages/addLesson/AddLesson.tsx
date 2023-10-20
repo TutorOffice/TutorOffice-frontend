@@ -53,7 +53,7 @@ const AddLesson = () => {
       >
         <div className={s.addLessonContent}>
           <Select
-            data={students}
+            options={students}
             label="Выберите ученика из списка"
             placeholder="Выберите ученика"
           />
@@ -63,9 +63,9 @@ const AddLesson = () => {
                 Начало урока <span className={s.last}>*</span>
               </p>
               <div className={s.item__time}>
-                <Select data={time} />
+                <Select options={time} />
                 <span className={s.separator__time}>:</span>
-                <Select data={time} />
+                <Select options={time} />
               </div>
             </div>
             <div>
@@ -73,9 +73,9 @@ const AddLesson = () => {
                 Окончание урока <span className={s.last}>*</span>
               </p>
               <div className={s.item__time}>
-                <Select data={time} />
+                <Select options={time} />
                 <span className={s.separator__time}>:</span>
-                <Select data={time} />
+                <Select options={time} />
               </div>
             </div>
           </div>

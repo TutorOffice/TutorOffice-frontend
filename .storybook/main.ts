@@ -1,4 +1,4 @@
-import type { StorybookConfig } from '@storybook/react-vite';
+import type { StorybookConfig } from '@storybook/react-vite'
 
 const config: StorybookConfig = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
@@ -8,6 +8,8 @@ const config: StorybookConfig = {
     '@storybook/addon-interactions',
     'storybook-addon-react-router-v6',
     'storybook-css-modules',
+    '@storybook/addon-styling',
+    'storybook-dark-mode',
   ],
   framework: {
     name: '@storybook/react-vite',
@@ -16,5 +18,5 @@ const config: StorybookConfig = {
   docs: {
     autodocs: 'tag',
   },
-};
-export default config;
+}
+export default config

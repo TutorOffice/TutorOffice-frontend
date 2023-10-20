@@ -17,15 +17,11 @@ interface DropdownProps
   extends ComboboxProps,
     ElementProps<'input', keyof ComboboxProps> {
   className?: string
+  options: {
+    label: string
+    value: string
+  }[]
 }
-
-const groceries = [
-  '🍎 Apples',
-  '🍌 Bananas',
-  '🥦 Broccoli',
-  '🥕 Carrots',
-  '🍫 Chocolate',
-]
 
 const classNames = {
   input: s.input,
@@ -38,30 +34,36 @@ const classNames = {
   dropdown: s.dropdown,
 }
 
-const Dropdown: React.FC<DropdownProps> = ({ className, ...props }) => {
+const Dropdown: React.FC<DropdownProps> = ({
+  className,
+  options,
+  ...props
+}) => {
   const combobox = useCombobox()
 
   const [value, setValue] = useState<string>('')
 
-  const options = groceries.map((item) => (
+  const data = options.map((item) => (
     <Radio
-      key={item}
+      key={item.value}
       style={{ padding: '9px 16px' }}
-      onClick={() => setValue(item)}
-      value={item}
-      label={item}
+      onClick={() => setValue(item.value)}
+      value={item.value}
+      label={item.label}
     />
   ))
 
   return (
     <Combobox
-      classNames={classNames}
       store={combobox}
       onOptionSubmit={(optionValue) => {
         setValue(optionValue)
         combobox.closeDropdown()
       }}
       withinPortal={false}
+      size="xl"
+      transitionProps={{ duration: 200, transition: 'pop' }}
+      classNames={classNames}
       {...props}
     >
       <Combobox.Target>
@@ -72,13 +74,12 @@ const Dropdown: React.FC<DropdownProps> = ({ className, ...props }) => {
           value={value}
           rightSection={<ArrowIcon />}
           readOnly
-          onClick={() => combobox.openDropdown()}
           onFocus={() => combobox.openDropdown()}
         />
       </Combobox.Target>
 
       <Combobox.Dropdown>
-        <MantRadio.Group>{options}</MantRadio.Group>
+        <MantRadio.Group>{data}</MantRadio.Group>
       </Combobox.Dropdown>
     </Combobox>
   )

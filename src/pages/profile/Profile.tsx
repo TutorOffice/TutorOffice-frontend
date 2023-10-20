@@ -38,15 +38,6 @@ const Profile = () => {
         <div className={s.profile__formWrapper}>
           <SubmitForm
             className={s.profile__form}
-            defaultValues={{
-              firstName: 'Иван',
-              lastName: 'Грозный',
-              email: 'grozniyIvan@gmail.com',
-              patronymic: 'Васильевич',
-              password: 'Gr0zniy_',
-              subject: 'Английский язык',
-              phone: '+7(999) 999-99-99',
-            }}
             resolverType={TValidationSubmitFormResolver.PROFILE}
             btnGroup={true}
             btnText="Сохранить изменения"

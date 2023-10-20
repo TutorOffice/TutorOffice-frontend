@@ -1,40 +1,39 @@
-import s from './Feedback.module.css';
+import { useState } from 'react'
+import { SubmitHandler } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom'
 
-import HeaderAuth from '@/components/header/headerAuth/HeaderAuth';
-import HeaderNoAuth from '@/components/header/headerNoAuth/HeaderNoAuth';
-import Layout from '@/components/layout/Layout';
-import SubmitForm from '@/components/submitForm/SubmitForm';
-import { Input, inputTypes } from '@/shared/ui';
-import { IFormValues, TValidationSubmitFormResolver, validateType } from '@/shared/validation';
+import HeaderAuth from '@/components/header/headerAuth/HeaderAuth'
+import HeaderNoAuth from '@/components/header/headerNoAuth/HeaderNoAuth'
+import Layout from '@/components/layout/Layout'
+import ModalWithButtons from '@/components/modals/modalWithButtons/modalWithButtons'
+import SubmitForm from '@/components/submitForm/SubmitForm'
+import { Input } from '@/shared/ui'
+import TextArea from '@/shared/ui/textarea/Textarea'
+import { IFormValues, TValidationSubmitFormResolver } from '@/shared/validation'
 
-import ModalWithButtons from '@/components/modals/modalWithButtons/modalWithButtons';
-
-import { useState } from 'react';
-
-import { SubmitHandler } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
+import s from './Feedback.module.css'
 
 const Feedback = () => {
-  const isAuth = false;
+  const isAuth = false
 
-  const [isOpenModal, setIsOpenModal] = useState(false);
-  const navigate = useNavigate();
+  const [isOpenModal, setIsOpenModal] = useState(false)
+  const navigate = useNavigate()
 
   const openModal = () => {
-    setIsOpenModal(true);
-  };
+    setIsOpenModal(true)
+  }
   const closeModal = () => {
-    setIsOpenModal(false);
-  };
+    setIsOpenModal(false)
+  }
   const goToMainPage = () => {
-    navigate('/');
-  };
+    navigate('/')
+  }
 
   const onSubmit: SubmitHandler<IFormValues> = (data) => {
     // eslint-disable-next-line no-console
-    console.log(data);
-    openModal();
-  };
+    console.log(data)
+    openModal()
+  }
 
   return (
     <>
@@ -45,43 +44,30 @@ const Feedback = () => {
           className={s.feedback__form}
           onSubmit={onSubmit}
           resolverType={TValidationSubmitFormResolver.FEEDBACK}
-          btnText='Сохранить'
+          btnText="Отправить"
         >
-          <Input
-            className={s.feedback__input}
-            type={inputTypes.text}
-            name={validateType.firstName}
-            labelText='Имя'
-            isRequired={true}
-          />
-          <Input
-            className={s.feedback__input}
-            type={inputTypes.text}
-            name={validateType.email}
-            labelText='E-mail'
-            isRequired={true}
-          />
-          <Input
+          <Input label="Имя" className={s.feedback__input} />
+          <Input label="Email" className={s.feedback__input} />
+          <TextArea
+            label="Ваше сообщение:"
             className={s.feedback__message}
-            type={inputTypes.textarea}
-            name={validateType.feedbackMessage}
-            labelText='Ваше сообщение:'
-            placeholder='Здесь можно оставить любой отзыв, вопрос или предложение по работе сайта'
+            minRows={5}
+            placeholder="Здесь можно оставить любой отзыв, вопрос или предложение по работе сайта"
           />
         </SubmitForm>
       </Layout>
       <ModalWithButtons
-        width='590px'
+        width="590px"
         isOpen={isOpenModal}
         onClose={closeModal}
-        title='Ваше сообщение отправлено!'
-        ghostBtnText='Написать ещё'
-        primaryBthText='На Главную'
+        title="Ваше сообщение отправлено!"
+        ghostBtnText="Написать ещё"
+        primaryBthText="На Главную"
         onClickGhostBtn={closeModal}
         onClickPrimaryBtn={goToMainPage}
       />
     </>
-  );
-};
+  )
+}
 
-export default Feedback;
+export default Feedback

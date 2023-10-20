@@ -1,27 +1,28 @@
-import s from './Register.module.css';
+import { Radio as MantRadio } from '@mantine/core'
+import React from 'react'
+import { SubmitHandler } from 'react-hook-form'
+import { Link } from 'react-router-dom'
 
-import registerImage from '@/assets/images/register-image.png';
-import { btnClass, btnType, Button, Input, inputTypes, Radio } from '@/shared/ui';
-import { IFormValues, TValidationSubmitFormResolver, validateType } from '@/shared/validation';
-import SubmitForm from '@/components/submitForm/SubmitForm';
-import Layout from '@/components/layout/Layout';
-import Policy from '@/components/policy/Policy';
+import registerImage from '@/assets/images/register-image.png'
+import Layout from '@/components/layout/Layout'
+import Policy from '@/components/policy/Policy'
+import SubmitForm from '@/components/submitForm/SubmitForm'
+import { Button, Input, Radio } from '@/shared/ui'
+import InputPassword from '@/shared/ui/input/InputPassword/InputPassword'
+import InputPhone from '@/shared/ui/input/InputPhone/InputPhone'
+import { IFormValues, TValidationSubmitFormResolver } from '@/shared/validation'
 
-import React from 'react';
-import { SubmitHandler } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import s from './Register.module.css'
 
 const Register = () => {
-  const phoneRef = React.useRef(null);
-
   const onSubmit: SubmitHandler<IFormValues> = (data) => {
     // eslint-disable-next-line no-console
-    console.log(data);
-  };
+    console.log(data)
+  }
 
   return (
     <Layout>
-      <Button className={s.register__goBack} type={btnType.button} variant={btnClass.back}>
+      <Button variant="back" className={s.register__goBack}>
         Назад
       </Button>
       <h2 className={s.register__title}>Регистрация</h2>
@@ -29,65 +30,43 @@ const Register = () => {
         <div className={s.register__formContainer}>
           <SubmitForm
             className={s.register__form}
-            btnText='Зарегистрироваться'
-            btnWidth='100%'
+            btnText="Зарегистрироваться"
+            btnWidth="100%"
             resolverType={TValidationSubmitFormResolver.REGISTER}
             onSubmit={onSubmit}
           >
-            <Input name={validateType.lastName} type={inputTypes.text} labelText='Фамилия' isRequired={true} />
-            <Input name={validateType.firstName} type={inputTypes.text} labelText='Имя' isRequired={true} />
-            <Input name={validateType.patronymic} type={inputTypes.text} labelText='Отчество' />
-            <Input
-              name={validateType.email}
-              type={inputTypes.email}
-              labelText='E-mail'
-              isRequired={true}
-              placeholder='example@domaim.ru'
+            <Input label="Фамилия" />
+            <Input label="Имя" />
+            <Input label="Отчество" />
+            <Input label="E-mail" />
+            <InputPhone label="Телефон" placeholder="+7 999 999 99 99" />
+            <InputPassword
+              label="Пароль"
+              description="Пароль должен содержать не менее 7 символов, буквы в верхнем
+					и нижнем регистре, цифры и спец. символ (ex: ! @ # $ % - & * _)"
             />
-            <Input
-              inputRef={phoneRef}
-              name={validateType.phone}
-              type={inputTypes.phone}
-              labelText='Телефон'
-              placeholder='+7 999 999 99 99'
-            />
-            <Input
-              name={validateType.password}
-              type={inputTypes.password}
-              labelText='Пароль'
-              isRequired={true}
-              commentTip='Пароль должен содержать не менее 7 символов, буквы в верхнем
-					и нижнем регистре, цифры и спец. символ (ex: ! @ # $ % - & * _)'
-            />
-            <Input
-              name={validateType.confirmPassword}
-              type={inputTypes.password}
-              labelText='Повторите пароль'
-              isRequired={true}
-            />
-            <Radio
-              className={s.register__radio}
-              radioItems={[
-                { id: 1, value: 'tutor', text: 'Преподаватель' },
-                { id: 2, value: 'student', text: 'Ученик' },
-              ]}
-              name={validateType.userRole}
-            />
-            <Policy className={s.register__policy} name={validateType.policy} />
+            <InputPassword label="Повторите пароль" />
+            <MantRadio.Group className={s.register__radio}>
+              <Radio value="Tutor" label="Преподователь" />
+              <Radio value="Student" label="Ученик" />
+            </MantRadio.Group>
+            <Policy className={s.register__policy} />
           </SubmitForm>
           <p className={s.register__desc}>
             Уже есть аккаунт?
-            <Link to='/login' className={s.loginLink}>
-              <Button variant={btnClass.common} type={btnType.button}>
-                Войти
-              </Button>
+            <Link to="/login" className={s.loginLink}>
+              <Button variant="transparent">Войти</Button>
             </Link>
           </p>
         </div>
-        <img className={s.register__img} src={registerImage} alt='Регистрация' />
+        <img
+          className={s.register__img}
+          src={registerImage}
+          alt="Регистрация"
+        />
       </div>
     </Layout>
-  );
-};
+  )
+}
 
-export default Register;
+export default Register

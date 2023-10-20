@@ -1,28 +1,92 @@
-.root {
-    width: 100%;
-}
-
 .input {
-    cursor: pointer;
+    border-color: var(--black);
+    border-radius: 12px;
+    padding: 19px 0 19px 12px;
+    font-family: Roboto, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+
+    &[data-error] {
+        color: var(--red);
+        border-color: var(--red);
+
+    }
 }
 
-.input:hover {
-    outline: 1px solid var(--black, #071D48);
+.dropdown {
+    border-radius: 12px;
+    border: 0.5px solid var(--black);
+}
+
+.option {
+    padding: 9px 16px;
+    justify-content: center;
+}
+
+.option:nth-child(odd) {
+    background: var(--inactive);
 
 }
 
-.inputFocus {
-    outline: 1px solid var(--black, #071D48);
+
+.input::placeholder {
+    color: var(--gray);
+    font-family: Roboto, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
-
-.showOptions svg {
-    transition: all .3s ease-in-out;
-    transform: rotate(180deg);
+.label {
+    padding-left: 12px;
+    padding-bottom: 12px;
+    font-family: Roboto, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
-.closeOptions svg {
-    transition: all .3s ease-in-out;
+.error {
+    color: var(--red);
+    padding-left: 12px;
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.description {
+    padding-left: 12px;
+    color: var(--black);
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.wrapper[data-error="true"] + .description {
+    color: var(--red);
+    padding-left: 12px;
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.input[data-expanded='true'] + div[data-position='right'] svg {
+    transform: rotate(-180deg);
+    transition: transform 0.3s ease-in-out;
+}
+
+.input + div[data-position='right'] svg {
     transform: rotate(0);
+    transition: transform 0.3s ease-in-out;
 }
-

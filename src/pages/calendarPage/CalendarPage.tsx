@@ -1,9 +1,8 @@
-import s from './CalendarPage.module.css';
+import Calendar from '@/components/calendar/Calendar'
+import HeaderAuth from '@/components/header/headerAuth/HeaderAuth'
+import Layout from '@/components/layout/Layout'
 
-import Calendar from '@/components/calendar/Calendar';
-import Layout from '@/components/layout/Layout';
-
-import HeaderAuth from '@/components/header/headerAuth/HeaderAuth';
+import s from './CalendarPage.module.css'
 
 const CalendarPage = () => {
   return (
@@ -11,7 +10,7 @@ const CalendarPage = () => {
       <HeaderAuth className={s.calendarPage__header} />
       <Calendar />
     </Layout>
-  );
-};
+  )
+}
 
-export default CalendarPage;
+export default CalendarPage

@@ -1,13 +1,19 @@
-import '../../../index.css';
+import type { Meta, StoryObj } from '@storybook/react'
+import React from 'react'
 
-import type { Meta } from '@storybook/react';
-import { StoryFn } from '@storybook/react';
-import Dropdown from '@/shared/ui/dropdown/Dropdown';
+import Dropdown from './Dropdown'
 
-export default {
-  title: 'Dropdown',
+const meta: Meta<typeof Dropdown> = {
   component: Dropdown,
-} as Meta<typeof Dropdown>;
+  render: ({ ...args }) => (
+    <div style={{ maxWidth: '490px' }}>
+      <Dropdown {...args} />
+    </div>
+  ),
+}
+
+export default meta
+type Story = StoryObj<typeof Dropdown>
 
 const options = [
   {
@@ -22,10 +28,10 @@ const options = [
     label: 'Banana 🍌',
     value: 'Banana 🍌',
   },
-];
+]
 
-export const Dropdowns: StoryFn<typeof Dropdown> = () => (
-  <div style={{ maxWidth: '500px' }}>
-    <Dropdown />
-  </div>
-);
+export const dropdown: Story = {
+  args: {
+    options,
+  },
+}

@@ -1,13 +1,13 @@
-import s from '../Information.module.css';
-import { InformationProps } from '../Information';
+import clsx from 'clsx'
+import React from 'react'
 
-import { btnClass, btnType, Button } from '@/shared/ui';
+import { Button } from '@/shared/ui'
 
-import React from 'react';
-import clsx from 'clsx';
+import { InformationProps } from '../Information'
+import s from '../Information.module.css'
 
 interface InformationContentProps extends InformationProps {
-  className?: string;
+  className?: string
 }
 
 const InformationContent: React.FC<InformationContentProps> = ({
@@ -18,20 +18,20 @@ const InformationContent: React.FC<InformationContentProps> = ({
   onClick,
   btnText,
 }) => {
-  const informationClassName = clsx(className, { [s.information__content]: true });
+  const informationClassName = clsx(className, {
+    [s.information__content]: true,
+  })
 
   return (
     <div className={informationClassName}>
       <div className={s.information__text}>
         <h2 className={s.information__title}>{title}</h2>
         <p className={s.information__desc}>{children}</p>
-        <Button onClick={onClick} variant={btnClass.primary} type={btnType.button}>
-          {btnText}
-        </Button>
+        <Button onClick={onClick}>{btnText}</Button>
       </div>
-      <img className={s.information__image} src={image} alt='Конверт' />
+      <img className={s.information__image} src={image} alt="Конверт" />
     </div>
-  );
-};
+  )
+}
 
-export default InformationContent;
+export default InformationContent

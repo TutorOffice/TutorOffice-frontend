@@ -1,34 +1,30 @@
-import s from './StudentsPageWithCards.module.css';
+import { useState } from 'react'
 
-import testStudents from '../testStudents';
+import AddStudentModal from '@/components/modals/addStudentModal/AddStudentModal'
+import UserCard from '@/components/userCard/UserCard'
+import { userRole } from '@/shared/types/userRole'
+import { Button } from '@/shared/ui'
+import VirtualStudent from '@/shared/ui/virtualStudent/VirtualStudent'
 
-import { btnClass, btnType, Button } from '@/shared/ui';
-import UserCard from '@/components/userCard/UserCard';
-import AddStudentModal from '@/components/modals/addStudentModal/AddStudentModal';
-import { userRole } from '@/shared/types/userRole';
-
-import VirtualStudent from '@/shared/ui/virtualStudent/VirtualStudent';
-
-import { useState } from 'react';
+import testStudents from '../testStudents'
+import s from './StudentsPageWithCards.module.css'
 
 const StudentsPageWithCards = () => {
-  const [isOpenModal, setIsOpenModal] = useState(false);
+  const [isOpenModal, setIsOpenModal] = useState(false)
 
   const openModal = () => {
-    setIsOpenModal(true);
-  };
+    setIsOpenModal(true)
+  }
   const closeModal = () => {
-    setIsOpenModal(false);
-  };
+    setIsOpenModal(false)
+  }
 
   return (
     <>
       <div className={s.studentsPageWithCards}>
         <div className={s.studentsPageWithCards__header}>
           <h2 className={s.studentsPageWithCards__title}>Ученики</h2>
-          <Button onClick={openModal} type={btnType.button} variant={btnClass.primary}>
-            Добавить ученика
-          </Button>
+          <Button onClick={openModal}>Добавить ученика</Button>
         </div>
         <div className={s.studentsPageWithCards__desc}>
           <VirtualStudent />
@@ -45,7 +41,7 @@ const StudentsPageWithCards = () => {
               patronymic={stud.patronymic}
               subject={stud.subject}
               studentSubjectLevel={stud.studentSubjectLevel}
-              btnText='Посмотреть'
+              btnText="Посмотреть"
               linkPath={stud.id.toString()}
             />
           ))}
@@ -53,7 +49,7 @@ const StudentsPageWithCards = () => {
       </div>
       <AddStudentModal isOpen={isOpenModal} onClose={closeModal} />
     </>
-  );
-};
+  )
+}
 
-export default StudentsPageWithCards;
+export default StudentsPageWithCards

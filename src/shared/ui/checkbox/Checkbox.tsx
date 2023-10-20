@@ -1,38 +1,39 @@
-import s from './Checkbox.module.css';
+import {
+  Checkbox as MantCheckbox,
+  CheckboxProps as MantCheckboxProps,
+  ElementProps,
+} from '@mantine/core'
+import React from 'react'
 
-import { validateType } from '@/shared/validation';
+import { ReactComponent as CheckIcon } from '@/assets/icons/checkbox.svg'
 
-import clsx from 'clsx';
-import React, { useState } from 'react';
-import { FieldValues, UseFormRegister } from 'react-hook-form';
+import s from './Checkbox.module.css'
 
-interface CheckboxProps {
-  name?: validateType;
-  register?: UseFormRegister<FieldValues>;
-  className?: string;
+interface CheckboxProps
+  extends MantCheckboxProps,
+    ElementProps<'input', keyof MantCheckboxProps> {
+  className?: string
 }
 
-const Checkbox: React.FC<CheckboxProps> = ({ name, register, className }) => {
-  const [isChecked, setIsChecked] = useState(false);
-  const onChange = () => {
-    setIsChecked(!isChecked);
-  };
+const classNames = {
+  root: s.root,
+  input: s.input,
+  body: s.body,
+  icon: s.icon,
+  inner: s.inner,
+  label: s.label,
+}
 
-  const checkboxClassName = clsx(className, { [s.checkbox]: true });
-
+const Checkbox: React.FC<CheckboxProps> = ({ className, ...props }) => {
   return (
-    <div className={s.checkbox__wrapper}>
-      <input
-        {...(register && name && { ...register(name) })}
-        type='checkbox'
-        id='checkbox'
-        className={checkboxClassName}
-        checked={isChecked}
-        onChange={onChange}
-      />
-      <label htmlFor='checkbox' />
-    </div>
-  );
-};
+    <MantCheckbox
+      size="xl"
+      icon={CheckIcon}
+      classNames={classNames}
+      className={className}
+      {...props}
+    />
+  )
+}
 
-export default Checkbox;
+export default Checkbox

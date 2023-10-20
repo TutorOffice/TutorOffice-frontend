@@ -47,6 +47,6 @@ const testStudents = [
     format: 'PDF',
     tutorName: 'Грозный И.В.',
   },
-];
+]
 
-export default testStudents;
+export default testStudents

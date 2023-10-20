@@ -1,129 +1,68 @@
 .input {
-    width: 100%;
-    color: var(--black);
-    border: 1px solid var(--black);
+    border-color: var(--black);
     border-radius: 12px;
-    padding: 12px 0 12px 12px;
-    margin-bottom: 10px;
-}
+    padding: 19px 0 19px 12px;
+    font-family: Roboto, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 
-.textarea {
-	resize: none;
-	padding: 12px;
-}
 
-.textarea::placeholder {
-	font-family: 'Roboto';
-	font-size: 18px;
-	font-weight: 400;
+    &[data-error] {
+        color: var(--red);
+        border-color: var(--red);
+
+    }
 }
 
 .input::placeholder {
     color: var(--gray);
-}
-
-.input:disabled {
-    color: var(--inactive);
-    border: 1px solid var(--inactive);
-}
-
-.input:disabled[aria-placeholder] {
-    color: var(--inactive);
-}
-
-.inputBlock {
-    position: relative;
-}
-
-.inputs {
-    display: flex;
-    flex-direction: column;
-}
-
-.labelText {
-    text-align: left;
-    padding-left: 12px;
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 400;
+    font-family: Roboto, sans-serif;
     font-size: 18px;
-    line-height: 21px;
-    color: var(--black);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.label {
+    padding-left: 12px;
     padding-bottom: 12px;
-}
-
-.required__icon {
-    color: var(--red);
-}
-
-.commentTip {
-    padding-left: 10px;
-    font-family: 'Roboto', sans-serif;
+    font-family: Roboto, sans-serif;
+    font-size: 18px;
     font-style: normal;
     font-weight: 400;
-    font-size: 14px;
-    line-height: 16px;
-    color: var(--black);
-    padding-top: 8px;
-}
-
-.required {
-    padding-left: 10px;
-    color: var(--red);
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
+    line-height: normal;
 }
 
 .error {
     color: var(--red);
-    border: 1px solid var(--red);
+    padding-left: 12px;
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
-.error::placeholder {
+.description {
+    padding-left: 12px;
+    color: var(--black);
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.wrapper[data-error="true"] + .description {
     color: var(--red);
+    padding-left: 12px;
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
-.error:focus {
-    color: var(--red);
-    border: 1px solid var(--red);
-}
 
-.errorTip {
-    color: var(--red);
-}
-
-.passHide {
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.passHide__icon {
-    width: 20px;
-    height: 20px;
-}
-
-.right {
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 80%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 5px;
-}
-
-.rightCentered {
-    display: flex;
-}
-
-.rightCentered * {
-    display: flex;
-}

@@ -1,11 +1,10 @@
-import s from './Layout.module.css';
+import React from 'react'
 
-import Navbar from '../navbar/Navbar';
-
-import React from 'react';
+import Navbar from '../navbar/Navbar'
+import s from './Layout.module.css'
 
 interface LayoutProps {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 
 const Layout = ({ children }: LayoutProps) => {
@@ -14,7 +13,7 @@ const Layout = ({ children }: LayoutProps) => {
       <Navbar />
       <main className={s.main}>{children}</main>
     </div>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout

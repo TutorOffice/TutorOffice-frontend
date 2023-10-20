@@ -1,12 +1,12 @@
-import { formatDate } from './formatDate';
+import moment from 'moment'
 
-import moment from 'moment';
+import { formatDate } from './formatDate'
 
-export type momentType = ReturnType<typeof moment>;
+export type momentType = ReturnType<typeof moment>
 
-const TOTAL_DAYS = 42;
-const SATURDAY_INDEX = 6;
-const SUNDAY_INDEX = 0;
+const TOTAL_DAYS = 42
+const SATURDAY_INDEX = 6
+const SUNDAY_INDEX = 0
 
 export const momentConfig = {
   week: { dow: 1 },
@@ -25,32 +25,39 @@ export const momentConfig = {
     'Декабрь',
   ],
   weekdays: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
-};
+}
 
 const getStartDay: (today: momentType) => momentType = (today) => {
-  return today.clone().startOf('month').startOf('week').clone().subtract(1, 'day');
-};
-export const getDaysArray: (today: momentType) => Array<momentType> = (today) => {
-  const startDay = getStartDay(today);
-  return [...Array(TOTAL_DAYS)].map(() => startDay.add(1, 'day').clone());
-};
+  return today
+    .clone()
+    .startOf('month')
+    .startOf('week')
+    .clone()
+    .subtract(1, 'day')
+}
+export const getDaysArray: (today: momentType) => Array<momentType> = (
+  today,
+) => {
+  const startDay = getStartDay(today)
+  return [...new Array(TOTAL_DAYS)].map(() => startDay.add(1, 'day').clone())
+}
 
 export const getToday: (today: momentType) => string = (today) => {
-  return formatDate(today.clone().format('DD MMMM YYYY'));
-};
+  return formatDate(today.clone().format('DD MMMM YYYY'))
+}
 export const getCurrentMonth: (today: momentType) => string = (today) => {
-  return today.clone().format('MMMM');
-};
+  return today.clone().format('MMMM')
+}
 export const getCurrentYear: (today: momentType) => string = (today) => {
-  return today.clone().format('YYYY');
-};
+  return today.clone().format('YYYY')
+}
 export const getPrevMonth: (today: momentType) => string = (today) => {
-  return today.clone().subtract(1, 'month').format('MMMM');
-};
+  return today.clone().subtract(1, 'month').format('MMMM')
+}
 export const getNextMonth: (today: momentType) => string = (today) => {
-  return today.clone().add(1, 'month').format('MMMM');
-};
+  return today.clone().add(1, 'month').format('MMMM')
+}
 
 export const getIsWeekend: (day: number) => boolean = (day) => {
-  return day === SATURDAY_INDEX || day === SUNDAY_INDEX;
-};
+  return day === SATURDAY_INDEX || day === SUNDAY_INDEX
+}

@@ -1,38 +1,39 @@
 .login__goBack {
-	margin-bottom: 200px;
+    margin-bottom: 200px;
 }
 
 .login__title {
-  margin-bottom: 35px;
-  font-family: 'Raleway';
-  font-size: 24px;
-  font-weight: 600;
+    margin-bottom: 35px;
+    font-family: 'Raleway';
+    font-size: 24px;
+    font-weight: 600;
 }
 
 .login__form {
-	margin-bottom: 30px;
+    margin-bottom: 30px;
 }
 
 .link_changePass {
-	display: block;
-	margin-bottom: 20px;
+    display: block;
+    margin-bottom: 20px;
 }
 
 .login__links_row {
-  display: flex;
-  column-gap: 10px;
-	font-size: 18px;
+    display: flex;
+    column-gap: 10px;
+    font-size: 18px;
+    align-items: center;
 }
 
 @media screen and (max-width: 1100px) {
-	.login__goBack {
-		margin: 50px 0 40px 0;
-	}
+    .login__goBack {
+        margin: 50px 0 40px 0;
+    }
 }
 
 @media screen and (max-width: 819px) {
-	.login__title {
-		margin-bottom: 40px;
-		font-size: 22px;
-	}
+    .login__title {
+        margin-bottom: 40px;
+        font-size: 22px;
+    }
 }

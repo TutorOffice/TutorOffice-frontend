@@ -1,27 +1,50 @@
-import { Button, Input, inputTypes } from '../index';
+import type { Meta, StoryObj } from '@storybook/react'
+import React from 'react'
 
-import type { Meta } from '@storybook/react';
-import { StoryFn } from '@storybook/react';
-import '../../../index.css';
+import Input from './Input'
 
-export default {
-  title: 'Input',
+const meta: Meta<typeof Input> = {
   component: Input,
-} as Meta<typeof Input>;
+  render: ({ ...args }) => (
+    <div style={{ maxWidth: '490px' }}>
+      <Input {...args} />
+    </div>
+  ),
+}
 
-const STATES = [
-  { type: inputTypes.text, labelText: 'Text', commentTip: 'commentTip', placeholder: 'Placeholder' },
-  { type: inputTypes.phone, labelText: 'Phone' },
-  { type: inputTypes.email, labelText: 'Email' },
-  { type: inputTypes.password, labelText: 'Password', isPassword: true },
-  { type: inputTypes.text, labelText: 'Error', isError: true, placeholder: 'Placeholder' },
-  { type: inputTypes.text, labelText: 'Required', isRequired: true },
-  { type: inputTypes.text, labelText: 'Disabled', isDisabled: true, placeholder: 'Placeholder' },
-];
-export const All: StoryFn<typeof Button> = () => (
-  <div style={{ display: 'grid', gap: '20px' }}>
-    {STATES.map((props, index) => (
-      <Input key={index} {...props} />
-    ))}
-  </div>
-);
+export default meta
+type Story = StoryObj<typeof Input>
+
+export const input: Story = {
+  args: {
+    label: 'Input',
+    placeholder: 'placeholder',
+    description: 'description',
+  },
+}
+
+export const inputWithErrorBoolean: Story = {
+  args: {
+    label: 'Input',
+    placeholder: 'placeholder',
+    description: 'description',
+    error: true,
+  },
+}
+export const inputWithErrorString: Story = {
+  args: {
+    label: 'Input',
+    placeholder: 'placeholder',
+    description: 'description',
+    error: 'error',
+  },
+}
+
+export const inputWithCustomOrder: Story = {
+  args: {
+    label: 'Input',
+    placeholder: 'placeholder',
+    description: 'description',
+    inputWrapperOrder: ['label', 'description', 'input', 'error'],
+  },
+}

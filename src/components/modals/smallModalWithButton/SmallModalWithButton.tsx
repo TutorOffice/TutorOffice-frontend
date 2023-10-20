@@ -1,11 +1,11 @@
-import { btnClass, btnType, Button, Modal } from '@/shared/ui';
-import { ModalProps } from '@/shared/ui/modal/Modal';
+import React from 'react'
 
-import React from 'react';
+import { Button, Modal } from '@/shared/ui'
+import { ModalProps } from '@/shared/ui/modal/Modal'
 
 interface SmallModalWithButtonProps extends ModalProps {
-  btnText: string;
-  onClickButton: () => void;
+  btnText: string
+  onClickButton: () => void
 }
 
 const SmallModalWithButton: React.FC<SmallModalWithButtonProps> = ({
@@ -18,12 +18,16 @@ const SmallModalWithButton: React.FC<SmallModalWithButtonProps> = ({
   onClickButton,
 }) => {
   return (
-    <Modal title={title} smallFont={smallFont} isOpen={isOpen} onClose={onClose} width={width}>
-      <Button onClick={onClickButton} type={btnType.button} variant={btnClass.primary}>
-        {btnText}
-      </Button>
+    <Modal
+      title={title}
+      smallFont={smallFont}
+      isOpen={isOpen}
+      onClose={onClose}
+      width={width}
+    >
+      <Button onClick={onClickButton}>{btnText}</Button>
     </Modal>
-  );
-};
+  )
+}
 
-export default SmallModalWithButton;
+export default SmallModalWithButton

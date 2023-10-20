@@ -1,4 +1,4 @@
-import userPhoto from '@/assets/images/user-photo.jpg';
+import userPhoto from '@/assets/images/user-photo.jpg'
 
 export const testData = [
   {
@@ -37,4 +37,4 @@ export const testData = [
     todo: 2,
     done: 10,
   },
-];
+]

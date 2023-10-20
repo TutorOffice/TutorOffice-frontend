@@ -1,17 +1,56 @@
-.root {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    width: 100%;
-    align-items: flex-start;
+.input {
+    border-color: var(--black);
+    border-radius: 12px;
+    padding: 12px;
+    font-family: Roboto, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+
+    &[data-error] {
+        color: var(--red);
+        border-color: var(--red);
+
+    }
 }
 
+.input::placeholder {
+    color: var(--gray);
+    font-family: Roboto, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
 
-.root textarea {
-    border-radius: 12px;
-    border: 1px solid var(--black, #071D48);
-    resize: none;
-    padding: 10px;
-    height: 108px;
+.label {
+    padding-left: 12px;
+    padding-bottom: 12px;
+    font-family: Roboto, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
 
+.error {
+    color: var(--red);
+    padding-left: 12px;
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.description {
+    padding-left: 12px;
+    color: var(--black);
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }

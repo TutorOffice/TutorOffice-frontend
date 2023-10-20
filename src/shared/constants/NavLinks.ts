@@ -1,6 +1,6 @@
 interface ILinkItem {
-  text: string;
-  link: string;
+  text: string
+  link: string
 }
 
 export const navLinksAuth: ILinkItem[] = [
@@ -36,7 +36,7 @@ export const navLinksAuth: ILinkItem[] = [
     text: 'Обратная связь',
     link: '/feedback',
   },
-];
+]
 
 export const navLinks: ILinkItem[] = [
   {
@@ -51,4 +51,4 @@ export const navLinks: ILinkItem[] = [
     text: 'Обратная связь',
     link: '/feedback',
   },
-];
+]

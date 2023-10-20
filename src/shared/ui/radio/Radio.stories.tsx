@@ -1,21 +1,33 @@
-import { validateType } from '@/shared/validation';
-import '../../../index.css';
+import { Radio as MantRadio } from '@mantine/core'
+import type { Meta, StoryObj } from '@storybook/react'
+import React from 'react'
 
-import Radio from './Radio';
+import s from '@/pages/register/Register.module.css'
 
-import type { Meta } from '@storybook/react';
-import { StoryFn } from '@storybook/react';
+import Radio from './Radio'
 
-export default {
-  title: 'Radio',
+const meta: Meta<typeof Radio> = {
   component: Radio,
-} as Meta<typeof Radio>;
+}
 
-const radioItems=[
-	{ id: 1, value: 'tutor', text: 'Преподаватель' },
-	{ id: 2, value: 'student', text: 'Ученик' },
-]
+export default meta
+type Story = StoryObj<typeof Radio>
 
-export const Radios: StoryFn<typeof Radio> = () => (
-	<Radio radioItems={radioItems} name={validateType.userRole} />
-);
+export const radio: Story = {
+  render: () => (
+    <div style={{ maxWidth: '490px' }}>
+      <Radio label="Label" />
+    </div>
+  ),
+}
+
+export const radioGroup: Story = {
+  render: () => (
+    <div style={{ maxWidth: '490px' }}>
+      <MantRadio.Group className={s.register__radio}>
+        <Radio value="Tutor" label="Преподователь" />
+        <Radio value="Student" label="Ученик" />
+      </MantRadio.Group>
+    </div>
+  ),
+}

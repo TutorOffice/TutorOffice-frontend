@@ -1,78 +1,78 @@
-.button {
-    width: fit-content;
+.root {
     padding: 18px 60px;
-    font-family: 'Raleway', sans-serif;
+    height: 57px;
+    border-radius: 20px;
+
+
+    &[data-disabled=true] {
+        color: var(--gray);
+    }
+
+}
+
+.primary {
+    color: var(--black);
+    font-family: Raleway, sans-serif;
+    font-size: 18px;
     font-style: normal;
     font-weight: 600;
+    line-height: normal;
+
+    &[data-variant='transparent'] {
+        padding: 0;
+        height: auto;
+        color: var(--orange);
+
+        &[data-disabled=true] {
+            background: transparent;
+        }
+    }
+
+    &[data-variant='back'] {
+        padding: 0;
+        height: auto;
+        color: var(--orange);
+        background: transparent;
+    }
+}
+
+.secondary {
+    color: var(--white);
+    font-family: Raleway, sans-serif;
     font-size: 18px;
-    line-height: 21px;
-    color: var(--black);
-    border-radius: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+    &[data-variant='outline'] {
+        color: var(--blue);
+    }
+
+    &[data-variant='transparent'] {
+        padding: 0;
+        height: auto;
+        color: var(--black);
+        font-weight: 600;
+
+        &[data-disabled=true] {
+            background: transparent;
+            color: var(--gray);
+        }
+    }
+
+    &[data-variant='back'] {
+        padding: 0;
+        height: auto;
+        color: var(--orange);
+        background: transparent;
+    }
 }
 
-.button:disabled {
-    background-color: var(--inactive);
-    color: var(--gray);
-    border: 1px solid var(--gray);
-    pointer-events: none;
-}
-
-.buttonPrimary {
-    background-color: var(--orange);
-    transition: background-color 0.3s ease-in-out;
-}
-
-.buttonPrimary:hover {
-    background-color: var(--orange-hover);
-}
-
-.buttonGhost {
-    background: var(--white);
-    outline: 1px solid var(--blue);
-    border-radius: 20px;
-    color: var(--blue);
-    transition: .1s ease-in-out;
-
-}
-
-.buttonGhost:hover {
-    outline: 2px solid var(--blue);
-    transition: .1s ease-in-out;
-}
-
-.buttonBack {
-    padding: 0;
-    align-self: flex-start;
-    color: var(--orange);
-    transition: color 0.3s ease-in-out;
-}
-
-.buttonBack:hover {
-    color: var(--orange-hover);
-}
-
-.buttonBack:active {
-    color: var(--orange-pressed);
-}
-
-.buttonCommon {
-    padding: 0;
-    align-self: flex-start;
-    color: var(--orange);
-    transition: color 0.3s ease-in-out;
-}
-
-.buttonCommon:hover {
-    color: var(--orange-hover);
-}
-
-.buttonCommon:active {
-    color: var(--orange-pressed);
-}
 
 @media screen and (max-width: 819px) {
-	.button:disabled, .buttonPrimary, .buttonGhost {
-		padding: 15px 60px;
-		font-size: 16px;
-	}
+    .root {
+        padding: 10px 40px;
+        font-size: 16px;
+        height: 39px;
+    }
 }

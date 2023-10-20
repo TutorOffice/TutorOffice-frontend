@@ -2,27 +2,29 @@
 @import url(./assets/vendor/fonts.css);
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+
 :root {
-  --black: #071d48;
-  --orange: #ffbd59;
-  --orange-hover: #ffab2b;
-  --orange-pressed: #ff9a00;
-  --red: #ec0f0f;
-  --blue: #2459bf;
-  --inactive: #efeeee;
-  --white: #ffffff;
-  --gray: #b8bbbf;
-  --green: #27bf24;
-  --light-green: #b6f0b5;
-  --dark-gray: #9ea1a6;
+    --black: #071d48;
+    --orange: #ffbd59;
+    --orange-hover: #ffab2b;
+    --orange-pressed: #ff9a00;
+    --red: #ec0f0f;
+    --blue: #2459bf;
+    --inactive: #efeeee;
+    --white: #ffffff;
+    --gray: #b8bbbf;
+    --green: #27bf24;
+    --light-green: #b6f0b5;
+    --dark-gray: #9ea1a6;
 }
 
 body {
-  font-family: 'Inter', Arial, sans-serif;
-  color: var(--black);
+    font-family: 'Inter', Arial, sans-serif;
+    color: var(--black);
 }
+

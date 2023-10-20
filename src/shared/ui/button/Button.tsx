@@ -1,54 +1,52 @@
-import s from './Button.module.css';
+import {
+  Button as MantButton,
+  ButtonProps as MantButtonProps,
+  ButtonVariant as MantButtonVariant,
+  ElementProps,
+} from '@mantine/core'
+import clsx from 'clsx'
+import React, { ReactNode } from 'react'
 
-import { useBack } from './useBack';
+import { useBack } from '@/shared/ui/button/useBack'
 
-import React from 'react';
-import clsx from 'clsx';
+import s from './Button.module.css'
 
-export enum btnClass {
-  primary = 'primary',
-  ghost = 'ghost',
-  back = 'back',
-  common = 'common',
+type ButtonVariant = MantButtonVariant | 'back'
+
+export interface ButtonProps
+  extends MantButtonProps,
+    ElementProps<'button', keyof MantButtonProps> {
+  children: ReactNode
+  color?: 'primaryColor' | 'secondaryColor'
+  variant?: ButtonVariant
 }
 
-export enum btnType {
-  button = 'button',
-  submit = 'submit',
-  reset = 'reset',
-}
-
-interface ButtonProps {
-  onClick?: () => void;
-  children: React.ReactNode;
-  variant: btnClass;
-  isDisabled?: boolean;
-  type: btnType;
-  width?: string;
-  className?: string;
-}
-
-const Button: React.FC<ButtonProps> = ({ onClick, children, variant, isDisabled, type, width, className }) => {
-  const buttonClassName = clsx(className, {
-    [s.button]: true,
-    [s.buttonPrimary]: variant === btnClass.primary && !isDisabled,
-    [s.buttonGhost]: variant === btnClass.ghost && !isDisabled,
-    [s.buttonBack]: variant === btnClass.back && !isDisabled,
-    [s.buttonCommon]: variant === btnClass.common && !isDisabled,
-  });
-  const [goBack] = useBack();
+const Button: React.FC<ButtonProps> = ({
+  children,
+  color = 'primaryColor',
+  className,
+  variant,
+  ...props
+}) => {
+  const classes = clsx(className, {
+    [s.root]: true,
+    [s.primary]: color === 'primaryColor',
+    [s.secondary]: color === 'secondaryColor',
+  })
+  const goBack = useBack()
+  const isBack = (variant === 'back' && goBack) || undefined
 
   return (
-    <button
-      type={type}
-      onClick={variant === btnClass.back ? goBack : onClick}
-      disabled={isDisabled}
-      className={buttonClassName}
-      style={{ width: width }}
+    <MantButton
+      onClick={isBack}
+      color={color}
+      variant={variant}
+      className={classes}
+      {...props}
     >
       {children}
-    </button>
-  );
-};
+    </MantButton>
+  )
+}
 
-export default Button;
+export default Button

@@ -1,36 +1,33 @@
-import s from './HeaderNoAuth.module.css';
+import clsx from 'clsx'
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-import HeaderMain from '../headerMain/HeaderMain';
+import { Button, ButtonGroup } from '@/shared/ui'
 
-import { Button, ButtonGroup, btnClass, btnType } from '@/shared/ui';
-
-import React from 'react';
-import { Link } from 'react-router-dom';
-import clsx from 'clsx';
+import HeaderMain from '../headerMain/HeaderMain'
+import s from './HeaderNoAuth.module.css'
 
 interface HeaderNoAuthProps {
-  className?: string;
+  className?: string
 }
 
 const HeaderNoAuth: React.FC<HeaderNoAuthProps> = ({ className }) => {
-  const headerClassName = clsx(className, { [s.headerNoAuth]: true });
+  const headerClassName = clsx(className, { [s.headerNoAuth]: true })
 
   return (
     <HeaderMain className={headerClassName}>
       <ButtonGroup>
-        <Link to='/login'>
-          <Button type={btnType.button} variant={btnClass.ghost}>
+        <Link to="/login">
+          <Button color="secondaryColor" variant="outline">
             Вход
           </Button>
         </Link>
-        <Link to='/register'>
-          <Button type={btnType.button} variant={btnClass.primary}>
-            Регистрация
-          </Button>
+        <Link to="/register">
+          <Button>Регистрация</Button>
         </Link>
       </ButtonGroup>
     </HeaderMain>
-  );
-};
+  )
+}
 
-export default HeaderNoAuth;
+export default HeaderNoAuth

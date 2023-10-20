@@ -1,28 +1,32 @@
-import s from './Calendar.module.css';
+import moment from 'moment'
+import React, { useState } from 'react'
 
-import CalendarHeader from './calendarHeader/CalendarHeader';
-import CalendarItem from './calendarItem/CalendarItem';
-import CalendarWeekDays from './calendarWeekDays/CalendarWeekDays';
+import {
+  getCurrentMonth,
+  getCurrentYear,
+  getDaysArray,
+  momentConfig,
+} from '@/shared/utils'
 
-import { getCurrentMonth, getCurrentYear, getDaysArray, momentConfig } from '@/shared/utils';
-
-import React, { useState } from 'react';
-import moment from 'moment';
+import s from './Calendar.module.css'
+import CalendarHeader from './calendarHeader/CalendarHeader'
+import CalendarItem from './calendarItem/CalendarItem'
+import CalendarWeekDays from './calendarWeekDays/CalendarWeekDays'
 
 const Calendar = () => {
-  moment.updateLocale('ru', momentConfig);
-  const [today, setToday] = useState(moment());
+  moment.updateLocale('ru', momentConfig)
+  const [today, setToday] = useState(moment())
 
-  const daysArray = getDaysArray(today);
-  const currentMonth = getCurrentMonth(today);
-  const currentYear = getCurrentYear(today);
+  const daysArray = getDaysArray(today)
+  const currentMonth = getCurrentMonth(today)
+  const currentYear = getCurrentYear(today)
 
   const prevHandler = () => {
-    setToday((prev) => prev.clone().subtract(1, 'month'));
-  };
+    setToday((prev) => prev.clone().subtract(1, 'month'))
+  }
   const nextHandler = () => {
-    setToday((prev) => prev.clone().add(1, 'month'));
-  };
+    setToday((prev) => prev.clone().add(1, 'month'))
+  }
 
   return (
     <div className={s.calendarWrapper}>
@@ -44,7 +48,7 @@ const Calendar = () => {
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Calendar;
+export default Calendar

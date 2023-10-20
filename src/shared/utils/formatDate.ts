@@ -1,6 +1,6 @@
 export const formatDate: (date: string) => string = (date) => {
-  const newDate = date.toLowerCase().split(' ');
-  const month = newDate[1];
+  const newDate = date.toLowerCase().split(' ')
+  const month = newDate[1]
 
   const months: { [key: string]: string } = {
     январь: 'января',
@@ -15,8 +15,8 @@ export const formatDate: (date: string) => string = (date) => {
     октябрь: 'октября',
     ноябрь: 'ноября',
     декабрь: 'декабря',
-  };
+  }
 
-  newDate[1] = months[month];
-  return newDate.join(' ');
-};
+  newDate[1] = months[month]
+  return newDate.join(' ')
+}

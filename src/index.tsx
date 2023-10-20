@@ -1,13 +1,19 @@
-import App from './components/app/App';
+import '@mantine/core/styles.css'
+import './index.css'
 
-import ReactDOM from 'react-dom/client';
+import { MantineProvider } from '@mantine/core'
+import ReactDOM from 'react-dom/client'
+import { BrowserRouter } from 'react-router-dom'
 
-import { BrowserRouter } from 'react-router-dom';
-import './index.css';
+import { theme } from '@/shared/constants/theme'
 
-const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+import App from './components/app/App'
+
+const root = ReactDOM.createRoot(document.querySelector('#root') as HTMLElement)
 root.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
-);
+  <MantineProvider theme={theme}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </MantineProvider>,
+)

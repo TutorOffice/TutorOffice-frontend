@@ -1,15 +1,15 @@
-import s from './ModalWithButtons.module.css';
+import React from 'react'
 
-import { btnClass, btnType, Button, ButtonGroup, Modal } from '@/shared/ui';
-import { ModalProps } from '@/shared/ui/modal/Modal';
+import { Button, ButtonGroup, Modal } from '@/shared/ui'
+import { ModalProps } from '@/shared/ui/modal/Modal'
 
-import React from 'react';
+import s from './ModalWithButtons.module.css'
 
 interface ModalWithButtonsProps extends ModalProps {
-  ghostBtnText: string;
-  primaryBthText: string;
-  onClickGhostBtn?: () => void;
-  onClickPrimaryBtn?: () => void;
+  ghostBtnText: string
+  primaryBthText: string
+  onClickGhostBtn?: () => void
+  onClickPrimaryBtn?: () => void
 }
 
 const ModalWithButtons: React.FC<ModalWithButtonsProps> = ({
@@ -25,18 +25,20 @@ const ModalWithButtons: React.FC<ModalWithButtonsProps> = ({
 }) => {
   return (
     <>
-      <Modal title={title} isOpen={isOpen} onClose={onClose} width={width} smallFont={smallFont}>
-        <ButtonGroup className={s.modal__btnGroup} width='100%'>
-          <Button onClick={onClickGhostBtn} type={btnType.button} variant={btnClass.ghost}>
-            {ghostBtnText}
-          </Button>
-          <Button onClick={onClickPrimaryBtn} type={btnType.button} variant={btnClass.primary}>
-            {primaryBthText}
-          </Button>
+      <Modal
+        title={title}
+        isOpen={isOpen}
+        onClose={onClose}
+        width={width}
+        smallFont={smallFont}
+      >
+        <ButtonGroup className={s.modal__btnGroup} width="100%">
+          <Button onClick={onClickGhostBtn}>{ghostBtnText}</Button>
+          <Button onClick={onClickPrimaryBtn}>{primaryBthText}</Button>
         </ButtonGroup>
       </Modal>
     </>
-  );
-};
+  )
+}
 
-export default ModalWithButtons;
+export default ModalWithButtons

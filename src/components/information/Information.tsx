@@ -1,31 +1,39 @@
-import s from './Information.module.css';
+import React from 'react'
 
-import InformationContent from './informationContent/InformationContent';
+import Layout from '@/components/layout/Layout'
+import { Button } from '@/shared/ui'
 
-import Layout from '@/components/layout/Layout';
-import { btnClass, btnType, Button } from '@/shared/ui';
-
-import React from 'react';
+import s from './Information.module.css'
+import InformationContent from './informationContent/InformationContent'
 
 export interface InformationProps {
-  title: string;
-  children: React.ReactNode;
-  btnText: string;
-  image: string;
-  onClick?: () => void;
+  title: string
+  children: React.ReactNode
+  btnText: string
+  image: string
+  onClick?: () => void
 }
 
-const Information: React.FC<InformationProps> = ({ children, title, btnText, image, onClick }) => {
+const Information: React.FC<InformationProps> = ({
+  children,
+  title,
+  btnText,
+  image,
+  onClick,
+}) => {
   return (
     <Layout>
-      <Button className={s.information__backBtn} variant={btnClass.back} type={btnType.button}>
-        Назад
-      </Button>
-      <InformationContent onClick={onClick} title={title} btnText={btnText} image={image}>
+      <Button className={s.information__backBtn}>Назад</Button>
+      <InformationContent
+        onClick={onClick}
+        title={title}
+        btnText={btnText}
+        image={image}
+      >
         {children}
       </InformationContent>
     </Layout>
-  );
-};
+  )
+}
 
-export default Information;
+export default Information

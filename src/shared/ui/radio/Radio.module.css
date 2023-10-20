@@ -1,5 +1,33 @@
 .radio {
-	display: flex;
-	flex-direction: column;
-	gap: 30px;
+    cursor: pointer;
+    background: transparent;
+    border-color: var(--black);
+}
+
+.label {
+    cursor: pointer;
+    color: var(--black);
+    font-family: Raleway, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.body {
+    align-items: center;
+}
+
+.icon path {
+    fill: var(--black);
+
+}
+
+.root[data-checked=true] .icon {
+    --_radio-icon-opacity: 1;
+    --_radio-icon-transform: scale(1.5);
+}
+
+.labelWrapper {
+    flex: 1 1 auto;
 }

@@ -1,0 +1,87 @@
+.input {
+    cursor: pointer;
+    border-color: var(--black);
+    border-radius: 12px;
+    font-family: Roboto, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 19px 0 19px 12px;
+
+    &[data-error] {
+        color: var(--red);
+        border-color: var(--red);
+
+    }
+}
+
+.dropdown {
+    border-radius: 12px;
+    border: 0.5px solid var(--black);
+}
+
+.option {
+    padding: 10px 20px;
+    justify-content: center;
+}
+
+
+.input::placeholder {
+    color: var(--black);
+    font-family: Raleway, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.label {
+    padding-left: 12px;
+    padding-bottom: 12px;
+    font-family: Roboto, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.error {
+    color: var(--red);
+    padding-left: 12px;
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.description {
+    padding-left: 12px;
+    color: var(--black);
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.wrapper[data-error="true"] + .description {
+    color: var(--red);
+    padding-left: 12px;
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.input[data-expanded='true'] + div[data-position='right'] svg {
+    transform: rotate(-180deg);
+    transition: transform 0.3s ease-in-out;
+}
+
+.input + div[data-position='right'] svg {
+    transform: rotate(0);
+    transition: transform 0.3s ease-in-out;
+}

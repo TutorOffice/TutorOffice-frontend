@@ -1,122 +1,86 @@
-import clsx from 'clsx'
-import React, { ChangeEvent, FC, useEffect, useRef, useState } from 'react'
 import {
-  Control,
-  Controller,
-  FieldValues,
-  UseFormRegister,
-} from 'react-hook-form'
+  Combobox,
+  ComboboxProps,
+  ElementProps,
+  Radio as MantRadio,
+  TextInput,
+  useCombobox,
+} from '@mantine/core'
+import React, { useState } from 'react'
 
-import { ReactComponent as Icon } from '@/assets/icons/select-down.svg'
-import { Input } from '@/shared/ui'
-import { RadioItems } from '@/shared/ui/radio/Radio'
-import RadioItem from '@/shared/ui/radio/radioItem/RadioItem'
-import { validateType } from '@/shared/validation'
+import { ReactComponent as ArrowIcon } from '@/assets/icons/select-down.svg'
+import { Radio } from '@/shared/ui'
 
-import s from './dropdown.module.css'
+import s from './Dropdown.module.css'
 
-interface DropdownProps {
-  radioItems?: RadioItems[]
-  name: validateType
-  register?: UseFormRegister<FieldValues>
-  control?: Control<FieldValues>
+interface DropdownProps
+  extends ComboboxProps,
+    ElementProps<'input', keyof ComboboxProps> {
+  className?: string
 }
 
-const defaultRadioItems = [
-  { id: 1, value: 'weight', text: 'по размеру файла' },
-  { id: 2, value: 'date', text: 'по дате' },
+const groceries = [
+  '🍎 Apples',
+  '🍌 Bananas',
+  '🥦 Broccoli',
+  '🥕 Carrots',
+  '🍫 Chocolate',
 ]
 
-const Dropdown: FC<DropdownProps> = ({
-  radioItems = defaultRadioItems,
-  name,
-  register,
-  control,
-}) => {
-  const [showOptions, setShowOptions] = useState(false)
-  const ref = useRef<HTMLDivElement>(null)
-  const inputRef = useRef<HTMLInputElement>(null)
+const classNames = {
+  input: s.input,
+  label: s.label,
+  error: s.error,
+  description: s.description,
+  wrapper: s.wrapper,
+  option: s.option,
+  options: s.options,
+  dropdown: s.dropdown,
+}
 
-  const [radioValue, setRadioValue] = useState(radioItems[0].value)
-  const changeRadioValue = (e: ChangeEvent<HTMLInputElement>) => {
-    setRadioValue(e.target.value)
-  }
+const Dropdown: React.FC<DropdownProps> = ({ className, ...props }) => {
+  const combobox = useCombobox()
 
-  const classNameOptions = clsx(s.hide, {
-    [s.showOptions]: showOptions,
-    [s.closeOptions]: !showOptions,
-  })
-  const classNameSelect = clsx(s.input, {
-    [s.inputFocus]: showOptions,
-  })
+  const [value, setValue] = useState<string>('')
 
-  const handlerOptions = () => {
-    setShowOptions(!showOptions)
-    inputRef.current?.focus()
-  }
-
-  useEffect(() => {
-    const checkIfClickedOutside = (e: TouchEvent | MouseEvent) => {
-      if (
-        showOptions &&
-        ref.current &&
-        !ref.current.contains(e.target as Node)
-      ) {
-        setShowOptions(false)
-      }
-    }
-    document.addEventListener('mousedown', checkIfClickedOutside)
-    return () => {
-      document.removeEventListener('mousedown', checkIfClickedOutside)
-    }
-  }, [showOptions])
+  const options = groceries.map((item) => (
+    <Radio
+      key={item}
+      style={{ padding: '9px 16px' }}
+      onClick={() => setValue(item)}
+      value={item}
+      label={item}
+    />
+  ))
 
   return (
-    <div ref={ref} className={s.root}>
-      <Controller
-        name={name}
-        control={control}
-        render={({ field }) => (
-          <Input
-            onClick={handlerOptions}
-            placeholder="Сортировать"
-            inputRef={inputRef}
-            className={classNameSelect}
-            type={inputTypes.text}
-            right={
-              <button
-                onClick={handlerOptions}
-                type="button"
-                className={classNameOptions}
-              >
-                <Icon />
-              </button>
-            }
-          >
-            {showOptions && (
-              <div className={s.options}>
-                {radioItems.map((obj) => {
-                  return (
-                    <div key={obj.value} className={s.option}>
-                      <RadioItem
-                        key={obj.id}
-                        itemValue={obj.value}
-                        labelText={obj.text}
-                        register={register}
-                        name={name}
-                        value={radioValue}
-                        changeValue={changeRadioValue}
-                        changeValueStorybook={field.onChange}
-                      />
-                    </div>
-                  )
-                })}
-              </div>
-            )}
-          </Input>
-        )}
-      />
-    </div>
+    <Combobox
+      classNames={classNames}
+      store={combobox}
+      onOptionSubmit={(optionValue) => {
+        setValue(optionValue)
+        combobox.closeDropdown()
+      }}
+      withinPortal={false}
+      {...props}
+    >
+      <Combobox.Target>
+        <TextInput
+          className={className}
+          classNames={classNames}
+          placeholder="Сортировать"
+          value={value}
+          rightSection={<ArrowIcon />}
+          readOnly
+          onClick={() => combobox.openDropdown()}
+          onFocus={() => combobox.openDropdown()}
+        />
+      </Combobox.Target>
+
+      <Combobox.Dropdown>
+        <MantRadio.Group>{options}</MantRadio.Group>
+      </Combobox.Dropdown>
+    </Combobox>
   )
 }
 

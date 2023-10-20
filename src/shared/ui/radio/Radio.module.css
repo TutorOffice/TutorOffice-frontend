@@ -27,3 +27,7 @@
     --_radio-icon-opacity: 1;
     --_radio-icon-transform: scale(1.5);
 }
+
+.labelWrapper {
+    flex: 1 1 auto;
+}

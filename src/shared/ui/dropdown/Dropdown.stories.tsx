@@ -1,3 +1,4 @@
+/*
 import '../../../index.css'
 
 import type { Meta } from '@storybook/react'
@@ -30,3 +31,4 @@ export const Dropdowns: StoryFn<typeof Dropdown> = () => (
     <Dropdown />
   </div>
 )
+*/

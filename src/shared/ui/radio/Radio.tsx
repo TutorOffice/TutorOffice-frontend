@@ -20,6 +20,7 @@ const classNames = {
   icon: s.icon,
   inner: s.inner,
   label: s.label,
+  labelWrapper: s.labelWrapper,
 }
 
 const Radio: React.FC<TextAreaProps> = ({ className, ...props }) => {

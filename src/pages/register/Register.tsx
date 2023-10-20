@@ -10,11 +10,7 @@ import SubmitForm from '@/components/submitForm/SubmitForm'
 import { Button, Input, Radio } from '@/shared/ui'
 import InputPassword from '@/shared/ui/input/InputPassword/InputPassword'
 import InputPhone from '@/shared/ui/input/InputPhone/InputPhone'
-import {
-  IFormValues,
-  TValidationSubmitFormResolver,
-  validateType,
-} from '@/shared/validation'
+import { IFormValues, TValidationSubmitFormResolver } from '@/shared/validation'
 
 import s from './Register.module.css'
 
@@ -54,7 +50,7 @@ const Register = () => {
               <Radio value="Tutor" label="Преподователь" />
               <Radio value="Student" label="Ученик" />
             </MantRadio.Group>
-            <Policy className={s.register__policy} name={validateType.policy} />
+            <Policy className={s.register__policy} />
           </SubmitForm>
           <p className={s.register__desc}>
             Уже есть аккаунт?

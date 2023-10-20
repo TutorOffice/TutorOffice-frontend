@@ -2,7 +2,6 @@ const { configure, presets } = require('eslint-kit')
 
 module.exports = configure({
   allowDebug: process.env.NODE_ENV !== 'production',
-  mode: 'only-warns',
   presets: [
     presets.imports({
       sort: {

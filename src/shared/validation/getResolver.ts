@@ -27,5 +27,7 @@ export const getResolver = (type: string) => {
       return yupResolver(profileSchema)
     case TValidationSubmitFormResolver.FEEDBACK:
       return yupResolver(feedbackSchema)
+    default:
+      break
   }
 }

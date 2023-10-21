@@ -1,4 +1,5 @@
 import { Radio as MantRadio } from '@mantine/core'
+import { useForm, yupResolver } from '@mantine/form'
 import React from 'react'
 import { SubmitHandler } from 'react-hook-form'
 import { Link } from 'react-router-dom'
@@ -7,15 +8,31 @@ import registerImage from '@/assets/images/register-image.png'
 import Layout from '@/components/layout/Layout'
 import Policy from '@/components/policy/Policy'
 import SubmitForm from '@/components/submitForm/SubmitForm'
-import { Button, Input, Radio } from '@/shared/ui'
+import { Button, Checkbox, Input, Radio } from '@/shared/ui'
 import InputPassword from '@/shared/ui/input/InputPassword/InputPassword'
 import InputPhone from '@/shared/ui/input/InputPhone/InputPhone'
-import { IFormValues, TValidationSubmitFormResolver } from '@/shared/validation'
+import { RegisterForm } from '@/shared/validation/formValues'
+import { registerSchema } from '@/shared/validation/validationSchemas'
 
 import s from './Register.module.css'
 
 const Register = () => {
-  const onSubmit: SubmitHandler<IFormValues> = (data) => {
+  const form = useForm<RegisterForm>({
+    validate: yupResolver(registerSchema),
+    validateInputOnChange: true,
+    initialValues: {
+      lastName: '',
+      firstName: '',
+      patronymic: '',
+      email: '',
+      phone: '',
+      password: '',
+      confirmPassword: '',
+      userRole: '',
+      policy: false,
+    },
+  })
+  const onSubmit: SubmitHandler<RegisterForm> = (data) => {
     // eslint-disable-next-line no-console
     console.log(data)
   }
@@ -29,28 +46,41 @@ const Register = () => {
       <div className={s.register__container}>
         <div className={s.register__formContainer}>
           <SubmitForm
-            className={s.register__form}
             btnText="Зарегистрироваться"
-            btnWidth="100%"
-            resolverType={TValidationSubmitFormResolver.REGISTER}
-            onSubmit={onSubmit}
+            className={s.register__form}
+            onSubmit={form.onSubmit(onSubmit)}
           >
-            <Input label="Фамилия" />
-            <Input label="Имя" />
-            <Input label="Отчество" />
-            <Input label="E-mail" />
-            <InputPhone label="Телефон" placeholder="+7 999 999 99 99" />
+            <Input label="Фамилия" {...form.getInputProps('lastName')} />
+            <Input label="Имя" {...form.getInputProps('firstName')} />
+            <Input label="Отчество" {...form.getInputProps('patronymic')} />
+            <Input label="E-mail" {...form.getInputProps('email')} />
+            <InputPhone
+              label="Телефон"
+              placeholder="+7 999 999 99 99"
+              {...form.getInputProps('phone')}
+            />
+
             <InputPassword
               label="Пароль"
               description="Пароль должен содержать не менее 7 символов, буквы в верхнем
 					и нижнем регистре, цифры и спец. символ (ex: ! @ # $ % - & * _)"
+              {...form.getInputProps('password')}
             />
-            <InputPassword label="Повторите пароль" />
-            <MantRadio.Group className={s.register__radio}>
+            <InputPassword
+              label="Повторите пароль"
+              {...form.getInputProps('confirmPassword')}
+            />
+            <MantRadio.Group
+              className={s.register__radio}
+              {...form.getInputProps('userRole')}
+            >
               <Radio value="Tutor" label="Преподователь" />
               <Radio value="Student" label="Ученик" />
             </MantRadio.Group>
-            <Policy className={s.register__policy} />
+            <Policy
+              checkbox={<Checkbox required {...form.getInputProps('policy')} />}
+              className={s.register__policy}
+            />
           </SubmitForm>
           <p className={s.register__desc}>
             Уже есть аккаунт?

@@ -1,21 +1,22 @@
 import clsx from 'clsx'
-import { FC } from 'react'
+import { FC, ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 
-import { Button, Checkbox } from '@/shared/ui'
+import { Button } from '@/shared/ui'
 
 import s from './Policy.module.css'
 
 interface PolicyProps {
   className?: string
+  checkbox: ReactNode
 }
 
-const Policy: FC<PolicyProps> = ({ className }) => {
+const Policy: FC<PolicyProps> = ({ className, checkbox }) => {
   const policyClassName = clsx(className, { [s.policy]: true })
 
   return (
     <div className={policyClassName}>
-      <Checkbox />
+      {checkbox}
       <p className={s.policy__text}>
         Я согласен с
         <Link to="/" className={s.policy__link}>

@@ -10,3 +10,15 @@ export interface IFormValues {
   role: string
   policy: boolean
 }
+
+export interface RegisterForm {
+  firstName: string
+  lastName: string
+  email: string
+  patronymic: string
+  password: string
+  confirmPassword: string
+  phone: string
+  userRole: string
+  policy: boolean
+}

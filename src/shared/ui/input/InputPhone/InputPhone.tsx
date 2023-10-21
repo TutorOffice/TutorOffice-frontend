@@ -4,7 +4,7 @@ import {
   InputBaseProps as MantInputBaseProps,
 } from '@mantine/core'
 import React from 'react'
-import { IMaskInput } from 'react-imask'
+import InputMask from 'react-input-mask'
 
 import s from '../Input.module.css'
 
@@ -23,7 +23,7 @@ const classNames = {
   wrapper: s.wrapper,
 }
 
-const maskDefaultValue = '+7 000 000 00 00'
+const maskDefaultValue = '+7 999 999 99 99'
 
 const InputPhone: React.FC<InputProps> = ({
   className,
@@ -35,8 +35,9 @@ const InputPhone: React.FC<InputProps> = ({
       {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
       <InputBase<any>
         classNames={classNames}
-        component={IMaskInput}
+        component={InputMask}
         mask={mask}
+        maskChar=""
         {...props}
       />
     </>

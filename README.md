@@ -2,7 +2,7 @@
 
 ## [Backlog](https://github.com/orgs/TutorOffice/projects/1)_
 
-## [Ссылка на прототип проекта](https://tutor-office-frontend.vercel.app/)
+## [Ссылка на прототип проекта](https://tutor-office-frontend-em4ny90ed-tutorofficefront.vercel.app/)
 
 ## Команда разработчиков:
 

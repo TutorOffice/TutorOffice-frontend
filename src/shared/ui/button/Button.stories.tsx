@@ -31,7 +31,19 @@ export const secondary: Story = {
     </div>
   ),
 }
-export const textButton: Story = {
+export const textButtonAccent: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'row', gap: '20px' }}>
+      <Button variant="transparent">Button</Button>
+      <Button variant="transparent">Button</Button>
+      <Button variant="transparent" disabled>
+        Button
+      </Button>
+    </div>
+  ),
+}
+
+export const textButtonBlack: Story = {
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'row', gap: '20px' }}>
       <Button color="secondaryColor" variant="transparent">

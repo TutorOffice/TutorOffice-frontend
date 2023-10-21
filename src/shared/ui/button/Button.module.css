@@ -25,6 +25,8 @@
 
         &[data-disabled=true] {
             background: transparent;
+            color: var(--gray);
+
         }
     }
 

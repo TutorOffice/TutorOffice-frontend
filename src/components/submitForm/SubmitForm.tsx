@@ -15,6 +15,7 @@ interface SubmitFormProps {
   defaultValues?: IFormValues
   className?: string
   submitBtnClassName?: string
+  disabledButton?: boolean
 }
 
 const SubmitForm: React.FC<SubmitFormProps> = ({
@@ -24,17 +25,24 @@ const SubmitForm: React.FC<SubmitFormProps> = ({
   btnGroup,
   className,
   submitBtnClassName,
+  disabledButton,
 }) => {
   let submitControls
   if (btnGroup) {
     submitControls = (
       <ButtonGroup width="100%">
-        <Button className={submitBtnClassName}>{btnText}</Button>
+        <Button disabled={disabledButton} className={submitBtnClassName}>
+          {btnText}
+        </Button>
         <Button>Отменить</Button>
       </ButtonGroup>
     )
   } else if (btnText) {
-    submitControls = <Button type="submit">{btnText}</Button>
+    submitControls = (
+      <Button disabled={disabledButton} type="submit">
+        {btnText}
+      </Button>
+    )
   }
 
   const formClassName = clsx(className, { [s.submitForm]: true })

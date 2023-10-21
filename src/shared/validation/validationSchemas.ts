@@ -15,39 +15,47 @@ export const registerSchema = yup
   .object({
     lastName: yup
       .string()
-      .required(lastNameMessages.required)
-      .matches(cyrillicLatinPattern, lastNameMessages.incorrect),
+      .matches(cyrillicLatinPattern, lastNameMessages.incorrect)
+      .required(lastNameMessages.required),
+
     firstName: yup
       .string()
-      .required(firstNameMessages.required)
-      .matches(cyrillicLatinPattern, firstNameMessages.incorrect),
+      .matches(cyrillicLatinPattern, firstNameMessages.incorrect)
+      .required(firstNameMessages.required),
+
     patronymic: yup.string().matches(cyrillicLatinPattern, {
       excludeEmptyString: true,
       message: patronymicMessages.incorrect,
     }),
+
     email: yup
       .string()
-      .required(emailMessages.required)
-      .email(emailMessages.incorrect),
+      .email(emailMessages.incorrect)
+      .required(emailMessages.required),
+
     phone: yup.string().max(18).matches(/\d+/, {
       excludeEmptyString: true,
       message: phoneMessages.incorrect,
     }),
+
     password: yup
       .string()
-      .required('')
-      .min(passwordPattern.min, '')
-      .matches(passwordPattern.number, '')
-      .matches(passwordPattern.special, '')
-      .matches(passwordPattern.latin, '')
-      .matches(passwordPattern.upperCase, '')
-      .matches(passwordPattern.valid, ''),
+      .min(passwordPattern.min, passwordMessages.min)
+      .matches(passwordPattern.special, passwordMessages.special)
+      .matches(passwordPattern.latin, passwordMessages.latin)
+      .matches(passwordPattern.upperCase, passwordMessages.upperCase)
+      .matches(passwordPattern.valid, passwordMessages.valid)
+      .matches(passwordPattern.number, passwordMessages.number)
+      .required(passwordMessages.required),
+
     confirmPassword: yup
       .string()
       .oneOf([yup.ref('password')], passwordMessages.mismatch)
       .required(''),
-    userRole: yup.string(),
-    policy: yup.boolean(),
+
+    userRole: yup.string().required('Выберите роль'),
+
+    policy: yup.boolean().isTrue(' ').required(' '),
   })
   .required('')
 

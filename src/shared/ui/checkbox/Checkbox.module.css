@@ -19,3 +19,11 @@
 
 }
 
+.body {
+    display: flex;
+    flex-direction: column;
+}
+
+.labelWrapper p {
+    padding-left: 0;
+}

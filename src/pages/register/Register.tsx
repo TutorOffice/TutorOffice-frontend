@@ -19,7 +19,7 @@ import s from './Register.module.css'
 const Register = () => {
   const form = useForm<RegisterForm>({
     validate: yupResolver(registerSchema),
-    validateInputOnChange: true,
+    validateInputOnBlur: true,
     initialValues: {
       lastName: '',
       firstName: '',
@@ -37,6 +37,8 @@ const Register = () => {
     console.log(data)
   }
 
+  console.log(form.isValid())
+
   return (
     <Layout>
       <Button variant="back" className={s.register__goBack}>
@@ -46,36 +48,43 @@ const Register = () => {
       <div className={s.register__container}>
         <div className={s.register__formContainer}>
           <SubmitForm
+            disabledButton={!form.isValid()}
             btnText="Зарегистрироваться"
             className={s.register__form}
             onSubmit={form.onSubmit(onSubmit)}
           >
-            <Input label="Фамилия" {...form.getInputProps('lastName')} />
-            <Input label="Имя" {...form.getInputProps('firstName')} />
+            <Input
+              label="Фамилия"
+              required
+              {...form.getInputProps('lastName')}
+            />
+            <Input label="Имя" required {...form.getInputProps('firstName')} />
             <Input label="Отчество" {...form.getInputProps('patronymic')} />
-            <Input label="E-mail" {...form.getInputProps('email')} />
+            <Input label="E-mail" required {...form.getInputProps('email')} />
             <InputPhone
               label="Телефон"
               placeholder="+7 999 999 99 99"
               {...form.getInputProps('phone')}
             />
-
             <InputPassword
+              required
               label="Пароль"
               description="Пароль должен содержать не менее 7 символов, буквы в верхнем
 					и нижнем регистре, цифры и спец. символ (ex: ! @ # $ % - & * _)"
               {...form.getInputProps('password')}
             />
             <InputPassword
+              required
               label="Повторите пароль"
               {...form.getInputProps('confirmPassword')}
             />
             <MantRadio.Group
+              withAsterisk
               className={s.register__radio}
               {...form.getInputProps('userRole')}
             >
-              <Radio value="Tutor" label="Преподователь" />
-              <Radio value="Student" label="Ученик" />
+              <Radio value="tutor" label="Преподаватель" />
+              <Radio value="student" label="Ученик" />
             </MantRadio.Group>
             <Policy
               checkbox={<Checkbox required {...form.getInputProps('policy')} />}

@@ -38,6 +38,7 @@
 .error {
     color: var(--red);
     padding-left: 12px;
+    padding-top: 5px;
     font-family: Roboto, sans-serif;
     font-size: 14px;
     font-style: normal;
@@ -46,6 +47,7 @@
 }
 
 .description {
+    padding-top: 10px;
     padding-left: 12px;
     color: var(--black);
     font-family: Roboto, sans-serif;

@@ -18,6 +18,19 @@ export const primary: Story = {
   ),
 }
 
+export const primarySmall: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'row', gap: '20px' }}>
+      <Button size="sm" variant="filled">
+        Button
+      </Button>
+      <Button size="sm" disabled>
+        Button
+      </Button>
+    </div>
+  ),
+}
+
 export const secondary: Story = {
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'row', gap: '20px' }}>
@@ -28,6 +41,19 @@ export const secondary: Story = {
         Button
       </Button>
       <Button disabled>Button</Button>
+    </div>
+  ),
+}
+
+export const secondarySmall: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'row', gap: '20px' }}>
+      <Button color="secondaryColor" size="sm" variant="filled">
+        Button
+      </Button>
+      <Button color="secondaryColor" size="sm" disabled>
+        Button
+      </Button>
     </div>
   ),
 }

@@ -1,11 +1,21 @@
 .root {
-    padding: 18px 60px;
-    height: 57px;
     border-radius: 20px;
-
 
     &[data-disabled=true] {
         color: var(--gray);
+    }
+
+    &[data-size='md'] {
+        padding: 18px 60px;
+        height: 57px;
+    }
+
+    &[data-size='sm'] {
+        padding: 10px 40px;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
     }
 
 }

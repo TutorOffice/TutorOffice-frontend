@@ -26,6 +26,7 @@ const Button: React.FC<ButtonProps> = ({
   color = 'primaryColor',
   className,
   variant,
+  size = 'md',
   ...props
 }) => {
   const classes = clsx(className, {
@@ -42,6 +43,7 @@ const Button: React.FC<ButtonProps> = ({
       color={color}
       variant={variant}
       className={classes}
+      size={size}
       {...props}
     >
       {children}

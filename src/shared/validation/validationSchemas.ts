@@ -11,19 +11,31 @@ import {
   phoneMessages,
 } from './validationConstants'
 
+export const registerInitialValues = {
+  first_name: '',
+  last_name: '',
+  patronymic_name: '',
+  email: '',
+  phone: '',
+  password: '',
+  password2: '',
+  is_teacher: '',
+  policy: false,
+}
+
 export const registerSchema = yup
   .object({
-    lastName: yup
+    last_name: yup
       .string()
       .matches(cyrillicLatinPattern, lastNameMessages.incorrect)
       .required(lastNameMessages.required),
 
-    firstName: yup
+    first_name: yup
       .string()
       .matches(cyrillicLatinPattern, firstNameMessages.incorrect)
       .required(firstNameMessages.required),
 
-    patronymic: yup.string().matches(cyrillicLatinPattern, {
+    patronymic_name: yup.string().matches(cyrillicLatinPattern, {
       excludeEmptyString: true,
       message: patronymicMessages.incorrect,
     }),
@@ -48,12 +60,12 @@ export const registerSchema = yup
       .matches(passwordPattern.number, passwordMessages.number)
       .required(passwordMessages.required),
 
-    confirmPassword: yup
+    password2: yup
       .string()
       .oneOf([yup.ref('password')], passwordMessages.mismatch)
       .required(''),
 
-    userRole: yup.string().required('Выберите роль'),
+    is_teacher: yup.string().required('Выберите роль'),
 
     policy: yup.boolean().isTrue(' ').required(' '),
   })

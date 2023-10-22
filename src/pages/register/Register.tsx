@@ -12,7 +12,10 @@ import { Button, Checkbox, Input, Radio } from '@/shared/ui'
 import InputPassword from '@/shared/ui/input/InputPassword/InputPassword'
 import InputPhone from '@/shared/ui/input/InputPhone/InputPhone'
 import { RegisterForm } from '@/shared/validation/formValues'
-import { registerSchema } from '@/shared/validation/validationSchemas'
+import {
+  registerInitialValues,
+  registerSchema,
+} from '@/shared/validation/validationSchemas'
 
 import s from './Register.module.css'
 
@@ -20,24 +23,12 @@ const Register = () => {
   const form = useForm<RegisterForm>({
     validate: yupResolver(registerSchema),
     validateInputOnBlur: true,
-    initialValues: {
-      lastName: '',
-      firstName: '',
-      patronymic: '',
-      email: '',
-      phone: '',
-      password: '',
-      confirmPassword: '',
-      userRole: '',
-      policy: false,
-    },
+    initialValues: registerInitialValues,
   })
   const onSubmit: SubmitHandler<RegisterForm> = (data) => {
     // eslint-disable-next-line no-console
     console.log(data)
   }
-
-  console.log(form.isValid())
 
   return (
     <Layout>
@@ -56,10 +47,13 @@ const Register = () => {
             <Input
               label="Фамилия"
               required
-              {...form.getInputProps('lastName')}
+              {...form.getInputProps('last_name')}
             />
-            <Input label="Имя" required {...form.getInputProps('firstName')} />
-            <Input label="Отчество" {...form.getInputProps('patronymic')} />
+            <Input label="Имя" required {...form.getInputProps('first_name')} />
+            <Input
+              label="Отчество"
+              {...form.getInputProps('patronymic_name')}
+            />
             <Input label="E-mail" required {...form.getInputProps('email')} />
             <InputPhone
               label="Телефон"
@@ -76,12 +70,12 @@ const Register = () => {
             <InputPassword
               required
               label="Повторите пароль"
-              {...form.getInputProps('confirmPassword')}
+              {...form.getInputProps('password2')}
             />
             <MantRadio.Group
               withAsterisk
               className={s.register__radio}
-              {...form.getInputProps('userRole')}
+              {...form.getInputProps('is_teacher')}
             >
               <Radio value="tutor" label="Преподаватель" />
               <Radio value="student" label="Ученик" />

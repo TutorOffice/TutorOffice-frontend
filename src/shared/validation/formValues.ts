@@ -12,13 +12,13 @@ export interface IFormValues {
 }
 
 export interface RegisterForm {
-  firstName: string
-  lastName: string
+  first_name: string
+  last_name: string
+  patronymic_name: string
   email: string
-  patronymic: string
-  password: string
-  confirmPassword: string
   phone: string
-  userRole: string
+  password: string
+  password2: string
+  is_teacher: string
   policy: boolean
 }

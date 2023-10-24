@@ -20,7 +20,6 @@ export const registerInitialValues = {
   password: '',
   password2: '',
   is_teacher: '',
-  policy: false,
 }
 
 export const registerSchema = yup
@@ -66,8 +65,6 @@ export const registerSchema = yup
       .required(''),
 
     is_teacher: yup.string().required('Выберите роль'),
-
-    policy: yup.boolean().isTrue(' ').required(' '),
   })
   .required('')
 

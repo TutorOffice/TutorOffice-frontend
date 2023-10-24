@@ -20,5 +20,4 @@ export interface RegisterForm {
   password: string
   password2: string
   is_teacher: string
-  policy: boolean
 }

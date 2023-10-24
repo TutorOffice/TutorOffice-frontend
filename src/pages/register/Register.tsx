@@ -1,6 +1,6 @@
 import { Radio as MantRadio } from '@mantine/core'
 import { useForm, yupResolver } from '@mantine/form'
-import React from 'react'
+import React, { useState } from 'react'
 import { SubmitHandler } from 'react-hook-form'
 import { Link } from 'react-router-dom'
 
@@ -8,6 +8,7 @@ import registerImage from '@/assets/images/register-image.png'
 import Layout from '@/components/layout/Layout'
 import Policy from '@/components/policy/Policy'
 import SubmitForm from '@/components/submitForm/SubmitForm'
+import { useRegistrationMutation } from '@/entities/auth/api'
 import { Button, Checkbox, Input, Radio } from '@/shared/ui'
 import InputPassword from '@/shared/ui/input/InputPassword/InputPassword'
 import InputPhone from '@/shared/ui/input/InputPhone/InputPhone'
@@ -25,9 +26,14 @@ const Register = () => {
     validateInputOnBlur: true,
     initialValues: registerInitialValues,
   })
+  const [isAgreed, setIsAgreed] = useState(false)
+  const [registration] = useRegistrationMutation()
+
   const onSubmit: SubmitHandler<RegisterForm> = (data) => {
     // eslint-disable-next-line no-console
-    console.log(data)
+    const isTeacher = data.is_teacher === 'tutor'
+    const user = { ...data, is_teacher: isTeacher }
+    registration(user)
   }
 
   return (
@@ -39,7 +45,7 @@ const Register = () => {
       <div className={s.register__container}>
         <div className={s.register__formContainer}>
           <SubmitForm
-            disabledButton={!form.isValid()}
+            disabledButton={!(form.isValid() && isAgreed)}
             btnText="Зарегистрироваться"
             className={s.register__form}
             onSubmit={form.onSubmit(onSubmit)}
@@ -81,7 +87,12 @@ const Register = () => {
               <Radio value="student" label="Ученик" />
             </MantRadio.Group>
             <Policy
-              checkbox={<Checkbox required {...form.getInputProps('policy')} />}
+              checkbox={
+                <Checkbox
+                  checked={isAgreed}
+                  onChange={(event) => setIsAgreed(event.currentTarget.checked)}
+                />
+              }
               className={s.register__policy}
             />
           </SubmitForm>

@@ -11,3 +11,5 @@ export const createStore = () =>
     middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware().concat(commonApi.middleware),
   })
+
+export const store = createStore()

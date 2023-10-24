@@ -17,6 +17,7 @@ const baseQuery = fetchBaseQuery({
 
     if (state.tokens.access) {
       headers.set('Authorization', `Bearer ${state.tokens.access}`)
+      headers.set('Access-Control-Allow-Origin', '*')
     }
 
     return headers
